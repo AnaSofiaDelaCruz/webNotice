@@ -60,15 +60,3 @@
     padding-right:150px;
 }
 
-/*inicia home*/
-.cardContainer{
-    border-color: black;
-}
-.rectangulo{
-    width: 250px; 
-    height: 100px; 
-    border: 3px solid #555;
-    background: #428bca;
-    background: #7BB0A8;
-    border-radius: 5px 5px 0px 0px;
-}

@@ -1,0 +1,19 @@
+/*inicia home*/
+.cardContainer{
+    border-color: black;
+    box-shadow: 2px 4px 15px #A2A2A2;
+}
+.rectangulo{
+    width: 1482px; 
+    height: 25px; 
+    background: #428bca;
+    background: #7BB0A8;
+    border-radius: 5px 5px 0px 0px;
+}
+.cardStyle{
+    background-color: #EEEEEE;
+}
+.img-card{
+    width:90%;
+    height:auto;
+}
