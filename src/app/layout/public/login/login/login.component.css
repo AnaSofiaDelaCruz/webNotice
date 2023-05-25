@@ -1,0 +1,74 @@
+.space{
+   padding-left: 0px !important;
+   padding-top: 0px !important;
+}
+.triangulo-tricolor {
+    width: fit-content;
+    border-left: 460px solid #512B52;
+    border-top: 359px solid #635274;
+    border-bottom: 431px solid #7BB0A8;
+   
+}
+.position{
+    position: relative;
+
+}
+.logo{
+    position: absolute; 
+    left: 23px; top: -73px; 
+    z-index: 1
+}
+.pilar{
+    position: absolute; 
+    left: 0px; 
+    top: 263px; 
+    z-index: 1
+}
+.slogan{
+    position: absolute;
+    color: aliceblue;
+    font-family: 'Roboto-Bold', sans-serif;
+    margin-top: 249px;
+    margin-left: 118px;
+    font-size: larger;
+}
+.background-login{
+    background-color: #EEEE;
+}
+.text-title{
+    color: black;
+    font-family: 'Roboto', sans-serif;
+    font-size: 100%;
+    font-size: xx-large;
+}
+.links{
+    color: #7BB0A8;
+}
+.text-others{
+    color: black;
+    font-family: 'Roboto', sans-serif;
+}
+.button-success{
+    background-color: #512B52;
+    color: white;
+    text-decoration:none;
+    font-weight:600;
+    font-size:20px;
+    padding-top:15px;
+    padding-bottom:15px;
+    padding-left:150px;
+    padding-right:150px;
+}
+
+/*inicia home*/
+.cardContainer{
+    border-color: black;
+}
+.rectangulo{
+    width: 250px; 
+    height: 100px; 
+    border: 3px solid #555;
+    background: #428bca;
+    background: #7BB0A8;
+    border-radius: 5px 5px 0px 0px;
+}
