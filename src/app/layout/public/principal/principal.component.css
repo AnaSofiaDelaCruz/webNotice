@@ -2,9 +2,10 @@
 .cardContainer{
     border-color: black;
     box-shadow: 2px 4px 15px #A2A2A2;
+    padding-left: 20px;
 }
 .rectangulo{
-    width: 1482px; 
+    width: 1480px; 
     height: 25px; 
     background: #428bca;
     background: #7BB0A8;
@@ -16,4 +17,13 @@
 .img-card{
     width:90%;
     height:auto;
+}
+.other-cards{
+    padding-left: 10px;
+}
+.text-others{
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: large; 
+    padding-left: 10px; 
 }
