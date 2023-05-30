@@ -27,3 +27,9 @@
     font-size: large; 
     padding-left: 10px; 
 }
+.rectangulo2{
+    width: 10px; 
+    height: 25px; 
+    background: #635274;
+    border-radius: 5px 5px 0px 0px;
+}
