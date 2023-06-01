@@ -33,3 +33,12 @@
     background: #635274;
     border-radius: 5px 5px 0px 0px;
 }
+.rectanguloVistos{
+    width: 1460px; 
+    height: 25px; 
+    background: #A7DBAB;
+    border-radius: 5px 5px 0px 0px;
+}
+.marginheadband{
+    margin-top: 20px;
+}
