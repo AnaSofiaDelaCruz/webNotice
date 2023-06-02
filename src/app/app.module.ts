@@ -7,7 +7,8 @@ import { LoginComponent } from './layout/public/login/login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegisterComponent } from './layout/public/register/register/register.component';
 import { PrincipalComponent } from './layout/public/principal/principal.component';
-import { app_routing } from './app.routes';
+//import { app_routing } from './app.routes';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -18,10 +19,16 @@ import { app_routing } from './app.routes';
   ],
   imports: [
     BrowserModule,
+    RouterModule.forRoot([
+      {path: 'home', component: PrincipalComponent},
+      {path: 'register', component: RegisterComponent},
+      { path: 'login', component: LoginComponent},
+      {path: '', redirectTo: '/login', pathMatch: 'full'},
+    ]),
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule,
-    app_routing
+    ReactiveFormsModule
+    //app_routing
   ],
   providers: [],
   bootstrap: [AppComponent]
