@@ -9,20 +9,24 @@ import { RegisterComponent } from './layout/public/register/register/register.co
 import { PrincipalComponent } from './layout/public/principal/principal.component';
 //import { app_routing } from './app.routes';
 import { RouterModule } from '@angular/router';
+import { BasenewsComponent } from './layout/public/basenews/basenews.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    PrincipalComponent
+    PrincipalComponent,
+    BasenewsComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot([
       {path: 'home', component: PrincipalComponent},
       {path: 'register', component: RegisterComponent},
+      {path: 'register2', component: RegisterComponent},
       { path: 'login', component: LoginComponent},
+      { path: 'news', component: BasenewsComponent},
       {path: '', redirectTo: '/login', pathMatch: 'full'},
     ]),
     AppRoutingModule,

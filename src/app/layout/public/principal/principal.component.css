@@ -27,20 +27,20 @@
     font-size: large; 
     padding-left: 10px; 
 }
-.rectangulo2{
-    width: 10px; 
-    height: 25px; 
-    background: #635274;
-    border-radius: 5px 5px 0px 0px;
-}
+
 .rectanguloVistos{
-    width: 1460px; 
+    width: 1480px; 
     height: 25px; 
     background: #A7DBAB;
     border-radius: 5px 5px 0px 0px;
 }
 .marginheadband{
-    margin-top: 20px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: center
+}
+.button-headband{
+    margin-left: 15px
 }
 .button-success{
     background-color: #512B52;
