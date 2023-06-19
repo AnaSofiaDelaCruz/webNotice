@@ -37,6 +37,12 @@
 .background{
     background-color: #EEEE;
 }
+.navbarContainer{
+    display: flex;
+    flex-wrap: inherit;
+    align-items: center;
+    
+}
 @media (max-width: 576px) {
     .images{
         visibility: hidden;

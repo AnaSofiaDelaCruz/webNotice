@@ -10,6 +10,7 @@ import { PrincipalComponent } from './layout/public/principal/principal.componen
 //import { app_routing } from './app.routes';
 import { RouterModule } from '@angular/router';
 import { BasenewsComponent } from './layout/public/basenews/basenews.component';
+import { WriterComponent } from './layout/public/writer/writer.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { BasenewsComponent } from './layout/public/basenews/basenews.component';
     LoginComponent,
     RegisterComponent,
     PrincipalComponent,
-    BasenewsComponent
+    BasenewsComponent,
+    WriterComponent
   ],
   imports: [
     BrowserModule,
@@ -27,6 +29,7 @@ import { BasenewsComponent } from './layout/public/basenews/basenews.component';
       {path: 'register2', component: RegisterComponent},
       { path: 'login', component: LoginComponent},
       { path: 'news', component: BasenewsComponent},
+      { path: 'writer', component: WriterComponent},
       {path: '', redirectTo: '/login', pathMatch: 'full'},
     ]),
     AppRoutingModule,
