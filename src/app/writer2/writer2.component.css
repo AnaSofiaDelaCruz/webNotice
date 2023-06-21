@@ -1,26 +1,8 @@
-.placeholder-writer{
-    height: 500px;
-}
-.button-img{
-    text-decoration:none;
- 
-}
 .background-writer{
     background-color: #EEEE;
     border-radius: 10px 10px 10px 10px;
 }
-.button-imgAdd{
-    background-color: #512B52;
-    color: white;
-    text-decoration:none;
-    font-weight:400;
-    font-size:15px;
-    padding-top:10px;
-    padding-bottom:10px;
-    padding-left:100px;
-    padding-right:100px;
-    display: inline-block;
-}
+
 .button-cont{
     background-color: #A7DBAB;
     color: white;
@@ -31,7 +13,8 @@
     padding-bottom:10px;
     padding-left:100px;
     padding-right:100px;
-    display: inline-block;
+    margin-left: 10px;
+    margin-top: 5px;
 }
 .button-style{
     display: flex;
@@ -39,6 +22,6 @@
     align-items: center;
     flex-direction: row;
 }
-.headbrand{
-    margin-top: 10px;
+.text{
+    text-align: center;
 }

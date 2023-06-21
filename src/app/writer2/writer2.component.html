@@ -23,7 +23,7 @@
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-success" type="submit">Search</button>
                 </form>
-                <a type="button" class="btn btn-outline-success me-2" href="/register">Iniciar sesión</a>
+                <!--<a type="button" class="btn btn-outline-success me-2" href="/register">Iniciar sesión</a>-->
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
                     data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -34,19 +34,23 @@
     </div>
     <br><br><br><br>
     <div class="col-md-6 col-xs-6 col-sm-6 background-writer">
-        <p>Nueva publicación</p>
-        <div class="form-floating">
-            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
-            <label for="floatingTextarea">Título de la nota</label>
+        <h5>Configuración de publicación</h5>
+        <br>
+        <p class="text">Selecciona el tipo de noticia</p>
+        <div class="col-md-6 col-xs-6 col-sm-6 button-style">
+            <a type="button" class="btn button-cont" href="/home">Estatal</a>
+            <a type="button" class="btn button-cont" href="/home">Nacional</a>
+            <a type="button" class="btn button-cont" href="/home">Internacional</a>
         </div>
+        <p class="text">Tipo de noticia</p>
         <div class="form-floating">
-            <textarea class="form-control placeholder-writer" placeholder="Leave a comment here"
-                id="floatingTextarea2"></textarea>
-            <label for="floatingTextarea2">Noticia aquí....</label>
-        </div>
-        <div class="col-md-6 col-xs-6 col-sm-6 headbrand button-style">
-            <a type="button" class="btn button-imgAdd" href="/news">Importar imagen o video</a>
-            <a type="button" class="btn button-cont" href="/writerstep2">Continuar</a>
+            <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                <option selected>...</option>
+                <option value="1">Accidentes</option>
+                <option value="2">Plítica</option>
+                <option value="3">Informativo</option>
+            </select>
+            <label for="floatingSelect">Seleccione la clasificación dde la noticia</label>
         </div>
     </div>
     <div class="col-md-6 col-xs-6 col-sm-6">
