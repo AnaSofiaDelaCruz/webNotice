@@ -11,7 +11,8 @@ import { PrincipalComponent } from './layout/public/principal/principal.componen
 import { RouterModule } from '@angular/router';
 import { BasenewsComponent } from './layout/public/basenews/basenews.component';
 import { WriterComponent } from './layout/public/writer/writer.component';
-import { Writer2Component } from './writer2/writer2.component';
+import { Writer2Component } from './layout/public/writer2/writer2.component';
+import { StatisticsComponent } from './layout/public/statistics/statistics.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { Writer2Component } from './writer2/writer2.component';
     PrincipalComponent,
     BasenewsComponent,
     WriterComponent,
-    Writer2Component
+    Writer2Component,
+    StatisticsComponent
   ],
   imports: [
     BrowserModule,
@@ -33,6 +35,7 @@ import { Writer2Component } from './writer2/writer2.component';
       { path: 'news', component: BasenewsComponent},
       { path: 'writer', component: WriterComponent},
       { path: 'writerstep2', component: Writer2Component},
+      { path: 'statistics', component: StatisticsComponent},
       {path: '', redirectTo: '/login', pathMatch: 'full'},
     ]),
     AppRoutingModule,
