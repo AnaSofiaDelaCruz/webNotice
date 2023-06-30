@@ -20,6 +20,7 @@
     padding-left:100px;
     padding-right:100px;
     display: inline-block;
+    font-family: 'Roboto-Bold', sans-serif;
 }
 .button-cont{
     background-color: #A7DBAB;
@@ -32,13 +33,21 @@
     padding-left:100px;
     padding-right:100px;
     display: inline-block;
+    font-family: 'Roboto-Bold', sans-serif;
 }
 .button-style{
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
-    flex-direction: row;
 }
 .headbrand{
     margin-top: 10px;
 }
+.text{
+    text-align: center;
+    font-family: 'Roboto-Bold', sans-serif;
+    font-size: medium;
+}
+.body {
+    font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif; 
+  }

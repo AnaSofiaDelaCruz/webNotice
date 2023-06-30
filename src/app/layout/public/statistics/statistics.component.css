@@ -1,6 +1,3 @@
-.color-navbar{
-    background-color: #7BB0A8 !important;
-}
 .background{
     background-color: #EEEE;
 }
@@ -36,4 +33,13 @@
     padding-right:150px;
     margin-top: 10px;
     margin-bottom: 10px;
+}
+.size-button{
+    min-width: 450px;
+text-align:center;
+}
+.imgStyle{
+    display: block;
+  margin: auto;
+    
 }
