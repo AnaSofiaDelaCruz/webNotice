@@ -1,0 +1,39 @@
+.color-navbar{
+    background-color: #7BB0A8 !important;
+}
+.background{
+    background-color: #EEEE;
+}
+.div-news{
+    margin-top: 15px;
+    background-color: white;
+}
+.cart-news{
+    margin-top: 15px;
+}
+.button-trash{
+    background-color: #DB3C3C;
+    color: white;
+    text-decoration:none;
+    font-weight:600;
+    font-size:20px;
+    padding-top:15px;
+    padding-bottom:15px;
+    padding-left:150px;
+    padding-right:150px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.button-edit{
+    background-color: #A7DBAB;
+    color: white;
+    text-decoration:none;
+    font-weight:600;
+    font-size:20px;
+    padding-top:15px;
+    padding-bottom:15px;
+    padding-left:150px;
+    padding-right:150px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

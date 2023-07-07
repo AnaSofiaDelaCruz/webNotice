@@ -1,0 +1,60 @@
+/*inicia home*/
+.cardContainer{
+    border-color: black;
+    box-shadow: 2px 4px 15px #A2A2A2;
+    padding-left: 20px;
+}
+.rectangulo{
+    width: 1480px; 
+    height: 25px; 
+    background: #428bca;
+    background: #7BB0A8;
+    border-radius: 5px 5px 0px 0px;
+}
+.cardStyle{
+    background-color: #EEEEEE;
+}
+.img-card{
+    width:90%;
+    height:auto;
+}
+.other-cards{
+    padding-left: 10px;
+}
+.text-others{
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: large; 
+    padding-left: 10px; 
+}
+
+.rectanguloVistos{
+    width: 1480px; 
+    height: 25px; 
+    background: #A7DBAB;
+    border-radius: 5px 5px 0px 0px;
+}
+.marginheadband{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: center
+}
+.button-headband{
+    margin-left: 15px
+}
+.button-success{
+    background-color: #512B52;
+    color: white;
+    text-decoration:none;
+    font-weight:600;
+    font-size:20px;
+    padding-top:15px;
+    padding-bottom:15px;
+    padding-left:150px;
+    padding-right:150px;
+}
+.navContainer{
+    display: flex;
+    flex-wrap: inherit;
+    align-items: center;
+}
