@@ -45,23 +45,19 @@
 <body>
     <div class="contenedorPrincipal">
         <div class="contenedorIzquierdo">
-<!--             <img src="../assets/images/Imagen-lateral-login.png" alt="barra lateral" class="triangulos">
-            <img src="./assets/images/pilar2.png" alt="Pilar" class="pilar">
-            <img src="../assets/images/Logo-blanco.png" alt="Logo" class="logo">
-            <p class="slogan">El punto exacto de la noticia</p> -->
             <img src="./assets/images/Lateral.png" alt="" class="imagen">
         </div>
         <div class="contenedorDerecho">
             <div class="formulario">
                 <h1 class="welcome">¡Bienvenido!</h1>
                 <h2 class="tip">Por favor inicia sesion con tus datos para ingresar a la plataforma.</h2>
-                <h3 class="label">Correo</h3>
-                <input type="text">
+                <h3 class="label" >Correo</h3>
+                <input type="text" placeholder="mision24@gmail.com" [(ngModel)]="email">
                 <h3 class="label" id="label-pass">Contraseña</h3>
-                <input type="password">
-                <button>Iniciar sesión</button>
-                <h3 class="alter">¿Tienes problemas para iniciar sesion? <a href="#">¡Te ayudamos!</a></h3>
-                <h3 class="alter">¿No te has registrado? <a href="#">¡Registrate ahora!</a></h3>
+                <input type="password" [(ngModel)]="pass">
+                <button id="iniciarSesion" (click)="iniciarSesion()">Iniciar sesión</button>
+                <h3 class="alter">¿Tienes problemas para iniciar sesion? <a >¡Te ayudamos!</a></h3>
+                <h3 class="alter">¿No te has registrado? <a routerLink="/register">¡Registrate ahora!</a></h3>
             </div>
         </div>
 

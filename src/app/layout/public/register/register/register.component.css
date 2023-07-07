@@ -1,4 +1,4 @@
-.space{
+/* .space{
     padding-left: 0px !important;
     padding-top: 0px !important;
  }
@@ -51,4 +51,139 @@
  .button-success{
      background-color: #512B52;
      color: white;
- }
+ } */
+
+
+ .html {
+    padding: 0;
+    margin: 0;
+}
+
+.contenedorIzquierdo {
+    background-color: #EEEEEE;
+    width: auto;
+    height: 100vh;
+    position: relative;
+}
+.contenedorDerecho {
+    background-color: #EEEEEE;
+    width: auto;
+    height: 100vh;
+    position: relative;
+}
+
+.contenedorPrincipal {
+    display: grid;
+    grid-template-columns: 23vw auto;
+}
+
+.triangulos {
+    width: 100%;
+    height: 100%;
+}
+
+.pilar {   
+    position: absolute;
+    width: 100%;
+    height: 60%;
+    left: 0;
+    bottom: 0;
+}
+
+.logo {
+    position: absolute;
+    width: 60%;
+    left: 20%;
+    top: 5%;
+}
+
+.slogan {
+    font-family: 'Poppins';
+    font-weight: bold;
+    font-size: 15px;
+    position: absolute;
+    top: 37%;
+    color: white;
+    left: 25%;
+}
+
+.imagen {
+    height: 100vh;
+}
+
+.formulario {
+    position: absolute;
+    margin-left: 78px;
+    width: 80%;
+}
+
+.welcome {
+    color: #000;
+    font-size: 48px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+.tip {
+    color: #464646;
+    font-size: 22px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 400;
+    
+}
+
+.label {
+    color: #636363;
+    font-size: 20px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 400;
+    margin-top: 30px;
+}
+
+
+input {
+    border-radius: 3px;
+    background: #FFF;
+    border: none;
+    width: 100%;
+    height: 50px;
+    font-size: 24px;
+    font-family: Roboto;
+    padding: 15px;
+    font-weight: bold;
+}
+
+button {
+    border-radius: 3px;
+    background: #512B52;
+    width: 50%;
+    height: 60px;
+    color: white;
+    font-family: Arial;
+    font-weight: bold;
+    font-size: 32px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-top: 20px;
+    border: none;
+}
+
+.alter {
+    color: #636363;
+    font-size: 15px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 400;
+    margin-top: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: #7BB0A8;
+    font-weight: bold;
+}
