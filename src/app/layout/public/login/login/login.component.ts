@@ -46,6 +46,7 @@ export class LoginComponent implements OnInit {
         text: 'Bienvenido de nuevo',
         icon: 'success',
       })
+
     }
   }
 }
