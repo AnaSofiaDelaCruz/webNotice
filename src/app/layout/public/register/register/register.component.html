@@ -10,7 +10,7 @@
     <p class="text-title">¡Bienvenido!</p>
     <p>Registrate en la plataforma para poder interactuar con las noticias</p>
     <br />
-    <form [formGroup]="registroForm" (ngSubmit)="registrarUsuario()">
+    <form [formGroup]="registroForm" (ngSubmit)="Registro()">
       <div class="col-md-8 col-xs-6">
         <label for="nombre" class="form-label">Nombre:</label>
         <input
@@ -100,34 +100,40 @@
           </div>
         </div>
       </div>
+      <br />
+      <div class="col-md-8 col-xs-6">
+        <label *ngIf="isAdmin" for="isAdmin" class="form-label"
+          >Administrador</label
+        >
+        <input
+          formControlName="isAdmin"
+          type="checkbox"
+          name="isAdmin"
+          *ngIf="isAdmin"
+          [disabled]="isWriterChecked"
+          [(ngModel)]="isAdminChecked"
+          id="isAdmin"
+        />
+
+        <label *ngIf="isWriter" for="isWriter" class="form-label"
+          >Escritor</label
+        >
+        <input
+          formControlName="isWriter"
+          type="checkbox"
+          name="isWriter"
+          *ngIf="isWriter"
+          [disabled]="isAdminChecked"
+          [(ngModel)]="isWriterChecked"
+          id="isWriter"
+        />
+      </div>
       <br /><br /><br />
       <button type="submit" class="btn btn-outline-success me-2">
         Continuar
       </button>
     </form>
-    <div class="col-md-8 col-xs-6">
-      <label *ngIf="isAdmin" for="isAdmin" class="form-label"
-        >Administrador</label
-      >
-      <input
-        type="checkbox"
-        name="isAdmin"
-        *ngIf="isAdmin"
-        [disabled]="isWriterChecked"
-        [(ngModel)]="isAdminChecked"
-        id="isAdmin"
-      />
 
-      <label *ngIf="isWriter" for="isWriter" class="form-label">Escritor</label>
-      <input
-        type="checkbox"
-        name="isWriter"
-        *ngIf="isWriter"
-        [disabled]="isAdminChecked"
-        [(ngModel)]="isWriterChecked"
-        id="isWriter"
-      />
-    </div>
     <br /><br />
     <p class="text-others">
       ¿Ya tienes cuenta? <a href="/login" class="links">Inicia sesión ya</a>

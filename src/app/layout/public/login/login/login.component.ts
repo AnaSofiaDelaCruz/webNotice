@@ -4,6 +4,7 @@ import Swal from 'sweetalert2';
 import { LOGIN } from 'src/interfaces/usuario';
 import { LoginService } from 'src/service/LoginService/login.service';
 import { Router } from '@angular/router';
+import { AlertService } from 'src/service/AlertService/alert.service';
 
 @Component({
   selector: 'app-login',
@@ -20,7 +21,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     protected loginService: LoginService,
-    public router: Router
+    public router: Router,
+    private alertService : AlertService
   ) {}
 
   ngOnInit(): void {
@@ -41,30 +43,21 @@ export class LoginComponent implements OnInit {
         (res) => {
           console.log('respuesta ', res);
           if (res === null) {
-            this.showErrorAlert('Error en credenciales');
+            this.alertService.showErrorAlert('Error en credenciales');
           } else {
             this.router.navigate(['/home']);
           }
         },
         (error) => {
           console.log('error', error);
-          this.showErrorAlert('Ocurrió un error en el servidor');
+          this.alertService.showErrorAlert('Ocurrió un error en el servidor');
         }
       );
     } else {
-      this.showErrorAlert('Los campos no pueden estar vacíos');
+      this.alertService.showErrorAlert('Los campos no pueden estar vacíos');
     }
   }
 
-  private showErrorAlert(message: string): void {
-    Swal.fire({
-      title: 'Error',
-      text: message,
-      icon: 'error',
-      confirmButtonColor: '#3085d6',
-      confirmButtonText: 'OK!',
-    });
-  }
 
   public submitFormulario() {
     this.iniciarSesion();

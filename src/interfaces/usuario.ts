@@ -10,6 +10,5 @@ export interface REGISTER {
   apellido: string;
   correo: string;
   password: string;
-  confirmPassword: string;
-  rol: string;
+  rolID: number;
 }
