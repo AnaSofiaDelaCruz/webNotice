@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="row justify-content-center mt-4">
+    <div class="col-lg-6">
+      <div class="input-group mb-3">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Buscar"
+          aria-label="Buscar"
+          aria-describedby="boton-buscar"
+        />
+        <button class="btn btn-primary" type="button" id="boton-buscar">
+          <fa-icon [icon]="faSearch"></fa-icon>
+        </button>
+        <button class="btn btn-primary" (click)="CrearNota()">
+          <fa-icon [icon]="faFileText"></fa-icon>
+          Crear nota
+        </button>
+      </div>
+      <div class="card mb-3" *ngFor="let nota of notas">
+        <div class="card-body">
+          <h5 class="card-title">{{ nota.titulo }}</h5>
+          <p class="card-text">{{ nota.descripcion }}</p>
+          <p class="card-text">
+            <small>Autor: {{ nota.autor }}</small>
+          </p>
+          <p class="card-text">
+            <small>Fecha: {{ nota.fecha }}</small>
+          </p>
+          <button class="btn btn-primary" type="button">
+            <fa-icon [icon]="faEdit"></fa-icon>
+            Editar
+          </button>
+          <button class="btn btn-danger" type="button">
+            <fa-icon [icon]="faTrash"></fa-icon>
+            Borrar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
