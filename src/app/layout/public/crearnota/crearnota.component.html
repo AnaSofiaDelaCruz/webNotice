@@ -1,1 +1,17 @@
-<p>crearnota works!</p>
+<h2>Crear Nota</h2>
+<form #forma="ngForm" (ngSubmit)="CrearNota(forma)">
+  <div>
+    <label>Titulo:</label
+    ><input type="text" [(ngModel)]="nota.titulo" name="tiutlo" />
+  </div>
+  <div>
+    <label>Descripcion</label>
+    <editor
+      [init]="editorConfig"
+      [(ngModel)]="nota.descripcion"
+      name="descripcion"
+    ></editor
+    ><!--Esto es lo mas importante, lo puedes meter dentre de un div, no se si se pueda en un textarea gl--->
+    <button>Guardar</button>
+  </div>
+</form>

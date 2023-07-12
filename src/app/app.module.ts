@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { EditorModule } from '@tinymce/tinymce-angular';
 // import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -37,7 +38,11 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
   imports: [
     BrowserModule,
     FontAwesomeModule,
+    EditorModule,
     HttpClientModule,
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot([
       { path: 'home', component: PrincipalComponent },
       { path: 'register', component: RegisterComponent },
@@ -52,9 +57,6 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
       { path: 'misnotas', component: MisNotasComponent },
       { path: 'crearnota', component: CrearnotaComponent },
     ]),
-    AppRoutingModule,
-    FormsModule,
-    ReactiveFormsModule,
 
     //app_routing
   ],
