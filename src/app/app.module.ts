@@ -20,9 +20,13 @@ import { MasopcionesComponent } from './layout/public/masopciones/masopciones.co
 import { MisNotasComponent } from './layout/public/misnotas/misnotas.component';
 import { CrearnotaComponent } from './layout/public/crearnota/crearnota.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { CategoriasComponent } from './layout/public/categorias/categorias.component';
+import { SubcategoriasComponent } from './layout/public/subcategorias/subcategorias.component';
+import { ObjToArray } from './objToArray.pipe';
 
 @NgModule({
   declarations: [
+    ObjToArray,
     AppComponent,
     LoginComponent,
     RegisterComponent,
@@ -34,6 +38,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     MasopcionesComponent,
     MisNotasComponent,
     CrearnotaComponent,
+    CategoriasComponent,
+    SubcategoriasComponent,
   ],
   imports: [
     BrowserModule,
@@ -56,6 +62,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
       { path: 'masopciones', component: MasopcionesComponent },
       { path: 'misnotas', component: MisNotasComponent },
       { path: 'crearnota', component: CrearnotaComponent },
+      { path: 'categoria', component: CategoriasComponent },
+      { path: 'subcategoria', component: SubcategoriasComponent },
     ]),
 
     //app_routing

@@ -7,7 +7,7 @@ import {
   faTrash,
   faFileText,
 } from '@fortawesome/free-solid-svg-icons';
-import { Nota } from 'src/app/interfaces/nota';
+import { NOTA } from 'src/app/interfaces/nota';
 
 import { AlertService } from 'src/app/service/AlertService/alert.service';
 import { ListNoteService } from 'src/app/service/ListNoteService/list-note-service.service';
@@ -18,7 +18,7 @@ import { ListNoteService } from 'src/app/service/ListNoteService/list-note-servi
   styleUrls: ['./misnotas.component.css'],
 })
 export class MisNotasComponent implements OnInit {
-  public notas: Nota[] = [];
+  public notas: NOTA[] = [];
 
   faSearch = faSearch;
   faEdit = faEdit;

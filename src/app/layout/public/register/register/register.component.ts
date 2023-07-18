@@ -89,7 +89,10 @@ export class RegisterComponent implements OnInit {
       this.registerService.registrar(this.register).subscribe(
         (response) => {
           if (response && response.message === 'Registro exitoso') {
-            this.alertService.showSuccess('Bienvenido');
+            this.alertService.showSuccess(
+              'Bienvenido',
+              'Gracias por registrarse'
+            );
             this.router.navigate(['/login']);
           }
         },

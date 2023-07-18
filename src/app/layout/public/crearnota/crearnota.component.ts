@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, NgForm } from '@angular/forms';
-import { Nota } from 'src/app/interfaces/nota';
+import { NOTA } from 'src/app/interfaces/nota';
 
 @Component({
   selector: 'app-crearnota',
@@ -9,7 +9,7 @@ import { Nota } from 'src/app/interfaces/nota';
 })
 export class CrearnotaComponent implements OnInit {
   public notaForm!: FormGroup;
-  public nota: Nota = {
+  public nota: NOTA = {
     titulo: '',
     descripcion: '',
     categoriaID: 0,

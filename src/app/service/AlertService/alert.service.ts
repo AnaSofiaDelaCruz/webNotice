@@ -17,13 +17,38 @@ export class AlertService {
     });
   }
 
+  AlertWarningDelete(mensaje: string) {
+    return Swal.fire({
+      title: '¿Estás seguro?',
+      text: mensaje,
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Sí',
+      cancelButtonText: 'Cancelar',
+    });
+  }
+  AlertWarningUpdate(mensaje: string) {
+    return Swal.fire({
+      title: '¿Estás seguro?',
+      text: mensaje,
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Sí',
+      cancelButtonText: 'Cancelar',
+    });
+  }
+  
   prueba() {
     Swal.fire({
       title: '¡Crea tu primera Nota!',
       // iconHtml: '<i class="fas fa-heart"></i>',
       icon: 'success',
       showConfirmButton: false,
-      timer: 2500,
+      timer: 1500,
       didOpen: (modal) => {
         setTimeout(() => {
           modal.style.opacity = '1';
@@ -39,11 +64,12 @@ export class AlertService {
       console.log('Animación personalizada completada');
     });
   }
-  showSuccess(message: string): void {
+
+  showSuccess(title: string, text: string): void {
     Swal.fire({
       icon: 'success',
-      title: message,
-      text: '¡Gracias por utilizar nuestra página de noticias!',
+      title: title,
+      text: text,
     });
   }
 }
