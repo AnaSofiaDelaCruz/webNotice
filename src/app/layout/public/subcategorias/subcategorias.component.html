@@ -1,1 +1,46 @@
-<p>subcategorias works!</p>
+<div class="container">
+  <div class="row justify-content-center mt-4">
+    <div class="col-lg-6">
+      <div class="input-group mb-3">
+        <input
+          #inputText
+          (input)="buscarSubCategorias(inputText.value)"
+          type="text"
+          class="form-control"
+          placeholder="Buscar"
+          aria-label="Buscar"
+          aria-describedby="boton-buscar"
+        />
+        <button class="btn btn-primary" type="button" id="boton-buscar">
+          <fa-icon [icon]="faSearch"></fa-icon>
+        </button>
+        <button class="btn btn-primary" (click)="CrearSubCategoria()">
+          <fa-icon [icon]="faFileText"></fa-icon>
+          Crear categoria
+        </button>
+      </div>
+      <div class="card mb-3" *ngFor="let Subcategoria of subcategorias | ObjToArray">
+        <div class="card-body">
+          <h5 class="card-title">Numero: {{ Subcategoria.id }}</h5>
+          <h5 class="card-text">Categoria: {{ Subcategoria.subcategoria }}</h5>
+          <button
+            class="btn btn-primary"
+            type="button"
+            (click)="Actualizar(Subcategoria)"
+          >
+            <fa-icon [icon]="faEdit"></fa-icon>
+            Editar
+          </button>
+          <button
+            class="btn btn-danger"
+            type="button"
+            (click)="Borrar(Subcategoria.id)"
+          >
+            <fa-icon [icon]="faTrash"></fa-icon>
+            Borrar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
