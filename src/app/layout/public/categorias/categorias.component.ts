@@ -1,15 +1,14 @@
-import { HttpErrorResponse } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import {
   faSearch,
   faEdit,
   faTrash,
   faFileText,
 } from '@fortawesome/free-solid-svg-icons';
-import { CATEGORIA } from 'src/app/interfaces/categoria';
-import { AlertService } from 'src/app/service/AlertService/alert.service';
 import { CategoriaService } from 'src/app/service/CategoriaService/categoria.service';
+import { AlertService } from 'src/app/service/AlertService/alert.service';
 import Swal from 'sweetalert2';
+
 @Component({
   selector: 'app-categorias',
   templateUrl: './categorias.component.html',
@@ -20,114 +19,85 @@ export class CategoriasComponent implements OnInit {
     private alertService: AlertService,
     private categoriaService: CategoriaService
   ) {}
+
   public categorias: any = [];
-  private categoriaCreate: CATEGORIA = {
-    id: 0,
-    Nuevacategoria: '',
-  };
+  private idUpdate!: number;
+  @ViewChild('inputText') inputText: any;
   faSearch = faSearch;
   faEdit = faEdit;
   faTrash = faTrash;
   faFileText = faFileText;
 
   ngOnInit(): void {
-    this.checkToken();
     this.ListCategoria();
-  }
-
-  private checkToken(): void {
-    const rol = localStorage.getItem('rol');
-    // Realiza las acciones necesarias con el token
   }
 
   ListCategoria() {
     this.categoriaService.ListCategoria().subscribe(
       (response: any) => {
-        console.log('RESPONSE ', response, ' su tipo es ', typeof response);
         this.categorias = response.categoria;
       },
-      (error: HttpErrorResponse) => {
-        if (error.status === 401) {
-          this.alertService.showErrorAlert('No Tiene permiso de estar aqui');
-        } else if (error.status === 500) {
-          this.alertService.showErrorAlert('Intente mas tarde por favor');
-        }
-      }
+      (error) => this.handleError(error)
     );
   }
 
   CrearCategoria() {
-    this.createSampleValue(true,this.categoriaCreate);
+    this.createOrUpdateCategoria(true);
   }
-  Actualizar(categoria: CATEGORIA) {
-    console.log();
-    this.createSampleValue(false, categoria);
+
+  Actualizar(categoria: any) {
+    this.idUpdate = categoria.id!;
+    this.createOrUpdateCategoria(false);
   }
+
   Borrar(id: number) {
     this.alertService
       .AlertWarningDelete(
         '¿Estás seguro de que quieres eliminar esta categoría?'
       )
-      .then(
-        (result) => {
-          if (result.isConfirmed) {
-            this.categoriaService.DeleteCategoria(id).subscribe((response) => {
+      .then((result) => {
+        if (result.isConfirmed) {
+          this.categoriaService.DeleteCategoria(id).subscribe(
+            () => {
               this.ListCategoria();
               this.alertService.showSuccess(
                 'Eliminado',
                 'La categoría ha sido eliminada correctamente'
               );
-            });
-          }
-        },
-        (error: HttpErrorResponse) => {
-          if (error.status === 404) {
-            this.alertService.showErrorAlert('No existe la categoria a borrar');
-          } else if (error.status === 401) {
-            this.alertService.showErrorAlert('No deberia estar aca');
-          } else if (error.status === 500) {
-            this.alertService.showErrorAlert('Regrese mas tarde');
-          }
+            },
+            (error) => this.handleError(error)
+          );
         }
-      );
+      });
   }
 
   buscarCategorias(termino: string) {
     this.categoriaService.buscarCategoria(termino).subscribe(
       (response: any) => {
-        console.log(response);
         this.categorias = response.categoria;
       },
-      (error: HttpErrorResponse) => {
-        if (error.status === 404) {
-          this.alertService.showErrorAlert('No se encontro la categoria');
-        } else if (error.status === 401) {
-          this.alertService.showErrorAlert('No deberia estar aqui');
-        } else if (error.status === 500) {
-          this.alertService.showErrorAlert('Intente mas tarde');
-        }
+      (error) => {
+        this.handleError(error);
+        this.ListCategoria();
+        this.inputText.nativeElement.value = '';
       }
     );
   }
 
-  createSampleValue(bandera: boolean, categoria:CATEGORIA) {
+  createOrUpdateCategoria(isNew: boolean) {
     Swal.fire({
-      title: 'Guardar texto',
+      title: isNew ? 'Crear nueva categoría' : 'Actualizar categoría',
       input: 'text',
       inputAttributes: {
         autocapitalize: 'off',
       },
       showCancelButton: true,
-      confirmButtonText: 'Guardar',
+      confirmButtonText: isNew ? 'Crear' : 'Actualizar',
       showLoaderOnConfirm: true,
       preConfirm: (texto) => {
-        this.categoriaCreate = texto;
-        if (bandera) {
-          return this.categoriaService.CreateCategoria(this.categoriaCreate);
-        } else {
-          console.log('si entro a false ', this.categoriaCreate);
-          return this.categoriaService.UpdateCategoria(categoria);
-        }
+        return isNew
+          ? this.categoriaService.CreateCategoria({ Nuevacategoria: texto })
+          : this.categoriaService.UpdateCategoria(texto, this.idUpdate);
       },
       allowOutsideClick: () => !Swal.isLoading(),
     })
@@ -135,17 +105,23 @@ export class CategoriasComponent implements OnInit {
         if (result.isConfirmed) {
           this.ListCategoria();
           Swal.fire({
-            title: 'Categoria Guardada',
+            title: isNew ? 'Categoría creada' : 'Categoría actualizada',
             icon: 'success',
           });
         }
       })
       .catch((error) => {
-        Swal.fire({
-          title: 'Error al guardar el Categoria',
-          text: error.message,
-          icon: 'error',
-        });
+        this.handleError(error);
       });
+  }
+
+  private handleError(error: any) {
+    if (error.status === 404) {
+      this.alertService.showErrorAlert('No se encontró la categoría');
+    } else if (error.status === 401) {
+      this.alertService.showErrorAlert('No tiene permiso para estar aquí');
+    } else if (error.status === 500) {
+      this.alertService.showErrorAlert('Intente más tarde por favor');
+    }
   }
 }

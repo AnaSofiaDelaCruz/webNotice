@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, tap } from 'rxjs';
+import { Observable } from 'rxjs';
 import { CATEGORIA } from 'src/app/interfaces/categoria';
 
 @Injectable({
@@ -8,55 +8,51 @@ import { CATEGORIA } from 'src/app/interfaces/categoria';
 })
 export class CategoriaService {
   private headers: HttpHeaders;
-  private id: any;
+  private apiUrl = 'http://localhost:8080'; // URL de la API
+
   constructor(private http: HttpClient) {
     this.headers = new HttpHeaders();
     this.checkToken();
   }
+
   private checkToken(): void {
     const token = localStorage.getItem('token'); // Obtener el token del almacenamiento local (o de donde lo hayas guardado)
     if (token) {
-      console.log('SI we tiene token');
       this.setAuthorizationHeader(token);
-    } else {
     }
   }
+
   private setAuthorizationHeader(token: string): void {
     this.headers = this.headers.set('Authorization', `Bearer ${token}`);
   }
-  private apiUrl = 'http://localhost:8080'; // URL de la API
 
-  ListCategoria() {
+  ListCategoria(): Observable<any> {
     return this.http.get(`${this.apiUrl}/api/categorias`, {
       headers: this.headers,
     });
   }
 
-  buscarCategoria(termino: string) {
+  buscarCategoria(termino: string): Observable<any> {
     return this.http.get(`${this.apiUrl}/api/buscar?q=${termino}`, {
       headers: this.headers,
     });
   }
 
-  CreateCategoria(categoria: CATEGORIA): Observable<any> {
-    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
-    const body = { Nuevacategoria: categoria };
-    console.log(body, ' body');
-    return this.http.post(`${this.apiUrl}/api/crear/categoria`, body, {
+  CreateCategoria(categoria: any): Observable<any> {
+    return this.http.post(`${this.apiUrl}/api/crear/categoria`, categoria, {
       headers: this.headers,
     });
   }
 
-  DeleteCategoria(id: number) {
+  DeleteCategoria(id: number): Observable<any> {
     return this.http.delete(`${this.apiUrl}/api/borrar/categoria/${id}`, {
       headers: this.headers,
     });
   }
 
-  UpdateCategoria(categoria: CATEGORIA) {
-    console.log('SI ENTRO A SERVICE');
+  UpdateCategoria(categoria: CATEGORIA, id: number) {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
-    const body = { id: categoria.id, Nuevacategoria: categoria };
+    const body = { id: id, categoria: categoria };
     return this.http.put(`${this.apiUrl}/api/actualizar/categoria`, body, {
       headers: this.headers,
     });
