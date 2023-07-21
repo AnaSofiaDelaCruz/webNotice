@@ -1,17 +1,57 @@
 <h2>Crear Nota</h2>
-<form #forma="ngForm" (ngSubmit)="CrearNota(forma)">
-  <div>
-    <label>Titulo:</label
-    ><input type="text" [(ngModel)]="nota.titulo" name="tiutlo" />
+<form [formGroup]="notaForm" (ngSubmit)="CrearNota()">
+  <div class="form-group">
+    <label>Titulo:</label>
+    <input
+      type="text"
+      formControlName="titulo"
+      class="form-control"
+    />
   </div>
-  <div>
-    <label>Descripcion</label>
+  <div class="form-group">
+    <label>Categoría:</label>
+    <select
+      class="form-control"
+      formControlName="categoriaID"
+    >
+      <option
+        *ngFor="let categoria of categorias | ObjToArray"
+        [value]="categoria.id"
+      >
+        {{ categoria.categoria }}
+      </option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label>Subcategoría:</label>
+    <select
+      class="form-control"
+      formControlName="subcategoriaID"
+    >
+      <option
+        *ngFor="let subcategoria of subCategorias"
+        [value]="subcategoria.id"
+      >
+        {{ subcategoria.subcategoria }}
+      </option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label>Imágenes:</label>
+    <input
+      type="file"
+      name="images"
+      class="form-control"
+      multiple
+      (change)="selectImages($event)"
+    />
+  </div>
+  <div class="form-group">
+    <label>Descripción:</label>
     <editor
       [init]="editorConfig"
-      [(ngModel)]="nota.descripcion"
-      name="descripcion"
-    ></editor
-    ><!--Esto es lo mas importante, lo puedes meter dentre de un div, no se si se pueda en un textarea gl--->
-    <button>Guardar</button>
+      formControlName="descripcion"
+    ></editor>
   </div>
+  <button type="submit" class="btn btn-primary">Guardar</button>
 </form>

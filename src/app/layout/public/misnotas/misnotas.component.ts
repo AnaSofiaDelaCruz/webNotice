@@ -34,6 +34,7 @@ export class MisNotasComponent implements OnInit {
   ngOnInit(): void {
     this.checkToken();
     this.ListNota();
+    this.ListNota()
   }
 
   private checkToken(): void {
@@ -42,7 +43,7 @@ export class MisNotasComponent implements OnInit {
   }
 
   ListNota() {
-    this.lisNotasService.ListNotasAdmi().subscribe(
+    this.lisNotasService.  ListNotas().subscribe(
       (response: any) => {
         this.notas = response;
         console.log(response, ' sí');

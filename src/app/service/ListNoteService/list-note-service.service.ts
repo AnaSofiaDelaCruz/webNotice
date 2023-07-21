@@ -23,7 +23,12 @@ export class ListNoteService {
     this.headers = this.headers.set('Authorization', `Bearer ${token}`);
   }
   private apiUrl = 'http://localhost:8080'; // URL de la API
-
+  
+  ListNotas(): Observable<any> {
+    return this.http.get(`${this.apiUrl}/api/noticias`, {
+      headers: this.headers,
+    });
+  }
   ListNotasAdmi() {
     this.id = this.http.get(`${this.apiUrl}/api/noticia`, {
       headers: this.headers,

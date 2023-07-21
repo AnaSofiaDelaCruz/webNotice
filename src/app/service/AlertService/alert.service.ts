@@ -29,6 +29,29 @@ export class AlertService {
       cancelButtonText: 'Cancelar',
     });
   }
+
+  showConfirmationAlert(
+    title: string,
+    message: string,
+    confirmText: string,
+    cancelText: string
+  ) {
+    Swal.fire({
+      icon: 'warning',
+      title: title,
+      text: message,
+      showCancelButton: true,
+      confirmButtonText: confirmText,
+      cancelButtonText: cancelText,
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.showSuccess('CORRECTO', 'Esta nota no tendra imagendes');
+      } else if (result.isDismissed) {
+        console.log('Se hizo clic en ' + cancelText);
+      }
+    });
+  }
+
   AlertWarningUpdate(mensaje: string) {
     return Swal.fire({
       title: '¿Estás seguro?',
@@ -41,11 +64,10 @@ export class AlertService {
       cancelButtonText: 'Cancelar',
     });
   }
-  
+
   prueba() {
     Swal.fire({
       title: '¡Crea tu primera Nota!',
-      // iconHtml: '<i class="fas fa-heart"></i>',
       icon: 'success',
       showConfirmButton: false,
       timer: 1500,
