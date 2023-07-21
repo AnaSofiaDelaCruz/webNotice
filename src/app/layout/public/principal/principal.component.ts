@@ -6,8 +6,11 @@ import { DashboardService } from 'src/service/DashboardService/dashboard-service
   selector: 'app-principal',
   templateUrl: './principal.component.html',
   styleUrls: ['./principal.component.css'],
+
 })
 export class PrincipalComponent {
+
+  public active : boolean = true;
   esAdmin = false;
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
@@ -24,5 +27,9 @@ export class PrincipalComponent {
   cerrarSesion(): void {
     this.dashBoardService.logout();
     this.router.navigate(['/login']);
+  }
+
+  setActive() : void {
+    this.active = !this.active;
   }
 }
