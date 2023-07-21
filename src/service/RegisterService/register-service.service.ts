@@ -19,15 +19,19 @@ export class RegisterService {
     if (token) {
       this.setAuthorizationHeader(token);
     } else {
-      // Realizar alguna acción si no hay token, por ejemplo, redireccionar a la página de login
     }
   }
   private setAuthorizationHeader(token: string): void {
     this.headers = this.headers.set('Authorization', `Bearer ${token}`);
   }
-  registar(registro: REGISTER) {
-    console.log('FUNCIONA');
-    return this.http.post(`${this.apiUrl}/api/register`, registro, {
+
+  registrar(registro: REGISTER): Observable<any> {
+    return this.http.post(`${this.apiUrl}/api/register`, registro);
+  }
+
+  registrarAdministrador(registro: REGISTER): Observable<any> {
+    console.log(registro)
+    return this.http.post(`${this.apiUrl}/api/register/admi`, registro, {
       headers: this.headers,
     });
   }
