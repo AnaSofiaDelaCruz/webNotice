@@ -92,8 +92,10 @@ export class CrearnotaComponent implements OnInit {
 
     this.notaService.CrearNota(formData).subscribe(
       (response) => {
-        this.notaForm.reset();
-        this.selectedImages = []; // Limpiar el arreglo después de guardar la nota
+        if (response.message === 'Nota creada') {
+          this.notaForm.reset();
+          this.selectedImages = []; // Limpiar el arreglo después de guardar la nota
+        }
       },
       (error) => {
         this.handleError(error);

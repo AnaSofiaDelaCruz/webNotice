@@ -16,6 +16,10 @@
           <fa-icon [icon]="faFileText"></fa-icon>
           Crear nota
         </button>
+        <button class="btn btn-primary" (click)="ChangeStatus()">
+          <fa-icon [icon]="faChildCombatant"></fa-icon>
+          Mis notas
+        </button>
       </div>
       <div class="card mb-3" *ngFor="let nota of notas | ObjToArray">
         <div class="card-body">
@@ -34,7 +38,7 @@
             <fa-icon [icon]="faEdit"></fa-icon>
             Editar
           </button>
-          <button class="btn btn-danger" type="button">
+          <button (click)="DeleteNota(nota.id)" class="btn btn-danger" type="button">
             <fa-icon [icon]="faTrash"></fa-icon>
             Borrar
           </button>

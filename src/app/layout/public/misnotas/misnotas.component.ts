@@ -7,6 +7,7 @@ import {
   faEdit,
   faTrash,
   faFileText,
+  faChild,
 } from '@fortawesome/free-solid-svg-icons';
 import { NOTA } from 'src/app/interfaces/nota';
 
@@ -20,12 +21,12 @@ import { ListNoteService } from 'src/app/service/ListNoteService/list-note-servi
 })
 export class MisNotasComponent implements OnInit {
   public notas: NOTA[] = [];
-
+  public NotasAdmi = false;
   faSearch = faSearch;
   faEdit = faEdit;
   faTrash = faTrash;
   faFileText = faFileText;
-
+  faChildCombatant = faChild;
   constructor(
     private router: Router,
     private lisNotasService: ListNoteService,
@@ -35,7 +36,7 @@ export class MisNotasComponent implements OnInit {
 
   ngOnInit(): void {
     this.checkToken();
-    this.ListNota();
+    this.CheckButton();
   }
 
   private checkToken(): void {
@@ -47,6 +48,18 @@ export class MisNotasComponent implements OnInit {
     return (
       this.sanitizer.sanitize(0 /* TrustedResourceUrl */, descripcion) || ''
     );
+  }
+
+  ChangeStatus() {
+    this.NotasAdmi = !this.NotasAdmi;
+  }
+
+  CheckButton() {
+    if (this.NotasAdmi) {
+      this.ListNotaAdmi();
+    } else {
+      this.ListNota();
+    }
   }
 
   ListNota() {
@@ -65,6 +78,50 @@ export class MisNotasComponent implements OnInit {
         }
       }
     );
+  }
+
+  DeleteNota(id: number) {
+    const rol = localStorage.getItem('rol')!;
+    this.alertService
+      .AlertWarningDelete('¿Desea eliminarlo?. Recuerde que no se recuperará')
+      .then(
+        (result) => {
+          this.lisNotasService.DeleteNotas(id, rol).subscribe((response) => {
+            console.log(response.message, ' response');
+            if (response.message === 'Noticia eliminada') {
+              this.alertService.showSuccess('Eliminado', 'Nota eliminada');
+              this.ListNota();
+            }
+          });
+        },
+        (error) => {
+          this.handleError(error);
+        }
+      );
+  }
+
+  ListNotaAdmi() {
+    this.lisNotasService.ListNotasAdmi().subscribe(
+      ({ noticias }: any) => {
+        noticias.forEach((nota: NOTA) => {
+          nota.descripcion = this.getDescripcionHTML(nota.descripcion);
+        });
+        this.notas = noticias;
+      },
+      (error) => {
+        this.handleError(error);
+      }
+    );
+  }
+
+  private handleError(error: any) {
+    if (error.status === 404) {
+      this.alertService.showErrorAlert('No se encontró la categoría');
+    } else if (error.status === 401) {
+      this.alertService.showErrorAlert('No tiene permiso para estar aquí');
+    } else if (error.status === 500) {
+      this.alertService.showErrorAlert('Intente más tarde por favor');
+    }
   }
 
   CrearNota() {

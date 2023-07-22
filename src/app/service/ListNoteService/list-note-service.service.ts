@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { NOTA } from 'src/app/interfaces/nota';
 
 @Injectable({
   providedIn: 'root',
@@ -23,26 +24,30 @@ export class ListNoteService {
     this.headers = this.headers.set('Authorization', `Bearer ${token}`);
   }
   private apiUrl = 'http://localhost:8080'; // URL de la API
-  
+
   ListNotas(): Observable<any> {
     return this.http.get(`${this.apiUrl}/api/noticias`, {
       headers: this.headers,
     });
   }
-  ListNotasAdmi() {
-    this.id = this.http.get(`${this.apiUrl}/api/noticia`, {
+
+  DeleteNotas(id: number, rol: string): Observable<any> {
+    return this.http.delete(`${this.apiUrl}/api/borrar/noticia/${id}/${rol}`, {
+      headers: this.headers,
+    });
+  }
+
+  ListNotasAdmi(): Observable<any> {
+    this.id = this.http.get(`${this.apiUrl}/api/noticias/administrador`, {
       headers: this.headers,
     });
     console.log(this.id, ' esto es id :D');
     localStorage.setItem('id', this.id);
     return this.id;
   }
+
   getId() {
     return localStorage.getItem('id');
-  }
-
-  ListNotaAdmi(id: string): Observable<any> {
-    return this.http.get(`${this.apiUrl}/api/noticia/${id}`);
   }
 
   listNewEscritor() {}

@@ -25,7 +25,7 @@ export class AlertService {
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
-      confirmButtonText: 'Sí',
+      confirmButtonText: 'Aceptar',
       cancelButtonText: 'Cancelar',
     });
   }
