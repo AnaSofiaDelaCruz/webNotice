@@ -55,9 +55,7 @@ export class CrearnotaComponent implements OnInit {
   }
   ListCategoria() {
     this.categoriaService.ListCategoria().subscribe((response) => {
-      console.log('ESTO ES CATEGORIA PERO OQ P2', response.categoria);
       this.categorias = response.categoria;
-      console.log('ESTO ES THIS CATEGORIAS', this.categorias);
     });
   }
   ListSubCategoria() {
@@ -94,12 +92,11 @@ export class CrearnotaComponent implements OnInit {
 
     this.notaService.CrearNota(formData).subscribe(
       (response) => {
-        console.log(response);
         this.notaForm.reset();
         this.selectedImages = []; // Limpiar el arreglo después de guardar la nota
       },
       (error) => {
-        console.error(error);
+        this.handleError(error);
       }
     );
   }

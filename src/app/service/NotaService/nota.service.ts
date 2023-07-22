@@ -35,47 +35,9 @@ export class NotaService {
   private setAuthorizationHeader(token: string): void {
     this.headers = this.headers.set('Authorization', `Bearer ${token}`);
   }
-  ListNota(): Observable<any> {
-    return this.http.get(`${this.apiUrl}/api/noticias`, {
-      headers: this.headers,
-    });
-  }
-
-  ListNotaCreador(): Observable<any> {
-    if (this.checkRol() === 1) {
-      return this.http.get(`${this.apiUrl}/api/noticias/administrador`, {
-        headers: this.headers,
-      });
-    } else {
-      return this.http.get(`${this.apiUrl}/api/noticias/escritor`, {
-        headers: this.headers,
-      });
-    }
-  }
-  ReadNota(id: any): Observable<any> {
-    return this.http.get(`${this.apiUrl}/api/noticia/${id}`, {
-      headers: this.headers,
-    });
-  }
-  BuscarNota(termino: string): Observable<any> {
-    return this.http.get(`${this.apiUrl}/api/buscar/nota?q=${termino}`, {
-      headers: this.headers,
-    });
-  }
 
   CrearNota(notaData: FormData): Observable<any> {
     return this.http.post(`${this.apiUrl}/api/registrar/nota`, notaData, {
-      headers: this.headers,
-    });
-  }
-
-  UpDateNota(nota: NOTA): Observable<any> {
-    return this.http.put(`${this.apiUrl}/api/actualizar/nota`, nota, {
-      headers: this.headers,
-    });
-  }
-  UpDateItem(nota: NOTA): Observable<any> {
-    return this.http.post(`${this.apiUrl}/api/actualizar/imagen`, nota, {
       headers: this.headers,
     });
   }

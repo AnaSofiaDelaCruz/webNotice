@@ -1,4 +1,5 @@
 import { HttpErrorResponse } from '@angular/common/http';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {
@@ -28,13 +29,13 @@ export class MisNotasComponent implements OnInit {
   constructor(
     private router: Router,
     private lisNotasService: ListNoteService,
-    private alertService: AlertService
+    private alertService: AlertService,
+    private sanitizer: DomSanitizer
   ) {}
 
   ngOnInit(): void {
     this.checkToken();
     this.ListNota();
-    this.ListNota()
   }
 
   private checkToken(): void {
@@ -42,11 +43,19 @@ export class MisNotasComponent implements OnInit {
     // Realiza las acciones necesarias con el token
   }
 
+  getDescripcionHTML(descripcion: SafeHtml): string {
+    return (
+      this.sanitizer.sanitize(0 /* TrustedResourceUrl */, descripcion) || ''
+    );
+  }
+
   ListNota() {
-    this.lisNotasService.  ListNotas().subscribe(
-      (response: any) => {
-        this.notas = response;
-        console.log(response, ' sí');
+    this.lisNotasService.ListNotas().subscribe(
+      ({ noticias }: any) => {
+        noticias.forEach((nota: NOTA) => {
+          nota.descripcion = this.getDescripcionHTML(nota.descripcion);
+        });
+        this.notas = noticias;
       },
       (error: HttpErrorResponse) => {
         if (error.status === 500) {

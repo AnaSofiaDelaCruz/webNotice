@@ -17,15 +17,18 @@
           Crear nota
         </button>
       </div>
-      <div class="card mb-3" *ngFor="let nota of notas">
+      <div class="card mb-3" *ngFor="let nota of notas | ObjToArray">
         <div class="card-body">
           <h5 class="card-title">{{ nota.titulo }}</h5>
-          <p class="card-text">{{ nota.descripcion }}</p>
+           <div [innerHTML]="getDescripcionHTML(nota.descripcion)"></div>
           <p class="card-text">
             <small>Autor: {{ nota.autor }}</small>
           </p>
           <p class="card-text">
             <small>Fecha: {{ nota.fecha }}</small>
+          </p>
+          <p class="card-text">
+            <small>Foto: {{ nota.images }}</small>
           </p>
           <button class="btn btn-primary" type="button">
             <fa-icon [icon]="faEdit"></fa-icon>
