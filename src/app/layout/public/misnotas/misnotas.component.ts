@@ -8,6 +8,7 @@ import {
   faTrash,
   faFileText,
   faChild,
+  faImages,
 } from '@fortawesome/free-solid-svg-icons';
 import { NOTA } from 'src/app/interfaces/nota';
 
@@ -21,12 +22,24 @@ import { ListNoteService } from 'src/app/service/ListNoteService/list-note-servi
 })
 export class MisNotasComponent implements OnInit {
   public notas: NOTA[] = [];
+  nota: NOTA = {
+    id: 0,
+    titulo: '',
+    descripcion: '',
+    autor: '',
+    fecha: '',
+    categoriaID: 0,
+    subcategoriaID: 0,
+    rol: '',
+    items: '',
+  };
   public NotasAdmi = false;
   faSearch = faSearch;
   faEdit = faEdit;
   faTrash = faTrash;
   faFileText = faFileText;
   faChildCombatant = faChild;
+  faImages = faImages;
   constructor(
     private router: Router,
     private lisNotasService: ListNoteService,
@@ -65,10 +78,11 @@ export class MisNotasComponent implements OnInit {
   ListNota() {
     this.lisNotasService.ListNotas().subscribe(
       ({ noticias }: any) => {
+        
         noticias.forEach((nota: NOTA) => {
           nota.descripcion = this.getDescripcionHTML(nota.descripcion);
         });
-        this.notas = noticias;
+        this.notas = noticias;      
       },
       (error: HttpErrorResponse) => {
         if (error.status === 500) {
@@ -87,7 +101,6 @@ export class MisNotasComponent implements OnInit {
       .then(
         (result) => {
           this.lisNotasService.DeleteNotas(id, rol).subscribe((response) => {
-            console.log(response.message, ' response');
             if (response.message === 'Noticia eliminada') {
               this.alertService.showSuccess('Eliminado', 'Nota eliminada');
               this.ListNota();
@@ -112,6 +125,17 @@ export class MisNotasComponent implements OnInit {
         this.handleError(error);
       }
     );
+  }
+  ActualizarNota(nota: NOTA) {
+    // Guarda la nota seleccionada en el servicio compartido o en localStorage
+    this.lisNotasService.guardarNotaSeleccionada(nota);
+    // Navega al componente de creación/editar nota con el identificador único de la nota en la URL
+    this.router.navigate(['/crearnota', nota.id]);
+  }
+
+  ActualizarImagen(id: string) {
+    this.lisNotasService.GuardarIDNotaSeleccionada(id)
+    this.router.navigate(['imagenes',id]);
   }
 
   private handleError(error: any) {

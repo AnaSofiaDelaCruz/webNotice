@@ -24,7 +24,7 @@
       <div class="card mb-3" *ngFor="let nota of notas | ObjToArray">
         <div class="card-body">
           <h5 class="card-title">{{ nota.titulo }}</h5>
-           <div [innerHTML]="getDescripcionHTML(nota.descripcion)"></div>
+          <div [innerHTML]="getDescripcionHTML(nota.descripcion)"></div>
           <p class="card-text">
             <small>Autor: {{ nota.autor }}</small>
           </p>
@@ -32,13 +32,30 @@
             <small>Fecha: {{ nota.fecha }}</small>
           </p>
           <p class="card-text">
-            <small>Foto: {{ nota.images }}</small>
+            <!-- <img [src]="nota.items" alt=""> -->
           </p>
-          <button class="btn btn-primary" type="button">
+          <button
+            (click)="ActualizarNota(nota)"
+            class="btn btn-primary"
+            type="button"
+          >
             <fa-icon [icon]="faEdit"></fa-icon>
             Editar
           </button>
-          <button (click)="DeleteNota(nota.id)" class="btn btn-danger" type="button">
+
+          <button
+            (click)="ActualizarImagen(nota.id)"
+            class="btn btn-primary"
+            type="button"
+          >
+            <fa-icon [icon]="faImages"></fa-icon>
+            Editar Imagenes
+          </button>
+          <button
+            (click)="DeleteNota(nota.id)"
+            class="btn btn-danger"
+            type="button"
+          >
             <fa-icon [icon]="faTrash"></fa-icon>
             Borrar
           </button>

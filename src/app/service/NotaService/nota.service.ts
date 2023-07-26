@@ -41,4 +41,10 @@ export class NotaService {
       headers: this.headers,
     });
   }
+
+  ActualizarNota(notaData: FormData): Observable<any> {
+    return this.http.put(`${this.apiUrl}/api/actualizr/nota/`, notaData, {
+      headers: this.headers,
+    });
+  }
 }

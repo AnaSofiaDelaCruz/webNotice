@@ -9,6 +9,9 @@ import { NOTA } from 'src/app/interfaces/nota';
 export class ListNoteService {
   private headers: HttpHeaders;
   private id: any;
+  private notaSeleccionada: NOTA | null = null;
+  private IDnotaSeleccionada: string | null = null;
+
   constructor(private http: HttpClient) {
     this.headers = new HttpHeaders();
     this.checkToken();
@@ -46,8 +49,26 @@ export class ListNoteService {
     return this.id;
   }
 
-  getId() {
-    return localStorage.getItem('id');
+  guardarNotaSeleccionada(nota: NOTA) {
+    this.notaSeleccionada = nota;
+  }
+
+  GuardarIDNotaSeleccionada(id: string) {
+    this.IDnotaSeleccionada = id;
+  }
+
+  ObtenerIDNotaSeleccionada(): string | null {
+    return this.IDnotaSeleccionada;
+  }
+
+  obtenerNotaSeleccionada(): NOTA | null {
+    return this.notaSeleccionada;
+  }
+
+  ListImagesNota(): Observable<any> {
+    return this.http.get(`${this.apiUrl}/api/images`, {
+      headers: this.headers,
+    });
   }
 
   listNewEscritor() {}

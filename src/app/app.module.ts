@@ -23,6 +23,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CategoriasComponent } from './layout/public/categorias/categorias.component';
 import { SubcategoriasComponent } from './layout/public/subcategorias/subcategorias.component';
 import { ObjToArray } from './objToArray.pipe';
+import { ImagesnotaComponent } from './layout/public/imagesnota/imagesnota.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { ObjToArray } from './objToArray.pipe';
     CrearnotaComponent,
     CategoriasComponent,
     SubcategoriasComponent,
+    ImagesnotaComponent,
   ],
   imports: [
     BrowserModule,
@@ -64,6 +66,8 @@ import { ObjToArray } from './objToArray.pipe';
       { path: 'crearnota', component: CrearnotaComponent },
       { path: 'categoria', component: CategoriasComponent },
       { path: 'subcategoria', component: SubcategoriasComponent },
+      { path: 'crearnota/:id', component: CrearnotaComponent },
+      { path: 'imagenes/:id', component: ImagesnotaComponent },
     ]),
 
     //app_routing

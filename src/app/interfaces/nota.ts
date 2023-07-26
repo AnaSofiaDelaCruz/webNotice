@@ -7,5 +7,5 @@ export interface NOTA {
   categoriaID: number;
   subcategoriaID: number;
   rol: string;
- images: string; // FileList para manejar las imágenes seleccionadas
+ items: string; // FileList para manejar las imágenes seleccionadas
 }
