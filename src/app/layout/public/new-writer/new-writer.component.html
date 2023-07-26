@@ -1,65 +1,79 @@
-<div class="row background">
-    <div class="col-lg-12">
-        <nav class="navbar bg-body-tertiary fixed-top">
-            <div class="container-fluid">
-                <div class="offcanvas offcanvas-end " tabindex="-1" id="offcanvasNavbar">
-                    <div class="offcanvas-header">
-                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Misión 24</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                    </div>
-                    <div class="offcanvas-body">
-                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Link</a>
-                            </li>
-                        </ul>
-                    </div>
+<div class="row">
+    <div class="general">
+        <div class="col-lg-12">
+            <div class="header">
+                <div class="contenido-izquierdo">
+                    <!-- <img src="../assets/images/menu-burguer.png" alt="Icono de menu" class="burguer-menu"> -->
+                    <button class="boton-hamburguesa" (click)="setActive()"><i class="bi bi-list"
+                            id="botonMenu"></i></button>
+                    <img src="./assets/images/logoNav.png" alt="logoNav">
                 </div>
-                <img src="./assets/images/logoNav.png" alt="logoNav">
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
-                <a type="button" class="btn btn-outline-success me-2" href="/register">Iniciar sesión</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
-                    data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+                <div class="buscador">
+                    <input type="text" class="barra-buscador">
+                </div>
+                <div class="boton-iniciar">
+                    <button class="boton1">Iniciar sesión</button>
+                </div>
+            </div>
 
-            </div>
-        </nav>
-    </div>
-    <br><br><br><br>
-    <div class="col-lg-12 ">
-        <div class="container-fluid col-lg-6 form">
-            <p class="h1 text-title">Nuevo Escritor</p>
-            <div class="row col-sm-6 col-lg-6">
-                <label class="col-sm-5 col-form-label">Nombre</label>
+        </div>
+        <br><br><br><br>
+        <div class="col-lg-12 ">
+            <div class="container-fluid col-lg-5 form">
+                <p class="h1 text-title">Nuevo Escritor</p>
+                <div class="row col-sm-8 col-lg-8">
+                    <label class="col-sm-5 col-form-label">Nombre</label>
                     <input class="form-control" type="text" aria-label="default input example">
-            </div>
-            <div class="row col-sm-6 col-lg-6">
-                <label class="col-sm-5 col-form-label">Apellido Paterno</label>
-                <input class="form-control" type="text" aria-label="default input example">
-            </div>
-            <div class="row col-sm-6 col-lg-6">
-                <label class="col-sm-5 col-form-label">Apellido Materno</label>
-                <input class="form-control" type="text" aria-label="default input example">
-            </div>
-            <div class="row col-sm-6 col-lg-6">
-                <label class="col-sm- col-form-label">Nombre de usuario</label>
-                <input class="form-control" type="text" aria-label="default input example">
-            </div>
-            <div class="row col-sm-6 col-lg-6">
-                <label for="staticEmail" class="col-sm-5 col-form-label">Email</label>
-                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-            </div>
-            <div class="row col-sm-6 col-lg-6">
-                <label for="inputPassword" class="col-sm-5 col-form-label">Password</label>
-                <input type="password" class="form-control place-holder-pass" id="inputPassword">
+                </div>
+                <div class="row col-sm-8 col-lg-8">
+                    <label class="col-sm-5 col-form-label">Apellido Paterno</label>
+                    <input class="form-control" type="text" aria-label="default input example">
+                </div>
+                <div class="row col-sm-8 col-lg-8">
+                    <label class="col-sm-5 col-form-label">Apellido Materno</label>
+                    <input class="form-control" type="text" aria-label="default input example">
+                </div>
+                <div class="row col-sm-8 col-lg-8">
+                    <label class="col-sm- col-form-label">Nombre de usuario</label>
+                    <input class="form-control" type="text" aria-label="default input example">
+                </div>
+                <button class="button-add"><img src="./assets/images/add_image.png">Agregar foto</button>
+                <div class="row col-sm-8 col-lg-8">
+                    <label for="staticEmail" class="col-sm-5 col-form-label">Email</label>
+                    <input type="email" class="form-control" id="exampleFormControlInput1"
+                        placeholder="name@example.com">
+                </div>
+                <div class="row col-sm-8 col-lg-8 password-style">
+                    <label for="inputPassword" class="col-sm-5 col-form-label">Contraseña</label>
+                    <input type="password" class="form-control place-holder-pass" id="inputPassword">
+                </div>
+                <div class="row col-sm-8 col-lg-8 password-style">
+                    <label for="inputPassword" class="col-sm-5 col-form-label">Confirmar Contraseña</label>
+                    <input type="password" class="form-control place-holder-pass" id="inputPassword">
+                </div>
+                <a type="button" class="btn button-success" href="/listWriter">Aceptar</a>
             </div>
         </div>
+
     </div>
+    <section class="menu-hamburguesa" [ngClass]="{'menu' : active}">
+        <div class="menu-lateral-contenedor">
+            <h1 class="labelM">Mision 24</h1>
+            <h2 class="select-noticias">Selecciona tus tipos de noticias</h2>
+            <div class="lineaDivisora"></div>
+            <div class="card1">
+                <h1 class="label">Internacional</h1>
+            </div>
+            <div class="card2">
+                <h1 class="label">Nacional</h1>
+            </div>
+            <div class="card3">
+                <h1 class="label">Opinion publica</h1>
+            </div>
+            <div class="card4">
+                <h1 class="label">Estado | Chiapas</h1>
+            </div>
+            <button class="botonCerrar" id="cerrarMenu" (click)="setActive()">Cerrar</button>
+        </div>
+    </section>
 </div>

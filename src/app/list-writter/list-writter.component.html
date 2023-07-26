@@ -1,0 +1,125 @@
+<div class="row">
+    <div class="general">
+        <div class="col-lg-12">
+            <div class="header">
+                <div class="contenido-izquierdo">
+                    <!-- <img src="../assets/images/menu-burguer.png" alt="Icono de menu" class="burguer-menu"> -->
+                    <button class="boton-hamburguesa" (click)="setActive()"><i class="bi bi-list"
+                            id="botonMenu"></i></button>
+                    <img src="./assets/images/logoNav.png" alt="logoNav">
+                </div>
+                <div class="buscador">
+                    <input type="text" class="barra-buscador">
+                </div>
+                <div class="boton-iniciar">
+                    <button class="boton1">Iniciar sesión</button>
+                </div>
+            </div>
+
+        </div>
+        <br>
+        <div class="col-lg-10 col-md-10">
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Buscar Usuario</button>
+            </form>
+        </div>
+        <div class="col-lg-12 col-md-12 col-xs-12 div-news">
+            <div class="card mb-3 cart-news">
+                <div class="row">
+                    <div class="col-md-3 imgStyle">
+                        <img src="./assets/images/img1.png"  alt="news1">
+                    </div>
+                    <div class="col-md-5">
+                        <div class="card-body ">
+                            <h5 class="card-title">Nombre usuario</h5>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                                additional content. This content is a little bit longer.</p>
+                            <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <a type="button" class="btn button-edit size-button" href="/news">Editar</a>
+                        <a type="button" class="btn button-trash size-button" href="/news">Eliminar</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card mb-3 ">
+                <div class="row">
+                    <div class="col-md-3 imgStyle">
+                        <img src="./assets/images/img1.png" class="img-card" alt="news1">
+                    </div>
+                    <div class="col-md-5">
+                        <div class="card-body ">
+                            <h5 class="card-title">Nombre usuario</h5>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                                additional content. This content is a little bit longer.</p>
+                            <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <a type="button" class="btn button-edit size-button" href="/news">Editar</a>
+                        <a type="button" class="btn button-trash size-button" href="/news">Eliminar</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card mb-3">
+                <div class="row">
+                    <div class="col-md-3 imgStyle">
+                        <img src="./assets/images/img1.png" class="img-card" alt="news1">
+                    </div>
+                    <div class="col-md-5">
+                        <div class="card-body ">
+                            <h5 class="card-title">Nombre usuario</h5>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                                additional content. This content is a little bit longer.</p>
+                            <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <a type="button" class="btn button-edit size-button" href="/news">Editar</a>
+                        <a type="button" class="btn button-trash size-button" href="/news">Eliminar</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card mb-3 ">
+                <div class="row">
+                    <div class="col-md-3 imgStyle">
+                        <img src="./assets/images/img1.png" class="img-card" alt="news1">
+                    </div>
+                    <div class="col-md-5">
+                        <div class="card-body ">
+                            <h5 class="card-title">Nombre usuario</h5>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                                additional content. This content is a little bit longer.</p>
+                            <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <a type="button" class="btn button-edit size-button" href="/news">Editar</a>
+                        <a type="button" class="btn button-trash size-button" href="/news">Eliminar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <section class="menu-hamburguesa" [ngClass]="{'menu' : active}">
+        <div class="menu-lateral-contenedor">
+            <h1 class="labelM">Mision 24</h1>
+            <h2 class="select-noticias">Selecciona tus tipos de noticias</h2>
+            <div class="lineaDivisora"></div>
+            <div class="card1">
+                <h1 class="label">Internacional</h1>
+            </div>
+            <div class="card2">
+                <h1 class="label">Nacional</h1>
+            </div>
+            <div class="card3">
+                <h1 class="label">Opinion publica</h1>
+            </div>
+            <div class="card4">
+                <h1 class="label">Estado | Chiapas</h1>
+            </div>
+            <button class="botonCerrar" id="cerrarMenu" (click)="setActive()">Cerrar</button>
+        </div>
+    </section>
+</div>

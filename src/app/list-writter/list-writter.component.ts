@@ -3,13 +3,11 @@ import { Router } from '@angular/router';
 import { DashboardService } from 'src/service/DashboardService/dashboard-service.service';
 
 @Component({
-  selector: 'app-principal',
-  templateUrl: './principal.component.html',
-  styleUrls: ['./principal.component.css'],
-
+  selector: 'app-list-writter',
+  templateUrl: './list-writter.component.html',
+  styleUrls: ['./list-writter.component.css']
 })
-export class PrincipalComponent {
-
+export class ListWritterComponent {
   public active : boolean = true;
   esAdmin = false;
   ngOnInit(): void {
@@ -33,3 +31,4 @@ export class PrincipalComponent {
     this.active = !this.active;
   }
 }
+

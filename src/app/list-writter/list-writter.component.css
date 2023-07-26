@@ -1,49 +1,15 @@
-/*inicia home*/
-.cardContainer{
-    border-color: black;
-    box-shadow: 2px 4px 15px #A2A2A2;
-    padding-left: 20px;
+.background{
+    background-color: #EEEE;
 }
-.rectangulo{
-    width: 1480px; 
-    height: 25px; 
-    background: #428bca;
-    background: #7BB0A8;
-    border-radius: 5px 5px 0px 0px;
+.div-news{
+    margin-top: 15px;
+    background-color: white;
 }
-.cardStyle{
-    background-color: #EEEEEE;
+.cart-news{
+    margin-top: 15px;
 }
-.img-card{
-    width:90%;
-    height:auto;
-}
-.other-cards{
-    padding-left: 10px;
-}
-.text-others{
-    color: white;
-    font-family: 'Roboto', sans-serif;
-    font-size: large; 
-    padding-left: 10px; 
-}
-
-.rectanguloVistos{
-    width: 1480px; 
-    height: 25px; 
-    background: #A7DBAB;
-    border-radius: 5px 5px 0px 0px;
-}
-.marginheadband{
-    margin-top: 30px;
-    margin-bottom: 30px;
-    text-align: center
-}
-.button-headband{
-    margin-left: 15px
-}
-.button-success{
-    background-color: #512B52;
+.button-trash{
+    background-color: #DB3C3C;
     color: white;
     text-decoration:none;
     font-weight:600;
@@ -52,15 +18,32 @@
     padding-bottom:15px;
     padding-left:150px;
     padding-right:150px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
-.navContainer{
-    display: flex;
-    flex-wrap: inherit;
-    align-items: center;
+.button-edit{
+    background-color: #A7DBAB;
+    color: white;
+    text-decoration:none;
+    font-weight:600;
+    font-size:20px;
+    padding-top:15px;
+    padding-bottom:15px;
+    padding-left:150px;
+    padding-right:150px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
-
-
-/*AQUI GRIMALDO*/
+.size-button{
+    min-width: 450px;
+text-align:center;
+}
+.imgStyle{
+    display: block;
+  margin: auto;
+    
+}
+/*Navbar*/
 .html {
     padding: 0;
     margin: 0;

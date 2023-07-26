@@ -13,13 +13,13 @@
         <form [formGroup]="myForm" (ngSubmit)="submitFormulario">
             <div class="col-md-8 col-xs-6">
                 <label for="exampleFormControlInput1" class="form-label">Correo electronico</label>
-                <input formControlName="user" type="email" class="form-control" id="exampleFormControlInput1"
+                <input formControlName="user" type="email" class="form-control input" id="exampleFormControlInput1"
                     placeholder="nombre@ejemplo.com">
             </div>
             <br>
             <div class="col-md-8 col-xs-6">
                 <label for="inputPassword5" class="form-label">Contraseña</label>
-                <input formControlName="password" type="password" id="inputPassword5" class="form-control"
+                <input formControlName="password" type="password" id="inputPassword5" class="form-control input"
                     aria-labelledby="passwordHelpBlock">
             </div>
             <br>
@@ -28,6 +28,7 @@
         <br><br>
         <p class="text-others">¿Tienes problemas con tu contraseña? <a  target="_blank" href="register.component.html" class="links">Nosotros te ayudamos</a></p>
         <p class="text-others">¿No estas registrado? <a routerLink="/register" class="links">Reistrate aquí</a></p>
+        <img src="./assets/images/pilar_secundario.png" alt="pilar" class="pilar-secundario">
     </div>
 </div>
 

@@ -15,6 +15,7 @@ import { Writer2Component } from './layout/public/writer2/writer2.component';
 import { StatisticsComponent } from './layout/public/statistics/statistics.component';
 import { HomeWriterComponent } from './layout/public/home-writer/home-writer.component';
 import { NewWriterComponent } from './layout/public/new-writer/new-writer.component';
+import { ListWritterComponent } from './list-writter/list-writter.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { NewWriterComponent } from './layout/public/new-writer/new-writer.compon
     Writer2Component,
     StatisticsComponent,
     HomeWriterComponent,
-    NewWriterComponent
+    NewWriterComponent,
+    ListWritterComponent
   ],
   imports: [
     BrowserModule,
@@ -42,6 +44,7 @@ import { NewWriterComponent } from './layout/public/new-writer/new-writer.compon
       { path: 'statistics', component: StatisticsComponent},
       { path: 'homeWriter', component: HomeWriterComponent},
       { path: 'newWriter', component: NewWriterComponent},
+      { path: 'listWriter', component: ListWritterComponent},
       {path: '', redirectTo: '/login', pathMatch: 'full'},
     ]),
     AppRoutingModule,

@@ -18,11 +18,19 @@
     left: 23px; top: -73px; 
     z-index: 1
 }
+.input{
+    width: 50%;
+}
 .pilar{
     position: absolute; 
     left: 0px; 
     top: 263px; 
     z-index: 1
+}
+.pilar-secundario{
+    position: relative;
+    left: 720px;
+    bottom: 20px;
 }
 .slogan{
     position: absolute;
