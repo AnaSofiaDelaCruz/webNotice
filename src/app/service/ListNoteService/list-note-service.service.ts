@@ -40,6 +40,12 @@ export class ListNoteService {
     });
   }
 
+  UpdateImages(notaData: FormData): Observable<any> {
+    return this.http.post(`${this.apiUrl}/api/actualizar/imagen`, notaData, {
+      headers: this.headers,
+    });
+  }
+
   ListNotasAdmi(): Observable<any> {
     this.id = this.http.get(`${this.apiUrl}/api/noticias/administrador`, {
       headers: this.headers,
@@ -53,16 +59,12 @@ export class ListNoteService {
     this.notaSeleccionada = nota;
   }
 
-  GuardarIDNotaSeleccionada(id: string) {
-    this.IDnotaSeleccionada = id;
-  }
-
-  ObtenerIDNotaSeleccionada(): string | null {
-    return this.IDnotaSeleccionada;
-  }
-
   obtenerNotaSeleccionada(): NOTA | null {
     return this.notaSeleccionada;
+  }
+
+  BuscarNota(termino: string): Observable<any> {
+    return this.http.get(`${this.apiUrl}/api/buscar/nota?q=${termino}`);
   }
 
   ListImagesNota(): Observable<any> {

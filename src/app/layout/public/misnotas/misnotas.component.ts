@@ -1,6 +1,6 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import {
   faSearch,
@@ -40,6 +40,8 @@ export class MisNotasComponent implements OnInit {
   faFileText = faFileText;
   faChildCombatant = faChild;
   faImages = faImages;
+  selectedImages: File[] = [];
+  @ViewChild('inputText') inputText: any;
   constructor(
     private router: Router,
     private lisNotasService: ListNoteService,
@@ -78,11 +80,10 @@ export class MisNotasComponent implements OnInit {
   ListNota() {
     this.lisNotasService.ListNotas().subscribe(
       ({ noticias }: any) => {
-        
         noticias.forEach((nota: NOTA) => {
           nota.descripcion = this.getDescripcionHTML(nota.descripcion);
         });
-        this.notas = noticias;      
+        this.notas = noticias;
       },
       (error: HttpErrorResponse) => {
         if (error.status === 500) {
@@ -106,9 +107,11 @@ export class MisNotasComponent implements OnInit {
               this.ListNota();
             }
           });
+          this.inputText.nativeElement.value = '';
         },
         (error) => {
           this.handleError(error);
+          this.inputText.nativeElement.value = '';
         }
       );
   }
@@ -129,13 +132,41 @@ export class MisNotasComponent implements OnInit {
   ActualizarNota(nota: NOTA) {
     // Guarda la nota seleccionada en el servicio compartido o en localStorage
     this.lisNotasService.guardarNotaSeleccionada(nota);
-    // Navega al componente de creación/editar nota con el identificador único de la nota en la URL
-    this.router.navigate(['/crearnota', nota.id]);
   }
 
-  ActualizarImagen(id: string) {
-    this.lisNotasService.GuardarIDNotaSeleccionada(id)
-    this.router.navigate(['imagenes',id]);
+  BuscarNota(termino: string) {
+    this.lisNotasService.BuscarNota(termino).subscribe(
+      (response) => {
+        console.log(response.noticia);
+        this.notas = response.noticia;
+      },
+      (error) => {
+        this.handleError(error);
+        this.ListNota();
+        this.inputText.nativeElement.value = '';
+      }
+    );
+  }
+
+  selectImages(event: Event, id: string) {
+    console.log('id ', id);
+    const input = event.target as HTMLInputElement;
+    if (input && input.files) {
+      this.selectedImages = [];
+      for (let i = 0; i < input.files.length; i++) {
+        this.selectedImages.push(input.files[i]);
+      }
+      const formData = new FormData();
+      // Navega al componente de creación/editar nota con el identificador único de la nota en la URL
+      this.selectedImages.forEach((image) => {
+        formData.append('images', image);
+      });
+      formData.append('id', id);
+      formData.append('rol', localStorage.getItem('rol')!);
+      this.lisNotasService.UpdateImages(formData).subscribe((res) => {
+        console.log(res);
+      });
+    }
   }
 
   private handleError(error: any) {

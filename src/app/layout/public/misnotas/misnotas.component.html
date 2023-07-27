@@ -8,6 +8,8 @@
           placeholder="Buscar"
           aria-label="Buscar"
           aria-describedby="boton-buscar"
+          #inputText
+          (input)="BuscarNota(inputText.value)"
         />
         <button class="btn btn-primary" type="button" id="boton-buscar">
           <fa-icon [icon]="faSearch"></fa-icon>
@@ -43,11 +45,15 @@
             Editar
           </button>
 
-          <button
-            (click)="ActualizarImagen(nota.id)"
-            class="btn btn-primary"
-            type="button"
-          >
+          <input
+            type="file"
+            name="images"
+            (change)="selectImages($event, nota.id)"
+            style="display: none"
+            #fileInput
+            multiple
+          />
+          <button class="btn btn-primary" (click)="fileInput.click()">
             <fa-icon [icon]="faImages"></fa-icon>
             Editar Imagenes
           </button>
