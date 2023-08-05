@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './layout/public/login/login/login.component';
@@ -29,30 +29,31 @@ import { ListWritterComponent } from './list-writter/list-writter.component';
     StatisticsComponent,
     HomeWriterComponent,
     NewWriterComponent,
-    ListWritterComponent
+    ListWritterComponent,
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot([
-      {path: 'home', component: PrincipalComponent},
-      {path: 'register', component: RegisterComponent},
-      {path: 'register2', component: RegisterComponent},
-      { path: 'login', component: LoginComponent},
-      { path: 'news', component: BasenewsComponent},
-      { path: 'writer', component: WriterComponent},
-      { path: 'writerstep2', component: Writer2Component},
-      { path: 'statistics', component: StatisticsComponent},
-      { path: 'homeWriter', component: HomeWriterComponent},
-      { path: 'newWriter', component: NewWriterComponent},
-      { path: 'listWriter', component: ListWritterComponent},
-      {path: '', redirectTo: '/login', pathMatch: 'full'},
+      { path: 'home', component: PrincipalComponent },
+      { path: 'register', component: RegisterComponent },
+      { path: 'register2', component: RegisterComponent },
+      { path: 'login', component: LoginComponent },
+      { path: 'news', component: BasenewsComponent },
+      { path: 'writer', component: WriterComponent },
+      { path: 'writerstep2', component: Writer2Component },
+      { path: 'statistics', component: StatisticsComponent },
+      { path: 'homeWriter', component: HomeWriterComponent },
+      { path: 'newWriter', component: NewWriterComponent },
+      { path: 'listWriter', component: ListWritterComponent },
+      { path: '', redirectTo: '/login', pathMatch: 'full' },
     ]),
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
     //app_routing
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
