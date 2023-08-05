@@ -1,230 +1,153 @@
-/*Formualrio */
-.background{
-    background-color: #EEEE;
-}
-.form{
-    background-color: #fff;
-    margin-bottom: 60px;
-}
-.place-holder-pass{
-    margin-left: 5px;
-}
-.text-title{
-    text-align: center;
-}
-.password-style{
-    padding-bottom: 10px;
-}
-.button-success{
-    border-radius: 5px;
-    background: #512B52;
-    width: 250px;
-    height: 40px;
-    color: white;
-    font-weight: bold;
-    margin-left: auto;
-    margin-right: auto;
-    border: none;
-    margin-bottom: 10px;
-}
-.button-add{
-    border-radius: 5px;
-    background: #7BB0A8;
-    width: 250px;
-    height: 40px;
-    color: white;
-    font-weight: bold;
-    margin-left: auto;
-    margin-right: auto;
-    border: none;
-    margin-top: 10px;
-}
-/*Navbar*/
-.header {
-    display: grid;
-    grid-template-columns: auto 70% auto;
-    grid-template-rows: 1 1 1;
-    background-color: white;
-    padding-bottom: 20px;
-    justify-content: center;
-    align-items: center;
-}
-
-.contenido-izquierdo {
+.cabecera {
     display: flex;
-    margin-top: 15px;
-    margin-left: 10px;
-    padding-right: 0;
-}
-
-.burguer-menu {
-    width: 50px;
-    cursor: pointer;
-}
-
-.general {
-    background-color: #EEE;
-}
-
-.labelmision {
-    color: #A7DBAB;
-    font-size: 35px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 133.2%;
-    align-items: center;
     justify-content: center;
-    display: block;
-    text-transform: uppercase;
-    margin-left: 5px;
+    align-items: center;
+    gap: 40rem;
+    background-color: white;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
 }
 
-.boton-hamburguesa {
-    border: none;
-    background-color: transparent;
-    color: #9c9c9c;
-    font-size: 2rem;
+@media screen and (max-width: 1360px) {
+    .cabecera {
+        gap: 22rem;
+    }
 }
 
-.barra-buscador {
-    border-radius: 10px;
-    background-color: #EEE;
-    border: none;
-    width: 60vw;
-    height: 50px;
-    font-family: Arial, Helvetica, sans-serif;
-    padding: 10px;
-    margin-top: 15px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.barra-buscador:hover {
-    border: white;
-}
-.boton-iniciar {
-    margin-top: 15px;
-}
-
-.boton1 {
+.boton-cancelar {
+    width: 139px;
+    height: 54px;
     border-radius: 3px;
     background: #7BB0A8;
     color: white;
+    font-family: Roboto;
     font-weight: bold;
-    width: auto;
-    height: 50px;
     border: none;
-    font-size: 20px;
-    display: block;
-    margin-right: 10px;
+    font-size: 24px;
 }
 
-.boton1:hover {
+.boton-cancelar:hover {
     background-color: #A7DBAB;
-    transition: 1s;
+    transition: .5s;
 }
 
-.menu-lateral-contenedor {
-    position: absolute;
-    background-color: white;
-    top: 0;
-    box-shadow: 1px -1px 5px 0px rgba(0,0,0,0.20);
-    padding: 1.5rem;
-    bottom: 0;
-}
-
-.labelM {
+.titulo {
     color: #A7DBAB;
-    font-size: 2.5rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    text-align: center;
-    top: 0;
-}
-
-.select-noticias {
-    color: #464646;
-    font-size: 1rem;
-    font-weight: 700;
-    text-align: center;   
-}
-
-.lineaDivisora{
-    background-color: black;
-    width: 100%;
-    height: 2px;
-    display: block;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 1rem;
-}
-
-.card1,.card2,.card3,.card4 {
-    background-image: url("https://trazoscreativos.com/wp-content/uploads/2020/01/marketing-internacional-1200x773.jpg");
-    width: 100%;
-    height: 100px;
-    margin-bottom: 1rem;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    border-radius: 5px;
-}
-
-.card2 {
-    background-image: url("https://mundi.io/content/images/2022/08/estados-que-mas-exportan-en-mexico.jpg");
-}
-
-.card3 {
-    background-image: url("https://concepto.de/wp-content/uploads/2020/11/opinion-e1605285684135.jpg");
-}
-
-.card4 {
-    background-image: url("https://visitmexico.com/wp-content/uploads/2022/09/Chiapas_Portada.png");
-}
-
-
-.card1:hover ,.card2:hover ,.card3:hover ,.card4 :hover {
-    cursor: pointer;
-}
-
-.label {
-    text-transform: uppercase;
-    display: block;
-    padding: 1rem;
-    text-align: center;
-    padding-top: 30px;
-    color: #FFF;
-    font-size: 2rem;
+    font-family: Poppins;
+    font-size: 48px;
     font-style: normal;
     font-weight: 700;
 }
 
-.botonCerrar {
-    border-radius: 2px;
-    background: #512B52;
-    font-size: 1rem;
-    color: white;
-    text-transform: uppercase;
+.slogan {
+    color: #636363;
+    text-align: right;
+    font-family: Gotham;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    justify-content: center;
+    align-items: center;
+    width: 202px;
+}
+
+.cuerpo, body {
+    background-color: #EEE;
+    height: 100vh;
+}
+
+h2 {
+    font-family: Roboto;
+}
+.contenedor-formulario {
+    width: 627px;
+    height: 800px;
+    background-color: white;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+    border-radius: 5px;
+    background: #FFF;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    padding: 2rem;
+}
+
+.titulo-form {
+    font-family: Poppins;
     font-weight: bold;
-    width: 100%;
-    height: 3rem;
+    font-size: 32px;
+    text-align: center;
+}
+
+.label-form {
+    color: #636363;
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    margin-left: 2rem;
+}
+
+.contenedor-texto {
+    width: 90%;
+    height: 39px;
+    font-family: Poppins;
+    padding-left: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    border-radius: 3px;
+    margin-bottom: 8px;
+    border: 1px solid #1F1E1E;
+}
+
+.contenedor-texto:hover {
+    border: 2px solid #A7DBAB;
+}
+
+.inferior-formulario {
+    margin-top: 2rem;
+}
+
+.crear-usuario {
+    width: 476px;
+    height: 63px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    border-radius: 3px;
+    background: #512B52;
+    color: white;
+    font-family: Roboto;
+    font-weight: bold;
+    font-size: 34px;
+    margin-top: 1rem;
     border: none;
-    margin-bottom: 1rem;
+    transition: width 1s ease 0s;
 }
 
-.botonCerrar:hover{
+.crear-usuario:hover {
+    background-color: #6d3670;
+    transition: 1s;
+    width: 520px;
+}
+
+.cargar-imagen {
+    width: 212px;
+    height: 39px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 3px;
+    background: #7BB0A8;
+    border: none;
+    color: white;
+    font-family: Roboto;
+    font-weight: bold;
+    transition: width 1s ease 0s;
+}
+
+.cargar-imagen:hover {
+    width: 220px;
     background-color: #A7DBAB;
-    color: #512B52;
-}
-
-.menu-lateral-contenedor {
-    box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.5);
-}
-
-.menu {
-    opacity: 0;
-    display: none;
-    transition: all 0.5s ease;
+    transition: 1s;
 }

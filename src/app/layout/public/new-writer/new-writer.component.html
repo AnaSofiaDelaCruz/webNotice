@@ -1,79 +1,46 @@
-<div class="row">
-    <div class="general">
-        <div class="col-lg-12">
-            <div class="header">
-                <div class="contenido-izquierdo">
-                    <!-- <img src="../assets/images/menu-burguer.png" alt="Icono de menu" class="burguer-menu"> -->
-                    <button class="boton-hamburguesa" (click)="setActive()"><i class="bi bi-list"
-                            id="botonMenu"></i></button>
-                    <img src="./assets/images/logoNav.png" alt="logoNav">
-                </div>
-                <div class="buscador">
-                    <input type="text" class="barra-buscador">
-                </div>
-                <div class="boton-iniciar">
-                    <button class="boton1">Iniciar sesión</button>
-                </div>
-            </div>
-
-        </div>
-        <br><br><br><br>
-        <div class="col-lg-12 ">
-            <div class="container-fluid col-lg-5 form">
-                <p class="h1 text-title">Nuevo Escritor</p>
-                <div class="row col-sm-8 col-lg-8">
-                    <label class="col-sm-5 col-form-label">Nombre</label>
-                    <input class="form-control" type="text" aria-label="default input example">
-                </div>
-                <div class="row col-sm-8 col-lg-8">
-                    <label class="col-sm-5 col-form-label">Apellido Paterno</label>
-                    <input class="form-control" type="text" aria-label="default input example">
-                </div>
-                <div class="row col-sm-8 col-lg-8">
-                    <label class="col-sm-5 col-form-label">Apellido Materno</label>
-                    <input class="form-control" type="text" aria-label="default input example">
-                </div>
-                <div class="row col-sm-8 col-lg-8">
-                    <label class="col-sm- col-form-label">Nombre de usuario</label>
-                    <input class="form-control" type="text" aria-label="default input example">
-                </div>
-                <button class="button-add"><img src="./assets/images/add_image.png">Agregar foto</button>
-                <div class="row col-sm-8 col-lg-8">
-                    <label for="staticEmail" class="col-sm-5 col-form-label">Email</label>
-                    <input type="email" class="form-control" id="exampleFormControlInput1"
-                        placeholder="name@example.com">
-                </div>
-                <div class="row col-sm-8 col-lg-8 password-style">
-                    <label for="inputPassword" class="col-sm-5 col-form-label">Contraseña</label>
-                    <input type="password" class="form-control place-holder-pass" id="inputPassword">
-                </div>
-                <div class="row col-sm-8 col-lg-8 password-style">
-                    <label for="inputPassword" class="col-sm-5 col-form-label">Confirmar Contraseña</label>
-                    <input type="password" class="form-control place-holder-pass" id="inputPassword">
-                </div>
-                <a type="button" class="btn button-success" href="/listWriter">Aceptar</a>
-            </div>
-        </div>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar escritor</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;800&family=Roboto:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;800&family=Roboto:wght@400;700&display=swap');
+      </style>
+</head>
+<body>
+    <div class="cabecera">
+        <button class="boton-cancelar">Cancelar</button>
+        <h1 class="titulo">Mision 24</h1>
+        <h1 class="slogan">El punto exacto de la noticia</h1>
     </div>
-    <section class="menu-hamburguesa" [ngClass]="{'menu' : active}">
-        <div class="menu-lateral-contenedor">
-            <h1 class="labelM">Mision 24</h1>
-            <h2 class="select-noticias">Selecciona tus tipos de noticias</h2>
-            <div class="lineaDivisora"></div>
-            <div class="card1">
-                <h1 class="label">Internacional</h1>
+
+    <div class="cuerpo">
+        <div class="contenedor-formulario">
+            <h1 class="titulo-form">Agregar a un nuevo escritor</h1>
+            <div class="superior-formulario">
+                <h2 class="label-form">Nombres</h2>
+                <input type="text" class="contenedor-texto" id="nombres" >
+                <h2 class="label-form">Apellido Paterno</h2>
+                <input type="text" class="contenedor-texto" >
+                <h2 class="label-form">Apellido Materno</h2>
+                <input type="text" class="contenedor-texto">
+                <h2 class="label-form">Nombre de usuario (apodo)</h2>
+                <input type="text" class="contenedor-texto">
+                <button class="cargar-imagen">Cargar imagen</button>
             </div>
-            <div class="card2">
-                <h1 class="label">Nacional</h1>
+            <div class="inferior-formulario">
+                <h2 class="label-form">Email</h2>
+                <input type="email" class="contenedor-texto">
+                <h2 class="label-form">Contraseña</h2>
+                <input type="password" class="contenedor-texto">
+                <h2 class="label-form">Repetir contraseña</h2>
+                <input type="password" class="contenedor-texto">
+
+                <button class="crear-usuario">Crear usuario</button>
             </div>
-            <div class="card3">
-                <h1 class="label">Opinion publica</h1>
-            </div>
-            <div class="card4">
-                <h1 class="label">Estado | Chiapas</h1>
-            </div>
-            <button class="botonCerrar" id="cerrarMenu" (click)="setActive()">Cerrar</button>
         </div>
-    </section>
-</div>
+    </div>
+</body>
+</html>
