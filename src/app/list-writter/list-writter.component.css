@@ -1,392 +1,116 @@
-.background{
-    background-color: #EEEE;
-}
-.div-news{
-    margin-top: 15px;
-    background-color: white;
-}
-.cart-news{
-    margin-top: 15px;
-}
-.button-trash{
-    background-color: #DB3C3C;
-    color: white;
-    text-decoration:none;
-    font-weight:600;
-    font-size:20px;
-    padding-top:15px;
-    padding-bottom:15px;
-    padding-left:150px;
-    padding-right:150px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-.button-edit{
-    background-color: #A7DBAB;
-    color: white;
-    text-decoration:none;
-    font-weight:600;
-    font-size:20px;
-    padding-top:15px;
-    padding-bottom:15px;
-    padding-left:150px;
-    padding-right:150px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-.size-button{
-    min-width: 450px;
-text-align:center;
-}
-.imgStyle{
-    display: block;
-  margin: auto;
-    
-}
-/*Navbar*/
-.html {
-    padding: 0;
-    margin: 0;
-}
-
-.header {
-    display: grid;
-    grid-template-columns: auto 70% auto;
-    grid-template-rows: 1 1 1;
-    background-color: white;
-    padding-bottom: 20px;
-    justify-content: center;
-    align-items: center;
-}
-
-.contenido-izquierdo {
+.cabecera {
     display: flex;
-    margin-top: 15px;
-    margin-left: 10px;
-    padding-right: 0;
-}
-
-.burguer-menu {
-    width: 50px;
-    cursor: pointer;
-}
-
-.general {
-    background-color: #EEE;
-}
-
-.labelmision {
-    color: #A7DBAB;
-    font-size: 35px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 133.2%;
-    align-items: center;
     justify-content: center;
-    display: block;
-    text-transform: uppercase;
-    margin-left: 5px;
+    align-items: center;
+    gap: 40rem;
+    background-color: white;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
 }
 
-.boton-hamburguesa {
-    border: none;
-    background-color: transparent;
-    color: #9c9c9c;
-    font-size: 2rem;
+@media screen and (max-width: 1360px) {
+    .cabecera {
+        gap: 22rem;
+    }
 }
 
-.barra-buscador {
-    border-radius: 10px;
-    background-color: #EEE;
-    border: none;
-    width: 60vw;
-    height: 50px;
-    font-family: Arial, Helvetica, sans-serif;
-    padding: 10px;
-    margin-top: 15px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.barra-buscador:hover {
-    border: white;
-}
-.boton-iniciar {
-    margin-top: 15px;
-}
-
-.boton1 {
+.boton-cancelar {
+    width: 139px;
+    height: 54px;
     border-radius: 3px;
     background: #7BB0A8;
     color: white;
+    font-family: Roboto;
     font-weight: bold;
-    width: auto;
-    height: 50px;
     border: none;
-    font-size: 20px;
-    display: block;
-    margin-right: 10px;
+    font-size: 24px;
 }
 
-.boton1:hover {
+.boton-cancelar:hover {
     background-color: #A7DBAB;
-    transition: 1s;
+    transition: .5s;
 }
 
-.menu-lateral-contenedor {
-    position: absolute;
-    background-color: white;
-    top: 0;
-    box-shadow: 1px -1px 5px 0px rgba(0,0,0,0.20);
-    padding: 1.5rem;
-    bottom: 0;
-}
-
-.labelM {
+.titulo {
     color: #A7DBAB;
-    font-size: 2.5rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    text-align: center;
-    top: 0;
-}
-
-.select-noticias {
-    color: #464646;
-    font-size: 1rem;
-    font-weight: 700;
-    text-align: center;   
-}
-
-.lineaDivisora{
-    background-color: black;
-    width: 100%;
-    height: 2px;
-    display: block;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 1rem;
-}
-
-.card1,.card2,.card3,.card4 {
-    background-image: url("https://trazoscreativos.com/wp-content/uploads/2020/01/marketing-internacional-1200x773.jpg");
-    width: 100%;
-    height: 100px;
-    margin-bottom: 1rem;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    border-radius: 5px;
-}
-
-.card2 {
-    background-image: url("https://mundi.io/content/images/2022/08/estados-que-mas-exportan-en-mexico.jpg");
-}
-
-.card3 {
-    background-image: url("https://concepto.de/wp-content/uploads/2020/11/opinion-e1605285684135.jpg");
-}
-
-.card4 {
-    background-image: url("https://visitmexico.com/wp-content/uploads/2022/09/Chiapas_Portada.png");
-}
-
-
-.card1:hover ,.card2:hover ,.card3:hover ,.card4 :hover {
-    cursor: pointer;
-}
-
-.label {
-    text-transform: uppercase;
-    display: block;
-    padding: 1rem;
-    text-align: center;
-    padding-top: 30px;
-    color: #FFF;
-    font-size: 2rem;
+    font-family: Poppins;
+    font-size: 48px;
     font-style: normal;
     font-weight: 700;
 }
 
-.botonCerrar {
-    border-radius: 2px;
-    background: #512B52;
-    font-size: 1rem;
-    color: white;
-    text-transform: uppercase;
-    font-weight: bold;
-    width: 100%;
-    height: 3rem;
-    border: none;
-    margin-bottom: 1rem;
+.slogan {
+    color: #636363;
+    text-align: right;
+    font-family: Roboto;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    justify-content: center;
+    align-items: center;
+    width: 202px;
 }
 
-.botonCerrar:hover{
-    background-color: #A7DBAB;
-    color: #512B52;
+body {
+    background-color: #EEE;
+    height: 100vh;
 }
 
-.menu-lateral-contenedor {
-    box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.5);
-}
-
-.menu {
-    opacity: 0;
-    display: none;
-    transition: all 0.5s ease;
-}
-
-
-/* CONTENIDO RECIENTE */ 
-
-.contenidoReciente {
-    width: 95vw;
-    height: 300px;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 5px;
-    border: none;
-    margin-top: 1.4rem;
-    background-color: white;
-}
-.textoReciente {
-    font-size: 1rem;
-    background-color: #7BB0A8;
-    color: white;
-    padding-left: 1rem;
-}
-
-.cards {
-    display: flex;
-    background-color: #EEEEEE;
-    width: 95%;
+.contenedor-general {
+    display: block;
     margin-left: auto;
     margin-right: auto;
     margin-top: 1rem;
+    background-color: white;
+    width: 95vw;
+    height: 80vh;
     border-radius: 5px;
-}
-.imagenNota {
-    width: 175px;
-    height: 113px;
-    border-radius: 5px;
+    padding: 1rem;
 }
 
-.titulo,.descripcion,.fecha {
+.titular {
     color: #000;
-    font-size: 24px;
+    font-family: Poppins;
+    font-size: 20px;
     font-style: normal;
     font-weight: 700;
-    
-}
-.titulo {
-    margin-top: .5rem;
 }
 
-.descripcion {
-    color: #636363;
-    font-size: 15px;
-    font-style: italic;
-    font-weight: 400;
-}
-
-.fecha {
-    color: #636363;
-    font-family: Gotham;
-    font-size: 15px;
-    font-style: normal;
-    font-weight: 700;
-    margin-bottom: 5px;
-    
-}
-
-.textos {
+.card-escritor {
     display: grid;
+    grid-template-columns: auto auto auto;
+    border-radius: 5px;
+    background: #EEE;
+    padding: 10px;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+.nombre-escritor,.fecha-registro  {
+    color: #636363;
+    font-family: Roboto;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+}
+
+.fecha-registro {
+    font-family: Poppins;
+    text-align: center;
+}
+
+.botones {
+    text-align: end;
+    gap: 5px;
+}
+.boton-editar,.boton-eliminar {
+    background-color: #A7DBAB;
+    width: 70px;
+    height: 30px;
+    border: none;
+    color: white;
     margin-left: 1rem;
 }
 
 
-/* BOTONES DE CATEGORIA */
-
-.botonCategoria {
-    border-radius: 5px;
-    background: #512B52;
-    width: 250px;
-    height: 40px;
-    color: white;
-    font-weight: bold;
-    margin-left: auto;
-    margin-right: auto;
-    border: none;
-}
-
-.pregunta {
-    color: #636363;
-    margin-top: 1rem;
-    margin-left: 2rem;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    color: #636363;
-}
-.botonesConjuntos {
-    display: grid;
-    grid-template-columns: auto auto auto;
-}
-
-.botonCategoria:hover {
-    background-color: #6f3a72;
-    transition: 0.5s;
-}
-
-
-/* MAS NOTICIAS */
-
-.masNoticias {
-    width: 95vw;
-    height: 300px;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 5px;
-    border: none;
-    margin-top: 1.4rem;
-    background-color: white;
-}
-
-
-.imagenNotaMas {
-    width: 259px;
-    height: 116px;
-    border-radius: 5px;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    cursor: pointer;
-    
-}
-
-.cardMasNotas {
-    background-color: #EEEEEE;
-    width: 290px;
-    height: 300;
-    padding: .5rem;
-    cursor: pointer;
-    
-}
-
-.cardMasNotas:hover{
-    box-shadow: 0px 0px 22px 5px rgba(127,178,212,1);
-    transition: 0.8s;
-}
-
-.listaCards {
-    display: flex;
-    flex-direction: row;
-    margin-left: auto;
-    margin-right: auto;
-    justify-content: center;
-    gap: 3rem;
-    flex-wrap: nowrap;
-    overflow: scroll;
+.boton-eliminar {
+ background-color: #CB3030;
 }

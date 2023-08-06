@@ -1,45 +1,51 @@
-.background{
-    background-color: #EEEE;
+.cabecera {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    background-color: #7BB0A8;
+    align-items: center;
+    height: 60px;
 }
-.div-news{
-    margin-top: 15px;
+
+.cancelar {
+    width: 250px;
+    height: 45px;
+    border-radius: 3px;
+    background: #512B52;
+    border: none;
+    color: white;
+    font-family: Roboto;
+    font-weight: bold;
+    font-size: 24px;
+    margin-left: 1rem;
+}
+
+.cancelar:hover {
+    background-color: #814583;
+    transition: 1s;
+}
+.mision24 {
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.barraBuscador {
+    display: flex;
     background-color: white;
 }
-.cart-news{
-    margin-top: 15px;
+
+.inputBuscar {
+    width: 784px;
+    height: 37px;
+    border-radius: 20px;
+    background: #EEE;
+    border: none;
 }
-.button-trash{
-    background-color: #DB3C3C;
-    color: white;
-    text-decoration:none;
-    font-weight:600;
-    font-size:20px;
-    padding-top:15px;
-    padding-bottom:15px;
-    padding-left:150px;
-    padding-right:150px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+
+body {
+    background-color: #EEE;
 }
-.button-edit{
-    background-color: #A7DBAB;
-    color: white;
-    text-decoration:none;
-    font-weight:600;
-    font-size:20px;
-    padding-top:15px;
-    padding-bottom:15px;
-    padding-left:150px;
-    padding-right:150px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-.size-button{
-    min-width: 450px;
-text-align:center;
-}
-.imgStyle{
-    display: block;
-  margin: auto;
-    
-}
+
