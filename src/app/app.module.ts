@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './layout/public/login/login/login.component';
@@ -30,8 +30,7 @@ import { HomeAdminComponent } from './layout/public/home-admin/home-admin.compon
     StatisticsComponent,
     HomeWriterComponent,
     NewWriterComponent,
-    ListWritterComponent,
-    HomeAdminComponent
+    ListWritterComponent
   ],
   imports: [
     BrowserModule,
@@ -47,15 +46,15 @@ import { HomeAdminComponent } from './layout/public/home-admin/home-admin.compon
       { path: 'homeWriter', component: HomeWriterComponent},
       { path: 'newWriter', component: NewWriterComponent},
       { path: 'listWriter', component: ListWritterComponent},
-      { path: 'home-admin', component: HomeAdminComponent},
       {path: '', redirectTo: '/login', pathMatch: 'full'},
     ]),
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
     //app_routing
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

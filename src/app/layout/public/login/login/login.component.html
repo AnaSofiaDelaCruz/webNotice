@@ -1,34 +1,57 @@
 <div class="row">
-    <div class="d-none d-lg-block col-md-4 col-xs-6 col-sm-6 background-login">
-        <p class="slogan">El punto exacto de la noticia</p>
-        <div class="triangulo-tricolor"></div>
-        <img src="./assets/images/logo2.png" alt="logo" class="logo">
-        <img src="./assets/images/pilar2.png" alt="pilar" class="pilar">
-    </div>
-    <div class="col-md-8 col-xs-6 col-sm-6 background-login">
-        <br>
-        <p class="text-title">¡Bienvenido!</p>
-        <p>Por favor, inicia sesión para entrar a la plataforma</p>
-        <br>
-        <form [formGroup]="myForm" (ngSubmit)="submitFormulario">
-            <div class="col-md-8 col-xs-6">
-                <label for="exampleFormControlInput1" class="form-label">Correo electronico</label>
-                <input formControlName="user" type="email" class="form-control input" id="exampleFormControlInput1"
-                    placeholder="nombre@ejemplo.com">
-            </div>
-            <br>
-            <div class="col-md-8 col-xs-6">
-                <label for="inputPassword5" class="form-label">Contraseña</label>
-                <input formControlName="password" type="password" id="inputPassword5" class="form-control input"
-                    aria-labelledby="passwordHelpBlock">
-            </div>
-            <br>
-        </form>
-        <a type="button" class="btn button-success" href="/home">Ingresar</a>
-        <br><br>
-        <p class="text-others">¿Tienes problemas con tu contraseña? <a  target="_blank" href="register.component.html" class="links">Nosotros te ayudamos</a></p>
-        <p class="text-others">¿No estas registrado? <a routerLink="/register" class="links">Reistrate aquí</a></p>
-        <img src="./assets/images/pilar_secundario.png" alt="pilar" class="pilar-secundario">
-    </div>
+  <div class="d-none d-lg-block col-md-4 col-xs-6 col-sm-6 background-login">
+    <p class="slogan">El punto exacto de la noticia</p>
+    <div class="triangulo-tricolor"></div>
+    <img src="./assets/images/logo2.png" alt="logo" class="logo" />
+    <img src="./assets/images/pilar2.png" alt="pilar" class="pilar" />
+  </div>
+  <div class="col-md-8 col-xs-6 col-sm-6 background-login">
+    <br />
+    <p class="text-title">¡Bienvenido!</p>
+    <p>Por favor, inicia sesión para entrar a la plataforma</p>
+    <br />
+    <form [formGroup]="loginForm" (ngSubmit)="submitFormulario()">
+      <div class="col-md-8 col-xs-6">
+        <label for="exampleFormControlInput1" class="form-label"
+          >Correo electronico</label
+        >
+        <input
+          formControlName="correo"
+          type="email"
+          class="form-control input"
+          id="exampleFormControlInput1"
+          placeholder="nombre@ejemplo.com"
+        />
+      </div>
+      <br />
+      <div class="col-md-8 col-xs-6">
+        <label for="inputPassword5" class="form-label">Contraseña</label>
+        <input
+          formControlName="password"
+          type="password"
+          id="inputPassword5"
+          class="form-control input"
+          aria-labelledby="passwordHelpBlock"
+        />
+      </div>
+      <br />
+    </form>
+    <a type="button" class="btn button-success" (click)="Iniciar()">Ingresar</a>
+    <br /><br />
+    <p class="text-others">
+      ¿Tienes problemas con tu contraseña?
+      <a target="_blank" href="register.component.html" class="links"
+        >Nosotros te ayudamos</a
+      >
+    </p>
+    <p class="text-others">
+      ¿No estas registrado?
+      <a routerLink="/register" class="links">Reistrate aquí</a>
+    </p>
+    <img
+      src="./assets/images/pilar_secundario.png"
+      alt="pilar"
+      class="pilar-secundario"
+    />
+  </div>
 </div>
-
