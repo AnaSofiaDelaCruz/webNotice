@@ -1,46 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Registrar escritor</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;800&family=Roboto:wght@400;700&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;800&family=Roboto:wght@400;700&display=swap');
-      </style>
-</head>
-<body>    <div class="cabecera">
-        <button class="boton-cancelar">Cancelar</button>
-        <h1 class="titulo">Mision 24</h1>
-        <h1 class="slogan">El punto exacto de la noticia</h1>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;800&family=Roboto:wght@400;700&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;800&family=Roboto:wght@400;700&display=swap");
+    </style>
+  </head>
+
+  <body>
+    <div class="cabecera">
+      <button class="boton-cancelar" routerLink="/homeAdminMenu">Cancelar</button>
+      <h1 class="titulo">Mision 24</h1>
+      <h1 class="slogan">El punto exacto de la noticia</h1>
     </div>
 
-
-    <div class="cuerpo">
+    <form [formGroup]="registroEscritor" (ngSubmit)="registrar()">
+      <div class="cuerpo">
         <div class="contenedor-formulario">
-            <h1 class="titulo-form">Agregar a un nuevo escritor</h1>
-            <div class="superior-formulario">
-                <h2 class="label-form">Nombres</h2>
-                <input type="text" class="contenedor-texto" id="nombres" >
-                <h2 class="label-form">Apellido Paterno</h2>
-                <input type="text" class="contenedor-texto" >
-                <h2 class="label-form">Apellido Materno</h2>
-                <input type="text" class="contenedor-texto">
-                <h2 class="label-form">Nombre de usuario (apodo)</h2>
-                <input type="text" class="contenedor-texto">
-                <button class="cargar-imagen">Cargar imagen</button>
-            </div>
-            <div class="inferior-formulario">
-                <h2 class="label-form">Email</h2>
-                <input type="email" class="contenedor-texto">
-                <h2 class="label-form">Contraseña</h2>
-                <input type="password" class="contenedor-texto">
-                <h2 class="label-form">Repetir contraseña</h2>
-                <input type="password" class="contenedor-texto">
+          <h1 class="titulo-form">Agregar a un nuevo escritor</h1>
+          <div class="superior-formulario">
+            <h2 class="label-form">Nombres</h2>
+            <input
+              type="text"
+              class="contenedor-texto"
+              formControlName="nombres"
+            />
+            <h2 class="label-form">Apellidos</h2>
+            <input
+              type="text"
+              class="contenedor-texto"
+              formControlName="apellidos"
+            />
+            <h2 class="label-form">Nombre de usuario (apodo)</h2>
+            <input
+              type="text"
+              class="contenedor-texto"
+              formControlName="username"
+            />
+            <button class="cargar-imagen">Cargar imagen</button>
+          </div>
+          <div class="inferior-formulario">
+            <h2 class="label-form">Email</h2>
+            <input
+              type="email"
+              class="contenedor-texto"
+              formControlName="email"
+            />
+            <h2 class="label-form">Contraseña</h2>
+            <input
+              type="password"
+              class="contenedor-texto"
+              formControlName="password"
+            />
+            <h2 class="label-form">Repetir contraseña</h2>
+            <input
+              type="password"
+              class="contenedor-texto"
+              formControlName="confirmPassword"
+            />
 
-                <button class="crear-usuario">Crear usuario</button>
-            </div>
+            <button class="crear-usuario">Crear usuario</button>
+          </div>
         </div>
-    </div>
-</body>
+      </div>
+    </form>
+  </body>
 </html>

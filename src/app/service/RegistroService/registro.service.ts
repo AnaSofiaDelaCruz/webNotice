@@ -23,7 +23,13 @@ export class RegistroService {
     this.headers = this.headers.set('Authorization', `Bearer ${token}`);
   }
 
-  registrar(registro: FormGroup): Observable<any> {
+  public registrar(registro: FormGroup): Observable<any> {
     return this.http.post(`${this.apiUrl}/api/register`, registro);
+  }
+
+  public registrarEscritor(registro: FormGroup): Observable<any> {
+    return this.http.post(`${this.apiUrl}/api/register/admi`, registro, {
+      headers: this.headers,
+    });
   }
 }

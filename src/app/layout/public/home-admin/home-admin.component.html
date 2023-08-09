@@ -1,1 +1,99 @@
-<p>home-admin works!</p>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home del administrador</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;800&family=Roboto:wght@400;700&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;800&family=Roboto:wght@400;700&display=swap");
+      @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
+    </style>
+  </head>
+  <body>
+    <div class="cabeza">
+      <button class="botonMenuHamburguesa">
+        <img
+          src="../assets/images/menu-burguer.png"
+          alt="Boton de menu"
+          class="imagenMenuHamburguesa"
+        />
+      </button>
+      <h1 class="mision24">misión 24</h1>
+      <button class="escribirNotaBoton">
+        <i class="bi bi-pen-fill"></i> Escribir
+      </button>
+      <button class="botonUsuario" (click)="AlternarMenu()">
+        <img src="../assets/images/usuarioIcon.png" class="imagenUsuarioIcon" />
+      </button>
+      <div class="buscador">
+        <input type="text" class="campoBuscador" placeholder="Buscar noticia" />
+      </div>
+    </div>
+
+    <div class="noticiasRecientes">
+      <h1 class="textoRecientes">Las noticias recientemente publicadas son:</h1>
+      <div class="contenedorRecientes">
+        <img
+          src="https://visitmexico.com/wp-content/uploads/2022/09/Chiapas_Portada.png"
+          class="imagenCard"
+        />
+        <div class="informacionCard">
+          <h1 class="tituloNota">Titulo de la nota</h1>
+          <h2 class="descripcion">Descripcion de la nota</h2>
+        </div>
+        <h2 class="fechaNota">(Fecha de la nota)</h2>
+      </div>
+
+      <div class="contenedorRecientes">
+        <img
+          src="https://visitmexico.com/wp-content/uploads/2022/09/Chiapas_Portada.png"
+          class="imagenCard"
+        />
+        <div class="informacionCard">
+          <h1 class="tituloNota">Warzone 3 se aproxima</h1>
+          <h2 class="descripcion">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+            minima architecto quia quod voluptatem reprehenderit eum, tempora
+            ratione est possimus at exercitationem corrupti libero sint sunt
+            fuga minus ex dicta?
+          </h2>
+        </div>
+        <h2 class="fechaNota">(07/08/2023)</h2>
+      </div>
+
+      <div class="contenedorRecientes">
+        <img
+          src="https://visitmexico.com/wp-content/uploads/2022/09/Chiapas_Portada.png"
+          class="imagenCard"
+        />
+        <div class="informacionCard">
+          <h1 class="tituloNota">Accidentes en Tuxtla</h1>
+          <h2 class="descripcion">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+            minima architecto quia quod voluptatem reprehenderit eum, tempora
+            ratione est possimus at exercitationem corrupti libero sint sunt
+            fuga minus ex dicta?
+          </h2>
+        </div>
+        <h2 class="fechaNota">(07/08/2023)</h2>
+      </div>
+    </div>
+    <div class="menuUserContenedor" [ngClass]="{'menu' : activar}">
+      <div class="fondoMenu">
+        <button class="botonesMenuUsuarios">
+          <i class="bi bi-pen-fill"></i> Editar informacion del perfil
+        </button>
+        <button class="botonesMenuUsuarios" id="botonCerrarSesion">
+          <i class="bi bi-box-arrow-in-left"></i> Cerrar sesión
+        </button>
+        <button class="botonesMenuUsuarios" routerLink="/homeAdminMenu">
+          <i class="bi bi-person-badge-fill"></i> Administrar escritores
+        </button>
+        <button class="botonesMenuUsuarios" (click)="AlternarMenu()" id="botonCerrarMenu">
+          <i class="bi bi-x-circle"></i> Cerrar menu
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

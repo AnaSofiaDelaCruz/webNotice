@@ -36,7 +36,12 @@ export class LoginComponent implements OnInit {
           if (res === null) {
             this.alertService.ShowErrorAlert('Error en credenciales');
           } else {
-            this.router.navigate(['/home']);
+            if (localStorage.getItem("rol") === "administrador" || localStorage.getItem("rol") === "escritor"){
+              this.router.navigate(['/homeAdmin']);
+            } else {
+              this.router.navigate(['/home']);
+            }
+            
           }
         },
         (error) => {

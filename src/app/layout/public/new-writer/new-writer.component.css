@@ -98,6 +98,7 @@ h2 {
     border-radius: 3px;
     margin-bottom: 8px;
     border: 1px solid #1F1E1E;
+    outline: #A7DBAB;
 }
 
 .contenedor-texto:hover {
@@ -128,7 +129,7 @@ h2 {
 .crear-usuario:hover {
     background-color: #6d3670;
     transition: 1s;
-    width: 520px;
+    width: 550px;
 }
 
 .cargar-imagen {
@@ -147,7 +148,7 @@ h2 {
 }
 
 .cargar-imagen:hover {
-    width: 220px;
+    width: 300px;
     background-color: #A7DBAB;
     transition: 1s;
 }

@@ -1,0 +1,86 @@
+.textoAdministrador {
+  font-family: Poppins;
+
+  color: white;
+  font-size: 36px;
+  padding: 3rem;
+}
+
+span {
+  color: rgb(255, 176, 5);
+  font-weight: bold;
+}
+
+.contenedorGeneral {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  justify-content: center;
+  gap: 5rem;
+}
+
+.botonRegresar {
+  font-family: Roboto;
+  font-weight: bold;
+  font-size: 24px;
+  border: none;
+  border-radius: 3px;
+  margin: 3rem;
+  width: 150px;
+  transition: 0.5s all ease;
+  height: 60px;
+}
+
+.botonRegresar:hover {
+  background-color: #7bb0a8;
+  color: white;
+  width: 200px;
+}
+
+.botonImagen {
+  border-radius: 10px;
+  padding: 0;
+  border: none;
+  background-color: #262525;
+  transition: 2s all ease;
+}
+body {
+  background-color: #262525;
+}
+
+.botonImagen:hover {
+  filter: brightness(30%);
+  background-color: white;
+  .textoEditar,.textoRegistrar,.textoEliminar {
+    opacity: 1;
+  }
+}
+
+.textoEditar,.textoRegistrar,.textoEliminar {
+
+  font-family: Poppins;
+  color: white;
+  opacity: 0;
+}
+
+@media screen and (max-width: 1360px) {
+  .textoAdministrador {
+    color: white;
+    font-size: 24px;
+    padding: 2rem;
+  }
+
+  .imagenMenu {
+    width: 325px;
+  }
+
+  .botonRegresar  {
+    margin: 2rem;
+    font-size: 16px;
+    width: 100px;
+    height: 40px;
+  }
+
+  .textoEditar,.textoRegistrar,.textoEliminar  {
+    font-size: 24px;
+  }
+}

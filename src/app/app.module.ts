@@ -17,6 +17,7 @@ import { HomeWriterComponent } from './layout/public/home-writer/home-writer.com
 import { NewWriterComponent } from './layout/public/new-writer/new-writer.component';
 import { ListWritterComponent } from './list-writter/list-writter.component';
 import { HomeAdminComponent } from './layout/public/home-admin/home-admin.component';
+import { MenuUsuariosAdminComponent } from './menu-usuarios-admin/menu-usuarios-admin.component';
 
 @NgModule({
   declarations: [
@@ -30,23 +31,27 @@ import { HomeAdminComponent } from './layout/public/home-admin/home-admin.compon
     StatisticsComponent,
     HomeWriterComponent,
     NewWriterComponent,
-    ListWritterComponent
+    ListWritterComponent,
+    HomeAdminComponent,
+    MenuUsuariosAdminComponent,
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot([
-      {path: 'home', component: PrincipalComponent},
-      {path: 'register', component: RegisterComponent},
-      {path: 'register2', component: RegisterComponent},
-      { path: 'login', component: LoginComponent},
-      { path: 'news', component: BasenewsComponent},
-      { path: 'writer', component: WriterComponent},
-      { path: 'writerstep2', component: Writer2Component},
-      { path: 'statistics', component: StatisticsComponent},
-      { path: 'homeWriter', component: HomeWriterComponent},
-      { path: 'newWriter', component: NewWriterComponent},
-      { path: 'listWriter', component: ListWritterComponent},
-      {path: '', redirectTo: '/login', pathMatch: 'full'},
+      { path: 'home', component: PrincipalComponent },
+      { path: 'register', component: RegisterComponent },
+      { path: 'register2', component: RegisterComponent },
+      { path: 'login', component: LoginComponent },
+      { path: 'news', component: BasenewsComponent },
+      { path: 'writer', component: WriterComponent },
+      { path: 'writerstep2', component: Writer2Component },
+      { path: 'statistics', component: StatisticsComponent },
+      { path: 'homeWriter', component: HomeWriterComponent },
+      { path: 'newWriter', component: NewWriterComponent },
+      { path: 'listWriter', component: ListWritterComponent },
+      { path: 'homeAdmin', component: HomeAdminComponent },
+      { path: 'homeAdminMenu', component: MenuUsuariosAdminComponent },
+      { path: '', redirectTo: '/login', pathMatch: 'full' },
     ]),
     AppRoutingModule,
     FormsModule,
