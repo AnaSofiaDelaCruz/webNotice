@@ -1,0 +1,154 @@
+.cabecera {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40rem;
+    background-color: white;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+}
+
+@media screen and (max-width: 1360px) {
+    .cabecera {
+        gap: 22rem;
+    }
+}
+
+.boton-cancelar {
+    width: 139px;
+    height: 54px;
+    border-radius: 3px;
+    background: #7BB0A8;
+    color: white;
+    font-family: Roboto;
+    font-weight: bold;
+    border: none;
+    font-size: 24px;
+}
+
+.boton-cancelar:hover {
+    background-color: #A7DBAB;
+    transition: .5s;
+}
+
+.titulo {
+    color: #A7DBAB;
+    font-family: Poppins;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+}
+
+.slogan {
+    color: #636363;
+    text-align: right;
+    font-family: Gotham;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    justify-content: center;
+    align-items: center;
+    width: 202px;
+}
+
+.cuerpo, body {
+    background-color: #EEE;
+    height: 100vh;
+}
+
+h2 {
+    font-family: Roboto;
+}
+.contenedor-formulario {
+    width: 627px;
+    height: 800px;
+    background-color: white;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+    border-radius: 5px;
+    background: #FFF;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    padding: 2rem;
+}
+
+.titulo-form {
+    font-family: Poppins;
+    font-weight: bold;
+    font-size: 32px;
+    text-align: center;
+}
+
+.label-form {
+    color: #636363;
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    margin-left: 2rem;
+}
+
+.contenedor-texto {
+    width: 90%;
+    height: 39px;
+    font-family: Poppins;
+    padding-left: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    border-radius: 3px;
+    margin-bottom: 8px;
+    border: 1px solid #1F1E1E;
+    outline: #A7DBAB;
+}
+
+.contenedor-texto:hover {
+    border: 2px solid #A7DBAB;
+}
+
+.inferior-formulario {
+    margin-top: 2rem;
+}
+
+.crear-usuario {
+    width: 476px;
+    height: 63px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    border-radius: 3px;
+    background: #512B52;
+    color: white;
+    font-family: Roboto;
+    font-weight: bold;
+    font-size: 34px;
+    margin-top: 1rem;
+    border: none;
+    transition: width 1s ease 0s;
+}
+
+.crear-usuario:hover {
+    background-color: #6d3670;
+    transition: 1s;
+    width: 550px;
+}
+
+.cargar-imagen {
+    width: 212px;
+    height: 39px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 3px;
+    background: #7BB0A8;
+    border: none;
+    color: white;
+    font-family: Roboto;
+    font-weight: bold;
+    transition: width 1s ease 0s;
+}
+
+.cargar-imagen:hover {
+    width: 300px;
+    background-color: #A7DBAB;
+    transition: 1s;
+}

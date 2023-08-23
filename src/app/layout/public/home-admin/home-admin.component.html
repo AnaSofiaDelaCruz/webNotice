@@ -12,7 +12,7 @@
   </head>
   <body>
     <div class="cabeza">
-      <button class="botonMenuHamburguesa">
+      <button class="botonMenuHamburguesa" (click)="setActive()">
         <img
           src="../assets/images/menu-burguer.png"
           alt="Boton de menu"
@@ -20,7 +20,7 @@
         />
       </button>
       <h1 class="mision24">misión 24</h1>
-      <button class="escribirNotaBoton">
+      <button class="escribirNotaBoton" routerLink="/writer">
         <i class="bi bi-pen-fill"></i> Escribir
       </button>
       <button class="botonUsuario" (click)="AlternarMenu()">
@@ -79,9 +79,10 @@
         <h2 class="fechaNota">(07/08/2023)</h2>
       </div>
     </div>
-    <div class="menuUserContenedor" [ngClass]="{'menu' : activar}">
+
+    <div class="menuUserContenedor" [ngClass]="{ menu: activar }">
       <div class="fondoMenu">
-        <button class="botonesMenuUsuarios">
+        <button class="botonesMenuUsuarios" routerLink="/editarPerfil">
           <i class="bi bi-pen-fill"></i> Editar informacion del perfil
         </button>
         <button class="botonesMenuUsuarios" id="botonCerrarSesion">
@@ -90,10 +91,37 @@
         <button class="botonesMenuUsuarios" routerLink="/homeAdminMenu">
           <i class="bi bi-person-badge-fill"></i> Administrar escritores
         </button>
-        <button class="botonesMenuUsuarios" (click)="AlternarMenu()" id="botonCerrarMenu">
+        <button
+          class="botonesMenuUsuarios"
+          (click)="AlternarMenu()"
+          id="botonCerrarMenu"
+        >
           <i class="bi bi-x-circle"></i> Cerrar menu
         </button>
       </div>
     </div>
+
+    <section class="menu-hamburguesa" [ngClass]="{ menu: active }">
+      <div class="menu-lateral-contenedor">
+        <h1 class="labelM">Mision 24</h1>
+        <h2 class="select-noticias">Selecciona tus tipos de noticias</h2>
+        <div class="lineaDivisora"></div>
+        <div class="card1" routerLink="/noticiaInternacional">
+          <h1 class="label">Internacional</h1>
+        </div>
+        <div class="card2" routerLink="/noticiaNacional">
+          <h1 class="label">Nacional</h1>
+        </div>
+        <div class="card3" routerLink="/noticiaOpinion">
+          <h1 class="label">Opinion publica</h1>
+        </div>
+        <div class="card4" routerLink="/noticiaChiapas">
+          <h1 class="label">Estado | Chiapas</h1>
+        </div>
+        <button class="botonCerrar" id="cerrarMenu" (click)="setActive()">
+          Cerrar
+        </button>
+      </div>
+    </section>
   </body>
 </html>

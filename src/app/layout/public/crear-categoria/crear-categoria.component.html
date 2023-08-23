@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vista para crear categorias</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;700;800&family=Roboto:wght@100;400;700&display=swap");
+      @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
+    </style>
+  </head>
+  <body>
+    <div class="cabeza">
+      <div class="contenedorBoton">
+        <button class="botonRetroceder" routerLink="/writer">Atras</button>
+      </div>
+      <h1 class="tituloCrearCategorias">Administrador: Crear categoria</h1>
+    </div>
+
+    <div class="cuerpo">
+      <div class="contenedorRegistro">
+        <h1 class="textoRegistrarCategoria">
+          Registra una nueva categoria o subcategoria
+        </h1>
+        <h2 class="textoNombreCategoria">Nombre</h2>
+        <input type="text" class="entrada" />
+        <select name="Tipo" id="tipo">
+          <option value="Sin seleccionar">Seleccionar tipo</option>
+          <option value="categoria">Categoria</option>
+          <option value="subcategoria">Subcategoria</option>
+        </select>
+        <button class="crearCategoria">
+          <i class="bi bi-plus-square-fill"></i> Crear
+        </button>
+      </div>
+      <div class="listas">
+        <div class="contenedorListaCategorias">
+          <h1 class="tituloCategorias">Categorias registradas</h1>
+          <div class="categoriasRegistradas">
+            <h2 class="categoriaR">Accidentes</h2>
+            <h2 class="categoriaR">Accidentes</h2>
+            <h2 class="categoriaR">Accidentes</h2>
+            <h2 class="categoriaR">Accidentes</h2>
+            <h2 class="categoriaR">Accidentes</h2>
+            <h2 class="categoriaR">Accidentes</h2>
+            <h2 class="categoriaR">Accidentes</h2>
+          </div>
+        </div>
+        <div class="contenedorListaSubcategorias">
+          <h1 class="tituloCategorias">Subcategorias registradas</h1>
+          <div class="categoriasRegistradas">
+            <h2 class="categoriaR">Accidentes</h2>
+            <h2 class="categoriaR">Accidentes</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pies">
+      <h1 class="textoPies"><i class="bi bi-tools"></i> Herramientas</h1>
+      <div class="botonesFooter">
+        <button class="botonFooter" id="botonEditar"><i class="bi bi-nut-fill"></i> Editar</button>
+        <button class="botonFooter" id="botonBorrar"><i class="bi bi-trash-fill"></i> Eliminar</button>
+      </div>
+      <br>
+    </div>
+  </body>
+</html>

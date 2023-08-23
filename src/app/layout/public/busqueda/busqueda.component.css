@@ -1,0 +1,222 @@
+.escritorio {
+  display: none;
+}
+
+.mobile {
+  display: none;
+}
+@media screen and (min-width: 1024px) {
+  .escritorio {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .mobile {
+    display: block;
+  }
+}
+
+.headerMobile {
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+  background-color: #512b52;
+  color: white;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.puntosMenu {
+  font-size: 24px;
+  margin-left: 1rem;
+}
+.mision24Mobile {
+  font-family: Poppins;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 24px;
+  margin-right: 1rem;
+}
+
+.buscador {
+  display: grid;
+  grid-template-columns: 80% auto;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+
+  gap: 5px;
+}
+.buscadorMobile {
+  border: none;
+  background-color: white;
+  width: 100%;
+  border-radius: 5px;
+  font-family: Poppins;
+  font-size: 16px;
+  padding-left: 5px;
+}
+.botonBuscarMobile {
+  border: none;
+  background-color: #7bb0a8;
+  border-radius: 5px;
+  color: white;
+}
+body {
+  background-color: #eee;
+}
+
+.contenidoRecientesMobile {
+  background-color: white;
+  margin: 1rem;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.notiRMobile {
+  font-family: Poppins;
+  font-size: 16px;
+  background-color: #7bb0a8;
+  color: white;
+  padding-left: 5px;
+}
+.TituloNotaMobile {
+  font-family: Poppins;
+  font-weight: bold;
+  font-size: 18px;
+  margin-top: 6px;
+}
+.fechaNotaMobile {
+  font-family: Poppins;
+  font-size: 12px;
+}
+.imagenCardMobile {
+  width: 92px;
+  border-radius: 5px;
+}
+.cardMobile1 {
+  background-color: #eee;
+  display: grid;
+  grid-template-columns: 30% auto;
+  margin: 5px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.informarteMobile {
+  font-family: Poppins;
+  font-size: 16px;
+  background-color: white;
+  text-align: center;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  margin: 1rem;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.botonesMobile {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  margin: 1rem;
+  gap: 5px;
+}
+.botonMobile {
+  border: none;
+  border-radius: 5px;
+  background-color: #512b52;
+  color: white;
+  font-family: poppins;
+  height: 40px;
+}
+
+/* Escritorio */
+
+.escritorio {
+  font-family: Poppins;
+}
+.header {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  align-items: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  background-color: white;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.iconoBurguer {
+  font-size: 30px;
+}
+.mision24texto {
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+}
+.slogan {
+  font-size: 16px;
+  text-align: end;
+}
+
+.imagenCard {
+  width: 175px;
+  border-radius: 5px;
+}
+.contenidoResultado {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-top: 1rem;
+}
+
+.resultadoBusqueda {
+  background-color: #7bb0a8;
+  color: white;
+  font-size: 24px;
+  padding: 8px;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: 20% auto;
+  padding: 1rem;
+}
+
+.tituloNota {
+  font-weight: bold;
+  font-size: 24px;
+}
+.fechaNota {
+  font-size: 16px;
+}
+
+.buscadorEscritorio{
+  display: grid;
+  grid-template-columns: 90% auto;
+  margin: 2rem;
+  gap: 1rem;
+}
+.buscarEscritorio{
+  border: none;
+  background-color: white;
+  font-family: Poppins;
+  padding-left: 10px;
+  font-size: 16px;
+  height: 40px;
+  border-radius: 5px;
+}
+.botonBuscarEscritorio{
+  background-color: #7bb0a8;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.botonHome{
+  background-color: #7bb0a8;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  transition: .5s all ease;
+}
+.botonHome:hover {
+  background-color: #512b52;
+}

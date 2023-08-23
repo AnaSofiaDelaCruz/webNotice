@@ -1,0 +1,202 @@
+.cabeza {
+  background-color: #7bb0a8;
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+
+  .contenedorBoton {
+    margin-left: 1rem;
+  }
+
+  .botonRetroceder {
+    font-family: Roboto;
+    font-weight: bold;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    width: 100px;
+    height: 40px;
+    background-color: #512b52;
+    color: white;
+    transition: 0.5s all ease;
+  }
+
+  .tituloCrearCategorias {
+    font-family: Poppins;
+    font-weight: bold;
+    color: white;
+    text-align: end;
+    margin-right: 1rem;
+  }
+
+  .botonRetroceder:hover {
+    width: 150px;
+    transition: 0.5s all ease;
+    background-color: #683969;
+  }
+
+  @media screen and (max-width: 1360px) {
+    .tituloCrearCategorias {
+      font-size: 24px;
+      padding: 0.5rem;
+    }
+
+    .botonRetroceder {
+      width: 80px;
+      height: 40px;
+    }
+  }
+}
+
+.cuerpo {
+  display: grid;
+  grid-template-columns: auto auto;
+  padding: 2rem;
+  gap: 1rem;
+
+  .contenedorRegistro {
+    width: 100%;
+    height: 500px;
+    -webkit-box-shadow: 12px 15px 5px 0px rgba(0, 0, 0, 0.31);
+    -moz-box-shadow: 12px 15px 5px 0px rgba(0, 0, 0, 0.31);
+    box-shadow: 12px 15px 5px 0px rgba(0, 0, 0, 0.31);
+    color: white;
+    border-radius: 10px;
+  }
+
+  .listas {
+    display: grid;
+    grid-template-rows: auto auto;
+    gap: 1rem;
+  }
+
+  .contenedorListaCategorias,
+  .contenedorListaSubcategorias {
+    width: 100%;
+    box-shadow: 12px 15px 5px 0px rgba(0, 0, 0, 0.31);
+    overflow-y: scroll;
+  }
+
+  .contenedorListaCategorias {
+    background-color: #eee;
+  }
+  .contenedorListaSubcategorias {
+    background-color: #EEE;
+  }
+
+  .textoRegistrarCategoria {
+    font-family: Roboto;
+    font-size: 24px;
+    text-align: left;
+    padding: 1rem;
+    background-color: #a7dbab;
+    font-weight: bold;
+  }
+
+  .textoNombreCategoria {
+    font-family: Roboto;
+    font-weight: bold;
+    margin-left: 1rem;
+    color: #512b52;
+  }
+  .entrada {
+    width: 96%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    outline: none;
+    border-radius: 5px;
+    padding-left: 1rem;
+    font-family: Poppins;
+    color: black;
+    font-weight: bold;
+    font-size: 24px;
+  }
+
+  #tipo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+    font-family: Poppins;
+    font-weight: bold;
+    width: 95%;
+    font-size: 24px;
+  }
+
+  .crearCategoria {
+    width: 300px;
+    height: 50px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: none;
+    margin-top: 5rem;
+    border-radius: 3px;
+    background-color: #512b52;
+    color: white;
+    font-weight: bold;
+    font-family: Roboto;
+    font-size: 24px;
+    transition: 0.5s all ease;
+  }
+
+  .crearCategoria:hover {
+    background-color: #683969;
+    width: 350px;
+  }
+
+  .tituloCategorias {
+    font-family: Roboto;
+    font-weight: bold;
+    background-color: #7bb0a8;
+    color: white;
+    font-size: 16px;
+    padding: 0.5rem;
+  }
+
+  .categoriaR {
+    font-family: Roboto;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 5px;
+    background-color: white;
+  }
+}
+
+.textoPies{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-family: Poppins;
+  font-weight: bold;
+}
+
+
+.botonesFooter {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 1rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+.botonFooter {
+  font-family: Roboto;
+  background-color: #7bb0a8;
+  color: white;
+  font-weight: bold;
+  font-size: 24px;
+  border: none;
+  border-radius: 5px;
+  height: 50px;
+  transition: .5s all ease;
+}
+
+#botonBorrar:hover {
+  background-color: rgb(206, 70, 70);
+}
+
+#botonEditar:hover {
+  background-color: #a7dbab;
+}

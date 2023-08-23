@@ -7,8 +7,13 @@ import { Component } from '@angular/core';
 })
 export class HomeAdminComponent {
   public activar: boolean = true;
+  public active: boolean = true;
 
   AlternarMenu(): void {
     this.activar = !this.activar;
+  }
+
+  setActive(): void {
+    this.active = !this.active;
   }
 }

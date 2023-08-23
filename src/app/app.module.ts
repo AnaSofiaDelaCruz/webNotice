@@ -1,3 +1,4 @@
+import { EditorModule } from '@tinymce/tinymce-angular';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
@@ -18,6 +19,13 @@ import { NewWriterComponent } from './layout/public/new-writer/new-writer.compon
 import { ListWritterComponent } from './list-writter/list-writter.component';
 import { HomeAdminComponent } from './layout/public/home-admin/home-admin.component';
 import { MenuUsuariosAdminComponent } from './menu-usuarios-admin/menu-usuarios-admin.component';
+import { CrearCategoriaComponent } from './layout/public/crear-categoria/crear-categoria.component';
+import { EditarPerfilComponent } from './layout/public/editar-perfil/editar-perfil.component';
+import { NoticiasInternacionalesComponent } from './layout/public/noticias-internacionales/noticias-internacionales.component';
+import { NoticiaNacionalComponent } from './layout/public/noticia-nacional/noticia-nacional.component';
+import { NoticiaOpinionComponent } from './layout/public/noticia-opinion/noticia-opinion.component';
+import { NoticiaChiapasComponent } from './layout/public/noticia-chiapas/noticia-chiapas.component';
+import { BusquedaComponent } from './layout/public/busqueda/busqueda.component';
 
 @NgModule({
   declarations: [
@@ -34,9 +42,17 @@ import { MenuUsuariosAdminComponent } from './menu-usuarios-admin/menu-usuarios-
     ListWritterComponent,
     HomeAdminComponent,
     MenuUsuariosAdminComponent,
+    CrearCategoriaComponent,
+    EditarPerfilComponent,
+    NoticiasInternacionalesComponent,
+    NoticiaNacionalComponent,
+    NoticiaOpinionComponent,
+    NoticiaChiapasComponent,
+    BusquedaComponent,
   ],
   imports: [
     BrowserModule,
+    EditorModule,
     RouterModule.forRoot([
       { path: 'home', component: PrincipalComponent },
       { path: 'register', component: RegisterComponent },
@@ -51,6 +67,16 @@ import { MenuUsuariosAdminComponent } from './menu-usuarios-admin/menu-usuarios-
       { path: 'listWriter', component: ListWritterComponent },
       { path: 'homeAdmin', component: HomeAdminComponent },
       { path: 'homeAdminMenu', component: MenuUsuariosAdminComponent },
+      { path: 'crear-categoria', component: CrearCategoriaComponent },
+      { path: 'editarPerfil', component: EditarPerfilComponent },
+      { path: 'noticiaOpinion', component: NoticiaOpinionComponent },
+      { path: 'noticiaChiapas', component: NoticiaChiapasComponent },
+      { path: 'busqueda', component: BusquedaComponent },
+      {
+        path: 'noticiaInternacional',
+        component: NoticiasInternacionalesComponent,
+      },
+      { path: 'noticiaNacional', component: NoticiaNacionalComponent },
       { path: '', redirectTo: '/login', pathMatch: 'full' },
     ]),
     AppRoutingModule,

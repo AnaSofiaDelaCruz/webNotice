@@ -1,112 +1,83 @@
-<div class="row">
-    <div class="col-lg-12">
-        <nav class="navbar bg-body-tertiary fixed-top">
-            <div class="container-fluid">
-                <div class="offcanvas offcanvas-end " tabindex="-1" id="offcanvasNavbar">
-                    <div class="offcanvas-header">
-                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Misión 24</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                    </div>
-                    <div class="offcanvas-body">
-                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Link</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <img src="./assets/images/logoNav.png" alt="logoNav">
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
-                <a type="button" class="btn btn-outline-success me-2" href="/register">Iniciar sesión</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
-                    data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-            </div>
-        </nav>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Espacio de escritor</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;700;800&family=Roboto:wght@100;400;700&display=swap");
+      @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
+    </style>
+  </head>
+  <body>
+    <div class="cabecera">
+      <h2 class="tituloHeader">Crear nota periodística</h2>
+      <div class="contenedorBoton">
+        <button class="cancelarNota" routerLink="/homeAdmin">Cancelar</button>
+      </div>
     </div>
-    <br><br><br><br>
-    <div class="col-md-6 col-xs-6 col-sm-6 background-writer">
-        <!--<p class="text">Nueva publicación</p>
-        <div class="form-floating">
-            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
-            <label for="floatingTextarea">Título de la nota</label>
-        </div>
-        <div class="form-floating">
-            <textarea class="form-control placeholder-writer" placeholder="Leave a comment here"
-                id="floatingTextarea2"></textarea>
-            <label for="floatingTextarea2">Noticia aquí....</label>
-        </div>
-        <div class="col-md-12 col-xs-12 col-sm-12 headbrand button-style ">
-            <a type="button" class="btn button-imgAdd" href="/news">Importar imagen o video</a>
-            <a type="button" class="btn button-cont" href="/writerstep2">Continuar</a>
-        </div>-->
-        <head>
-            <title>Editor de Texto Simple</title>
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-            <link rel="stylesheet" type="text/css" href="writer.component.css">
-          </head>
-          <body>
-            <div class="container">
-              <header>
-                <div class="titulo">
-                  <h1>TEXT EDIT</h1>
-                </div>
-                <nav>
-                  <div class="opciones">
-                    <div class="grupo">
-                      <button onclick="execCmd('bold')"><b>N</b></button>
-                      <button onclick="execCmd('italic')"><i>K</i></button>
-                      <button onclick="execCmd('underline')"><u>S</u></button>
-                    </div>
-                    <div class="grupo">
-                      <button onclick="execCmd('justifyLeft')"><i class="fas fa-align-left"></i></button>
-                      <button onclick="execCmd('justifyCenter')"><i class="fas fa-align-center"></i></button>
-                      <button onclick="execCmd('justifyRight')"><i class="fas fa-align-right"></i></button>
-                    </div>
-                    <div class="grupo">
-                      <select id="fontsize" onchange="execCmd('fontSize', this.value)">
-                        <option value="1">10</option>
-                        <option value="2">13</option>
-                        <option value="3" selected>16</option>
-                        <option value="4">18</option>
-                        <option value="5">24</option>
-                        <option value="6">32</option>
-                        <option value="7">48</option>
-                      </select>
-                      <input type="color" id="textcolor" onchange="execCmd('foreColor', this.value)">
-          
-                    </div>
-                  </div>
-                  <div class="botones">
-                    <button onclick="downloadFile()" class="btn">Descargar</button>
-                    <input type="file" id="file-input" style="display: none;">
-                    <button onclick="openFile()" class="btn">Abrir</button>
-                  </div>
-                </nav>
-              </header>
-              <div id="editor" contenteditable="true">
-                
-              </div>
-            </div>
-          
-            <script src="write.js"></script>
-          </body>
-  
 
-
-
+    <!-- <form [formGroup]="notaForm" (ngSubmit)="CrearNota()"> -->
+    <div class="form-group">
+      <label class="tituloNota">Titulo de la noticia:</label>
+      <input
+        type="text"
+        formControlName="titulo"
+        class="form-control"
+        id="inputTitulo"
+      />
     </div>
-    <div class="col-md-6 col-xs-6 col-sm-6">
-        <a type="button" class="btn button-img" href="/statistics"><img src="./assets/images/admin.png" class=""></a>
-        <a type="button" class="btn button-img" href="/statistics"><img src="./assets/images/home.png" class=""></a>
+
+    <div class="encapsularCategorias">
+      <div class="form-group">
+        <label class="textoCategoria">Categoría:</label>
+        <select class="form-control" formControlName="categoriaID">
+          <option></option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="textoCategoria">Subcategoría:</label>
+        <select class="form-control" formControlName="subcategoriaID">
+          <option></option>
+        </select>
+      </div>
+    <div class="dropdown">
+      <a href="#"><i class="bi bi-three-dots-vertical"></i> Gestionar de categorias</a>
+      <div class="gestion">
+        <ul class="lista">
+          <li><a href="/crear-categoria" class="opcion"><i class="bi bi-plus-circle-fill"></i> Crear categoria</a></li>
+          <li><a href="#"class="opcion"><i class="bi bi-pencil-fill"></i> Editar categoria</a></li>
+          <li><a href="#"class="opcion"><i class="bi bi-trash-fill"></i> Eliminar categoria</a></li>
+        </ul>
+      </div>
     </div>
-</div>
+    </div>
+
+    <div class="form-group">
+      <label class="textoCategoria">Seleccion de imágenes:</label>
+      <input
+        type="file"
+        name="images"
+        class="form-control"
+        multiple
+        (change)="selectImages($event)"
+        id="selectorImagenes"
+      />
+    </div>
+    <div class="form-group">
+      <label class="cuerpoNotaTitulo">Cuerpo de la nota:</label>
+      <editor
+        [init]="editorConfig"
+        formControlName="descripcion"
+        class="estiloEditor"
+      ></editor>
+    </div>
+
+    <button type="submit" class="confirmarNoticia">
+      Publicar
+      <!-- {{ nota.id ? "Actualizar" : "Guardar" }} -->
+    </button>
+
+
+  </body>
+</html>

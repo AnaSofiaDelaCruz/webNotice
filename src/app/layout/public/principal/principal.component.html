@@ -1,123 +1,290 @@
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-  <title>Home</title>
-</head>
-<body>
-  <div class="general">
-    <div class="header">
-      <div class="contenido-izquierdo">
-        <!-- <img src="../assets/images/menu-burguer.png" alt="Icono de menu" class="burguer-menu"> -->
-        <button class="boton-hamburguesa" (click)="setActive()"><i class="bi bi-list" id="botonMenu"></i></button>
-        <img src="./assets/images/logoNav.png" alt="logoNav">
-      </div>
-      <div class="buscador">
-        <input type="text" class="barra-buscador">
-      </div>
-      <div class="boton-iniciar">
-        <button class="boton1">Iniciar sesión</button>
-      </div>
-    </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
 
-    <div class="contenidoReciente">
-      <h1 class="textoReciente">Noticias recientes</h1>
-      <div class="cards">
-        <img src="https://visitchiapas.com/v1/admin/archivos/Turismo/multimedia/ea21c17f_08042020_0506.jpg" alt="imagen tuxtla" class="imagenNota">
-        <div class="textos">
-          <h1 class="titulo">Titulo de noticia</h1>
-          <h1 class="descripcion">Descripcion breve de noticia</h1>
-          <h1 class="fecha">Fecha de noticia</h1>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+    </style>
+    <title>Home</title>
+  </head>
+  <body>
+    <section class="escritorio">
+      <div class="general">
+        <div class="header">
+          <div class="contenido-izquierdo">
+            <!-- <img src="../assets/images/menu-burguer.png" alt="Icono de menu" class="burguer-menu"> -->
+            <button class="boton-hamburguesa" (click)="setActive()">
+              <i class="bi bi-list" id="botonMenu"></i>
+            </button>
+            <img src="./assets/images/logoNav.png" alt="logoNav" />
+          </div>
+          <div class="buscador">
+            <input type="text" class="barra-buscador" />
+          </div>
+          <div class="boton-iniciar">
+            <button class="boton1">Iniciar sesión</button>
+          </div>
         </div>
-      </div>
-      <div class="cards">
-        <img src="https://visitchiapas.com/v1/admin/archivos/Turismo/multimedia/ea21c17f_08042020_0506.jpg" alt="imagen tuxtla" class="imagenNota">
-        <div class="textos">
-          <h1 class="titulo">COMIENZAN LAS LLUVIAS EN CHIAPAS</h1>
-          <h1 class="descripcion">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem modi nesciunt et, a perspiciatis asperiores aliquam placeat. Illo, earum! Molestias eligendi ex tempore fuga maiores, nam suscipit commodi voluptatum rem!</h1>
-          <h1 class="fecha">21/07/2023</h1>
-        </div>
-      </div>
-    </div>
 
-    <h1 class="pregunta">¿De que te gustaria informarte?</h1>
+        <div class="contenidoReciente">
+          <h1 class="textoReciente">Noticias recientes</h1>
+          <div class="cards">
+            <img
+              src="https://visitchiapas.com/v1/admin/archivos/Turismo/multimedia/ea21c17f_08042020_0506.jpg"
+              alt="imagen tuxtla"
+              class="imagenNota"
+            />
+            <div class="textos">
+              <h1 class="titulo">Titulo de noticia</h1>
+              <h1 class="descripcion">Descripcion breve de noticia</h1>
+              <h1 class="fecha">Fecha de noticia</h1>
+            </div>
+          </div>
+          <div class="cards">
+            <img
+              src="https://visitchiapas.com/v1/admin/archivos/Turismo/multimedia/ea21c17f_08042020_0506.jpg"
+              alt="imagen tuxtla"
+              class="imagenNota"
+            />
+            <div class="textos">
+              <h1 class="titulo">COMIENZAN LAS LLUVIAS EN CHIAPAS</h1>
+              <h1 class="descripcion">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Exercitationem modi nesciunt et, a perspiciatis asperiores
+                aliquam placeat. Illo, earum! Molestias eligendi ex tempore fuga
+                maiores, nam suscipit commodi voluptatum rem!
+              </h1>
+              <h1 class="fecha">21/07/2023</h1>
+            </div>
+          </div>
+        </div>
 
-    <div class="botonesConjuntos">
-      <button class="botonCategoria">Accidentes</button>
-      <button class="botonCategoria">Opinion publica</button>
-      <button class="botonCategoria">Noticias del día</button>
-    </div>
+        <h1 class="pregunta">¿De que te gustaria informarte?</h1>
 
+        <div class="botonesConjuntos">
+          <button class="botonCategoria">Accidentes</button>
+          <button class="botonCategoria">Opinion publica</button>
+          <button class="botonCategoria">Noticias del día</button>
+        </div>
 
+        <div class="masNoticias">
+          <h1 class="textoReciente">Mas noticias que te pueden interesar</h1>
+          <div class="listaCards">
+            <div class="cardMasNotas">
+              <img
+                src="https://imgs.callofduty.com/content/dam/atvi/callofduty/cod-touchui/mw2/meta-images/seasons/S04_WZ_Meta.jpg"
+                alt="Fotos de mas noticias"
+                class="imagenNotaMas"
+              />
+              <h1 class="titulo">Titulo de noticia</h1>
+              <h1 class="descripcion">Descripcion</h1>
+              <h1 class="fecha">Fecha</h1>
+            </div>
+            <div class="cardMasNotas">
+              <img
+                src="https://imgs.callofduty.com/content/dam/atvi/callofduty/cod-touchui/mw2/meta-images/seasons/S04_WZ_Meta.jpg"
+                alt="Fotos de mas noticias"
+                class="imagenNotaMas"
+              />
+              <h1 class="titulo">WARZONE 2.0</h1>
+              <h1 class="descripcion">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Suscipit eos molestias esse quod beatae qui commodi cumque
+                temporibus veniam tempore, voluptates reiciendis ipsa natus
+                assumenda adipisci! Rerum, nesciunt? Fugiat, dolor.
+              </h1>
+              <h1 class="fecha">21/07/2023</h1>
+            </div>
+            <div class="cardMasNotas">
+              <img
+                src="https://imgs.callofduty.com/content/dam/atvi/callofduty/cod-touchui/mw2/meta-images/seasons/S04_WZ_Meta.jpg"
+                alt="Fotos de mas noticias"
+                class="imagenNotaMas"
+              />
+              <h1 class="titulo">WARZONE 2.0</h1>
+              <h1 class="descripcion">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Suscipit eos molestias esse quod beatae qui commodi cumque
+                temporibus veniam tempore, voluptates reiciendis ipsa natus
+                assumenda adipisci! Rerum, nesciunt? Fugiat, dolor.
+              </h1>
+              <h1 class="fecha">21/07/2023</h1>
+            </div>
+            <div class="cardMasNotas">
+              <img
+                src="https://imgs.callofduty.com/content/dam/atvi/callofduty/cod-touchui/mw2/meta-images/seasons/S04_WZ_Meta.jpg"
+                alt="Fotos de mas noticias"
+                class="imagenNotaMas"
+              />
+              <h1 class="titulo">WARZONE 2.0</h1>
+              <h1 class="descripcion">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Suscipit eos molestias esse quod beatae qui commodi cumque
+                temporibus veniam tempore, voluptates reiciendis ipsa natus
+                assumenda adipisci! Rerum, nesciunt? Fugiat, dolor.
+              </h1>
+              <h1 class="fecha">21/07/2023</h1>
+            </div>
+            <div class="cardMasNotas">
+              <img
+                src="https://imgs.callofduty.com/content/dam/atvi/callofduty/cod-touchui/mw2/meta-images/seasons/S04_WZ_Meta.jpg"
+                alt="Fotos de mas noticias"
+                class="imagenNotaMas"
+              />
+              <h1 class="titulo">WARZONE 2.0</h1>
+              <h1 class="descripcion">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Suscipit eos molestias esse quod beatae qui commodi cumque
+                temporibus veniam tempore, voluptates reiciendis ipsa natus
+                assumenda adipisci! Rerum, nesciunt? Fugiat, dolor.
+              </h1>
+              <h1 class="fecha">21/07/2023</h1>
+            </div>
+            <div class="cardMasNotas">
+              <img
+                src="https://imgs.callofduty.com/content/dam/atvi/callofduty/cod-touchui/mw2/meta-images/seasons/S04_WZ_Meta.jpg"
+                alt="Fotos de mas noticias"
+                class="imagenNotaMas"
+              />
+              <h1 class="titulo">WARZONE 2.0</h1>
+              <h1 class="descripcion">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Suscipit eos molestias esse quod beatae qui commodi cumque
+                temporibus veniam tempore, voluptates reiciendis ipsa natus
+                assumenda adipisci! Rerum, nesciunt? Fugiat, dolor.
+              </h1>
+              <h1 class="fecha">21/07/2023</h1>
+            </div>
+          </div>
+        </div>
 
-    <div class="masNoticias">
-      <h1 class="textoReciente">Mas noticias que te pueden interesar</h1>
-      <div class="listaCards">
-        <div class="cardMasNotas">
-          <img src="https://imgs.callofduty.com/content/dam/atvi/callofduty/cod-touchui/mw2/meta-images/seasons/S04_WZ_Meta.jpg" alt="Fotos de mas noticias" class="imagenNotaMas">
-          <h1 class="titulo">Titulo de noticia</h1>
-          <h1 class="descripcion">Descripcion</h1>
-          <h1 class="fecha">Fecha</h1>
-        </div>
-        <div class="cardMasNotas">
-          <img src="https://imgs.callofduty.com/content/dam/atvi/callofduty/cod-touchui/mw2/meta-images/seasons/S04_WZ_Meta.jpg" alt="Fotos de mas noticias" class="imagenNotaMas">
-          <h1 class="titulo">WARZONE 2.0</h1>
-          <h1 class="descripcion">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit eos molestias esse quod beatae qui commodi cumque temporibus veniam tempore, voluptates reiciendis ipsa natus assumenda adipisci! Rerum, nesciunt? Fugiat, dolor.</h1>
-          <h1 class="fecha">21/07/2023</h1>
-        </div>
-        <div class="cardMasNotas">
-          <img src="https://imgs.callofduty.com/content/dam/atvi/callofduty/cod-touchui/mw2/meta-images/seasons/S04_WZ_Meta.jpg" alt="Fotos de mas noticias" class="imagenNotaMas">
-          <h1 class="titulo">WARZONE 2.0</h1>
-          <h1 class="descripcion">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit eos molestias esse quod beatae qui commodi cumque temporibus veniam tempore, voluptates reiciendis ipsa natus assumenda adipisci! Rerum, nesciunt? Fugiat, dolor.</h1>
-          <h1 class="fecha">21/07/2023</h1>
-        </div>
-        <div class="cardMasNotas">
-          <img src="https://imgs.callofduty.com/content/dam/atvi/callofduty/cod-touchui/mw2/meta-images/seasons/S04_WZ_Meta.jpg" alt="Fotos de mas noticias" class="imagenNotaMas">
-          <h1 class="titulo">WARZONE 2.0</h1>
-          <h1 class="descripcion">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit eos molestias esse quod beatae qui commodi cumque temporibus veniam tempore, voluptates reiciendis ipsa natus assumenda adipisci! Rerum, nesciunt? Fugiat, dolor.</h1>
-          <h1 class="fecha">21/07/2023</h1>
-        </div>
-        <div class="cardMasNotas">
-          <img src="https://imgs.callofduty.com/content/dam/atvi/callofduty/cod-touchui/mw2/meta-images/seasons/S04_WZ_Meta.jpg" alt="Fotos de mas noticias" class="imagenNotaMas">
-          <h1 class="titulo">WARZONE 2.0</h1>
-          <h1 class="descripcion">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit eos molestias esse quod beatae qui commodi cumque temporibus veniam tempore, voluptates reiciendis ipsa natus assumenda adipisci! Rerum, nesciunt? Fugiat, dolor.</h1>
-          <h1 class="fecha">21/07/2023</h1>
-        </div>
-        <div class="cardMasNotas">
-          <img src="https://imgs.callofduty.com/content/dam/atvi/callofduty/cod-touchui/mw2/meta-images/seasons/S04_WZ_Meta.jpg" alt="Fotos de mas noticias" class="imagenNotaMas">
-          <h1 class="titulo">WARZONE 2.0</h1>
-          <h1 class="descripcion">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit eos molestias esse quod beatae qui commodi cumque temporibus veniam tempore, voluptates reiciendis ipsa natus assumenda adipisci! Rerum, nesciunt? Fugiat, dolor.</h1>
-          <h1 class="fecha">21/07/2023</h1>
-        </div>
-      </div>
-
-    </div>
-
-
-    <section class="menu-hamburguesa" [ngClass]="{'menu' : active}">
-      <div class="menu-lateral-contenedor">
-        <h1 class="labelM">Mision 24</h1>
-        <h2 class="select-noticias">Selecciona tus tipos de noticias</h2>
-        <div class="lineaDivisora"></div>
-        <div class="card1">
-          <h1 class="label">Internacional</h1>
-        </div>
-        <div class="card2">
-          <h1 class="label">Nacional</h1>
-        </div>
-        <div class="card3">
-          <h1 class="label">Opinion publica</h1>
-        </div>
-        <div class="card4">
-          <h1 class="label">Estado | Chiapas</h1>
-        </div>
-        <button class="botonCerrar" id="cerrarMenu" (click)="setActive()">Cerrar</button>
+        <section class="menu-hamburguesa" [ngClass]="{ menu: active }">
+          <div class="menu-lateral-contenedor">
+            <h1 class="labelM">Mision 24</h1>
+            <h2 class="select-noticias">Selecciona tus tipos de noticias</h2>
+            <div class="lineaDivisora"></div>
+            <div class="card1" routerLink="/noticiaInternacional">
+              <h1 class="label">Internacional</h1>
+            </div>
+            <div class="card2" routerLink="/noticiaNacional">
+              <h1 class="label">Nacional</h1>
+            </div>
+            <div class="card3" routerLink="/noticiaOpinion">
+              <h1 class="label">Opinion publica</h1>
+            </div>
+            <div class="card4" routerLink="/noticiaChiapas">
+              <h1 class="label">Estado | Chiapas</h1>
+            </div>
+            <button class="botonCerrar" id="cerrarMenu" (click)="setActive()">
+              Cerrar
+            </button>
+          </div>
+        </section>
       </div>
     </section>
 
-  </div>
-</body>
+    <section class="mobile">
+      <div class="headerMobile">
+        <div class="puntosMenu"><i class="bi bi-three-dots-vertical"></i></div>
+        <h1 class="mision24Mobile">Mision 24</h1>
+      </div>
+
+      <div class="buscador">
+        <input type="text" class="buscadorMobile" />
+        <div>
+          <button class="botonBuscarMobile" routerLink="/busqueda">
+            <i class="bi bi-search"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="contenidoRecientesMobile">
+        <h1 class="notiRMobile">Noticias Recientes</h1>
+        <div class="cardMobile1">
+          <img
+            src="https://static.wixstatic.com/media/fd3de2_bb0edc60f6d946bda23a3a94625f2595~mv2.jpg/v1/fit/w_1000%2Ch_726%2Cal_c%2Cq_80,enc_auto/file.jpg"
+            alt=""
+            class="imagenCardMobile"
+          />
+          <div class="textoContenidoMobile">
+            <h1 class="TituloNotaMobile">Titulo de noticia</h1>
+            <h2 class="fechaNotaMobile">23/08/2023</h2>
+          </div>
+        </div>
+        <div class="cardMobile1">
+          <img
+            src="https://static.wixstatic.com/media/fd3de2_bb0edc60f6d946bda23a3a94625f2595~mv2.jpg/v1/fit/w_1000%2Ch_726%2Cal_c%2Cq_80,enc_auto/file.jpg"
+            alt=""
+            class="imagenCardMobile"
+          />
+          <div class="textoContenidoMobile">
+            <h1 class="TituloNotaMobile">Titulo de noticia</h1>
+            <h2 class="fechaNotaMobile">23/08/2023</h2>
+          </div>
+        </div>
+        <div class="cardMobile1">
+          <img
+            src="https://static.wixstatic.com/media/fd3de2_bb0edc60f6d946bda23a3a94625f2595~mv2.jpg/v1/fit/w_1000%2Ch_726%2Cal_c%2Cq_80,enc_auto/file.jpg"
+            alt=""
+            class="imagenCardMobile"
+          />
+          <div class="textoContenidoMobile">
+            <h1 class="TituloNotaMobile">Titulo de noticia</h1>
+            <h2 class="fechaNotaMobile">23/08/2023</h2>
+          </div>
+        </div>
+      </div>
+
+      <h1 class="informarteMobile">¿De que te gustaría informarte?</h1>
+
+      <div class="botonesMobile">
+        <button class="botonMobile">Accidentes</button>
+        <button class="botonMobile">Opinión</button>
+        <button class="botonMobile">Notas del día</button>
+      </div>
+
+      <div class="contenidoRecientesMobile">
+        <h1 class="notiRMobile">Noticias relacionadas</h1>
+        <div class="cardMobile1">
+          <img
+            src="https://static.wixstatic.com/media/fd3de2_bb0edc60f6d946bda23a3a94625f2595~mv2.jpg/v1/fit/w_1000%2Ch_726%2Cal_c%2Cq_80,enc_auto/file.jpg"
+            alt=""
+            class="imagenCardMobile"
+          />
+          <div class="textoContenidoMobile">
+            <h1 class="TituloNotaMobile">Titulo de noticia</h1>
+            <h2 class="fechaNotaMobile">23/08/2023</h2>
+          </div>
+        </div>
+        <div class="cardMobile1">
+          <img
+            src="https://static.wixstatic.com/media/fd3de2_bb0edc60f6d946bda23a3a94625f2595~mv2.jpg/v1/fit/w_1000%2Ch_726%2Cal_c%2Cq_80,enc_auto/file.jpg"
+            alt=""
+            class="imagenCardMobile"
+          />
+          <div class="textoContenidoMobile">
+            <h1 class="TituloNotaMobile">Titulo de noticia</h1>
+            <h2 class="fechaNotaMobile">23/08/2023</h2>
+          </div>
+        </div>
+        <div class="cardMobile1">
+          <img
+            src="https://static.wixstatic.com/media/fd3de2_bb0edc60f6d946bda23a3a94625f2595~mv2.jpg/v1/fit/w_1000%2Ch_726%2Cal_c%2Cq_80,enc_auto/file.jpg"
+            alt=""
+            class="imagenCardMobile"
+          />
+          <div class="textoContenidoMobile">
+            <h1 class="TituloNotaMobile">Titulo de noticia</h1>
+            <h2 class="fechaNotaMobile">23/08/2023</h2>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
 </html>

@@ -1,0 +1,164 @@
+.pagina {
+  display: grid;
+  grid-template-columns: 20% auto;
+}
+
+.contenedorLateral {
+  background-color: #512b52;
+  width: 100%;
+  height: 100vh;
+}
+
+.contenedorLogo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+.textoTipoNoticia {
+  font-family: Poppins;
+  color: white;
+  font-size: 16px;
+  text-align: center;
+}
+
+.indicador {
+  background-color: white;
+  text-align: center;
+  width: 90%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.tipoNoticia {
+  font-size: 24px;
+  font-family: Poppins;
+}
+
+.navegacion {
+  background-color: white;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+}
+
+a {
+  font-family: Poppins;
+  color: #636363;
+  text-decoration: none;
+  text-align: center;
+  background-color: #eee;
+  padding: 1rem;
+  margin: 0.5rem;
+  transition: 0.5s all ease;
+}
+
+a:hover {
+  background-color: #7bb0a8;
+  color: white;
+}
+
+.botonRegresar {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  background-color: #635274;
+  color: white;
+  border: none;
+  font-family: Poppins;
+  font-size: 24px;
+  height: 60px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  transition: 0.5s all ease;
+
+  margin-top: 120%;
+}
+.botonRegresar:hover {
+  background-color: #7bb0a8;
+}
+.contenido {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Cards */
+
+.card {
+  width: 428px;
+  height: 422px;
+  border-radius: 5px;
+  background: #fff;
+  box-shadow: 0px 4px 39px 0px rgba(0, 0, 0, 0.17);
+  margin: 2rem;
+  transition: 0.5s all ease;
+}
+.imagenCard {
+  width: 381px;
+  height: 214px;
+  display: block;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1rem;
+  transition: 0.5s all ease;
+}
+
+.tituloNota {
+  font-family: Poppins;
+  font-weight: bold;
+  font-size: 24px;
+  margin-left: 1rem;
+  margin-top: 1rem;
+  transition: 0.5s all ease;
+}
+
+.fechaNota {
+  font-family: Poppins;
+  font-size: 16px;
+  margin-left: 1rem;
+  margin-bottom: 0;
+  transition: 0.5s all ease;
+}
+.card:hover {
+  box-shadow: 0px 4px 39px 0px rgba(0, 0, 0, 0.4);
+}
+
+@media screen and (max-width: 1360px) {
+  .botonRegresar {
+    margin-top: 50%;
+  }
+  .card {
+    width: 299.6px;
+    height: 295px;
+    border-radius: 5px;
+    background: #fff;
+    box-shadow: 0px 4px 39px 0px rgba(0, 0, 0, 0.17);
+    margin: 2rem;
+  }
+  .imagenCard {
+    width: 266px;
+    height: 149px;
+    display: block;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+  }
+
+  .tituloNota {
+    font-family: Poppins;
+    font-weight: bold;
+    font-size: 16px;
+    margin-left: 1rem;
+    margin-top: 1rem;
+  }
+
+  .fechaNota {
+    font-family: Poppins;
+    font-size: 12px;
+    margin-left: 1rem;
+    margin-bottom: 0;
+  }
+}
