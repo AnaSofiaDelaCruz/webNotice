@@ -1,115 +1,182 @@
-<div class="row">
-  <div class="col-md-4 col-xs-6 col-sm-6 background-login">
-    <p class="slogan">El punto exacto de la noticia</p>
-    <div class="triangulo-tricolor"></div>
-    <img src="./assets/images/logo2.png" alt="logo" class="logo" />
-    <img src="./assets/images/pilar2.png" alt="pilar" class="pilar" />
-  </div>
-  <div class="col-md-8 col-xs-6 col-sm-6 background-login">
-    <br />
-    <p class="text-title">¡Bienvenido!</p>
-    <p>Registrate en la plataforma para poder interactuar con las noticias</p>
-    <br />
-    <form [formGroup]="registroForm" (ngSubmit)="Registro()">
-      <div class="col-md-8 col-xs-6">
-        <label for="nombre" class="form-label">Nombre:</label>
-        <input
-          formControlName="nombre"
-          type="text"
-          class="form-control"
-          id="nombre"
-          placeholder="Eduardo"
-        />
-        <div *ngIf="isFieldInvalid('nombre')" class="text-danger">
-          <div *ngIf="isFieldRequired('nombre')">El nombre es requerido.</div>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registro de usuario</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+    </style>
+  </head>
+  <body>
+    <section class="escritorio">
+      <div class="row">
+        <div class="col-md-4 col-xs-6 col-sm-6 background-login">
+          <p class="slogan">El punto exacto de la noticia</p>
+          <div class="triangulo-tricolor"></div>
+          <img src="./assets/images/logo2.png" alt="logo" class="logo" />
+          <img src="./assets/images/pilar2.png" alt="pilar" class="pilar" />
         </div>
-      </div>
-      <div class="col-md-8 col-xs-6">
-        <label for="apellido" class="form-label">Apellidos</label>
-        <input
-          formControlName="apellido"
-          type="text"
-          class="form-control"
-          id="apellido"
-          placeholder="Ramirez Sanchez"
-        />
-        <div *ngIf="isFieldInvalid('apellido')" class="text-danger">
-          <div *ngIf="isFieldRequired('apellido')">
-            Los apellidos son requeridos.
-          </div>
-        </div>
-      </div>
-      <div class="col-md-8 col-xs-6">
-        <label for="correo" class="form-label">Correo electrónico</label>
-        <input
-          formControlName="correo"
-          type="email"
-          class="form-control"
-          id="correo"
-          placeholder="nombre@ejemplo.com"
-        />
-        <div *ngIf="isFieldInvalid('correo')" class="text-danger">
-          <div *ngIf="isFieldRequired('correo')">
-            El correo electrónico es requerido.
-          </div>
-        </div>
-      </div>
-      <br />
-      <div class="col-md-8 col-xs-6">
-        <label for="password" class="form-label">Contraseña</label>
-        <input
-          formControlName="password"
-          type="password"
-          class="form-control"
-          id="password"
-          aria-labelledby="passwordHelpBlock"
-        />
-        <div *ngIf="isFieldInvalid('password')" class="text-danger">
-          <div *ngIf="isFieldRequired('password')">
-            La contraseña es requerida.
-          </div>
-        </div>
-      </div>
-      <br />
-      <div class="col-md-8 col-xs-6">
-        <label for="confirmPassword" class="form-label"
-          >Confirmar Contraseña</label
-        >
-        <input
-          formControlName="confirmPassword"
-          type="password"
-          class="form-control"
-          id="confirmPassword"
-          aria-labelledby="passwordHelpBlock"
-          required
-        />
-        <div
-          *ngIf="
-            isFieldInvalid('confirmPassword') ||
-            registroForm.hasError('passwordMismatch')
-          "
-          class="text-danger"
-        >
-          <div
-            *ngIf="
-              isFieldRequired('confirmPassword') ||
-              registroForm.hasError('passwordMismatch')
-            "
-          >
-            Las contraseñas no coinciden.
-          </div>
-        </div>
-      </div>
-      <br />
-      <br /><br /><br />
-      <button type="submit" class="btn btn-outline-success me-2">
-        Continuar
-      </button>
-    </form>
+        <div class="col-md-8 col-xs-6 col-sm-6 background-login">
+          <br />
+          <p class="text-title">¡Bienvenido!</p>
+          <p>
+            Registrate en la plataforma para poder interactuar con las noticias
+          </p>
+          <br />
+          <form [formGroup]="registroForm" (ngSubmit)="Registro()">
+            <div class="col-md-8 col-xs-6">
+              <label for="nombre" class="form-label">Nombre:</label>
+              <input
+                formControlName="nombre"
+                type="text"
+                class="form-control"
+                id="nombre"
+                placeholder="Eduardo"
+              />
+              <div *ngIf="isFieldInvalid('nombre')" class="text-danger">
+                <div *ngIf="isFieldRequired('nombre')">
+                  El nombre es requerido.
+                </div>
+              </div>
+            </div>
+            <div class="col-md-8 col-xs-6">
+              <label for="apellido" class="form-label">Apellidos</label>
+              <input
+                formControlName="apellido"
+                type="text"
+                class="form-control"
+                id="apellido"
+                placeholder="Ramirez Sanchez"
+              />
+              <div *ngIf="isFieldInvalid('apellido')" class="text-danger">
+                <div *ngIf="isFieldRequired('apellido')">
+                  Los apellidos son requeridos.
+                </div>
+              </div>
+            </div>
+            <div class="col-md-8 col-xs-6">
+              <label for="correo" class="form-label">Correo electrónico</label>
+              <input
+                formControlName="correo"
+                type="email"
+                class="form-control"
+                id="correo"
+                placeholder="nombre@ejemplo.com"
+              />
+              <div *ngIf="isFieldInvalid('correo')" class="text-danger">
+                <div *ngIf="isFieldRequired('correo')">
+                  El correo electrónico es requerido.
+                </div>
+              </div>
+            </div>
+            <br />
+            <div class="col-md-8 col-xs-6">
+              <label for="password" class="form-label">Contraseña</label>
+              <input
+                formControlName="password"
+                type="password"
+                class="form-control"
+                id="password"
+                aria-labelledby="passwordHelpBlock"
+              />
+              <div *ngIf="isFieldInvalid('password')" class="text-danger">
+                <div *ngIf="isFieldRequired('password')">
+                  La contraseña es requerida.
+                </div>
+              </div>
+            </div>
+            <br />
+            <div class="col-md-8 col-xs-6">
+              <label for="confirmPassword" class="form-label"
+                >Confirmar Contraseña</label
+              >
+              <input
+                formControlName="confirmPassword"
+                type="password"
+                class="form-control"
+                id="confirmPassword"
+                aria-labelledby="passwordHelpBlock"
+                required
+              />
+              <div
+                *ngIf="
+                  isFieldInvalid('confirmPassword') ||
+                  registroForm.hasError('passwordMismatch')
+                "
+                class="text-danger"
+              >
+                <div
+                  *ngIf="
+                    isFieldRequired('confirmPassword') ||
+                    registroForm.hasError('passwordMismatch')
+                  "
+                >
+                  Las contraseñas no coinciden.
+                </div>
+              </div>
+            </div>
+            <br />
+            <br /><br /><br />
+            <button type="submit" class="btn btn-outline-success me-2">
+              Continuar
+            </button>
+          </form>
 
-    <br /><br />
-    <p class="text-others">
-      ¿Ya tienes cuenta? <a href="/login" class="links">Inicia sesión ya</a>
-    </p>
-  </div>
-</div>
+          <br /><br />
+          <p class="text-others">
+            ¿Ya tienes cuenta?
+            <a href="/login" class="links">Inicia sesión ya</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="mobile">
+      <div class="barraFondoMobile">
+        <div class="fondoContrasteMobile">
+          <img
+            src="../assets/images/mision24_whiteVersion.png"
+            class="logoMision24Mobile"
+          />
+        </div>
+      </div>
+
+      <form>
+        <div class="formularioMobile">
+          <h1 class="texto1Mobile">Registrate</h1>
+          <div class="cont1">
+            <input type="text" placeholder="Nombres" class="inputMobile" />
+            <input type="text" placeholder="Apellidos" class="inputMobile" />
+          </div>
+
+          <div class="cont2">
+            <input
+              type="email"
+              placeholder="Correo electronico"
+              class="inputMobile"
+            />
+            <input
+              type="password"
+              placeholder="Contraseña"
+              class="inputMobile"
+            />
+            <input
+              type="password"
+              placeholder="Confirmar la contraseña"
+              class="inputMobile"
+            />
+          </div>
+
+          <button class="registrarseMobile">Registrarse</button>
+        </div>
+      </form>
+
+      <h2 class="tieneCuenta">
+        ¿Ya tienes cuenta?
+        <span class="pulsar" routerLink="/login">Pulsa aqui</span>
+      </h2>
+    </section>
+  </body>
+</html>
+l

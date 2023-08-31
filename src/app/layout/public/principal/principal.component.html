@@ -191,7 +191,7 @@
 
     <section class="mobile">
       <div class="headerMobile">
-        <div class="puntosMenu"><i class="bi bi-three-dots-vertical"></i></div>
+        <div class="puntosMenu" (click)="setActive()"><i class="bi bi-three-dots-vertical"></i></div>
         <h1 class="mision24Mobile">Mision 24</h1>
       </div>
 
@@ -284,6 +284,17 @@
             <h2 class="fechaNotaMobile">23/08/2023</h2>
           </div>
         </div>
+      </div>
+
+      <div class="menuLateralMobile" [ngClass]="{ menu: active }">
+        <h1 class="menuM24Mobile">Mision 24</h1>
+        <nav class="navegacionLateralMObile">
+          <a routerLink="/noticiaInternacional" class="enlaceMObile">Internacional</a>
+          <a href="#" class="enlaceMObile">Nacional</a>
+          <a href="#" class="enlaceMObile">Opinión Publica</a>
+          <a href="#" class="enlaceMObile">Notas del día</a>
+        </nav>
+        <button class="cerrarMenuMobile" (click)="setActive()">Cerrar menú</button>
       </div>
     </section>
   </body>

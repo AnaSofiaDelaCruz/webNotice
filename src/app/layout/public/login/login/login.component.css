@@ -1,3 +1,111 @@
+.escritorio {
+  display: none;
+}
+
+.mobile {
+  display: none;
+}
+@media screen and (min-width: 1024px) {
+  .escritorio {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .mobile {
+    display: block;
+  }
+}
+
+
+.fondoMobile {
+    background-color: #512B52;
+    width: 100%;
+    height: 60vh;
+    border-radius: 0 0 2rem 2rem;
+    text-align: center;
+}
+
+.sloganMobile{
+    font-family: Poppins;
+    color: white;
+    font-size: 1rem;
+}
+.contenedorFormulario{
+    background-color: white;
+    width: 90%;
+    height: 100%px;
+    position: absolute;
+    top: 30%;
+    border-radius: 10px;
+    font-family: Poppins;
+    left: 0;
+    right: 0;
+    margin: auto;
+    padding: 1rem;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+}
+.bienvenidoMobile{
+    font-weight: bold;
+    margin-left: 1rem;
+}
+.problemasMobile{
+    border: none;
+    margin: 5px;
+    background-color: white;
+    margin-top: 1rem;
+    font-size: 1rem;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.footerMobile{
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 2rem;
+    font-family: Poppins;
+    width: 100%;
+}
+.slogan2Mobile{
+    font-weight: bold;
+    font-size: 1rem;
+    margin-left: 1rem;
+}
+.botonRegistrarMobile{
+    border: none;
+    background-color: #512B52;
+    color: white;
+    width: 90%;
+    height: 3rem;
+    border-radius: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.inputMobile{
+    border-radius: 10px;
+    height: 40px;
+    padding-left: 5px;
+    border: none;
+    background-color: #EEE;
+    margin-bottom: 1rem;
+    width: 90%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.loginBotonMobile{
+    border: none;
+    font-family: Poppins;
+    font-size: 2rem;
+    background-color: #7BB0A8;
+    border-radius: 50%;
+    width: 99px;
+    height: 99px;
+    color: white;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
 .space{
    padding-left: 0px !important;
    padding-top: 0px !important;

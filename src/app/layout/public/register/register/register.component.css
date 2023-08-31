@@ -1,54 +1,142 @@
-.space{
-    padding-left: 0px !important;
-    padding-top: 0px !important;
- }
- .triangulo-tricolor {
-     width: fit-content;
-     border-left: 460px solid #512B52;
-     border-top: 359px solid #635274;
-     border-bottom: 431px solid #7BB0A8;
-    
- }
- .position{
-     position: relative;
- 
- }
- .logo{
-     position: absolute; 
-     left: 23px; top: -73px; 
-     z-index: 1
- }
- .pilar{
-     position: absolute; 
-     left: 0px; 
-     top: 263px; 
-     z-index: 1
- }
- .slogan{
-     position: absolute;
-     color: aliceblue;
-     font-family: 'Roboto-Bold', sans-serif;
-     margin-top: 249px;
-     margin-left: 118px;
-     font-size: larger;
- }
- .background-login{
-     background-color: #EEEE;
- }
- .text-title{
-     color: black;
-     font-family: 'Roboto', sans-serif;
-     font-size: 100%;
-     font-size: xx-large;
- }
- .links{
-     color: #7BB0A8;
- }
- .text-others{
-     color: black;
-     font-family: 'Roboto', sans-serif;
- }
- .button-success{
-     background-color: #512B52;
-     color: white;
- }
+.escritorio {
+  display: none;
+}
+
+.mobile {
+  display: none;
+}
+@media screen and (min-width: 1024px) {
+  .escritorio {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .mobile {
+    display: block;
+  }
+}
+
+.space {
+  padding-left: 0px !important;
+  padding-top: 0px !important;
+}
+.triangulo-tricolor {
+  width: fit-content;
+  border-left: 460px solid #512b52;
+  border-top: 359px solid #635274;
+  border-bottom: 431px solid #7bb0a8;
+}
+.position {
+  position: relative;
+}
+.logo {
+  position: absolute;
+  left: 23px;
+  top: -73px;
+  z-index: 1;
+}
+.pilar {
+  position: absolute;
+  left: 0px;
+  top: 263px;
+  z-index: 1;
+}
+.slogan {
+  position: absolute;
+  color: aliceblue;
+  font-family: "Roboto-Bold", sans-serif;
+  margin-top: 249px;
+  margin-left: 118px;
+  font-size: larger;
+}
+.background-login {
+  background-color: #eeee;
+}
+.text-title {
+  color: black;
+  font-family: "Roboto", sans-serif;
+  font-size: 100%;
+  font-size: xx-large;
+}
+.links {
+  color: #7bb0a8;
+}
+.text-others {
+  color: black;
+  font-family: "Roboto", sans-serif;
+}
+.button-success {
+  background-color: #512b52;
+  color: white;
+}
+
+
+.barraFondoMobile{
+  background-color: #512b52;
+  width: 100%;
+  height: 3rem;
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.fondoContrasteMobile{
+  background-color: #512b52;
+  width: 140px;
+  text-align: center;
+  border-radius: 50%;
+  height: 140px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 0;
+}
+
+.formularioMobile{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  margin: 1rem;
+  margin-top: 4rem;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  padding: 1rem;
+}
+
+.texto1Mobile{
+  font-family: Poppins;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.inputMobile{
+  border: none;
+  font-family: Poppins;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  margin-bottom: 1rem;
+  width: 100%;
+  height: 2.5rem;
+  padding-left: 10px;
+}
+.cont2{
+  margin-top: 1.5rem;
+}
+.registrarseMobile{
+  border: none;
+  font-family: Poppins;
+  color: white;
+  background-color: #512b52;
+  width: 100%;
+  height: 3rem;
+}
+
+.tieneCuenta{
+  font-family: Poppins;
+  font-size: 1rem;
+  margin-left: 1rem;
+  .pulsar{
+    font-weight: bold;
+    color: #7bb0a8;
+  }
+}

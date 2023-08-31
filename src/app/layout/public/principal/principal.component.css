@@ -539,3 +539,49 @@ body {
     height: 40px;
     
 }
+
+
+.menuLateralMobile {
+  position: absolute;
+  top: 0;
+  background-color: #512b52;
+  width: 60%;
+  height: 100vh;
+  box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.5);
+}
+
+.menuM24Mobile{
+  font-family: Poppins;
+  font-weight: bold;
+  color: white;
+  text-transform: uppercase;
+  text-align: center;
+}
+.navegacionLateralMObile{
+  display: grid;
+  background-color: white;
+  gap: 5px;
+  margin: 5px;
+}
+
+.enlaceMObile{
+  color: #000;
+  text-decoration: none;
+  background-color: #EEE;
+  margin: 5px;
+  font-family: Poppins;
+  text-align: center;
+}
+
+.cerrarMenuMobile{
+  font-family: Poppins;
+  border: none;
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  margin-top: 1rem;
+  background-color: #7bb0a8;
+  color: white;
+  height: 40px;
+}
