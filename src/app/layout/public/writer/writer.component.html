@@ -16,7 +16,6 @@
         <button class="cancelarNota" routerLink="/homeAdmin">Cancelar</button>
       </div>
     </div>
-
     <form [formGroup]="notaForm" (ngSubmit)="CrearNota()">
       <div class="form-group">
         <label class="tituloNota">Titulo de la noticia:</label>
@@ -27,20 +26,27 @@
           id="inputTitulo"
         />
       </div>
-
       <div class="encapsularCategorias">
         <div class="form-group">
           <label class="textoCategoria">Categoría:</label>
           <select class="form-control" formControlName="categoriaID">
-            <option>valores</option>
-            <option>esto</option>
+            <option
+              *ngFor="let categoria of categories | ObjToArray"
+              [value]="categoria.id"
+            >
+              {{ categoria.categoria }}
+            </option>
           </select>
         </div>
         <div class="form-group">
           <label class="textoCategoria">Subcategoría:</label>
           <select class="form-control" formControlName="subcategoriaID">
-            <option>sera</option>
-            <option>que no tiene</option>
+            <option
+              *ngFor="let subcategoria of subcategories | ObjToArray"
+              [value]="subcategoria.id"
+            >
+              {{ subcategoria.subcategoria }}
+            </option>
           </select>
         </div>
         <div class="dropdown">
@@ -69,7 +75,6 @@
           </div>
         </div>
       </div>
-
       <div class="form-group">
         <label class="textoCategoria">Seleccion de imágenes:</label>
         <input
@@ -89,10 +94,9 @@
           class="estiloEditor"
         ></editor>
       </div>
-
+      <input type="hidden" formControlName="id" />
       <button type="submit" class="confirmarNoticia">
-        Publicar
-        <!-- {{ nota.id ? "Actualizar" : "Guardar" }} -->
+        {{ notaForm.get("id")!.value ? "Actualizar" : "Publicar" }}
       </button>
     </form>
   </body>
