@@ -26,7 +26,10 @@ import { NoticiaNacionalComponent } from './layout/public/noticia-nacional/notic
 import { NoticiaOpinionComponent } from './layout/public/noticia-opinion/noticia-opinion.component';
 import { NoticiaChiapasComponent } from './layout/public/noticia-chiapas/noticia-chiapas.component';
 import { BusquedaComponent } from './layout/public/busqueda/busqueda.component';
-import { ObjToArray } from './objToArray.pipe';
+
+import { ObjToArray } from './ObjToArray.pipe';
+
+
 @NgModule({
   declarations: [
     AppComponent,

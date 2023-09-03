@@ -43,6 +43,8 @@ export class ListWritterComponent {
         console.log(this.escritores);
       },
       (error) => {
+        this.handleError;
+
         this.handleError(error);
       }
     );
@@ -69,5 +71,39 @@ export class ListWritterComponent {
     this.router.navigate(['/editarPerfil/', idEscritor], {
       queryParams: { parametro1: idEscritor },
     });
+  }
+
+  public eliminarEscritor(idEscritor: any) {
+    // Mostrar una advertencia al usuario antes de eliminar
+    this.alertas
+      .AlertWarningDelete('¡Alerta! el escritor sera eliminado permanente...')
+      .then((result) => {
+        if (result.value) {
+          // Si el usuario confirma la eliminación, procede con la solicitud DELETE
+          this.enlistar.eliminaEscritorFuncion(idEscritor).subscribe(
+            (response) => {
+              if (response.message === 'Escritor borrado') {
+                // Mostrar mensaje de éxito
+                this.alertas.showSuccess(
+                  'Escritor eliminado',
+                  'Escritor borrado exitosamente'
+                );
+
+                // Actualizar la lista de escritores u otras acciones necesarias
+                this.listar();
+              }
+              // Maneja la respuesta si es necesario
+              console.log('Registro eliminado con éxito', response);
+            },
+            (error) => {
+              // Maneja el error si ocurre uno
+              console.error('Error al eliminar el registro', error);
+            }
+          );
+        } else {
+          // Si el usuario cancela la eliminación, puedes manejarlo aquí
+          console.log('Eliminación cancelada por el usuario');
+        }
+      });
   }
 }
