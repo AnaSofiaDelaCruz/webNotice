@@ -44,6 +44,8 @@ export class ListWritterComponent {
       },
       (error) => {
         this.handleError;
+
+        this.handleError(error);
       }
     );
   }

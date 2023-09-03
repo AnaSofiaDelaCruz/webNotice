@@ -1,5 +1,11 @@
 import { Component } from '@angular/core';
-import { AbstractControl, FormBuilder, FormGroup, ValidationErrors, Validators } from '@angular/forms';
+import {
+  AbstractControl,
+  FormBuilder,
+  FormGroup,
+  ValidationErrors,
+  Validators,
+} from '@angular/forms';
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 import { AlertService } from 'src/app/service/AlertService/alert.service';
@@ -88,8 +94,10 @@ export class EditarPerfilComponent {
 
   public guardarCambios() {
     if (this.miFormulario.valid) {
+      console.log(this.miFormulario.value, ' aca es el put');
+
       this.rellenar
-        .actualizarEscritorFuncion(this.idEncontrado,this.miFormulario.value)
+        .actualizarEscritorFuncion(this.idEncontrado, this.miFormulario.value)
         .subscribe((res) => {
           this.alertas.showSuccess(
             'Actualizacion exitosa',
@@ -100,5 +108,4 @@ export class EditarPerfilComponent {
       this.alertas.ShowErrorAlert('¡Existen campos vacios!');
     }
   }
-
 }
