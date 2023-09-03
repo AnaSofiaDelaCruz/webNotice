@@ -9,13 +9,13 @@ import { AlertService } from '../service/AlertService/alert.service';
   styleUrls: ['./list-writter.component.css'],
 })
 export class ListWritterComponent {
-  public cantidadEscritores:  number = 0;
+  public cantidadEscritores: number = 0;
   public escritores = [];
   public active: boolean = true;
   esAdmin = false;
   ngOnInit(): void {
-    this.listar()
-    console.log("Esto tiene localstorage:",localStorage.getItem("rol"))
+    this.listar();
+    console.log('Esto tiene localstorage:', localStorage.getItem('rol'));
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
     const rol = localStorage.getItem('rol');
@@ -40,9 +40,11 @@ export class ListWritterComponent {
       (res) => {
         this.escritores = res.message;
         this.cantidadEscritores = this.escritores.length;
-        console.log(this.escritores)
+        console.log(this.escritores);
       },
-      (error) => {this.handleError}
+      (error) => {
+        this.handleError(error);
+      }
     );
   }
 
@@ -62,9 +64,10 @@ export class ListWritterComponent {
     }
   }
 
-
-  public encontrarEscritor(idEscritor:any ) {
-    console.log("Esto tiene idEscritor: ",idEscritor);
-      this.router.navigate(['/editarPerfil/',idEscritor],{queryParams: {parametro1:idEscritor}});
+  public encontrarEscritor(idEscritor: any) {
+    console.log('Esto tiene idEscritor: ', idEscritor);
+    this.router.navigate(['/editarPerfil/', idEscritor], {
+      queryParams: { parametro1: idEscritor },
+    });
   }
 }

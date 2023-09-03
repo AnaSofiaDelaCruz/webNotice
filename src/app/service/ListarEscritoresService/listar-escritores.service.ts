@@ -34,8 +34,13 @@ export class ListarEscritoresService {
     });
   }
 
-  public actualizarEscritorFuncion(id: any, formulario:FormGroup): Observable<any> {
-    return this.http.put(`${this.apiUrl}/api/update/${id}`,formulario, {
+  public actualizarEscritorFuncion(
+    id: any,
+    formulario: FormGroup
+  ): Observable<any> {
+    console.log(localStorage.getItem('token'));
+
+    return this.http.put(`${this.apiUrl}/api/update/${id}`, formulario, {
       headers: this.headers,
     });
   }
