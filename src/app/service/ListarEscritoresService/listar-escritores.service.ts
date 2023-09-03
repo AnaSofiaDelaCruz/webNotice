@@ -15,6 +15,8 @@ export class ListarEscritoresService {
   }
   private checkToken(): void {
     const token = localStorage.getItem('token'); // Obtener el token del almacenamiento local (o de donde lo hayas guardado)
+    console.log(token);
+
     if (token) {
       this.setAuthorizationHeader(token);
     } else {
@@ -34,8 +36,17 @@ export class ListarEscritoresService {
     });
   }
 
-  public actualizarEscritorFuncion(id: any, formulario:FormGroup): Observable<any> {
-    return this.http.put(`${this.apiUrl}/api/update/${id}`,formulario, {
+  public actualizarEscritorFuncion(
+    id: any,
+    formulario: FormGroup
+  ): Observable<any> {
+    return this.http.put(`${this.apiUrl}/api/update/${id}`, formulario, {
+      headers: this.headers,
+    });
+  }
+  // eliminar a los usuarios
+  public eliminaEscritorFuncion(id: any): Observable<any> {
+    return this.http.delete(`${this.apiUrl}/api/delete/escritor/${id}`, {
       headers: this.headers,
     });
   }
