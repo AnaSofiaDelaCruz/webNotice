@@ -85,7 +85,12 @@
         <button class="botonesMenuUsuarios" routerLink="/editarPerfil">
           <i class="bi bi-pen-fill"></i> Editar informacion del perfil
         </button>
-        <button class="botonesMenuUsuarios" id="botonCerrarSesion">
+        <button
+          class="botonesMenuUsuarios"
+          id="botonCerrarSesion"
+          (click)="cerrarSesion()"
+          routerLink="/login" 
+        >
           <i class="bi bi-box-arrow-in-left"></i> Cerrar sesión
         </button>
         <button class="botonesMenuUsuarios" routerLink="/homeAdminMenu">
