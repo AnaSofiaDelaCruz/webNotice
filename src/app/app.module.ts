@@ -26,6 +26,7 @@ import { NoticiaNacionalComponent } from './layout/public/noticia-nacional/notic
 import { NoticiaOpinionComponent } from './layout/public/noticia-opinion/noticia-opinion.component';
 import { NoticiaChiapasComponent } from './layout/public/noticia-chiapas/noticia-chiapas.component';
 import { BusquedaComponent } from './layout/public/busqueda/busqueda.component';
+import { ObjToArray } from './objToArray.pipe';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { BusquedaComponent } from './layout/public/busqueda/busqueda.component';
     NoticiaOpinionComponent,
     NoticiaChiapasComponent,
     BusquedaComponent,
+    ObjToArray,
   ],
   imports: [
     BrowserModule,
@@ -68,7 +70,7 @@ import { BusquedaComponent } from './layout/public/busqueda/busqueda.component';
       { path: 'homeAdmin', component: HomeAdminComponent },
       { path: 'homeAdminMenu', component: MenuUsuariosAdminComponent },
       { path: 'crear-categoria', component: CrearCategoriaComponent },
-      { path: 'editarPerfil', component: EditarPerfilComponent },
+      { path: 'editarPerfil/:id', component: EditarPerfilComponent },
       { path: 'noticiaOpinion', component: NoticiaOpinionComponent },
       { path: 'noticiaChiapas', component: NoticiaChiapasComponent },
       { path: 'busqueda', component: BusquedaComponent },
@@ -78,6 +80,7 @@ import { BusquedaComponent } from './layout/public/busqueda/busqueda.component';
       },
       { path: 'noticiaNacional', component: NoticiaNacionalComponent },
       { path: '', redirectTo: '/login', pathMatch: 'full' },
+
     ]),
     AppRoutingModule,
     FormsModule,
