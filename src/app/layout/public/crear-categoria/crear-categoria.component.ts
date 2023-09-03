@@ -17,9 +17,11 @@ export class CrearCategoriaComponent implements OnInit {
   public categoriaForm!: FormGroup;
   tipoSeleccionado: string = 'Sin seleccionar';
   public categoriaLista = [];
+  public subcategoriaLista = [];
   ngOnInit(): void {
     this.FormInit();
     this.ListaCategory();
+    this.ListSubCategory();
   }
 
   public FormInit() {
@@ -51,10 +53,10 @@ export class CrearCategoriaComponent implements OnInit {
       .RegistrarCategoria(this.categoriaForm.value)
       .subscribe(
         (response) => {
-          console.log(response.message);
           if (response.message === 'Categoria creada') {
             this.alertService.showSuccess('Categoria', 'Categoria creada');
             this.categoriaForm.reset();
+            this.ListaCategory();
           }
         },
         (error) => {
@@ -73,6 +75,7 @@ export class CrearCategoriaComponent implements OnInit {
               'Subcategoría',
               'Subcategoría creada'
             );
+            this.ListSubCategory();
           }
         },
         (error) => {
@@ -92,14 +95,20 @@ export class CrearCategoriaComponent implements OnInit {
   private ListaCategory() {
     this.categoriaService.ListCategorias().subscribe(
       (res) => {
-        console.log(res);
-        console.log(res.categoria);
-
         this.categoriaLista = res.categoria;
-        console.log(this.categoriaLista, ' este es mi array');
       },
       (error) => {
         this.handleError;
+      }
+    );
+  }
+  private ListSubCategory() {
+    this.categoriaService.ListSubCategorias().subscribe(
+      (res) => {
+        this.subcategoriaLista = res.subcategoria;
+      },
+      (error) => {
+        this.handleError(error);
       }
     );
   }

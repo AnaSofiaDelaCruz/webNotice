@@ -38,16 +38,14 @@
       <div class="listas">
         <div class="contenedorListaCategorias">
           <h1 class="tituloCategorias">Categorias registradas</h1>
-          <div class="categoriasRegistradas"></div>
-          <div *ngFor="let categoria at categoriaLista | ObjToArray ">
-            <h2 class="categoriaR">{{categoria}}</h2>
+          <div class="categoriasRegistradas" *ngFor="let categoria of categoriaLista | ObjToArray">
+            <h2 class="categoriaR">{{categoria.categoria}}</h2>
           </div>
         </div>
         <div class="contenedorListaSubcategorias">
           <h1 class="tituloCategorias">Subcategorias registradas</h1>
-          <div class="categoriasRegistradas">
-            <h2 class="categoriaR">Accidentes</h2>
-            <h2 class="categoriaR">Accidentes</h2>
+          <div class="categoriasRegistradas" *ngFor="let subcategoria of subcategoriaLista | ObjToArray">
+            <h2 class="categoriaR">{{subcategoria.subcategoria}}</h2>
           </div>
         </div>
       </div>
