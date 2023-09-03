@@ -60,7 +60,6 @@ export class HomeAdminComponent implements OnInit {
     this.active = !this.active;
   }
 
-
   private handleError(error: any) {
     if (error.status === 401) {
       this.alertService.ShowErrorAlert('Token invalido');
