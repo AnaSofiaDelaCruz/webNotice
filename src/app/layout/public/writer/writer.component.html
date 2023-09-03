@@ -17,67 +17,83 @@
       </div>
     </div>
 
-    <!-- <form [formGroup]="notaForm" (ngSubmit)="CrearNota()"> -->
-    <div class="form-group">
-      <label class="tituloNota">Titulo de la noticia:</label>
-      <input
-        type="text"
-        formControlName="titulo"
-        class="form-control"
-        id="inputTitulo"
-      />
-    </div>
-
-    <div class="encapsularCategorias">
+    <form [formGroup]="notaForm" (ngSubmit)="CrearNota()">
       <div class="form-group">
-        <label class="textoCategoria">Categoría:</label>
-        <select class="form-control" formControlName="categoriaID">
-          <option></option>
-        </select>
+        <label class="tituloNota">Titulo de la noticia:</label>
+        <input
+          type="text"
+          formControlName="titulo"
+          class="form-control"
+          id="inputTitulo"
+        />
+      </div>
+
+      <div class="encapsularCategorias">
+        <div class="form-group">
+          <label class="textoCategoria">Categoría:</label>
+          <select class="form-control" formControlName="categoriaID">
+            <option>valores</option>
+            <option>esto</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="textoCategoria">Subcategoría:</label>
+          <select class="form-control" formControlName="subcategoriaID">
+            <option>sera</option>
+            <option>que no tiene</option>
+          </select>
+        </div>
+        <div class="dropdown">
+          <a href="#"
+            ><i class="bi bi-three-dots-vertical"></i> Gestionar de
+            categorias</a
+          >
+          <div class="gestion">
+            <ul class="lista">
+              <li>
+                <a href="/crear-categoria" class="opcion"
+                  ><i class="bi bi-plus-circle-fill"></i> Crear categoria</a
+                >
+              </li>
+              <li>
+                <a href="#" class="opcion"
+                  ><i class="bi bi-pencil-fill"></i> Editar categoria</a
+                >
+              </li>
+              <li>
+                <a href="#" class="opcion"
+                  ><i class="bi bi-trash-fill"></i> Eliminar categoria</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="textoCategoria">Seleccion de imágenes:</label>
+        <input
+          type="file"
+          name="images"
+          class="form-control"
+          multiple
+          (change)="selectImages($event)"
+          id="selectorImagenes"
+        />
       </div>
       <div class="form-group">
-        <label class="textoCategoria">Subcategoría:</label>
-        <select class="form-control" formControlName="subcategoriaID">
-          <option></option>
-        </select>
+        <label class="cuerpoNotaTitulo">Cuerpo de la nota:</label>
+        <editor
+          [init]="editorConfig"
+          formControlName="descripcion"
+          class="estiloEditor"
+        ></editor>
       </div>
-    <div class="dropdown">
-      <a href="#"><i class="bi bi-three-dots-vertical"></i> Gestionar de categorias</a>
-      <div class="gestion">
-        <ul class="lista">
-          <li><a href="/crear-categoria" class="opcion"><i class="bi bi-plus-circle-fill"></i> Crear categoria</a></li>
-          <li><a href="#"class="opcion"><i class="bi bi-pencil-fill"></i> Editar categoria</a></li>
-          <li><a href="#"class="opcion"><i class="bi bi-trash-fill"></i> Eliminar categoria</a></li>
-        </ul>
-      </div>
-    </div>
-    </div>
 
-    <div class="form-group">
-      <label class="textoCategoria">Seleccion de imágenes:</label>
-      <input
-        type="file"
-        name="images"
-        class="form-control"
-        multiple
-        (change)="selectImages($event)"
-        id="selectorImagenes"
-      />
-    </div>
-    <div class="form-group">
-      <label class="cuerpoNotaTitulo">Cuerpo de la nota:</label>
-      <editor
-        [init]="editorConfig"
-        formControlName="descripcion"
-        class="estiloEditor"
-      ></editor>
-    </div>
-
-    <button type="submit" class="confirmarNoticia">
-      Publicar
-      <!-- {{ nota.id ? "Actualizar" : "Guardar" }} -->
-    </button>
-
-
+      <button type="submit" class="confirmarNoticia">
+        Publicar
+        <!-- {{ nota.id ? "Actualizar" : "Guardar" }} -->
+      </button>
+    </form>
   </body>
 </html>
