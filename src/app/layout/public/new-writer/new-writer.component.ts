@@ -39,12 +39,13 @@ export class NewWriterComponent {
     }
     this.registroEscritor = this.fb.group(
       {
-        nombres: ['', Validators.required],
-        apellidos: ['', Validators.required],
+        nombre: ['', Validators.required],
+        apellido: ['', Validators.required],
         username: ['', Validators.required],
-        email: ['', Validators.required],
+        correo: ['', Validators.required],
         password: ['', Validators.required],
         confirmPassword: ['', Validators.required],
+        rolID: ['2', Validators.required],
       },
       { validator: this.passwordMatch }
     );
@@ -61,19 +62,18 @@ export class NewWriterComponent {
   }
 
   public registrar() {
+    console.log(this.registroEscritor.value);
     if (this.registroEscritor.valid) {
-      console.log("Pasa la validacion vacia")
+      console.log('Pasa la validacion vacia');
       this.registroEscritorService
         .registrarEscritor(this.registroEscritor.value)
         .subscribe(
           (res) => {
-            console.log('Promesa: ',res);
-            if (res === 'Nuevo administrador/escritor creado') {
-              this.alertaService.showSuccess(
-                'Registro exitoso',
-                'El usuario ha sido registrado exitosamente :D'
-              );
-            }
+            this.registroEscritor.reset();
+            this.alertaService.showSuccess(
+              'Registro exitoso',
+              'El usuario ha sido registrado exitosamente :D'
+            );
           },
           (err) => {
             this.handleError(err);
@@ -86,7 +86,7 @@ export class NewWriterComponent {
 
   private handleError(error: any) {
     if (error.status === 409) {
-      this.alertaService.ShowErrorAlert('No se encontró la categoría');
+      this.alertaService.ShowErrorAlert('Error: Correo en uso.');
     } else if (error.status === 503) {
       this.alertaService.ShowErrorAlert('Intentelo más tarde');
     }

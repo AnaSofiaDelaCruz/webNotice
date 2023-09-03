@@ -26,13 +26,13 @@
             <input
               type="text"
               class="contenedor-texto"
-              formControlName="nombres"
+              formControlName="nombre"
             />
             <h2 class="label-form">Apellidos</h2>
             <input
               type="text"
               class="contenedor-texto"
-              formControlName="apellidos"
+              formControlName="apellido"
             />
             <h2 class="label-form">Nombre de usuario (apodo)</h2>
             <input
@@ -47,7 +47,7 @@
             <input
               type="email"
               class="contenedor-texto"
-              formControlName="email"
+              formControlName="correo"
             />
             <h2 class="label-form">Contraseña</h2>
             <input
@@ -61,6 +61,7 @@
               class="contenedor-texto"
               formControlName="confirmPassword"
             />
+            <input type="hidden" formControlName="rolID" value="1">
 
             <button class="crear-usuario">Crear usuario</button>
           </div>

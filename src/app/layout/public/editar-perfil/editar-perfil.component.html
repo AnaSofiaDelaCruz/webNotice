@@ -15,30 +15,34 @@
       <button class="boton-cancelar" routerLink="/homeAdmin">
         Cancelar
       </button>
-      <h1 class="titulo">Mision 24</h1>
+      <h1 class="titulo">MISIÓN 24</h1>
       <h1 class="slogan">El punto exacto de la noticia</h1>
     </div>
     <div class="cuerpo">
-      <div class="contenedor-formulario">
+      <form [formGroup]="miFormulario" (ngSubmit)="guardarCambios()">
+
+      
+      <div class="contenedor-formulario" >
         <h1 class="titulo-form">Editar perfil</h1>
         <div class="superior-formulario">
           <h2 class="label-form">Nombres</h2>
           <input
             type="text"
             class="contenedor-texto"
-            formControlName="nombres"
+            formControlName="nombre"
           />
           <h2 class="label-form">Apellidos</h2>
           <input
             type="text"
             class="contenedor-texto"
-            formControlName="apellidos"
+            formControlName="apellido"
           />
           <h2 class="label-form">Nombre de usuario (apodo)</h2>
           <input
             type="text"
             class="contenedor-texto"
             formControlName="username"
+            value=""
           />
           <button class="cargar-imagen">Cargar imagen</button>
         </div>
@@ -47,7 +51,7 @@
           <input
             type="email"
             class="contenedor-texto"
-            formControlName="email"
+            formControlName="correo"
           />
           <h2 class="label-form">Contraseña</h2>
           <input
@@ -65,6 +69,7 @@
           <button class="crear-usuario">Guardar cambios</button>
         </div>
       </div>
+      </form>
     </div>
   </body>
 </html>

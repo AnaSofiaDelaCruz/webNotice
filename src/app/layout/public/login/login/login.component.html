@@ -1,57 +1,107 @@
-<div class="row">
-  <div class="d-none d-lg-block col-md-4 col-xs-6 col-sm-6 background-login">
-    <p class="slogan">El punto exacto de la noticia</p>
-    <div class="triangulo-tricolor"></div>
-    <img src="./assets/images/logo2.png" alt="logo" class="logo" />
-    <img src="./assets/images/pilar2.png" alt="pilar" class="pilar" />
-  </div>
-  <div class="col-md-8 col-xs-6 col-sm-6 background-login">
-    <br />
-    <p class="text-title">¡Bienvenido!</p>
-    <p>Por favor, inicia sesión para entrar a la plataforma</p>
-    <br />
-    <form [formGroup]="loginForm" (ngSubmit)="submitFormulario()">
-      <div class="col-md-8 col-xs-6">
-        <label for="exampleFormControlInput1" class="form-label"
-          >Correo electronico</label
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+      @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
+    </style>
+  </head>
+  <body>
+    <section class="escritorio">
+      <div class="row">
+        <div
+          class="d-none d-lg-block col-md-4 col-xs-6 col-sm-6 background-login"
         >
-        <input
-          formControlName="correo"
-          type="email"
-          class="form-control input"
-          id="exampleFormControlInput1"
-          placeholder="nombre@ejemplo.com"
-        />
+          <p class="slogan">El punto exacto de la noticia</p>
+          <div class="triangulo-tricolor"></div>
+          <img src="./assets/images/logo2.png" alt="logo" class="logo" />
+          <img src="./assets/images/pilar2.png" alt="pilar" class="pilar" />
+        </div>
+        <div class="col-md-8 col-xs-6 col-sm-6 background-login">
+          <br />
+          <p class="text-title">¡Bienvenido!</p>
+          <p>Por favor, inicia sesión para entrar a la plataforma</p>
+          <br />
+          <form [formGroup]="loginForm" (ngSubmit)="submitFormulario()">
+            <div class="col-md-8 col-xs-6">
+              <label for="exampleFormControlInput1" class="form-label"
+                >Correo electronico</label
+              >
+              <input
+                formControlName="correo"
+                type="email"
+                class="form-control input"
+                id="exampleFormControlInput1"
+                placeholder="nombre@ejemplo.com"
+              />
+            </div>
+            <br />
+            <div class="col-md-8 col-xs-6">
+              <label for="inputPassword5" class="form-label">Contraseña</label>
+              <input
+                formControlName="password"
+                type="password"
+                id="inputPassword5"
+                class="form-control input"
+                aria-labelledby="passwordHelpBlock"
+              />
+            </div>
+            <br />
+          </form>
+          <a type="button" class="btn button-success" (click)="Iniciar()"
+            >Ingresar</a
+          >
+          <br /><br />
+          <p class="text-others">
+            ¿Tienes problemas con tu contraseña?
+            <a target="_blank" href="register.component.html" class="links"
+              >Nosotros te ayudamos</a
+            >
+          </p>
+          <p class="text-others">
+            ¿No estas registrado?
+            <a routerLink="/register" class="links">Reistrate aquí</a>
+          </p>
+          <img
+            src="./assets/images/pilar_secundario.png"
+            alt="pilar"
+            class="pilar-secundario"
+          />
+        </div>
       </div>
-      <br />
-      <div class="col-md-8 col-xs-6">
-        <label for="inputPassword5" class="form-label">Contraseña</label>
-        <input
-          formControlName="password"
-          type="password"
-          id="inputPassword5"
-          class="form-control input"
-          aria-labelledby="passwordHelpBlock"
+    </section>
+
+    <section class="mobile">
+      <div class="fondoMobile">
+        <img
+          src="../assets/images/mision24_whiteVersion.png"
+          class="logoMobile"
         />
+        <h1 class="sloganMobile">El punto exacto de la noticia</h1>
       </div>
-      <br />
-    </form>
-    <a type="button" class="btn button-success" (click)="Iniciar()">Ingresar</a>
-    <br /><br />
-    <p class="text-others">
-      ¿Tienes problemas con tu contraseña?
-      <a target="_blank" href="register.component.html" class="links"
-        >Nosotros te ayudamos</a
-      >
-    </p>
-    <p class="text-others">
-      ¿No estas registrado?
-      <a routerLink="/register" class="links">Reistrate aquí</a>
-    </p>
-    <img
-      src="./assets/images/pilar_secundario.png"
-      alt="pilar"
-      class="pilar-secundario"
-    />
-  </div>
-</div>
+
+      <div class="contenedorFormulario">
+        <h1 class="bienvenidoMobile">¡Inicia sesión!</h1>
+        <input
+          type="text"
+          placeholder="Correo electronico"
+          class="inputMobile"
+        />
+        <input type="password" placeholder="Contraseña" class="inputMobile" />
+        <button class="loginBotonMobile">Ok!</button>
+
+        <button class="problemasMobile">
+          Clic aca si tienes problemas para iniciar sesion
+        </button>
+      </div>
+      <br>
+      <div class="footerMobile">
+        <h2 class="slogan2Mobile">¿No estas registrado?</h2>
+        <button class="botonRegistrarMobile" routerLink="/register">Registrarse</button>
+      </div>
+    </section>
+  </body>
+</html>

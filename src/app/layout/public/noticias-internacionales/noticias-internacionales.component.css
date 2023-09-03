@@ -1,3 +1,23 @@
+.escritorio {
+  display: none;
+}
+
+.mobile {
+  display: none;
+}
+@media screen and (min-width: 1024px) {
+  .escritorio {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .mobile {
+    display: block;
+  }
+}
+
+
 .pagina {
   display: grid;
   grid-template-columns: 20% auto;
@@ -161,4 +181,123 @@ a:hover {
     margin-left: 1rem;
     margin-bottom: 0;
   }
+}
+
+
+
+
+
+/* Mobile */
+
+/* Header */
+.headerMobile {
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+  background-color: #512b52;
+  color: white;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.puntosMenu {
+  font-size: 24px;
+  margin-left: 1rem;
+}
+.mision24Mobile {
+  font-family: Poppins;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 24px;
+  margin-right: 1rem;
+}
+/* Header */
+
+
+.categoriaNoticiaMobile{
+  font-family: Poppins;
+  font-size: 1.5rem;
+  text-align: center;
+  margin: 1rem;
+  background-color: white;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  padding: .5rem;
+}
+
+body {
+  background-color: #EEE;
+}
+
+.cardMobile{
+  background-color: white;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 5px;
+}
+
+.imagenCardMobile{
+  width: 100%;
+  border-radius: 5px;
+}
+
+.tituloNotaMobile{
+  font-family: Poppins;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.fechaNotaMobile{
+  font-family: Poppins;
+  font-size: 1rem;
+}
+
+.menu {
+  opacity: 0;
+  display: none;
+  transition: all 0.5s ease;
+}
+
+.menuLateralMobile {
+  position: absolute;
+  top: 0;
+  background-color: #512b52;
+  width: 60%;
+  height: 100vh;
+  box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.5);
+}
+
+.menuM24Mobile{
+  font-family: Poppins;
+  font-weight: bold;
+  color: white;
+  text-transform: uppercase;
+  text-align: center;
+}
+.navegacionLateralMObile{
+  display: grid;
+  background-color: white;
+  gap: 5px;
+  margin: 5px;
+}
+
+.enlaceMObile{
+  color: #000;
+  text-decoration: none;
+  background-color: #EEE;
+  margin: 5px;
+  font-family: Poppins;
+  text-align: center;
+}
+
+.cerrarMenuMobile{
+  font-family: Poppins;
+  border: none;
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  margin-top: 1rem;
+  background-color: #7bb0a8;
+  color: white;
+  height: 40px;
 }
