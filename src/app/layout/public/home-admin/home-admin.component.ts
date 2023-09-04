@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-home-admin',
@@ -18,8 +17,5 @@ export class HomeAdminComponent {
     this.active = !this.active;
   }
 
-  cerrarSesion() {
-    // Borra los datos del localStorage
-    localStorage.clear();
-  }
+  
 }
