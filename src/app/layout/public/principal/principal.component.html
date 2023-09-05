@@ -28,138 +28,77 @@
             <input type="text" class="barra-buscador" />
           </div>
           <div class="boton-iniciar">
-            <button class="boton1">Iniciar sesión</button>
+            <a
+              *ngIf="!tokenEnLocalStorage"
+              type="button"
+              class="btn btn-outline-success me-2"
+              href="/login"
+              >Iniciar sesión</a
+            >
+            <a
+              *ngIf="tokenEnLocalStorage"
+              type="button"
+              class="btn btn-outline-danger me-2"
+              (click)="cerrarSesion()"
+              >Cerrar sesión</a
+            >
           </div>
         </div>
 
         <div class="contenidoReciente">
           <h1 class="textoReciente">Noticias recientes</h1>
-          <div class="cards">
+          <div class="cards" *ngFor="let nota of notasLimitadas | ObjToArray">
             <img
-              src="https://visitchiapas.com/v1/admin/archivos/Turismo/multimedia/ea21c17f_08042020_0506.jpg"
-              alt="imagen tuxtla"
+              [src]="nota.itemPaths[0]"
+              [alt]="nota.item[0]"
               class="imagenNota"
             />
             <div class="textos">
-              <h1 class="titulo">Titulo de noticia</h1>
-              <h1 class="descripcion">Descripcion breve de noticia</h1>
-              <h1 class="fecha">Fecha de noticia</h1>
-            </div>
-          </div>
-          <div class="cards">
-            <img
-              src="https://visitchiapas.com/v1/admin/archivos/Turismo/multimedia/ea21c17f_08042020_0506.jpg"
-              alt="imagen tuxtla"
-              class="imagenNota"
-            />
-            <div class="textos">
-              <h1 class="titulo">COMIENZAN LAS LLUVIAS EN CHIAPAS</h1>
-              <h1 class="descripcion">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Exercitationem modi nesciunt et, a perspiciatis asperiores
-                aliquam placeat. Illo, earum! Molestias eligendi ex tempore fuga
-                maiores, nam suscipit commodi voluptatum rem!
-              </h1>
-              <h1 class="fecha">21/07/2023</h1>
+              <h1 class="titulo">{{ nota.titulo }}</h1>
+              <h1
+                class="descripcion"
+                [innerHTML]="nota.descripcion | slice : 0 : 500"
+              ></h1>
+              <h1 class="fecha">{{ nota.createdAt }}</h1>
             </div>
           </div>
         </div>
-
+        <br />
         <h1 class="pregunta">¿De que te gustaria informarte?</h1>
-
+        <br />
         <div class="botonesConjuntos">
-          <button class="botonCategoria">Accidentes</button>
-          <button class="botonCategoria">Opinion publica</button>
-          <button class="botonCategoria">Noticias del día</button>
+          <button class="botonCategoria" (click)="FiltrarNota('Accidentes')">
+            Accidentes
+          </button>
+          <button
+            class="botonCategoria"
+            (click)="FiltrarNota('Opinion publica')"
+          >
+            Opinion publica
+          </button>
+          <button
+            class="botonCategoria"
+            (click)="FiltrarNota('Noticias del día')"
+          >
+            Noticias del día
+          </button>
         </div>
 
         <div class="masNoticias">
           <h1 class="textoReciente">Mas noticias que te pueden interesar</h1>
           <div class="listaCards">
-            <div class="cardMasNotas">
+            <div
+              class="cardMasNotas"
+              *ngFor="let nota of notasAbajoLimitadas | ObjToArray"
+            >
               <img
-                src="https://imgs.callofduty.com/content/dam/atvi/callofduty/cod-touchui/mw2/meta-images/seasons/S04_WZ_Meta.jpg"
+                [src]="nota.itemPaths[0]"
                 alt="Fotos de mas noticias"
                 class="imagenNotaMas"
               />
-              <h1 class="titulo">Titulo de noticia</h1>
-              <h1 class="descripcion">Descripcion</h1>
-              <h1 class="fecha">Fecha</h1>
-            </div>
-            <div class="cardMasNotas">
-              <img
-                src="https://imgs.callofduty.com/content/dam/atvi/callofduty/cod-touchui/mw2/meta-images/seasons/S04_WZ_Meta.jpg"
-                alt="Fotos de mas noticias"
-                class="imagenNotaMas"
-              />
-              <h1 class="titulo">WARZONE 2.0</h1>
-              <h1 class="descripcion">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Suscipit eos molestias esse quod beatae qui commodi cumque
-                temporibus veniam tempore, voluptates reiciendis ipsa natus
-                assumenda adipisci! Rerum, nesciunt? Fugiat, dolor.
-              </h1>
-              <h1 class="fecha">21/07/2023</h1>
-            </div>
-            <div class="cardMasNotas">
-              <img
-                src="https://imgs.callofduty.com/content/dam/atvi/callofduty/cod-touchui/mw2/meta-images/seasons/S04_WZ_Meta.jpg"
-                alt="Fotos de mas noticias"
-                class="imagenNotaMas"
-              />
-              <h1 class="titulo">WARZONE 2.0</h1>
-              <h1 class="descripcion">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Suscipit eos molestias esse quod beatae qui commodi cumque
-                temporibus veniam tempore, voluptates reiciendis ipsa natus
-                assumenda adipisci! Rerum, nesciunt? Fugiat, dolor.
-              </h1>
-              <h1 class="fecha">21/07/2023</h1>
-            </div>
-            <div class="cardMasNotas">
-              <img
-                src="https://imgs.callofduty.com/content/dam/atvi/callofduty/cod-touchui/mw2/meta-images/seasons/S04_WZ_Meta.jpg"
-                alt="Fotos de mas noticias"
-                class="imagenNotaMas"
-              />
-              <h1 class="titulo">WARZONE 2.0</h1>
-              <h1 class="descripcion">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Suscipit eos molestias esse quod beatae qui commodi cumque
-                temporibus veniam tempore, voluptates reiciendis ipsa natus
-                assumenda adipisci! Rerum, nesciunt? Fugiat, dolor.
-              </h1>
-              <h1 class="fecha">21/07/2023</h1>
-            </div>
-            <div class="cardMasNotas">
-              <img
-                src="https://imgs.callofduty.com/content/dam/atvi/callofduty/cod-touchui/mw2/meta-images/seasons/S04_WZ_Meta.jpg"
-                alt="Fotos de mas noticias"
-                class="imagenNotaMas"
-              />
-              <h1 class="titulo">WARZONE 2.0</h1>
-              <h1 class="descripcion">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Suscipit eos molestias esse quod beatae qui commodi cumque
-                temporibus veniam tempore, voluptates reiciendis ipsa natus
-                assumenda adipisci! Rerum, nesciunt? Fugiat, dolor.
-              </h1>
-              <h1 class="fecha">21/07/2023</h1>
-            </div>
-            <div class="cardMasNotas">
-              <img
-                src="https://imgs.callofduty.com/content/dam/atvi/callofduty/cod-touchui/mw2/meta-images/seasons/S04_WZ_Meta.jpg"
-                alt="Fotos de mas noticias"
-                class="imagenNotaMas"
-              />
-              <h1 class="titulo">WARZONE 2.0</h1>
-              <h1 class="descripcion">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Suscipit eos molestias esse quod beatae qui commodi cumque
-                temporibus veniam tempore, voluptates reiciendis ipsa natus
-                assumenda adipisci! Rerum, nesciunt? Fugiat, dolor.
-              </h1>
-              <h1 class="fecha">21/07/2023</h1>
+              <h1 class="titulo">{{nota.titulo}}a</h1>
+              <h1 class="descripcion"[innerHTML]="nota.descripcion | slice : 0 : 50"></h1>
+              <h1 class="fecha">{{nota.createdAt}}</h1>
             </div>
           </div>
         </div>
@@ -191,7 +130,9 @@
 
     <section class="mobile">
       <div class="headerMobile">
-        <div class="puntosMenu" (click)="setActive()"><i class="bi bi-three-dots-vertical"></i></div>
+        <div class="puntosMenu" (click)="setActive()">
+          <i class="bi bi-three-dots-vertical"></i>
+        </div>
         <h1 class="mision24Mobile">Mision 24</h1>
       </div>
 
@@ -289,12 +230,16 @@
       <div class="menuLateralMobile" [ngClass]="{ menu: active }">
         <h1 class="menuM24Mobile">Mision 24</h1>
         <nav class="navegacionLateralMObile">
-          <a routerLink="/noticiaInternacional" class="enlaceMObile">Internacional</a>
+          <a routerLink="/noticiaInternacional" class="enlaceMObile"
+            >Internacional</a
+          >
           <a href="#" class="enlaceMObile">Nacional</a>
           <a href="#" class="enlaceMObile">Opinión Publica</a>
           <a href="#" class="enlaceMObile">Notas del día</a>
         </nav>
-        <button class="cerrarMenuMobile" (click)="setActive()">Cerrar menú</button>
+        <button class="cerrarMenuMobile" (click)="setActive()">
+          Cerrar menú
+        </button>
       </div>
     </section>
   </body>
