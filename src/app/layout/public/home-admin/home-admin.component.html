@@ -27,56 +27,25 @@
         <img src="../assets/images/usuarioIcon.png" class="imagenUsuarioIcon" />
       </button>
       <div class="buscador">
-        <input type="text" class="campoBuscador" placeholder="Buscar noticia" />
+        <input type="text" class="campoBuscador" placeholder="Buscar noticia" (input)="BuscarNota(inputText.value)" #inputText />
       </div>
     </div>
 
     <div class="noticiasRecientes">
       <h1 class="textoRecientes">Las noticias recientemente publicadas son:</h1>
-      <div class="contenedorRecientes">
-        <img
-          src="https://visitmexico.com/wp-content/uploads/2022/09/Chiapas_Portada.png"
-          class="imagenCard"
-        />
+      <div
+        class="contenedorRecientes"
+        *ngFor="let nota of notaCompleta | ObjToArray"
+      >
+        <img [src]="nota.itemPaths[0]" class="imagenCard" />
         <div class="informacionCard">
-          <h1 class="tituloNota">Titulo de la nota</h1>
-          <h2 class="descripcion">Descripcion de la nota</h2>
+          <h1 class="tituloNota">{{ nota.titulo }}</h1>
+          <div
+            class="descripcion"
+            [innerHTML]="nota.descripcion | slice : 0 : 500"
+          ></div>
         </div>
-        <h2 class="fechaNota">(Fecha de la nota)</h2>
-      </div>
-
-      <div class="contenedorRecientes">
-        <img
-          src="https://visitmexico.com/wp-content/uploads/2022/09/Chiapas_Portada.png"
-          class="imagenCard"
-        />
-        <div class="informacionCard">
-          <h1 class="tituloNota">Warzone 3 se aproxima</h1>
-          <h2 class="descripcion">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi
-            minima architecto quia quod voluptatem reprehenderit eum, tempora
-            ratione est possimus at exercitationem corrupti libero sint sunt
-            fuga minus ex dicta?
-          </h2>
-        </div>
-        <h2 class="fechaNota">(07/08/2023)</h2>
-      </div>
-
-      <div class="contenedorRecientes">
-        <img
-          src="https://visitmexico.com/wp-content/uploads/2022/09/Chiapas_Portada.png"
-          class="imagenCard"
-        />
-        <div class="informacionCard">
-          <h1 class="tituloNota">Accidentes en Tuxtla</h1>
-          <h2 class="descripcion">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi
-            minima architecto quia quod voluptatem reprehenderit eum, tempora
-            ratione est possimus at exercitationem corrupti libero sint sunt
-            fuga minus ex dicta?
-          </h2>
-        </div>
-        <h2 class="fechaNota">(07/08/2023)</h2>
+        <h2 class="fechaNota">{{ nota.createdAt }}</h2>
       </div>
     </div>
 
@@ -85,7 +54,11 @@
         <button class="botonesMenuUsuarios" routerLink="/editarPerfil">
           <i class="bi bi-pen-fill"></i> Editar informacion del perfil
         </button>
-        <button class="botonesMenuUsuarios" id="botonCerrarSesion">
+        <button
+          class="botonesMenuUsuarios"
+          id="botonCerrarSesion"
+          routerLink="/login" 
+        >
           <i class="bi bi-box-arrow-in-left"></i> Cerrar sesión
         </button>
         <button class="botonesMenuUsuarios" routerLink="/homeAdminMenu">

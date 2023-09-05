@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AlertService } from 'src/app/service/AlertService/alert.service';
+import { CategoriaService } from 'src/app/service/CategoriaService/categoria.service';
+import { NotaService } from 'src/app/service/NotaService/nota.service';
 
 @Component({
   selector: 'app-writer',
@@ -7,14 +10,25 @@ import { FormBuilder, FormGroup } from '@angular/forms';
   styleUrls: ['./writer.component.css'],
 })
 export class WriterComponent implements OnInit {
-  public notaForm!: FormGroup; // Declara el FormGroup
-
-  constructor(private fb: FormBuilder) {} // Inyecta FormBuilder en el constructor
+  public notaForm!: FormGroup; // Declara el FormGroup.
+  public categories = [];
+  public subcategories = [];
+  public selectedImages: File[] = [];
+  constructor(
+    private fb: FormBuilder,
+    private categorias: CategoriaService,
+    private alertService: AlertService,
+    private notaServie: NotaService,
+    private formBuilder: FormBuilder
+  ) {} // Inyecta FormBuilder en el constructor
 
   ngOnInit(): void {
-    this.notaForm = this.fb.group({
-      descripcion: [''], // Agrega el control 'descripcion' al FormGroup
-    });
+    this.CrearGroup();
+    this.ListCategories();
+    this.ListSubCategories();
+    if (!this.notaForm.get('id')!.value) {
+      this.notaForm.patchValue({ id: null }); // Asegúrate de que el campo id esté vacío
+    }
   }
   editorConfig = {
     height: 500,
@@ -27,12 +41,77 @@ export class WriterComponent implements OnInit {
       bullist numlist outdent indent | removeformat | charmap | link | table | help',
   };
 
-  selectImages(event: any) {}
-
-  public CrearNota() {}
+  selectImages(event: Event) {
+    const input = event.target as HTMLInputElement;
+    if (input && input.files) {
+      this.selectedImages = [];
+      for (let i = 0; i < input.files.length; i++) {
+        this.selectedImages.push(input.files[i]);
+      }
+    }
+  }
+  private CrearGroup() {
+    this.notaForm = this.formBuilder.group({
+      id: [''],
+      titulo: ['', Validators.required],
+      categoriaID: ['Sin seleccionar', Validators.required],
+      subcategoriaID: ['Sin seleccionar', Validators.required],
+      descripcion: ['', Validators.required],
+      images: [''],
+    });
+  }
+  public CrearNota() {
+    if (this.notaForm.valid) {
+      const formData = new FormData();
+      formData.append('titulo', this.notaForm.get('titulo')!.value);
+      formData.append('categoriaID', this.notaForm.get('categoriaID')!.value);
+      formData.append(
+        'subcategoriaID',
+        this.notaForm.get('subcategoriaID')!.value
+      );
+      formData.append('descripcion', this.notaForm.get('descripcion')!.value);
+      formData.append('rol', localStorage.getItem('rol')!);
+      this.selectedImages.forEach((image) => {
+        formData.append('images', image);
+      });
+      this.notaServie.CrearNota(formData).subscribe(
+        (response) => {
+          if (response.message === 'Nota creada') {
+            this.alertService.showSuccess(
+              'Nota creada',
+              'Su nota ya se ha publicado'
+            );
+          }
+        },
+        (error) => {}
+      );
+    } else {
+      this.alertService.ShowErrorAlert('No deje campos vacios');
+    }
+  }
   public activar: boolean = true;
 
   public AlternarMenu(): void {
     this.activar = !this.activar;
+  }
+  private ListCategories() {
+    this.categorias.ListCategorias().subscribe((response) => {
+      this.categories = response.categoria;
+    });
+  }
+  private ListSubCategories() {
+    this.categorias.ListSubCategorias().subscribe((response) => {
+      this.subcategories = response.subcategoria;
+    });
+  }
+
+  private handleError(error: any) {
+    if (error.status === 401) {
+      this.alertService.ShowErrorAlert('Token invalido');
+    } else if (error.status === 500) {
+      this.alertService.ShowErrorAlert('Intentelo más tarde');
+    } else if (error.status === 403) {
+      this.alertService.ShowErrorAlert('Token invalido');
+    }
   }
 }

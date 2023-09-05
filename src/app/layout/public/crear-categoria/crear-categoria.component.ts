@@ -76,6 +76,7 @@ export class CrearCategoriaComponent implements OnInit {
               'Subcategoría creada'
             );
             this.ListSubCategory();
+            this.categoriaForm.reset();
           }
         },
         (error) => {
