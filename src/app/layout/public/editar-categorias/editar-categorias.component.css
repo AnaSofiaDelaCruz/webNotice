@@ -1,0 +1,86 @@
+.cabeza {
+  background-color: #7bb0a8;
+  padding: 1rem;
+}
+.botonRegresar {
+  border: none;
+  background-color: #512b52;
+  color: white;
+  font-family: Poppins;
+  padding: 1rem;
+  border-radius: 5px;
+  transition: all ease 0.5s;
+}
+.botonRegresar:hover {
+  background-color: #834c85;
+}
+
+.contenido {
+  padding: 2rem;
+}
+
+.dropdown {
+  font-family: Poppins;
+  border-radius: 5px;
+  padding: 0.5rem;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  border: none;
+}
+
+.contenedor {
+  margin-top: 1rem;
+  box-shadow: 0px 4px 26px 0px rgba(0, 0, 0, 0.25);
+  padding: 0.5rem;
+  border-radius: 10px;
+  height: 500px;
+  overflow-y: scroll;
+}
+
+.contenedor::-webkit-scrollbar {
+    width: 8px;     /* Tamaño del scroll en vertical */
+    height: 8px;    /* Tamaño del scroll en horizontal */
+    display: none;  /* Ocultar scroll */
+}
+
+.tipo {
+  font-family: Poppins;
+  font-size: 1.2rem;
+}
+.card {
+  display: grid;
+  grid-template-columns: 80% auto;
+  margin: 1rem;
+  padding: 0.5rem;
+  align-items: center;
+  background-color: #eee;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.boton,.boton2 {
+  border: none;
+  font-family: Poppins;
+  background-color: #ffffff;
+  
+  border-radius: 5px;
+  height: 40px;
+  transition: 0.5s all ease;
+}
+.boton2:hover {
+    background-color: rgb(211, 79, 79);
+    color: white;
+}
+
+.boton:hover {
+    background-color: #7bb0a8;
+    color: white;
+}
+
+.botones {
+  text-align: end;
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 5px;
+  
+}
+
+

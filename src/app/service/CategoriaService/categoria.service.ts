@@ -52,4 +52,10 @@ export class CategoriaService {
       headers: this.headers,
     });
   }
+
+  public EliminarCategoria(): Observable<any> {
+    return this.http.get(`${this.apiUrl}/api/borrar/categoria/{id}`, {
+      headers: this.headers,
+    });
+  }
 }

@@ -28,6 +28,8 @@ import { NoticiaChiapasComponent } from './layout/public/noticia-chiapas/noticia
 import { BusquedaComponent } from './layout/public/busqueda/busqueda.component';
 
 import { ObjToArray } from './ObjToArray.pipe';
+import { EditarCategoriasComponent } from './layout/public/editar-categorias/editar-categorias.component';
+
 
 
 @NgModule({
@@ -53,6 +55,7 @@ import { ObjToArray } from './ObjToArray.pipe';
     NoticiaChiapasComponent,
     BusquedaComponent,
     ObjToArray,
+    EditarCategoriasComponent,
   ],
   imports: [
     BrowserModule,
@@ -81,8 +84,8 @@ import { ObjToArray } from './ObjToArray.pipe';
         component: NoticiasInternacionalesComponent,
       },
       { path: 'noticiaNacional', component: NoticiaNacionalComponent },
+      { path: 'editarCategoria', component: EditarCategoriasComponent },
       { path: '', redirectTo: '/login', pathMatch: 'full' },
-
     ]),
     AppRoutingModule,
     FormsModule,

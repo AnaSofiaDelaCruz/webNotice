@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AlertService } from 'src/app/service/AlertService/alert.service';
 import { CategoriaService } from 'src/app/service/CategoriaService/categoria.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-crear-categoria',
@@ -112,5 +113,9 @@ export class CrearCategoriaComponent implements OnInit {
         this.handleError(error);
       }
     );
+  }
+
+  public irEditar() {
+    this.router.navigate(["/editarCategoria"])
   }
 }
