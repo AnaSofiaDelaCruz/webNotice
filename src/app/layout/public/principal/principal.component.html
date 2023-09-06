@@ -47,7 +47,7 @@
 
         <div class="contenidoReciente">
           <h1 class="textoReciente">Noticias recientes</h1>
-          <div class="cards" *ngFor="let nota of notasLimitadas | ObjToArray">
+          <div class="cards" *ngFor="let nota of notasLimitadas | ObjToArray" (click)="LeerNota(nota.id)">
             <img
               [src]="nota.itemPaths[0]"
               [alt]="nota.item[0]"

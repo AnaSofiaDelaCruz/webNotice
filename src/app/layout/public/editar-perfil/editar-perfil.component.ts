@@ -33,15 +33,11 @@ export class EditarPerfilComponent {
   }
 
   ngOnInit(): void {
-    console.log('Recuperando ID en la otra vista: ', this.idEncontrado);
     this.recuperarEscritor(this.idEncontrado);
     this.iniciarForm();
-    console.log('Paso el form', this.miFormulario.value);
   }
 
   public recuperarEscritor(idEscritor: any) {
-    console.log('Entro a recuperar');
-    console.log('Checando recuperacion: ', this.idEncontrado);
     this.rellenar.encontrarEscritorFuncion(idEscritor).subscribe(
       (res) => {
         this.miFormulario.patchValue({
@@ -94,7 +90,6 @@ export class EditarPerfilComponent {
 
   public guardarCambios() {
     if (this.miFormulario.valid) {
-      console.log(this.miFormulario.value, ' aca es el put');
 
       this.rellenar
         .actualizarEscritorFuncion(this.idEncontrado, this.miFormulario.value)

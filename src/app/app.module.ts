@@ -65,7 +65,7 @@ import { EditarCategoriasComponent } from './layout/public/editar-categorias/edi
       { path: 'register', component: RegisterComponent },
       { path: 'register2', component: RegisterComponent },
       { path: 'login', component: LoginComponent },
-      { path: 'news', component: BasenewsComponent },
+      { path: 'news/:id', component: BasenewsComponent },
       { path: 'writer', component: WriterComponent },
       { path: 'writerstep2', component: Writer2Component },
       { path: 'statistics', component: StatisticsComponent },
