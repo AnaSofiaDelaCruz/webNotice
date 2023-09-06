@@ -38,6 +38,8 @@ export class PrincipalComponent implements OnInit {
 
   private ListaNotas() {
     this.dashboardService.ListNotas().subscribe((response) => {
+
+      
       this.notaCompleta = response.noticias.map((noticia) => ({
         ...noticia,
         itemPaths: noticia.items.map((item: { path: any }) => item.path),
@@ -82,6 +84,12 @@ export class PrincipalComponent implements OnInit {
         } else {
         }
       });
+  }
+
+  LeerNota(id: string) {
+    this.router.navigate(['/news', id], {
+      queryParams: { parametro1: id },
+    });
   }
 
   setActive(): void {

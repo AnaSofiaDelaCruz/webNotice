@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
-export class NotaService {
+export class LeerNoticiaService {
   private apiUrl = 'http://localhost:8080'; // URL de la API
   private headers: HttpHeaders;
   private id: any;
@@ -24,22 +24,7 @@ export class NotaService {
     this.headers = this.headers.set('Authorization', `Bearer ${token}`);
   }
 
-  CrearNota(notaData: FormData): Observable<any> {
-    return this.http.post(`${this.apiUrl}/api/registrar/nota`, notaData, {
-      headers: this.headers,
-    });
-  }
-  ListNotasAdmi(): Observable<any> {
-    this.id = this.http.get(
-      `${this.apiUrl}/api/noticias/fecha/${localStorage.getItem('rol')}`,
-      {
-        headers: this.headers,
-      }
-    );
-    localStorage.setItem('id', this.id);
-    return this.id;
-  }
-  BuscarNota(termino: string): Observable<any> {
-    return this.http.get(`${this.apiUrl}/api/buscar/nota?q=${termino}`);
+  LeerNota(id: string): Observable<any> {
+    return this.http.get(`${this.apiUrl}/api/noticia/${id}`);
   }
 }
