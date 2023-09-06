@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AlertService } from 'src/app/service/AlertService/alert.service';
 import { CategoriaService } from 'src/app/service/CategoriaService/categoria.service';
-import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-crear-categoria',
@@ -73,10 +74,8 @@ export class CrearCategoriaComponent implements OnInit {
       .subscribe(
         (response) => {
           if (response.message === 'Subcategoría creada') {
-            this.alertService.showSuccess(
-              'Subcategoría',
-              'Subcategoría creada'
-            );
+
+            this.alertService.MinShowSucces("Creador","Subcategoría")
             this.ListSubCategory();
             this.categoriaForm.reset();
           }

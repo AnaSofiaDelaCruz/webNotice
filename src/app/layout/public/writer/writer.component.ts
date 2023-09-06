@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AlertService } from 'src/app/service/AlertService/alert.service';
 import { CategoriaService } from 'src/app/service/CategoriaService/categoria.service';
 import { NotaService } from 'src/app/service/NotaService/nota.service';
@@ -19,7 +20,8 @@ export class WriterComponent implements OnInit {
     private categorias: CategoriaService,
     private alertService: AlertService,
     private notaServie: NotaService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private router: Router
   ) {} // Inyecta FormBuilder en el constructor
 
   ngOnInit(): void {
@@ -29,6 +31,7 @@ export class WriterComponent implements OnInit {
     if (!this.notaForm.get('id')!.value) {
       this.notaForm.patchValue({ id: null }); // Asegúrate de que el campo id esté vacío
     }
+    console.log(localStorage.getItem('token'));
   }
   editorConfig = {
     height: 500,
@@ -77,10 +80,8 @@ export class WriterComponent implements OnInit {
       this.notaServie.CrearNota(formData).subscribe(
         (response) => {
           if (response.message === 'Nota creada') {
-            this.alertService.showSuccess(
-              'Nota creada',
-              'Su nota ya se ha publicado'
-            );
+            this.alertService.MinShowSucces('Nota Publicada', 'Nota creada');
+            this.router.navigate(['/homeAdmin']);
           }
         },
         (error) => {}

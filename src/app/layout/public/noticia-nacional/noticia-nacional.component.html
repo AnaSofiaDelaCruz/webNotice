@@ -32,37 +32,16 @@
             <a routerLink="/noticiaChiapas">Estado | Chiapas</a>
           </div>
 
-          <button class="botonRegresar" routerLink="/homeAdmin">
-            Regresar
-          </button>
+          <button class="botonRegresar" (click)="Home()">Regresar</button>
         </div>
 
         <div class="contenido">
-          <div class="card">
-            <img
-              src="https://static.wixstatic.com/media/fd3de2_bb0edc60f6d946bda23a3a94625f2595~mv2.jpg/v1/fit/w_1000%2Ch_726%2Cal_c%2Cq_80,enc_auto/file.jpg"
-              class="imagenCard"
-            />
+          <div class="card" *ngFor="let noticia of nota | ObjToArray">
+            <img [src]="noticia.itemPaths[0]" class="imagenCard" />
             <h1 class="tituloNota">
-              Los aliens fueron confirmados por la NASA
+              {{ noticia.titulo }}
             </h1>
-            <h2 class="fechaNota">(22/08/2023)</h2>
-          </div>
-          <div class="card">
-            <img
-              src="https://static.wixstatic.com/media/fd3de2_bb0edc60f6d946bda23a3a94625f2595~mv2.jpg/v1/fit/w_1000%2Ch_726%2Cal_c%2Cq_80,enc_auto/file.jpg"
-              class="imagenCard"
-            />
-            <h1 class="tituloNota">Titulo de noticia</h1>
-            <h2 class="fechaNota">(22/08/2023)</h2>
-          </div>
-          <div class="card">
-            <img
-              src="https://static.wixstatic.com/media/fd3de2_bb0edc60f6d946bda23a3a94625f2595~mv2.jpg/v1/fit/w_1000%2Ch_726%2Cal_c%2Cq_80,enc_auto/file.jpg"
-              class="imagenCard"
-            />
-            <h1 class="tituloNota">Titulo de noticia</h1>
-            <h2 class="fechaNota">(22/08/2023)</h2>
+            <h2 class="fechaNota">{{ noticia.createdAt }}</h2>
           </div>
         </div>
       </div>
