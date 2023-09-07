@@ -4,7 +4,7 @@
   display: flex;
   justify-content: space-between;
 }
-.texto_editor_categorias{
+.texto_editor_categorias {
   font-family: Poppins;
   font-weight: bold;
   cursor: default;
@@ -27,6 +27,9 @@
 
 .contenido {
   padding: 2rem;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .dropdown {
@@ -48,9 +51,9 @@
 }
 
 .contenedor::-webkit-scrollbar {
-    width: 8px;     /* Tamaño del scroll en vertical */
-    height: 8px;    /* Tamaño del scroll en horizontal */
-    display: none;  /* Ocultar scroll */
+  width: 8px; /* Tamaño del scroll en vertical */
+  height: 8px; /* Tamaño del scroll en horizontal */
+  display: none; /* Ocultar scroll */
 }
 
 .tipo {
@@ -59,31 +62,37 @@
 }
 .card {
   display: grid;
-  grid-template-columns: 80% auto;
+  grid-template-columns: 70% auto;
   margin: 1rem;
   padding: 0.5rem;
   align-items: center;
   background-color: #eee;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
+@media screen and (max-width:1360px) {
+  .card {
+    grid-template-columns: 60% auto;
+  }
+}
 
-.boton,.boton2 {
+.boton,
+.boton2 {
   border: none;
   font-family: Poppins;
   background-color: #ffffff;
-  
+  font-size: 1rem;
   border-radius: 5px;
   height: 40px;
   transition: 0.5s all ease;
 }
 .boton2:hover {
-    background-color: rgb(211, 79, 79);
-    color: white;
+  background-color: rgb(211, 79, 79);
+  color: white;
 }
 
 .boton:hover {
-    background-color: #7bb0a8;
-    color: white;
+  background-color: #7bb0a8;
+  color: white;
 }
 
 .botones {
@@ -91,7 +100,4 @@
   display: grid;
   grid-template-columns: auto auto;
   gap: 5px;
-  
 }
-
-
