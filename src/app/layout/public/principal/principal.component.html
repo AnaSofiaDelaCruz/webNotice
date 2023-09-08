@@ -89,7 +89,7 @@
           <div class="listaCards">
             <div
               class="cardMasNotas"
-              *ngFor="let nota of notasAbajoLimitadas | ObjToArray"
+              *ngFor="let nota of notasAbajoLimitadas | ObjToArray " (click)="LeerNota(nota.id)"
             >
               <img
                 [src]="nota.itemPaths[0]"

@@ -35,7 +35,14 @@ export class BasenewsComponent implements OnInit {
       }
     });
   }
-  Home() {
-    this.router.navigate(['/home']);
+  Redireccionar() {
+    if (
+      localStorage.getItem('rol') === 'administrador' ||
+      localStorage.getItem('rol') === 'escritor'
+    ) {
+      this.router.navigate(['/homeAdmin']);
+    } else {
+      this.router.navigate(['/home']);
+    }
   }
 }

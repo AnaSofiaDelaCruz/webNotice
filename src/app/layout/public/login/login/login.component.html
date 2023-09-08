@@ -82,26 +82,35 @@
         />
         <h1 class="sloganMobile">El punto exacto de la noticia</h1>
       </div>
+      <form [formGroup]="loginForm" (ngSubmit)="submitFormulario()">
+        <div class="contenedorFormulario">
+          <h1 class="bienvenidoMobile">¡Inicia sesión!</h1>
+          <input
+            type="text"
+            placeholder="Correo electronico"
+            class="inputMobile"
+            formControlName="correo"
+          />
+          <input
+            type="password"
+            placeholder="Contraseña"
+            class="inputMobile"
+            formControlName="password"
+          />
+          <button class="loginBotonMobile" (click)="Iniciar()">Ok!</button>
 
-      <div class="contenedorFormulario">
-        <h1 class="bienvenidoMobile">¡Inicia sesión!</h1>
-        <input
-          type="text"
-          placeholder="Correo electronico"
-          class="inputMobile"
-        />
-        <input type="password" placeholder="Contraseña" class="inputMobile" />
-        <button class="loginBotonMobile">Ok!</button>
-
-        <button class="problemasMobile">
-          Clic aca si tienes problemas para iniciar sesion
-        </button>
-      </div>
-      <br>
-      <div class="footerMobile">
-        <h2 class="slogan2Mobile">¿No estas registrado?</h2>
-        <button class="botonRegistrarMobile" routerLink="/register">Registrarse</button>
-      </div>
+          <button class="problemasMobile">
+            Clic aca si tienes problemas para iniciar sesion
+          </button>
+        </div>
+        <br />
+        <div class="footerMobile">
+          <h2 class="slogan2Mobile">¿No estas registrado?</h2>
+          <button class="botonRegistrarMobile" routerLink="/register">
+            Registrarse
+          </button>
+        </div>
+      </form>
     </section>
   </body>
 </html>

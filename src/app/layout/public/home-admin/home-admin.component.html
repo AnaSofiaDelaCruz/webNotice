@@ -41,7 +41,7 @@
       <h1 class="textoRecientes">Las noticias recientemente publicadas son:</h1>
       <div
         class="contenedorRecientes"
-        *ngFor="let nota of notaCompleta | ObjToArray"
+        *ngFor="let nota of notaCompleta | ObjToArray" (click)="LeerNota(nota.id)"
       >
         <img [src]="nota.itemPaths[0]" class="imagenCard" />
         <div class="informacionCard">

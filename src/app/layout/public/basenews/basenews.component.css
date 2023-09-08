@@ -36,6 +36,7 @@
   color: white;
   height: 40px;
   transition: 0.5s all ease;
+  border-radius: 10px;
 }
 .btnRegresar:hover {
   background-color: #a7dbab;
@@ -130,7 +131,7 @@
   padding: 1rem;
   text-align: justify;
   font-family: Poppins;
-  width: 778px;
+  
 }
 
 @media screen and (max-width: 1360px) {
