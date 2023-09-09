@@ -97,4 +97,26 @@ export class AlertService {
 
     Swal.fire(options);
   }
+
+  InputAlert(tittle?: string): Promise<string | null> {
+    return new Promise((resolve) => {
+      Swal.fire({
+        title: tittle,
+        input: 'text',
+        inputAttributes: {
+          autocapitalize: 'off',
+        },
+        showCancelButton: true,
+        confirmButtonText: 'Confirmar',
+        showLoaderOnConfirm: false,
+      }).then((result) => {
+        if (result.isConfirmed) {
+          const valor_input = result.value;
+          resolve(valor_input);
+        } else {
+          resolve(null);
+        }
+      });
+    });
+  }
 }

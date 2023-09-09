@@ -136,4 +136,31 @@ export class EditarCategoriasComponent {
         });
     }
   }
+
+  public async editar(idCategoria: any) {
+    let capturar: string | null;
+
+    if (this.mostrarPrimerH1) {
+      capturar = await this.alertas.InputAlert(
+        'Cambiar nombre de la categoria'
+      );
+
+      this.categoriaServicio
+        .EditarCategoriaFuncion(idCategoria, capturar)
+        .subscribe((res) => {
+          this.alertas.showSuccess(
+            'Edición exitosa',
+            'La categoria fue actualizada correctamente.'
+          );
+        });
+    } else {
+      capturar = await this.alertas.InputAlert(
+        'Cambiar nombre de la subcategoria'
+      );
+    }
+
+    if (capturar !== null) {
+      console.log('Esto obtenemos:', capturar);
+    }
+  }
 }

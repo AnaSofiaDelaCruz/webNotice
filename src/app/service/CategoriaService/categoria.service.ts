@@ -64,4 +64,15 @@ export class CategoriaService {
       headers: this.headers,
     });
   }
+
+  public EditarCategoriaFuncion(id: any, Nuevacategoria: any): Observable<any> {
+    const body = { id: id, Nuevacategoria: Nuevacategoria };
+    return this.http.put(
+      `${this.apiUrl}/api/actualizar/categoria`,
+      body,
+      {
+        headers: this.headers,
+      }
+    );
+  }
 }
