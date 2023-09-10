@@ -101,3 +101,7 @@
   grid-template-columns: auto auto;
   gap: 5px;
 }
+
+.input_sweet{
+  font-family: Poppins;
+}

@@ -65,14 +65,17 @@ export class CategoriaService {
     });
   }
 
-  public EditarCategoriaFuncion(id: any, Nuevacategoria: any): Observable<any> {
-    const body = { id: id, Nuevacategoria: Nuevacategoria };
-    return this.http.put(
-      `${this.apiUrl}/api/actualizar/categoria`,
-      body,
-      {
-        headers: this.headers,
-      }
-    );
+  public EditarCategoriaFuncion(id: any, categoria: any): Observable<any> {
+    const body = { id: id, categoria: categoria };
+    return this.http.put(`${this.apiUrl}/api/actualizar/categoria`, body, {
+      headers: this.headers,
+    });
+  }
+
+  public EditarSubCategoriaFuncion(id: any, subcategoria: any): Observable<any> {
+    const body = { id: id, subcategoria: subcategoria };
+    return this.http.put(`${this.apiUrl}/api/actualizar/subcategoria`, body, {
+      headers: this.headers,
+    });
   }
 }

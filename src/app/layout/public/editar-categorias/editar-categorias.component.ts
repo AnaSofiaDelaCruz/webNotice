@@ -153,10 +153,20 @@ export class EditarCategoriasComponent {
             'La categoria fue actualizada correctamente.'
           );
         });
+      this.listarCategorias();
     } else {
       capturar = await this.alertas.InputAlert(
         'Cambiar nombre de la subcategoria'
       );
+      this.categoriaServicio
+        .EditarSubCategoriaFuncion(idCategoria, capturar)
+        .subscribe((res) => {
+          this.alertas.showSuccess(
+            'Edición exitosa',
+            'La subcategoria fue actualizada correctamente.'
+          );
+        });
+      this.listarSubCategorias();
     }
 
     if (capturar !== null) {

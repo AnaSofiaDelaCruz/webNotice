@@ -117,6 +117,9 @@ export class AlertService {
           resolve(null);
         }
       });
+      customClass: {
+        input: "input_sweet"
+      }
     });
   }
 }

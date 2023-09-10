@@ -1,12 +1,15 @@
 .escritorio {
   display: none;
 }
+.escritorio_nuevo{
+    display: none;
+}
 
 .mobile {
   display: none;
 }
 @media screen and (min-width: 1024px) {
-  .escritorio {
+  .escritorio_nuevo {
     display: block;
   }
 }
@@ -17,160 +20,247 @@
   }
 }
 
-.fondoMobile {
-    background-color: #512B52;
-    width: 100%;
-    height: 60vh;
-    border-radius: 0 0 2rem 2rem;
+.contenedor_general {
+  width: 100%;
+  display: flex;
+}
+.imagen_lateral_izquierda {
+  height: 100vh;
+}
+.contenedor_contenido {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 4rem;
+}
+.texto_login {
+  font-family: Poppins;
+  font-weight: bold;
+  text-align: start;
+}
+.texto_leyenda {
+  color: #7d7d7d;
+  text-align: justify;
+  font-family: Poppins;
+  font-size: 1rem;
+}
+
+.contenedor_formulario_login {
+  margin-top: 3rem;
+}
+.input_escritorio {
+  display: block;
+  border-radius: 10px;
+  background: #eee;
+  border: none;
+  width: 100%;
+  outline: none;
+  padding: 1rem;
+  font-family: Poppins;
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+}
+.boton_login {
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+  font-size: 1.5rem;
+  font-family: Poppins;
+  color: white;
+  background-color: #512b52;
+  height: 50px;
+  
+}
+.boton_login:hover {
+  transition: all ease 0.5s;
+  box-shadow: 0px 0px 15px 0px rgba(99, 82, 116, 0.65);
+  
+}
+
+.botones_card{
+    display: grid;
+    grid-template-columns: auto auto;
+    margin-top: 2rem;
+    gap: 20px;
+}
+.card_boton{
+    padding: 1rem;
+    background-color: #EEE;
+    border-radius: 10px;
+    text-align: center;
+    transition: all ease 0.5;
+}
+.card_boton:hover{
+    box-shadow: 0px 0px 44px -13px rgba(0, 0, 0, 0.356);
+    transition: all ease 0.5;
+}
+.sugerencia_registrarse{
+    font-family: Poppins;
+    font-size: 1.5rem;
     text-align: center;
 }
-
-.sloganMobile{
-    font-family: Poppins;
-    color: white;
-    font-size: 1rem;
-}
-.contenedorFormulario{
-    background-color: white;
-    width: 90%;
-    height: 100%px;
-    position: absolute;
-    top: 30%;
-    border-radius: 10px;
-    font-family: Poppins;
-    left: 0;
-    right: 0;
-    margin: auto;
-    padding: 1rem;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-
-}
-.bienvenidoMobile{
-    font-weight: bold;
-    margin-left: 1rem;
-}
-.problemasMobile{
+.boton_registrarse{
     border: none;
-    margin: 5px;
-    background-color: white;
-    margin-top: 1rem;
-    font-size: 1rem;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-}
-.footerMobile{
-    position: absolute;
-    bottom: 0;
-    margin-bottom: 2rem;
+    border-radius: 5px;
     font-family: Poppins;
+    background-color: #635274;
+    color: white;
+    font-size: 1.5rem;
     width: 100%;
+    height: 50px;
 }
-.slogan2Mobile{
-    font-weight: bold;
-    font-size: 1rem;
-    margin-left: 1rem;
+.fondoMobile {
+  background-color: #512b52;
+  width: 100%;
+  height: 60vh;
+  border-radius: 0 0 2rem 2rem;
+  text-align: center;
 }
-.botonRegistrarMobile{
-    border: none;
-    background-color: #512B52;
-    color: white;
-    width: 90%;
-    height: 3rem;
-    border-radius: 10px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+
+.sloganMobile {
+  font-family: Poppins;
+  color: white;
+  font-size: 1rem;
 }
-.inputMobile{
-    border-radius: 10px;
-    height: 40px;
-    padding-left: 5px;
-    border: none;
-    background-color: #EEE;
-    margin-bottom: 1rem;
-    width: 90%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+.contenedorFormulario {
+  background-color: white;
+  width: 90%;
+  height: 100%px;
+  position: absolute;
+  top: 30%;
+  border-radius: 10px;
+  font-family: Poppins;
+  left: 0;
+  right: 0;
+  margin: auto;
+  padding: 1rem;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
-.loginBotonMobile{
-    border: none;
-    font-family: Poppins;
-    font-size: 2rem;
-    background-color: #7BB0A8;
-    border-radius: 50%;
-    width: 99px;
-    height: 99px;
-    color: white;
-    display: block;
-    margin-right: auto;
-    margin-left: auto;
+.bienvenidoMobile {
+  font-weight: bold;
+  margin-left: 1rem;
 }
-.space{
-   padding-left: 0px !important;
-   padding-top: 0px !important;
+.problemasMobile {
+  border: none;
+  margin: 5px;
+  background-color: white;
+  margin-top: 1rem;
+  font-size: 1rem;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.footerMobile {
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 2rem;
+  font-family: Poppins;
+  width: 100%;
+}
+.slogan2Mobile {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-left: 1rem;
+}
+.botonRegistrarMobile {
+  border: none;
+  background-color: #512b52;
+  color: white;
+  width: 90%;
+  height: 3rem;
+  border-radius: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.inputMobile {
+  border-radius: 10px;
+  height: 40px;
+  padding-left: 5px;
+  border: none;
+  background-color: #eee;
+  margin-bottom: 1rem;
+  width: 90%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.loginBotonMobile {
+  border: none;
+  font-family: Poppins;
+  font-size: 2rem;
+  background-color: #7bb0a8;
+  border-radius: 50%;
+  width: 99px;
+  height: 99px;
+  color: white;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+.space {
+  padding-left: 0px !important;
+  padding-top: 0px !important;
 }
 .triangulo-tricolor {
-    width: fit-content;
-    border-left: 460px solid #512B52;
-    border-top: 359px solid #635274;
-    border-bottom: 431px solid #7BB0A8;
-   
+  width: fit-content;
+  border-left: 460px solid #512b52;
+  border-top: 359px solid #635274;
+  border-bottom: 431px solid #7bb0a8;
 }
-.position{
-    position: relative;
-
+.position {
+  position: relative;
 }
-.logo{
-    position: absolute; 
-    left: 23px; top: -73px; 
-    z-index: 1
+.logo {
+  position: absolute;
+  left: 23px;
+  top: -73px;
+  z-index: 1;
 }
-.input{
-    width: 50%;
+.input {
+  width: 50%;
 }
-.pilar{
-    position: absolute; 
-    left: 0px; 
-    top: 263px; 
-    z-index: 1
+.pilar {
+  position: absolute;
+  left: 0px;
+  top: 263px;
+  z-index: 1;
 }
-.pilar-secundario{
-    position: relative;
-    left: 720px;
-    bottom: 20px;
+.pilar-secundario {
+  position: relative;
+  left: 720px;
+  bottom: 20px;
 }
-.slogan{
-    position: absolute;
-    color: aliceblue;
-    font-family: 'Roboto-Bold', sans-serif;
-    margin-top: 249px;
-    margin-left: 118px;
-    font-size: larger;
+.slogan {
+  position: absolute;
+  color: aliceblue;
+  font-family: "Roboto-Bold", sans-serif;
+  margin-top: 249px;
+  margin-left: 118px;
+  font-size: larger;
 }
-.background-login{
-    background-color: #EEEE;
+.background-login {
+  background-color: #eeee;
 }
-.text-title{
-    color: black;
-    font-family: 'Roboto', sans-serif;
-    font-size: 100%;
-    font-size: xx-large;
+.text-title {
+  color: black;
+  font-family: "Roboto", sans-serif;
+  font-size: 100%;
+  font-size: xx-large;
 }
-.links{
-    color: #7BB0A8;
+.links {
+  color: #7bb0a8;
 }
-.text-others{
-    color: black;
-    font-family: 'Roboto', sans-serif;
+.text-others {
+  color: black;
+  font-family: "Roboto", sans-serif;
 }
-.button-success{
-    background-color: #512B52;
-    color: white;
-    text-decoration:none;
-    font-weight:600;
-    font-size:20px;
-    padding-top:15px;
-    padding-bottom:15px;
-    padding-left:150px;
-    padding-right:150px;
+.button-success {
+  background-color: #512b52;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 20px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 150px;
+  padding-right: 150px;
 }
