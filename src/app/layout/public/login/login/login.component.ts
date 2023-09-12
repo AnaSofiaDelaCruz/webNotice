@@ -38,8 +38,13 @@ export class LoginComponent implements OnInit {
             this.alertService.ShowErrorAlert('Error en credenciales');
           } else {
             if (localStorage.getItem("rol") === "administrador" || localStorage.getItem("rol") === "escritor"){
+              this.alertService.showSuccess("Inicio de sesión exitoso","Bienvenido Administrador")
               this.router.navigate(['/homeAdmin']);
             } else {
+              this.alertService.showSuccess(
+                'Inicio de sesión exitoso',
+                'Bienvenido a Misión 24'
+              );
               this.router.navigate(['/home']);
             }
             
@@ -56,7 +61,7 @@ export class LoginComponent implements OnInit {
 
   private handleError(error: any) {
     if (error.status === 401) {
-      this.alertService.ShowErrorAlert('No se encontró la categoría');
+      this.alertService.ShowErrorAlert('Correo o contraseña incorrectos');
     } else if (error.status === 503) {
       this.alertService.ShowErrorAlert('No tiene permiso para estar aquí');
     }

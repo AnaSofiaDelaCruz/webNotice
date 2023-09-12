@@ -4,7 +4,6 @@ import { Router } from '@angular/router';
 import { AlertService } from 'src/app/service/AlertService/alert.service';
 import { CategoriaService } from 'src/app/service/CategoriaService/categoria.service';
 
-
 @Component({
   selector: 'app-crear-categoria',
   templateUrl: './crear-categoria.component.html',
@@ -74,8 +73,7 @@ export class CrearCategoriaComponent implements OnInit {
       .subscribe(
         (response) => {
           if (response.message === 'Subcategoría creada') {
-
-            this.alertService.MinShowSucces("Creador","Subcategoría")
+            this.alertService.MinShowSucces('Creador', 'Subcategoría');
             this.ListSubCategory();
             this.categoriaForm.reset();
           }
@@ -116,6 +114,6 @@ export class CrearCategoriaComponent implements OnInit {
   }
 
   public irEditar() {
-    this.router.navigate(["/editarCategoria"])
+    this.router.navigate(['/editarCategoria']);
   }
 }
