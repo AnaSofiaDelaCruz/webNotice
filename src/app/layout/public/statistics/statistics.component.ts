@@ -80,7 +80,7 @@ export class StatisticsComponent {
               this.cargar_noticias();
             },
             (error) => {
-              console.log('Hay error al eliminar: ', error);
+              console.log('> Hay error al eliminar: ', error);
             }
           );
         } else {

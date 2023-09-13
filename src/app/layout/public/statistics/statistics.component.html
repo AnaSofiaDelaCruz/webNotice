@@ -52,7 +52,7 @@
       <div
         class="card"
         *ngFor="let nota of notaCompleta | ObjToArray"
-        (click)="eliminar_noticia(nota.id)"
+        
       >
         <div class="contenedor_imagen">
           <img
@@ -70,7 +70,7 @@
             <button class="boton_editar">
               <i class="bi bi-pencil-square"></i> Editar
             </button>
-            <button class="boton_eliminar">
+            <button class="boton_eliminar" (click)="eliminar_noticia(nota.id)">
               <i class="bi bi-trash-fill"></i> Eliminar
             </button>
           </div>
