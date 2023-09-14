@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -41,5 +42,15 @@ export class NotaService {
   }
   BuscarNota(termino: string): Observable<any> {
     return this.http.get(`${this.apiUrl}/api/buscar/nota?q=${termino}`);
+  }
+
+  BuscarNotaId(id: any): Observable<any> {
+    return this.http.get(`${this.apiUrl}/api/noticia/${id}`);
+  }
+
+  ActualizarNota(id: any, nota: FormData): Observable<any> {
+    return this.http.put(`${this.apiUrl}/api/actualizar/nota/${id}`, nota, {
+      headers: this.headers,
+    });
   }
 }

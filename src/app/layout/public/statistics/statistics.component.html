@@ -67,7 +67,7 @@
           </h1>
           <h2 class="fecha_noticia">{{ nota.createdAt }}</h2>
           <div class="contenedor_botontes_card">
-            <button class="boton_editar">
+            <button class="boton_editar" (click)="editar_noticia(nota.id)">
               <i class="bi bi-pencil-square"></i> Editar
             </button>
             <button class="boton_eliminar" (click)="eliminar_noticia(nota.id)">

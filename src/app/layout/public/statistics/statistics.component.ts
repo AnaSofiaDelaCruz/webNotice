@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
+import { Route, Router } from '@angular/router';
 import { AlertService } from 'src/app/service/AlertService/alert.service';
 import { CategoriaService } from 'src/app/service/CategoriaService/categoria.service';
 import { DashboardService } from 'src/app/service/DashboardService/dashboard.service';
+import { NotaService } from 'src/app/service/NotaService/nota.service';
 
 @Component({
   selector: 'app-statistics',
@@ -21,7 +23,9 @@ export class StatisticsComponent {
   constructor(
     private servicio_categorias: CategoriaService,
     private servicio_dashboard: DashboardService,
-    private servicio_alertas: AlertService
+    private servicio_alertas: AlertService,
+    private servicio_notas: NotaService,
+    private router: Router
   ) {}
 
   private cargar_categorias() {
@@ -87,5 +91,11 @@ export class StatisticsComponent {
           this.servicio_alertas.ShowErrorAlert('Operación Cancelada');
         }
       });
+  }
+
+  public editar_noticia(id: string) {
+    this.router.navigate(['/writerEdit/', id], {
+      queryParams: { parametro1: id },
+    });
   }
 }
