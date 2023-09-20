@@ -1,0 +1,168 @@
+.contenedor_general {
+  width: 100%;
+  font-family: Poppins;
+  display: grid;
+  grid-template-columns: 20% auto;
+}
+.contenedor_lateral {
+  background: linear-gradient(#0395c2, #7bb0a8);
+  height: 100vh;
+}
+
+.contenedor_contenido {
+  background-color: blue;
+}
+
+.contenedor_imagen {
+  margin-top: 3rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.admin_texto {
+  font-size: 1rem;
+  font-weight: 600;
+}
+.nombre_admin {
+  font-size: 1rem;
+}
+.admin_texto,
+.nombre_admin {
+  text-align: center;
+  color: white;
+}
+.menu_lateral {
+  margin-top: 2rem;
+}
+.boton_lateral {
+  width: 100%;
+  text-align: start;
+  border: none;
+  color: white;
+  background-color: transparent;
+  transition: all ease 0.5s;
+  font-size: 1.5rem;
+}
+
+.boton_lateral:hover {
+  background-color: #5abed3;
+  padding-left: 1rem;
+}
+
+.boton_seleccionado {
+  background-color: #5abed3;
+  padding-left: 1rem;
+}
+
+.boton_cerrar {
+  border: none;
+  width: 90%;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-top: 70%;
+  border-radius: 5px;
+  background: linear-gradient(#7bb0a8, #0395c2);
+  color: white;
+  transition: all ease 0.5s;
+}
+.boton_cerrar:hover {
+  padding: 1rem;
+}
+
+.contenedor_contenido {
+  background-color: #ebeaea;
+}
+@media screen and (max-width: 1360px) {
+  .boton_lateral {
+    font-size: 1rem;
+  }
+}
+
+.mensaje_bienvenida {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-left: 1rem;
+  margin-top: 2rem;
+}
+.mensaje {
+  font-size: 1rem;
+  margin-left: 1rem;
+  color: #a9a1a1;
+  margin-top: -0.5rem;
+}
+
+.escritores_registrados_texto {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-left: 1rem;
+  padding-top: 10px;
+}
+.escritores_registrados {
+  background-color: white;
+  width: 736px;
+  height: 70vh;
+  border-radius: 10px;
+  margin-left: 1rem;
+  overflow-y: scroll;
+  align-items: center;
+}
+.resultados_escritores {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  align-items: center;
+  padding: 0.3rem;
+  transition: all ease 0.5s;
+  cursor: pointer;
+}
+
+.resultados_escritores:hover {
+  background-color: #efefef;
+}
+.nombre_escritor {
+  font-size: 1rem;
+}
+.fecha_creado {
+  font-size: 0.8rem;
+}
+
+.boton_editar,
+.boton_eliminar {
+  border: none;
+  color: white;
+  width: 50px;
+  border-radius: 10px;
+  transition: all ease 0.5s;
+}
+.boton_editar {
+  background: linear-gradient(#0395c2, #7bb0a8);
+  margin-right: 5px;
+}
+.boton_eliminar {
+  background: linear-gradient(90deg, #993232 0%, #f94c4c 100%);
+}
+
+.boton_editar:hover,
+.boton_eliminar:hover {
+  padding: 8px;
+}
+
+.boton_registrar_escritor {
+  border: none;
+  width: 736px;
+  font-size: 3rem;
+  color: white;
+  background: linear-gradient(#0395c2, #7bb0a8);
+  margin: 1rem;
+  border-radius: 10px;
+  transition: all ease 0.5s;
+}
+
+.boton_registrar_escritor:hover {
+  margin: 0.5rem 1rem;
+}
+
+#checkEscritores,#checkPubs,#checkCategorias{
+  display: none;
+}

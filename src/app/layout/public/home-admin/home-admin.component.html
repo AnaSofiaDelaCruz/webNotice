@@ -57,9 +57,6 @@
 
     <div class="menuUserContenedor" [ngClass]="{ menu: activar }">
       <div class="fondoMenu">
-        <button class="botonesMenuUsuarios" routerLink="/editarPerfil">
-          <i class="bi bi-pen-fill"></i> Editar informacion del perfil
-        </button>
         <button
           class="botonesMenuUsuarios"
           id="botonCerrarSesion"
@@ -67,11 +64,8 @@
         >
           <i class="bi bi-box-arrow-in-left"></i> Cerrar sesión
         </button>
-        <button class="botonesMenuUsuarios" routerLink="/homeAdminMenu">
-          <i class="bi bi-person-badge-fill"></i> Administrar escritores
-        </button>
-        <button class="botonesMenuUsuarios" routerLink="/statistics">
-          <i class="bi bi-bar-chart-fill"></i> Administrar publicaciones
+        <button class="botonesMenuUsuarios" routerLink="/administrador">
+          <i class="bi bi-bar-chart-fill"></i> Menú de administrador
         </button>
         <button
           class="botonesMenuUsuarios"

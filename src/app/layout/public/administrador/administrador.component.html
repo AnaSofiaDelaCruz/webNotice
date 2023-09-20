@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu de administrador</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+      @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css");
+    </style>
+  </head>
+  <body>
+    <div class="contenedor_general">
+      <div class="contenedor_lateral">
+        <div class="contenedor_imagen">
+          <img src="../assets/images/admin_image.png" alt="Admin imagen" />
+        </div>
+        <h1 class="admin_texto">Administrador</h1>
+        <h2 class="nombre_admin">Lic. Flores</h2>
+
+        <div class="menu_lateral">
+          <button class="boton_lateral" (click)="activarEscritores()" id="botonEscritores">
+            <i class="bi bi-person-fill"></i> Escritores
+          </button>
+          <button class="boton_lateral" (click)="activar_pubs()" id="boton_pubs">
+            <i class="bi bi-bar-chart-line-fill"></i> Publicaciones
+          </button>
+          <button class="boton_lateral" (click)="activar_categorias()" id="boton_categorias">
+            <i class="bi bi-book-half"></i> Categorias
+          </button>
+        </div>
+        <button class="boton_cerrar" routerLink="/homeAdmin">
+          <i class="bi bi-x-lg"></i> Cerrar menu
+        </button>
+      </div>
+      <div class="contenedor_contenido">
+        <h1 class="mensaje_bienvenida">Hola, Bienvenido administrador</h1>
+        <section class="escritores">
+          <h2 class="mensaje">
+            En este panel, podrás gestionar la información de tus escritores.
+          </h2>
+
+          <div class="escritores_registrados">
+            <h1 class="escritores_registrados_texto">
+              Escritores registrados: <span>{{cantidadEscritores}}</span>
+            </h1>
+            <div class="resultados_escritores" *ngFor="let escritor of escritores | ObjToArray">
+              <h1 class="nombre_escritor">{{ escritor.nombre }} {{ escritor.apellido }}</h1>
+              <h2 class="fecha_creado">Fecha de registro: {{ escritor.createdAt }}</h2>
+              <div class="botones_gestion">
+                <button class="boton_editar" (click)="encontrarEscritor(escritor.id)">
+                  <i class="bi bi-pen-fill"></i>
+                </button>
+                <button class="boton_eliminar" (click)="eliminarEscritor(escritor.id)">
+                  <i class="bi bi-trash3-fill"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <button class="boton_registrar_escritor" routerLink="/newWriter"><i class="bi bi-person-plus-fill"></i> Registrar escritor</button>
+          <input type="checkbox" class="checkbox" id="checkEscritores">
+          <input type="checkbox" class="checkbox" id="checkPubs">
+          <input type="checkbox" class="checkbox" id="checkCategorias">
+        </section>
+      </div>
+    </div>
+  </body>
+</html>

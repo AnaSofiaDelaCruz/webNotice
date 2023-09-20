@@ -3,73 +3,43 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Editar perfil</title>
+    <title>Nuevo escritor</title>
     <style>
-      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;800&family=Roboto:wght@400;700&display=swap");
-      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;800&family=Roboto:wght@400;700&display=swap");
-      @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+      @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css");
     </style>
   </head>
   <body>
-    <div class="cabecera">
-      <button class="boton-cancelar" routerLink="/homeAdmin">
-        Cancelar
+    <div class="header">
+      <button class="boton_regresar" routerLink="/administrador">
+        Regresar
       </button>
-      <h1 class="titulo">MISIÓN 24</h1>
-      <h1 class="slogan">El punto exacto de la noticia</h1>
+      <h1 class="mision24">MISIÓN 24</h1>
+      <h2 class="slogan">El punto exacto de la noticia</h2>
     </div>
-    <div class="cuerpo">
+
+    <div class="contenedor_principal">
+      <h1 class="nuevo_escritor_texto">Registrar escritor</h1>
       <form [formGroup]="miFormulario" (ngSubmit)="guardarCambios()">
-
-      
-      <div class="contenedor-formulario" >
-        <h1 class="titulo-form">Editar perfil</h1>
-        <div class="superior-formulario">
-          <h2 class="label-form">Nombres</h2>
-          <input
-            type="text"
-            class="contenedor-texto"
-            formControlName="nombre"
-          />
-          <h2 class="label-form">Apellidos</h2>
-          <input
-            type="text"
-            class="contenedor-texto"
-            formControlName="apellido"
-          />
-          <h2 class="label-form">Nombre de usuario (apodo)</h2>
-          <input
-            type="text"
-            class="contenedor-texto"
-            formControlName="username"
-            value=""
-          />
-          <button class="cargar-imagen">Cargar imagen</button>
-        </div>
-        <div class="inferior-formulario">
-          <h2 class="label-form">Email</h2>
-          <input
-            type="email"
-            class="contenedor-texto"
-            formControlName="correo"
-          />
-          <h2 class="label-form">Contraseña</h2>
-          <input
-            type="password"
-            class="contenedor-texto"
-            formControlName="password"
-          />
-          <h2 class="label-form">Repetir contraseña</h2>
-          <input
-            type="password"
-            class="contenedor-texto"
-            formControlName="confirmPassword"
-          />
-
-          <button class="crear-usuario">Guardar cambios</button>
-        </div>
-      </div>
+        <h2 class="nombres_texto">Nombres</h2>
+        <input type="text" formControlName="nombre" />
+        <h2 class="nombres_texto">Apellidos</h2>
+        <input type="text" formControlName="apellido" />
+        <br />
+        <h2 class="nombres_texto">Email (Correo electronico)</h2>
+        <input type="text" formControlName="correo" />
+        <h2 class="nombres_texto">Contraseña</h2>
+        <input type="password" formControlName="password" />
+        <h2 class="nombres_texto">Confirmar contraseña</h2>
+        <input type="text" formControlName="confirmPassword" />
+        <br />
+        <button class="boton_guardar">
+          <i class="bi bi-floppy-fill"></i> Guardar cambios
+        </button>
+        <input type="hidden" formControlName="rolID" value="1" />
+        <br />
       </form>
+      <div class="linea_decorativa"></div>
     </div>
   </body>
 </html>
