@@ -163,6 +163,125 @@
   margin: 0.5rem 1rem;
 }
 
-#checkEscritores,#checkPubs,#checkCategorias{
+#checkEscritores,
+#checkPubs,
+#checkCategorias {
   display: none;
+}
+
+.esconder {
+  transition: all ease 0.5s;
+  display: none;
+}
+
+/* Seccion de publicaciones */
+
+.header {
+  background: linear-gradient(270deg, #7bb0a8 33.43%, #0595c3 100%);
+  padding: 1rem;
+  text-align: center;
+}
+.buscador_notas {
+  border-radius: 47px;
+  background: linear-gradient(90deg, #23b5e3 1.14%, #60c6b6 99.98%);
+  border: none;
+  color: white;
+  outline: none;
+  width: 628px;
+  height: 40px;
+  padding-left: 1rem;
+}
+
+.contenedor_publicaciones {
+  background-color: white;
+  border-radius: 10px;
+  width: 98%;
+  height: 80vh;
+  flex-shrink: 0;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1rem;
+  overflow-y: scroll;
+  align-items: center;
+  justify-content: center;
+}
+
+.publicaciones_realizadas {
+  color: #000;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  margin-left: 1rem;
+}
+
+.imagen_publicacion {
+  width: 259px;
+  height: 129px;
+  border-radius: 10px;
+  margin: 0 auto;
+  display: block;
+}
+
+.titulo_noticia {
+  color: #000;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+.informacion_nota h2 {
+  color: #000;
+  font-family: Poppins;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 133.2%;
+  display: block;
+}
+
+.card_publicacion {
+  width: 308px;
+  height: 368px;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0px 11px 12px 0px rgba(0, 0, 0, 0.25);
+  padding: 1rem;
+  cursor: pointer;
+  transition: all ease 0.5s;
+  margin: 1rem;
+}
+.card_publicacion:hover {
+  transform: translateY(-10px);
+}
+
+.botones_noticia button {
+  border-radius: 44px;
+  border: none;
+  width: 72px;
+  height: 32px;
+  color: white;
+  transition: all ease 0.5s;
+}
+.botones_noticia {
+  text-align: end;
+  margin-top: 2rem;
+}
+.boton_borrar_nota {
+  border-radius: 44px;
+  background: linear-gradient(90deg, #993232 0%, #f94c4c 100%);
+  margin-left: 5px;
+}
+.boton_editar_nota {
+  background: linear-gradient(90deg, #7bb0a8 0%, #60b0fa 100%);
+}
+
+.boton_editar_nota:hover {
+  background: linear-gradient(90deg, #91ccc3 0%, #b1dbff, #60b0fa 100%);
+}
+
+.boton_borrar_nota:hover {
+  background: linear-gradient(90deg, #a35555 0%, #fb7070 100%);
 }

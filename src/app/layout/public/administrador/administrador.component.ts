@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertService } from 'src/app/service/AlertService/alert.service';
+import { DashboardService } from 'src/app/service/DashboardService/dashboard.service';
 import { ListarEscritoresService } from 'src/app/service/ListarEscritoresService/listar-escritores.service';
 
 @Component({
@@ -13,8 +14,10 @@ export class AdministradorComponent {
   public escritores = [];
   public active: boolean = true;
   esAdmin = false;
+  public notaCompleta: { items: any[]; itemPaths: string[] }[] = [];
   ngOnInit(): void {
-    this.activarEscritores();
+    this.activar_pubs();
+    this.cargar_noticias();
     this.listar();
     console.log('Esto tiene localstorage:', localStorage.getItem('rol'));
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
@@ -27,10 +30,17 @@ export class AdministradorComponent {
   constructor(
     public router: Router,
     private enlistar: ListarEscritoresService,
-    private alertas: AlertService
+    private alertas: AlertService,
+    private servicio_dashboard: DashboardService
   ) {}
 
   public activarEscritores() {
+    const seccionEscritores = document.getElementById('seccion_escritores');
+    seccionEscritores?.classList.remove('esconder');
+
+    const seccionPubs = document.getElementById('seccion_publicaciones');
+    seccionPubs?.classList.add('esconder');
+
     var checkbox1 = document.getElementById(
       'checkEscritores'
     ) as HTMLInputElement;
@@ -60,11 +70,15 @@ export class AdministradorComponent {
   }
 
   public activar_pubs() {
+    const seccionPubs = document.getElementById('seccion_publicaciones');
+    seccionPubs?.classList.remove('esconder');
+    const seccionEscritores = document.getElementById('seccion_escritores');
     var checkbox2 = document.getElementById('checkPubs') as HTMLInputElement;
     var boton_pubs = document.getElementById('boton_pubs') as HTMLButtonElement;
     checkbox2.checked = true;
     if (checkbox2.checked) {
       boton_pubs.classList.add('boton_seleccionado');
+      seccionEscritores?.classList.add('esconder');
     }
 
     var checkbox1 = document.getElementById(
@@ -192,5 +206,50 @@ export class AdministradorComponent {
           console.log('Eliminación cancelada por el usuario');
         }
       });
+  }
+
+  private cargar_noticias() {
+    this.servicio_dashboard.ListNotas().subscribe((response) => {
+      this.notaCompleta = response.noticias.map((noticia) => ({
+        ...noticia,
+        itemPaths: noticia.items.map((item: { path: any }) => item.path),
+        item: noticia.items.map((item: { nombre: any }) => item.nombre),
+      }));
+      console.log('Esto tiene nota completa', this.notaCompleta);
+    });
+  }
+
+  public eliminar_noticia(id: string) {
+    let rol = localStorage.getItem('rol');
+
+    console.log('Este es el ID de la publicación: ', id);
+
+    this.alertas
+      .AlertWarningDelete('¿Esta seguro de eliminar esta noticia?')
+      .then((respuesta) => {
+        if (respuesta.value) {
+          this.servicio_dashboard.EliminarNoticia(id, rol).subscribe(
+            (res) => {
+              res.message === 'Noticia eliminada';
+              this.alertas.showSuccess(
+                'Operación exitosa',
+                'La publicación fue eliminada exitosamente'
+              );
+              this.cargar_noticias();
+            },
+            (error) => {
+              console.log('> Hay error al eliminar: ', error);
+            }
+          );
+        } else {
+          this.alertas.ShowErrorAlert('Operación Cancelada');
+        }
+      });
+  }
+
+  public editar_noticia(id: string) {
+    this.router.navigate(['/writerEdit/', id], {
+      queryParams: { parametro1: id },
+    });
   }
 }
