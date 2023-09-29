@@ -105,7 +105,6 @@
           </h2>
           <h1 class="publicaciones_realizadas">Publicaciones realizadas</h1>
           <div class="contenedor_publicaciones">
-            
             <div
               class="card_publicacion"
               *ngFor="let nota of notaCompleta | ObjToArray"
@@ -123,10 +122,16 @@
                 <h2>Subcategoria: {{ nota.subcategorium.subcategoria }}</h2>
               </div>
               <div class="botones_noticia">
-                <button class="boton_editar_nota">
+                <button
+                  class="boton_editar_nota"
+                  (click)="editar_noticia(nota.id)"
+                >
                   <i class="bi bi-pen-fill"></i>
                 </button>
-                <button class="boton_borrar_nota">
+                <button
+                  class="boton_borrar_nota"
+                  (click)="eliminar_noticia(nota.id)"
+                >
                   <i class="bi bi-trash3-fill"></i>
                 </button>
               </div>

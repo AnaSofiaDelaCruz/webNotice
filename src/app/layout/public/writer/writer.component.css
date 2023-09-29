@@ -1,229 +1,336 @@
-.cabecera {
-  display: grid;
-  background-color: #7bb0a8;
-  grid-template-columns: auto auto;
-  align-items: center;
+body {
+  font-family: Poppins;
+  background: #ebeaea;
+  height: 100vh;
 }
 
-.tituloHeader {
-  font-family: Roboto;
-  font-size: 32px;
-  padding: 1rem;
-  font-weight: bold;
-  color: white;
-  transition: 1s all ease;
-}
-.cancelarNota {
-  width: 200px;
-  height: 60px;
-  border: none;
-  font-size: 32px;
-  align-items: end;
-  border-radius: 5px;
-  font-family: Roboto;
-  font-weight: bold;
-  background-color: #512b52;
-  color: white;
-  transition: 1s all ease;
-}
-
-.cancelarNota:hover {
-  width: 250px;
-  background-color: #7f4681;
-}
-
-.contenedorBoton {
-  text-align: end;
-  margin-right: 1rem;
-}
-
-.form-group {
-  margin: 1rem;
-
-  .tituloNota {
-    font-family: Poppins;
-    font-weight: bold;
-    font-size: 24px;
-  }
-  .form-control {
-    width: 10vw;
-    font-family: Roboto;
-  }
-
-  #inputTitulo {
-    width: 50vw;
-    font-weight: bold;
-    text-transform: uppercase;
-  }
-  .textoCategoria {
-    font-family: Poppins;
-    font-weight: bold;
-  }
-}
-
-.encapsularCategorias {
+.header {
+  background: linear-gradient(90deg, #00b2ff 0%, #7bb0a8 100%);
   display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
   align-items: center;
 }
 
-.botonCrearCategorias {
-  font-family: Roboto;
-  font-weight: bold;
-  color: white;
+.header button {
+  border-radius: 30px;
+  background: #fff;
   border: none;
-  border-radius: 5px;
-  background-color: #7bb0a8;
-  height: 40px;
-  margin-top: 20px;
-}
-
-#selectorImagenes {
-  background-color: #7bb0a8;
-  color: white;
-  font-family: Roboto;
-  width: 400px;
-  font-weight: bold;
-}
-
-.cuerpoNotaTitulo {
-  font-family: Poppins;
-  font-weight: bold;
+  width: 143px;
+  height: 53px;
   font-size: 20px;
+  transition: all ease 0.5s;
 }
 
-.confirmarNoticia {
-  font-family: Roboto;
-  font-weight: bold;
+.header button:hover {
+  transform: translateY(-3px);
   background-color: #7bb0a8;
-  border: none;
-  border-radius: 5px;
   color: white;
-  width: 150px;
-  height: 50px;
-  transition: 1s all ease;
-  margin-left: 1rem;
 }
 
-.confirmarNoticia:hover {
-  width: 250px;
-  background-color: #a7dbab;
+.header h1,
+h2 {
+  color: white;
 }
 
-.estiloEditor:hover {
-  box-shadow: -1px -1px 69px -21px rgba(123, 176, 168, 1);
-  transition: 1s all ease;
+.header h1 {
+  color: #fff;
+  font-family: Poppins;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 600;
 }
 
-.menuCategorias {
-  background-color: #eee;
-  width: 500px;
-  height: 300px;
+.header h2 {
+  color: #fff;
+  font-family: Poppins;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+}
+
+.contenedor_general {
   border-radius: 10px;
+  background: #fff;
+  width: 632px;
+  height: 586px;
+  display: block;
+  margin: auto;
+  margin-top: 4rem;
+}
+
+.informacionNoticia {
+  color: #000;
+  font-family: Poppins;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  text-align: center;
+  padding-top: 1rem;
+}
+
+.formulario {
+  padding: 1.2rem;
+  display: block;
+  margin: auto;
+  text-align: center;
+}
+.titulo,
+.categorias,
+.cargar {
   display: grid;
-  padding: 3rem;
+  grid-template-columns: 30% auto;
+  align-items: center;
   gap: 1rem;
-  box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.5);
-
-  position: absolute;
-  top: 30%;
-  left: 35%;
 }
 
-.botonCategoria {
+.titulo h1,
+.categorias h1,
+.cargar h1 {
+  color: #000;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  text-align: end;
+  margin-top: 5px;
+}
+
+.titulo input {
+  border-radius: 5px;
+  background: #ebebeb;
   border: none;
-  border-radius: 5px;
-  font-family: Roboto;
+  outline: none;
+  padding: 5px 10px;
   font-weight: bold;
-  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.25);
-  background-color: white;
-  transition: 0.5s all ease;
+  text-transform: uppercase;
 }
 
-.botonCategoria:hover {
-  background-color: #7bb0a8;
-  color: white;
-  font-size: 20px;
+.categorias select {
+  border-radius: 5px;
+  background: #ebebeb;
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  padding: 5px 10px;
+  outline: none;
 }
 
-#cerrarMenuCategorias:hover {
-  background-color: rgb(170, 41, 41);
+.categorias,
+.cargar,
+.titulo {
+  margin-top: 2rem;
+}
+.selects {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 15px;
 }
 
-
-.dropdown {
-  position: relative;
-  width: 260px;
-  margin-top: 20px;
+.cargador {
+  border-radius: 10px;
+  border: 1px solid #ebebeb;
 }
 
-.dropdown > a {
+.boton_continuar {
+  border-radius: 30px;
+  background: linear-gradient(90deg, #00b2ff 0%, #7bb0a8 100%);
+  width: 271px;
+  height: 63px;
+  flex-shrink: 0;
+  color: #fff;
   font-family: Poppins;
-  text-decoration: none;
-  background-color: #7bb0a8;
-  padding: .5rem;
-  border-radius: 5px;
-  color: white;
-  font-weight: bold;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  border: none;
+  margin-top: 12rem;
+  transition: all ease 0.5s;
 }
 
-.gestion {
+.boton_continuar:hover {
+  transform: translateY(-10px);
+}
+
+.decoracion {
+  border-radius: 0px 0px 10px 10px;
+  background: linear-gradient(90deg, #00b2ff 0%, #7bb0a8 100%);
+  width: 632px;
+  height: 17px;
+  margin-top: 1.6rem;
+}
+
+.esconder {
   display: none;
-  transition: .5s all ease;
-}
-.dropdown:hover {
-  .gestion{
-    display: block;
-  }
 }
 
-.lista {
-  background-color: #EEE;
-  width: 300px;
-  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.25);
-  border-radius: 5px;
-  padding: 1rem;
+.estiloEditor {
+  padding: 2rem;
 }
 
-.opcion {
-  font-family: Poppins;
-  text-decoration: none;
-  color: black;
-  font-weight: bold;
-  transition: .5s all ease;
+body {
+  min-width: 548px;
+  min-height: 629px;
 }
-.opcion:hover{
+
+.editor button {
+  display: block;
+  margin: auto;
+}
+
+.boton_noticia {
+  border: none;
+  outline: none;
   color: white;
-}
-li {
-  list-style: none;
-  text-align: left;
-  padding: 5px;
-  border-radius: 5px;
+  background: linear-gradient(90deg, #00b2ff 0%, #7bb0a8 100%);
+  font-size: 2rem;
+  font-weight: bold;
+  height: 70px;
+  width: 380px;
+  border-radius: 30px;
+  transition: all ease 1s;
 }
 
-li:hover {
-  background-color: #a7dbab;
-  transition: .5s all ease;
+.boton_noticia:hover {
+  transform: translateY(-10px);
+  width: 420px;
 }
 
 @media screen and (max-width: 1360px) {
-  .tituloHeader {
-    font-size: 20px;
+  .header {
+    background: linear-gradient(90deg, #00b2ff 0%, #7bb0a8 100%);
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 8px;
+    align-items: center;
   }
-  .cancelarNota {
-    width: 100px;
-    height: 40px;
+
+  .header button {
+    border-radius: 30px;
+    background: #fff;
     border: none;
-    font-size: 20px;
+    width: calc(143px * 0.7);
+    height: calc(53px * 0.7);
+    font-size: calc(20px * 0.7);
+    transition: all ease 0.5s;
   }
 
-  .cancelarNota:hover {
-    width: 150px;
-    background-color: #7f4681;
+  .header h1 {
+    color: #fff;
+    font-family: Poppins;
+    font-size: calc(48px * 0.7);
+    font-style: normal;
+    font-weight: 600;
   }
 
-  .menuCategorias {
-    top: 30%;
-    left: 30%;
+  .header h2 {
+    color: #fff;
+    font-family: Poppins;
+    font-size: calc(20px * 0.7);
+    font-style: normal;
+    font-weight: 600;
+  }
+
+  .contenedor_general {
+    border-radius: 10px;
+    background: #fff;
+    width: calc(632px * 0.7);
+    height: calc(586px * 0.7);
+    display: block;
+    margin: auto;
+    margin-top: 3rem;
+  }
+
+  .informacionNoticia {
+    color: #000;
+    font-family: Poppins;
+    font-size: calc(24px * 0.7);
+    font-style: normal;
+    font-weight: 600;
+    text-align: center;
+    padding-top: 1rem;
+  }
+
+  .formulario {
+    padding: 1rem;
+    display: block;
+    margin: auto;
+    text-align: center;
+  }
+  .titulo,
+  .categorias,
+  .cargar {
+    display: grid;
+    grid-template-columns: 30% auto;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .titulo h1,
+  .categorias h1,
+  .cargar h1 {
+    color: #000;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    text-align: end;
+    margin-top: 5px;
+  }
+
+  .titulo input {
+    border-radius: 5px;
+    background: #ebebeb;
+    border: none;
+    outline: none;
+    padding: 5px 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  .categorias,
+  .cargar,
+  .titulo {
+    margin-top: 1rem;
+  }
+  .selects {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 15px;
+  }
+
+  .cargador {
+    border-radius: 10px;
+    border: 1px solid #ebebeb;
+  }
+
+  .boton_continuar {
+    border-radius: 30px;
+    background: linear-gradient(90deg, #00b2ff 0%, #7bb0a8 100%);
+    width: 271px;
+    height: 63px;
+    flex-shrink: 0;
+    color: #fff;
+    font-family: Poppins;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    border: none;
+    margin-top: 3rem;
+  }
+
+  .decoracion {
+    border-radius: 0px 0px 10px 10px;
+    background: linear-gradient(90deg, #00b2ff 0%, #7bb0a8 100%);
+    width: calc(632px * 0.7);
+    height: calc(17px 0.7);
+    margin-top: 1.6rem;
+  }
+  .esconder {
+    display: none;
+  }
+
+  .estiloEditor {
+    padding: 2rem;
   }
 }

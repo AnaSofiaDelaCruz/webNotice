@@ -36,6 +36,10 @@ export class WriterComponent implements OnInit {
   } // Inyecta FormBuilder en el constructor
 
   ngOnInit(): void {
+
+    const editor = document.getElementById('parteEditor');
+    editor?.classList.add("esconder")
+
     this.CrearGroup();
     this.ListCategories();
     this.ListSubCategories();
@@ -76,7 +80,9 @@ export class WriterComponent implements OnInit {
     });
   }
   public CrearNota() {
-    if (this.editarActivo) {
+    console.log("Esto tiene idNoticiaEncontrada:",this.idNoticiaEncontrada);
+    
+    if (this.idNoticiaEncontrada !== undefined) {
       this.editarNoticia();
     } else {
       if (this.notaForm.valid) {
@@ -95,6 +101,8 @@ export class WriterComponent implements OnInit {
         });
         this.notaServie.CrearNota(formData).subscribe(
           (response) => {
+            console.log('Esto tiene response: ', response);
+
             if (response.message === 'Nota creada') {
               this.alertService.MinShowSucces('Nota Publicada', 'Nota creada');
               this.router.navigate(['/homeAdmin']);
@@ -160,7 +168,7 @@ export class WriterComponent implements OnInit {
               'Cambios guardados',
               'La nota fue editada exitosamente.'
             );
-            this.router.navigate(['/statistics']);
+            this.router.navigate(['/administrador']);
           },
           (error) => {
             this.alertService.ShowErrorAlert(error);
@@ -177,6 +185,17 @@ export class WriterComponent implements OnInit {
       this.alertService.ShowErrorAlert('Intentelo más tarde');
     } else if (error.status === 403) {
       this.alertService.ShowErrorAlert('Token invalido');
+    }
+  }
+
+  public probar() {
+    const primerFormulario = document.getElementById('contenedorGeneral');
+    const editor = document.getElementById('parteEditor');
+    var bandera = true
+    if (bandera) {
+      primerFormulario?.classList.add("esconder")
+      editor?.classList.remove("esconder")
+      bandera = false
     }
   }
 }

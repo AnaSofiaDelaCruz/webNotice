@@ -27,7 +27,7 @@
             class="imagenNoticia"
           />
 
-          <button class="masContenido">Ver mas contenido</button>
+          <button class="masContenido" *ngIf="!ocultarBoton">Ver mas contenido</button>
         </div>
         <div class="textoNoticia" *ngIf="notita">
           <div class="contenedorTitulo">
@@ -39,7 +39,6 @@
             <p [innerHTML]="notita.descripcion"></p>
           </div>
         </div>
-        <div class="seccionComentarios">comentarios (proximamente)</div>
       </div>
     </section>
 

@@ -75,51 +75,33 @@
     </section>
 
     <section class="escritorio_nuevo">
-      <div class="contenedor_general">
-        <div class="contenedor_lateral_izquierda">
-          <img
-            src="../assets/recursos/lateral_login.png"
-            class="imagen_lateral_izquierda"
-          />
+      <div class="general">
+        <div class="contenedorIzquierdo">
+          <img src="../assets/images/M24x400px.png" class="logoM24" />
+          <img src="../assets/images/pilar2.png" class="pilarAdd" />
         </div>
-        <div class="contenedor_contenido">
-          <h1 class="texto_login">Iniciar sesión</h1>
-          <h2 class="texto_leyenda">
-            Ingresa tus credenciales para poder formar parte de esta plataforma,
-            o bien solamente lee los artículos de tu interés.
-          </h2>
-          <form [formGroup]="loginForm" (ngSubmit)="submitFormulario()">
-            <div class="contenedor_formulario_login">
+        <div class="contenedorDerecho">
+          <div class="centrar">
+            <h2 class="sloganEscritorio">El punto exacto de la noticia</h2>
+            <h1>Hola, bienvenido</h1>
+            <h2>Inicia sesión para entrar a Misión 24</h2>
+            <form [formGroup]="loginForm" (ngSubmit)="submitFormulario()">
+              <input type="email" class="inputEntrada" placeholder="Correo@gmail.com" formControlName="correo"/>
               <input
-                class="input_escritorio"
-                formControlName="correo"
-                type="email"
-                id="exampleFormControlInput1"
-                placeholder="nombre@ejemplo.com"
-              />
-              <input
-                placeholder="Ingresa tu contraseña"
-                class="input_escritorio"
-                formControlName="password"
                 type="password"
-                id="inputPassword5"
-                aria-labelledby="passwordHelpBlock"
+                class="inputEntrada"
+                placeholder="Contraseña"
+                formControlName="password"
               />
-              <button class="boton_login" (click)="Iniciar()">Iniciar sesión</button>
-            </div>
-          </form>
-
-          <div class="botones_card">
-            <div class="card_boton">
-              <h2 class="sugerencia_registrarse">¿No estas registrado?</h2>
-              <button class="boton_registrarse" routerLink="/register">Registrarse</button>
-            </div>
-            <div class="card_boton">
-              <h2 class="sugerencia_registrarse">
-                ¿No te interesa registrarte?
-              </h2>
-              <button class="boton_registrarse">inicio rapido</button>
-            </div>
+              <button class="botonIngresar" (click)="Iniciar()">
+                Ingresar <i class="bi bi-arrow-right-short"></i>
+              </button>
+              <br /><br />
+              <h2>O támbien</h2>
+              <button id="registrarBoton" routerLink="/register">
+                Registrar <i class="bi bi-plus-square"></i>
+              </button>
+            </form>
           </div>
         </div>
       </div>

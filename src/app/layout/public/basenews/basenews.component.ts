@@ -26,11 +26,17 @@ export class BasenewsComponent implements OnInit {
     this.LecturaNoticia();
   }
 
+  public ocultarBoton = false;
   private LecturaNoticia() {
     this.leerNota.LeerNota(this.idEncontrado).subscribe((response) => {
       if (response && response.noticia) {
         this.notita = response.noticia;
-        // Obtener las dos primeras imágenes de 'items'
+        if (this.notita.items.length > 2) {
+          console.log('Hay mas de 2 imagenes');
+        } else {
+          console.log('Solo hay una imagen');
+          this.ocultarBoton = true;
+        }
         this.firstTwoImages = this.notita.items.slice(0, 2);
       }
     });

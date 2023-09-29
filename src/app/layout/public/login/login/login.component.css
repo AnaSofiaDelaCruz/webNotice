@@ -20,94 +20,138 @@
   }
 }
 
-.contenedor_general {
+/* Escritorio */
+
+.general {
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: 50% 50%;
+  overflow-y: hidden;
 }
-.imagen_lateral_izquierda {
+.contenedorIzquierdo {
+  background-image: url("https://visitmexico.com/wp-content/uploads/2022/09/Chiapas_Portada.png");
   height: 100vh;
-  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
 }
-.contenedor_contenido {
-  padding: 4rem;
+
+.logoM24 {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 35%;
+}
+.pilarAdd {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  width: 361px;
+}
+
+.sloganEscritorio {
   font-family: Poppins;
-  .texto_login {
-    font-weight: bold;
+  color: #595959;
+  text-align: end;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  padding: 1rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.contenedorDerecho {
+  background-color: #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-y: hidden;
+}
+
+.centrar {
+  text-align: center;
+}
+
+.centrar h1 {
+  color: #000;
+  font-family: Poppins;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+}
+.centrar h2 {
+  color: #595959;
+  font-family: Poppins;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 158.5%; /* 38.04px */
+}
+
+.inputEntrada {
+  display: block;
+  width: 100%;
+  border-radius: 10px;
+  padding: 5px 10px;
+  border: none;
+  outline: none;
+  font-family: Poppins;
+  margin-bottom: 1rem;
+  height: 60px;
+  font-size: 1.5rem;
+}
+
+.botonIngresar {
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #635274 0.06%, #512b52 99.95%);
+  height: 60px;
+  color: white;
+  font-family: Poppins;
+  margin-top: 2rem;
+}
+
+#registrarBoton {
+  background-color: transparent;
+  width: 100%;
+  height: 60px;
+  font-size: 24px;
+  border-radius: 10px;
+}
+.botonIngresar,
+#registrarBoton {
+  transition: ease-in-out 0.5s;
+}
+.botonIngresar:hover,
+#registrarBoton:hover {
+  transform: translateY(-10px);
+}
+
+@media screen and (max-width: 1360px) {
+  .logoM24 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 35%;
+    width: calc(568px * 0.7);
   }
-  .texto_leyenda {
-    font-size: 1.4rem;
-    justify-content: justify;
-    color: #727272;
-  }
-  .input_escritorio {
-    display: block;
-    background-color: #eee;
-    border: none;
-    border-radius: 10px;
-    font-size: 1.5rem;
-    outline: none;
-    padding: 10px;
-    width: 100%;
-    margin-top: 2rem;
-    margin-left: auto;
-    margin-right: auto;
+  .pilarAdd {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width:  calc( 361px*0.7);
   }
 
-  .boton_login {
-    border: none;
-    font-size: 2rem;
-    width: 100%;
-    background-color: #512b52;
-    height: 50px;
-    text-align: center;
-    align-items: center;
-    color: white;
-    border-radius: 5px;
-    margin-top: 2rem;
-    transition: all ease 0.5s;
-  }
-  .boton_login:hover {
-    background-color: #8f4d92;
-  }
-
-  .botones_card {
-    display: grid;
-    grid-template-columns: auto auto;
-    gap: 10px;
-    margin-top: 5rem;
-    text-align: center;
-  }
-  .card_boton {
-    background-color: #eee;
-    border-radius: 10px;
-    padding: 1rem;
-    transition: all ease 0.5s;
-  }
-  .sugerencia_registrarse {
-    font-size: 1.5rem;
-  }
-  .boton_registrarse {
-    border: none;
-    background-color: #512b52;
-    color: white;
-    border-radius: 5px;
-    font-size: 1.5rem;
-    width: 70%;
-    transition: all ease 0.5s;
-  }
-  .card_boton:hover {
-    box-shadow: 0px 0px 51px -6px rgba(0, 0, 0, 0.35);
-  }
-  .boton_registrarse:hover {
-    background-color: #8f4d92;
-  }
-  @media screen and (max-width: 1360px) {
-    .botones_card {
-      margin-top: 1.5rem;
-    }
+  .sloganEscritorio{
+    font-size: 1rem;
   }
 }
 
+
+/* Mobile */
 
 .fondoMobile {
   background-color: #512b52;

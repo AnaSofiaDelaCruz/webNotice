@@ -17,60 +17,136 @@
   }
 }
 
-.space {
-  padding-left: 0px !important;
-  padding-top: 0px !important;
+/* Escritorio */
+.general {
+  display: grid;
+  grid-template-columns: 50% 50%;
 }
-.triangulo-tricolor {
-  width: fit-content;
-  border-left: 460px solid #512b52;
-  border-top: 359px solid #635274;
-  border-bottom: 431px solid #7bb0a8;
-}
-.position {
+.contenedorIzquierdo {
+  background-image: url("https://visitmexico.com/wp-content/uploads/2022/09/Chiapas_Portada.png");
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
   position: relative;
 }
-.logo {
+
+.logoM24 {
   position: absolute;
-  left: 23px;
-  top: -73px;
-  z-index: 1;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 35%;
 }
-.pilar {
+.pilarAdd {
   position: absolute;
-  left: 0px;
-  top: 263px;
-  z-index: 1;
-}
-.slogan {
-  position: absolute;
-  color: aliceblue;
-  font-family: "Roboto-Bold", sans-serif;
-  margin-top: 249px;
-  margin-left: 118px;
-  font-size: larger;
-}
-.background-login {
-  background-color: #eeee;
-}
-.text-title {
-  color: black;
-  font-family: "Roboto", sans-serif;
-  font-size: 100%;
-  font-size: xx-large;
-}
-.links {
-  color: #7bb0a8;
-}
-.text-others {
-  color: black;
-  font-family: "Roboto", sans-serif;
-}
-.button-success {
-  background-color: #512b52;
-  color: white;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  width: 361px;
 }
 
+.sloganEscritorio {
+  font-family: Poppins;
+  color: #595959;
+  text-align: end;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  padding: 1rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.contenedorDerecho {
+  background-color: #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-y: hidden;
+}
+
+.centrar {
+  text-align: center;
+}
+
+.centrar h1 {
+  color: #000;
+  font-family: Poppins;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+}
+.centrar h2 {
+  color: #595959;
+  font-family: Poppins;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 158.5%; /* 38.04px */
+}
+
+.inputEntrada {
+  display: block;
+  width: 100%;
+  border-radius: 10px;
+  padding: 5px 10px;
+  border: none;
+  outline: none;
+  font-family: Poppins;
+  margin-bottom: 1rem;
+  height: 50px;
+  font-size: 1.5rem;
+}
+
+.botonIngresar {
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #635274 0.06%, #512b52 99.95%);
+  height: 60px;
+  color: white;
+  font-family: Poppins;
+  margin-top: 2rem;
+}
+
+#registrarBoton {
+  background-color: transparent;
+  width: 100%;
+  height: 60px;
+  font-size: 24px;
+  border-radius: 10px;
+}
+.botonIngresar,
+#registrarBoton {
+  transition: ease-in-out 0.5s;
+}
+.botonIngresar:hover,
+#registrarBoton:hover {
+  transform: translateY(-10px);
+}
+
+@media screen and (max-width: 1360px) {
+  .logoM24 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 35%;
+    width: calc(568px * 0.7);
+  }
+  .pilarAdd {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width:  calc( 361px*0.7);
+  }
+  .inputEntrada{
+    height: calc(50px * 0.7);
+    font-size: 1rem;
+  }
+  .sloganEscritorio{
+    display: none;
+  }
+}
 
 .barraFondoMobile{
   background-color: #512b52;

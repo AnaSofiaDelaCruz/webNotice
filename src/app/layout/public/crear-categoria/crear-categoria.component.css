@@ -1,218 +1,244 @@
-.cabeza {
-  background-color: #7bb0a8;
-  display: grid;
-  grid-template-columns: auto auto;
-  align-items: center;
-
-  .contenedorBoton {
-    margin-left: 1rem;
-  }
-
-  .botonRetroceder {
-    font-family: Roboto;
-    font-weight: bold;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    width: 100px;
-    height: 40px;
-    background-color: #512b52;
-    color: white;
-    transition: 0.5s all ease;
-  }
-
-  .tituloCrearCategorias {
-    font-family: Poppins;
-    font-weight: bold;
-    color: white;
-    text-align: end;
-    margin-right: 1rem;
-  }
-
-  .botonRetroceder:hover {
-    width: 150px;
-    transition: 0.5s all ease;
-    background-color: #683969;
-  }
-
-  @media screen and (max-width: 1360px) {
-    .tituloCrearCategorias {
-      font-size: 24px;
-      padding: 0.5rem;
-    }
-
-    .botonRetroceder {
-      width: 80px;
-      height: 40px;
-    }
-  }
-}
-
-.cuerpo {
-  display: grid;
-  grid-template-columns: auto auto;
-  padding: 2rem;
-  gap: 1rem;
-
-  .contenedorRegistro {
-    width: 100%;
-    height: 500px;
-    -webkit-box-shadow: 12px 15px 5px 0px rgba(0, 0, 0, 0.31);
-    -moz-box-shadow: 12px 15px 5px 0px rgba(0, 0, 0, 0.31);
-    box-shadow: 12px 15px 5px 0px rgba(0, 0, 0, 0.31);
-    color: white;
-    border-radius: 10px;
-  }
-
-  .listas {
-    display: grid;
-    grid-template-rows: auto auto;
-    gap: 1rem;
-  }
-
-  .contenedorListaCategorias,
-  .contenedorListaSubcategorias {
-    width: 100%;
-    box-shadow: 12px 15px 5px 0px rgba(0, 0, 0, 0.31);
-    overflow-y: scroll;
-    height: 240px;
-  }
-
-  /* Cambiar el color del scrollbar */
-  ::-webkit-scrollbar {
-    width: 8px; /* Ancho del scrollbar */
-  }
-
-  ::-webkit-scrollbar-thumb {
-    background-color: #a7dbab; /* Color del thumb (la parte arrastrable del scrollbar) */
-    border-radius: 10px;
-  }
-
-  ::-webkit-scrollbar-track {
-    background-color: #f1f1f1; /* Color del track (el fondo del scrollbar) */
-  }
-
-  .contenedorListaCategorias {
-    background-color: #eee;
-  }
-  .contenedorListaSubcategorias {
-    background-color: #eee;
-  }
-
-  .textoRegistrarCategoria {
-    font-family: Roboto;
-    font-size: 24px;
-    text-align: left;
-    padding: 1rem;
-    background-color: #a7dbab;
-    font-weight: bold;
-  }
-
-  .textoNombreCategoria {
-    font-family: Roboto;
-    font-weight: bold;
-    margin-left: 1rem;
-    color: #512b52;
-  }
-  .entrada {
-    width: 96%;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    outline: none;
-    border-radius: 5px;
-    padding-left: 1rem;
-    font-family: Poppins;
-    color: black;
-    font-weight: bold;
-    font-size: 24px;
-  }
-
-  #tipo {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 1rem;
-    font-family: Poppins;
-    font-weight: bold;
-    width: 95%;
-    font-size: 24px;
-  }
-
-  .crearCategoria {
-    width: 300px;
-    height: 50px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    border: none;
-    margin-top: 5rem;
-    border-radius: 3px;
-    background-color: #512b52;
-    color: white;
-    font-weight: bold;
-    font-family: Roboto;
-    font-size: 24px;
-    transition: 0.5s all ease;
-  }
-
-  .crearCategoria:hover {
-    background-color: #683969;
-    width: 350px;
-  }
-
-  .tituloCategorias {
-    font-family: Roboto;
-    font-weight: bold;
-    background-color: #7bb0a8;
-    color: white;
-    font-size: 16px;
-    padding: 0.5rem;
-    position: sticky;
-    top: 0;
-  }
-
-  .categoriaR {
-    font-family: Roboto;
-    font-weight: bold;
-    font-size: 16px;
-    padding: 5px;
-    background-color: white;
-  }
-}
-
-.textoPies {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
+.contenedor_general {
+  width: 100%;
   font-family: Poppins;
-  font-weight: bold;
+  display: grid;
+  grid-template-columns: 20% auto;
+}
+.contenedor_lateral {
+  background: linear-gradient(#0395c2, #7bb0a8);
+  height: 100vh;
 }
 
-.botonesFooter {
-  display: grid;
-  grid-template-columns: auto auto;
-  gap: 1rem;
+.contenedor_contenido {
+  background-color: blue;
+}
+
+.contenedor_imagen {
+  margin-top: 3rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.admin_texto {
+  font-size: 1rem;
+  font-weight: 600;
+}
+.nombre_admin {
+  font-size: 1rem;
+}
+.admin_texto,
+.nombre_admin {
+  text-align: center;
+  color: white;
+}
+.menu_lateral {
+  margin-top: 2rem;
+}
+.boton_lateral {
+  width: 100%;
+  text-align: start;
+  border: none;
+  color: white;
+  background-color: transparent;
+  transition: all ease 0.5s;
+  font-size: 1.5rem;
+}
+
+.boton_lateral:hover {
+  background-color: #5abed3;
+  padding-left: 1rem;
+}
+
+.boton_seleccionado {
+  background-color: #5abed3;
+  padding-left: 1rem;
+}
+
+.boton_cerrar {
+  border: none;
+  width: 90%;
   margin-left: 1rem;
   margin-right: 1rem;
-}
-.botonFooter {
-  font-family: Roboto;
-  background-color: #7bb0a8;
-  color: white;
-  font-weight: bold;
-  font-size: 24px;
-  border: none;
+  margin-top: 70%;
   border-radius: 5px;
-  height: 50px;
-  transition: 0.5s all ease;
+  background: linear-gradient(#7bb0a8, #0395c2);
+  color: white;
+  transition: all ease 0.5s;
+}
+.boton_cerrar:hover {
+  padding: 1rem;
 }
 
-#botonBorrar:hover {
-  background-color: rgb(206, 70, 70);
+.contenedor_contenido {
+  background-color: #ebeaea;
+}
+@media screen and (max-width: 1360px) {
+  .boton_lateral {
+    font-size: 1rem;
+  }
 }
 
-#botonEditar:hover {
-  background-color: #a7dbab;
+.mensaje_bienvenida {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-left: 1rem;
+  margin-top: 2rem;
+}
+.mensaje {
+  font-size: 1rem;
+  margin-left: 1rem;
+  color: #a9a1a1;
+  margin-top: -0.5rem;
+}
+.contenedorCategorias,
+.contenedorSubcategorias {
+  width: 100%;
+  height: 400px;
+  background-color: white;
+  border-radius: 10px;
+  overflow-y: scroll;
+}
+
+.centrarCartelesCategorias {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  gap: 1rem;
+  margin-top: 1rem;
+  margin-left: 1rem;
+  margin-right: 2rem;
+}
+
+.categoriasRegistradasTexto {
+  color: #000;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  padding: 1rem;
+}
+
+.nombreCategoria {
+  color: #000 !important;
+  font-family: Poppins;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+}
+
+.botonEditarCategoria {
+  border-radius: 44px;
+  background: linear-gradient(90deg, #7bb0a8 0%, #60b0fa 100%);
+  transition: all ease 0.5s;
+}
+.botonEliminarCategoria {
+  border-radius: 44px;
+  background: linear-gradient(90deg, #a04242 0%, #fc5555 100%);
+  margin-left: 5px;
+  transition: all ease 0.5s;
+}
+
+.botonEditarCategoria:hover,.botonEliminarCategoria:hover {
+  transform: translateY(-5px);
+}
+.botonesCategoria button {
+  color: white;
+  border: none;
+  border-radius: 10px;
+  width: 72px;
+  height: 32px;
+}
+
+.cardCategorias {
+  display: flex;
+  justify-content: space-between;
+  padding: 2px 1rem;
+  align-items: center;
+}
+
+.cardCategorias:hover {
+  background-color: rgb(241, 241, 241);
+}
+
+.contenedorCrearCategoria {
+  background-color: white;
+  width: 50%;
+  border-radius: 10px;
+  margin: 1rem;
+}
+.textoRegistrarCategoria {
+  color: #000;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  padding: 1rem;
+}
+
+.centrarInputCategoria {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 2rem;
+}
+
+.inputCategoria {
+  border-radius: 5px;
+  border: 1px solid #949494;
+  outline: none;
+  padding: 5px 10px;
+  width: 80%;
+}
+.selectCategorias {
+  border-radius: 18px;
+  border: 1px solid #949494;
+  background: #fff;
+  width: 20%;
+  padding: 5px 10px;
+  margin-left: 5px;
+}
+
+.guardarCategoria {
+  display: block;
+  margin: 1rem auto;
+  border-radius: 29px;
+  background: linear-gradient(90deg, #4acef8 0%, #7bb0a8 109.65%);
+  border: none;
+  color: white;
+  width: 30%;
+  height: 40px;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #f5f5f5;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: #f5f5f5;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(36, 228, 235);
+  background-image: -webkit-linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.2) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0.2) 75%,
+    transparent 75%,
+    transparent
+  );
+}
+
+@media (max-width: 1360px) {
+  .contenedorCategorias,
+  .contenedorSubcategorias {
+    height: calc(400px * 0.7);
+  }
+
+  .nombreCategoria {
+    font-size: 1rem;
+  }
 }

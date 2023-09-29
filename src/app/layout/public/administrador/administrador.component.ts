@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertService } from 'src/app/service/AlertService/alert.service';
+import { CategoriaService } from 'src/app/service/CategoriaService/categoria.service';
 import { DashboardService } from 'src/app/service/DashboardService/dashboard.service';
 import { ListarEscritoresService } from 'src/app/service/ListarEscritoresService/listar-escritores.service';
 
@@ -15,8 +16,10 @@ export class AdministradorComponent {
   public active: boolean = true;
   esAdmin = false;
   public notaCompleta: { items: any[]; itemPaths: string[] }[] = [];
+  public categoriaLista = [];
+  public subcategoriaLista = [];
   ngOnInit(): void {
-    this.activar_pubs();
+    this.activarEscritores();
     this.cargar_noticias();
     this.listar();
     console.log('Esto tiene localstorage:', localStorage.getItem('rol'));
@@ -31,10 +34,12 @@ export class AdministradorComponent {
     public router: Router,
     private enlistar: ListarEscritoresService,
     private alertas: AlertService,
-    private servicio_dashboard: DashboardService
+    private servicio_dashboard: DashboardService,
+    private categoriaService: CategoriaService
   ) {}
 
   public activarEscritores() {
+    const seccionCategorias = document.getElementById('seccion_categorias');
     const seccionEscritores = document.getElementById('seccion_escritores');
     seccionEscritores?.classList.remove('esconder');
 
@@ -67,9 +72,11 @@ export class AdministradorComponent {
 
     checkbox3.checked = false;
     boton_categorias.classList.remove('boton_seleccionado');
+    seccionCategorias?.classList.add('esconder');
   }
 
   public activar_pubs() {
+    const seccionCategorias = document.getElementById('seccion_categorias');
     const seccionPubs = document.getElementById('seccion_publicaciones');
     seccionPubs?.classList.remove('esconder');
     const seccionEscritores = document.getElementById('seccion_escritores');
@@ -100,18 +107,28 @@ export class AdministradorComponent {
 
     checkbox3.checked = false;
     boton_categorias.classList.remove('boton_seleccionado');
+    seccionCategorias?.classList.add('esconder');
   }
 
   public activar_categorias() {
+    this.router.navigate(['/crear-categoria']);
+    const seccionCategorias = document.getElementById('seccion_categorias');
+    const seccionPubs = document.getElementById('seccion_publicaciones');
+
+    const seccionEscritores = document.getElementById('seccion_escritores');
+    seccionCategorias?.classList.remove('esconder');
     var checkbox3 = document.getElementById(
       'checkCategorias'
     ) as HTMLInputElement;
     var boton_categorias = document.getElementById(
       'boton_categorias'
     ) as HTMLButtonElement;
+
     checkbox3.checked = true;
     if (checkbox3.checked) {
       boton_categorias.classList.add('boton_seleccionado');
+      seccionEscritores?.classList.add('esconder');
+      seccionPubs?.classList.add('esconder');
     }
 
     var checkbox1 = document.getElementById(
@@ -251,5 +268,28 @@ export class AdministradorComponent {
     this.router.navigate(['/writerEdit/', id], {
       queryParams: { parametro1: id },
     });
+  }
+
+  private ListaCategory() {
+    this.categoriaService.ListCategorias().subscribe(
+      (res) => {
+        console.log('Esto tiene res:', res);
+
+        this.categoriaLista = res.categoria;
+      },
+      (error) => {
+        this.handleError(error);
+      }
+    );
+  }
+  private ListSubCategory() {
+    this.categoriaService.ListSubCategorias().subscribe(
+      (res) => {
+        this.subcategoriaLista = res.subcategoria;
+      },
+      (error) => {
+        this.handleError(error);
+      }
+    );
   }
 }
