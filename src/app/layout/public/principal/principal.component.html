@@ -47,7 +47,11 @@
 
         <div class="contenidoReciente">
           <h1 class="textoReciente">Noticias recientes</h1>
-          <div class="cards" *ngFor="let nota of notasLimitadas | ObjToArray" (click)="LeerNota(nota.id)">
+          <div
+            class="cards"
+            *ngFor="let nota of notasLimitadas | ObjToArray"
+            (click)="LeerNota(nota.id)"
+          >
             <img
               [src]="nota.itemPaths[0]"
               [alt]="nota.item[0]"
@@ -57,7 +61,7 @@
               <h1 class="titulo">{{ nota.titulo }}</h1>
               <h1
                 class="descripcion"
-                [innerHTML]="nota.descripcion | slice : 0 : 500"
+                [innerHTML]="nota.descripcion | slice : 0 : 150"
               ></h1>
               <h1 class="fecha">{{ nota.createdAt }}</h1>
             </div>
@@ -91,14 +95,19 @@
               class="cardMasNotas"
               *ngFor="let nota of notasAbajoLimitadas | ObjToArray"
             >
-              <img
-                [src]="nota.itemPaths[0]"
-                alt="Fotos de mas noticias"
-                class="imagenNotaMas"
-              />
-              <h1 class="titulo">{{nota.titulo}}a</h1>
-              <h1 class="descripcion"[innerHTML]="nota.descripcion | slice : 0 : 50"></h1>
-              <h1 class="fecha">{{nota.createdAt}}</h1>
+              <div (click)="LeerNota(nota.id)">
+                <img
+                  [src]="nota.itemPaths[0]"
+                  alt="Fotos de mas noticias"
+                  class="imagenNotaMas"
+                />
+                <h1 class="titulo">{{ nota.titulo }}a</h1>
+                <h1
+                  class="descripcion"
+                  [innerHTML]="nota.descripcion | slice : 0 : 50"
+                ></h1>
+                <h1 class="fecha">{{ nota.createdAt }}</h1>
+              </div>
             </div>
           </div>
         </div>
