@@ -26,12 +26,10 @@ import { NoticiaNacionalComponent } from './layout/public/noticia-nacional/notic
 import { NoticiaOpinionComponent } from './layout/public/noticia-opinion/noticia-opinion.component';
 import { NoticiaChiapasComponent } from './layout/public/noticia-chiapas/noticia-chiapas.component';
 import { BusquedaComponent } from './layout/public/busqueda/busqueda.component';
-
+import { CarouselModule } from 'ngx-owl-carousel-o';
 import { ObjToArray } from './ObjToArray.pipe';
 import { EditarCategoriasComponent } from './layout/public/editar-categorias/editar-categorias.component';
 import { AdministradorComponent } from './layout/public/administrador/administrador.component';
-
-
 
 @NgModule({
   declarations: [
@@ -95,7 +93,7 @@ import { AdministradorComponent } from './layout/public/administrador/administra
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    //app_routing
+    CarouselModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

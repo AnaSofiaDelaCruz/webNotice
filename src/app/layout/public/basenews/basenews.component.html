@@ -12,7 +12,9 @@
     <section class="escritorio">
       <div class="header">
         <div class="botonVolver">
-          <button class="btnRegresar" (click)="Redireccionar()">Regresar</button>
+          <button class="btnRegresar" (click)="Redireccionar()">
+            Regresar
+          </button>
         </div>
         <h1 class="tituloMision24" (click)="Redireccionar()">Mision 24</h1>
         <h2 class="slogan">El punto exacto de la noticia</h2>
@@ -27,7 +29,13 @@
             class="imagenNoticia"
           />
 
-          <button class="masContenido" *ngIf="!ocultarBoton">Ver mas contenido</button>
+          <button
+            class="masContenido"
+            *ngIf="!ocultarBoton"
+            (click)="abrirCarrusel()"
+          >
+            Ver mas contenido
+          </button>
         </div>
         <div class="textoNoticia" *ngIf="notita">
           <div class="contenedorTitulo">
@@ -55,7 +63,9 @@
           [alt]="item.nombre"
           class="imagenMobile"
         />
-        <button class="botonMasContenidoMobile">Ver mas contenido</button>
+        <button class="botonMasContenidoMobile" (click)="abrirCarrusel()">
+          Ver mas contenido
+        </button>
 
         <h1 class="tituloNoticiaMobile">{{ notita.titulo }}</h1>
         <h2 class="fechaNotaMobile">Fecha: {{ notita.createdAt }}</h2>
