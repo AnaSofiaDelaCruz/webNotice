@@ -53,8 +53,28 @@ export class CategoriaService {
     });
   }
 
-  public EliminarCategoria(): Observable<any> {
-    return this.http.get(`${this.apiUrl}/api/borrar/categoria/{id}`, {
+  public EliminarCategoriaFuncion(id: any): Observable<any> {
+    return this.http.delete(`${this.apiUrl}/api/borrar/categoria/${id}`, {
+      headers: this.headers,
+    });
+  }
+
+  public EliminarSubCategoriaFuncion(id: any): Observable<any> {
+    return this.http.delete(`${this.apiUrl}/api/borrar/subcategoria/${id}`, {
+      headers: this.headers,
+    });
+  }
+
+  public EditarCategoriaFuncion(id: any, categoria: any): Observable<any> {
+    const body = { id: id, categoria: categoria };
+    return this.http.put(`${this.apiUrl}/api/actualizar/categoria`, body, {
+      headers: this.headers,
+    });
+  }
+
+  public EditarSubCategoriaFuncion(id: any, subcategoria: any): Observable<any> {
+    const body = { id: id, subcategoria: subcategoria };
+    return this.http.put(`${this.apiUrl}/api/actualizar/subcategoria`, body, {
       headers: this.headers,
     });
   }

@@ -282,7 +282,7 @@
 
 .contenidoReciente {
   width: 95vw;
-  height: 300px;
+  padding: 1rem;
   margin-left: auto;
   margin-right: auto;
   border-radius: 5px;
@@ -305,6 +305,7 @@
   margin-right: auto;
   margin-top: 1rem;
   border-radius: 5px;
+  padding: 1rem;
 }
 .imagenNota {
   width: 175px;
@@ -584,4 +585,14 @@ body {
   background-color: #7bb0a8;
   color: white;
   height: 40px;
+}
+
+
+.cards,.cardMasNotas {
+  cursor: pointer;
+  transition: all ease 0.5s;
+}
+
+.cards:hover {
+  box-shadow: 0px 0px 94px -40px rgba(0,0,0,0.75);
 }

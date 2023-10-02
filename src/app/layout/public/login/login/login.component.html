@@ -74,6 +74,38 @@
       </div>
     </section>
 
+    <section class="escritorio_nuevo">
+      <div class="general">
+        <div class="contenedorIzquierdo">
+          <img src="../assets/images/M24x400px.png" class="logoM24" />
+          <img src="../assets/images/pilar2.png" class="pilarAdd" />
+        </div>
+        <div class="contenedorDerecho">
+          <div class="centrar">
+            <h2 class="sloganEscritorio">El punto exacto de la noticia</h2>
+            <h1>Hola, bienvenido</h1>
+            <h2>Inicia sesión para entrar a Misión 24</h2>
+            <form [formGroup]="loginForm" (ngSubmit)="submitFormulario()">
+              <input type="email" class="inputEntrada" placeholder="Correo@gmail.com" formControlName="correo"/>
+              <input
+                type="password"
+                class="inputEntrada"
+                placeholder="Contraseña"
+                formControlName="password"
+              />
+              <button class="botonIngresar" (click)="Iniciar()">
+                Ingresar <i class="bi bi-arrow-right-short"></i>
+              </button>
+              <br /><br />
+              <h2>O támbien</h2>
+              <button id="registrarBoton" routerLink="/register">
+                Registrar <i class="bi bi-plus-square"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
     <section class="mobile">
       <div class="fondoMobile">
         <img
@@ -82,26 +114,35 @@
         />
         <h1 class="sloganMobile">El punto exacto de la noticia</h1>
       </div>
+      <form [formGroup]="loginForm" (ngSubmit)="submitFormulario()">
+        <div class="contenedorFormulario">
+          <h1 class="bienvenidoMobile">¡Inicia sesión!</h1>
+          <input
+            type="text"
+            placeholder="Correo electronico"
+            class="inputMobile"
+            formControlName="correo"
+          />
+          <input
+            type="password"
+            placeholder="Contraseña"
+            class="inputMobile"
+            formControlName="password"
+          />
+          <button class="loginBotonMobile" (click)="Iniciar()">Ok!</button>
 
-      <div class="contenedorFormulario">
-        <h1 class="bienvenidoMobile">¡Inicia sesión!</h1>
-        <input
-          type="text"
-          placeholder="Correo electronico"
-          class="inputMobile"
-        />
-        <input type="password" placeholder="Contraseña" class="inputMobile" />
-        <button class="loginBotonMobile">Ok!</button>
-
-        <button class="problemasMobile">
-          Clic aca si tienes problemas para iniciar sesion
-        </button>
-      </div>
-      <br>
-      <div class="footerMobile">
-        <h2 class="slogan2Mobile">¿No estas registrado?</h2>
-        <button class="botonRegistrarMobile" routerLink="/register">Registrarse</button>
-      </div>
+          <button class="problemasMobile">
+            Clic aca si tienes problemas para iniciar sesion
+          </button>
+        </div>
+        <br />
+        <div class="footerMobile">
+          <h2 class="slogan2Mobile">¿No estas registrado?</h2>
+          <button class="botonRegistrarMobile" routerLink="/register">
+            Registrarse
+          </button>
+        </div>
+      </form>
     </section>
   </body>
 </html>

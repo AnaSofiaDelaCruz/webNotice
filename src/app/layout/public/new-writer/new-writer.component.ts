@@ -41,7 +41,6 @@ export class NewWriterComponent {
       {
         nombre: ['', Validators.required],
         apellido: ['', Validators.required],
-        username: ['', Validators.required],
         correo: ['', Validators.required],
         password: ['', Validators.required],
         confirmPassword: ['', Validators.required],

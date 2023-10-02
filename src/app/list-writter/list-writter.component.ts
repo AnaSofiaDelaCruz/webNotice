@@ -67,7 +67,6 @@ export class ListWritterComponent {
   }
 
   public encontrarEscritor(idEscritor: any) {
-    console.log('Esto tiene idEscritor: ', idEscritor);
     this.router.navigate(['/editarPerfil/', idEscritor], {
       queryParams: { parametro1: idEscritor },
     });

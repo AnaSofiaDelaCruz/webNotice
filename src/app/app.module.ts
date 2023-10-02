@@ -29,6 +29,7 @@ import { BusquedaComponent } from './layout/public/busqueda/busqueda.component';
 
 import { ObjToArray } from './ObjToArray.pipe';
 import { EditarCategoriasComponent } from './layout/public/editar-categorias/editar-categorias.component';
+import { AdministradorComponent } from './layout/public/administrador/administrador.component';
 
 
 
@@ -56,6 +57,7 @@ import { EditarCategoriasComponent } from './layout/public/editar-categorias/edi
     BusquedaComponent,
     ObjToArray,
     EditarCategoriasComponent,
+    AdministradorComponent,
   ],
   imports: [
     BrowserModule,
@@ -67,6 +69,7 @@ import { EditarCategoriasComponent } from './layout/public/editar-categorias/edi
       { path: 'login', component: LoginComponent },
       { path: 'news/:id', component: BasenewsComponent },
       { path: 'writer', component: WriterComponent },
+      { path: 'writerEdit/:id', component: WriterComponent },
       { path: 'writerstep2', component: Writer2Component },
       { path: 'statistics', component: StatisticsComponent },
       { path: 'homeWriter', component: HomeWriterComponent },
@@ -77,6 +80,7 @@ import { EditarCategoriasComponent } from './layout/public/editar-categorias/edi
       { path: 'crear-categoria', component: CrearCategoriaComponent },
       { path: 'editarPerfil/:id', component: EditarPerfilComponent },
       { path: 'noticiaOpinion', component: NoticiaOpinionComponent },
+      { path: 'administrador', component: AdministradorComponent },
       { path: 'noticiaChiapas', component: NoticiaChiapasComponent },
       { path: 'busqueda', component: BusquedaComponent },
       {

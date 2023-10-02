@@ -3,65 +3,115 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vista para crear categorias</title>
+    <title>Menu de administrador</title>
     <style>
-      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;700;800&family=Roboto:wght@100;400;700&display=swap");
-      @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+      @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css");
     </style>
   </head>
   <body>
-    <div class="cabeza">
-      <div class="contenedorBoton">
-        <button class="botonRetroceder" routerLink="/writer">Atras</button>
-      </div>
-      <h1 class="tituloCrearCategorias">Administrador: Crear categoria</h1>
-    </div>
+    <div class="contenedor_general">
+      <div class="contenedor_lateral">
+        <div class="contenedor_imagen">
+          <img src="../assets/images/admin_image.png" alt="Admin imagen" />
+        </div>
+        <h1 class="admin_texto">Administrador</h1>
+        <h2 class="nombre_admin">Lic. Flores</h2>
 
-    <div class="cuerpo">
-      <form [formGroup]="categoriaForm" (ngSubmit)="RegistrarCategoria()">
-        <div class="contenedorRegistro">
-          <h1 class="textoRegistrarCategoria">
-            Registra una nueva categoria o subcategoria
-          </h1>
-          <h2 class="textoNombreCategoria">Nombre</h2>
-          <input type="text" class="entrada" formControlName="Nuevacategoria" />
-          <select name="Tipo" id="tipo" formControlName="Tipo">
-            <option value="Sin seleccionar">Seleccionar tipo</option>
-            <option value="categoria">Categoría</option>
-            <option value="subcategoria">Subcategoría</option>
-          </select>
-          <button class="crearCategoria">
-            <i class="bi bi-plus-square-fill"></i> Crear
+        <div class="menu_lateral">
+          <button
+            class="boton_lateral"
+            id="botonEscritores"
+            routerLink="/administrador"
+          >
+            <i class="bi bi-person-fill"></i> Escritores
+          </button>
+          <button
+            class="boton_lateral"
+            id="boton_pubs"
+            routerLink="/administrador"
+          >
+            <i class="bi bi-bar-chart-line-fill"></i> Publicaciones
+          </button>
+          <button
+            class="boton_lateral boton_seleccionado"
+            id="boton_categorias"
+          >
+            <i class="bi bi-book-half"></i> Categorias
           </button>
         </div>
-      </form>
-      <div class="listas">
-        <div class="contenedorListaCategorias">
-          <h1 class="tituloCategorias">Categorias registradas</h1>
-          <div class="categoriasRegistradas" *ngFor="let categoria of categoriaLista | ObjToArray">
-            <h2 class="categoriaR">{{categoria.categoria}}</h2>
-          </div>
-        </div>
-        <div class="contenedorListaSubcategorias">
-          <h1 class="tituloCategorias">Subcategorias registradas</h1>
-          <div class="categoriasRegistradas" *ngFor="let subcategoria of subcategoriaLista | ObjToArray">
-            <h2 class="categoriaR">{{subcategoria.subcategoria}}</h2>
-          </div>
-        </div>
+        <button class="boton_cerrar" routerLink="/homeAdmin">
+          <i class="bi bi-x-lg"></i> Cerrar menu
+        </button>
       </div>
-    </div>
+      <div class="contenedor_contenido">
+        <section class="categorias" id="seccion_categorias">
+          <h1 class="mensaje_bienvenida">Hola, Bienvenido administrador</h1>
+          <h2 class="mensaje">
+            En este panel, podrás gestionar la información de tus escritores.
+          </h2>
+          <div class="centrarCartelesCategorias">
+            <div class="contenedorCategorias">
+              <h1 class="categoriasRegistradasTexto">Categorias registradas</h1>
+              <div
+                class="cardCategorias"
+                *ngFor="let categoria of categoriaLista | ObjToArray"
+              >
+                <h1 class="nombreCategoria">{{ categoria.categoria }}</h1>
+                <div class="botonesCategoria">
+                  <button class="botonEditarCategoria" (click)="irEditar()">
+                    <i class="bi bi-gear-fill"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="contenedorSubcategorias">
+              <h1 class="categoriasRegistradasTexto">
+                Subcategorias registradas
+              </h1>
+              <div
+                class="cardCategorias"
+                *ngFor="let subcategoria of subcategoriaLista | ObjToArray"
+              >
+                <h1 class="nombreCategoria">{{ subcategoria.subcategoria }}</h1>
+                <div class="botonesCategoria">
+                  <button class="botonEditarCategoria" (click)="irEditar()">
+                    <i class="bi bi-gear-fill"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
 
-    <div class="pies">
-      <h1 class="textoPies"><i class="bi bi-tools"></i> Herramientas</h1>
-      <div class="botonesFooter">
-        <button class="botonFooter" id="botonEditar" (click)="irEditar()">
-          <i class="bi bi-nut-fill"></i> Editar
-        </button>
-        <button class="botonFooter" id="botonBorrar" (click)="irEditar()">
-          <i class="bi bi-trash-fill"></i> Eliminar
-        </button>
+          <div class="contenedorCrearCategoria">
+            <h1 class="textoRegistrarCategoria">Registrar</h1>
+            <form [formGroup]="categoriaForm" (ngSubmit)="RegistrarCategoria()">
+              <div class="centrarInputCategoria">
+                <input
+                  type="text"
+                  placeholder="Nombre de categoria o subcategoria"
+                  class="inputCategoria"
+                  formControlName="Nuevacategoria"
+                />
+                <select
+                  class="selectCategorias"
+                  name="Tipo"
+                  id="tipo"
+                  formControlName="Tipo"
+                >
+                  <option value="Sin seleccionar">Seleccionar tipo</option>
+                  <option value="categoria">Categoria</option>
+                  <option value="subcategoria">Subcategoria</option>
+                </select>
+              </div>
+              <button class="guardarCategoria">
+                Guardar <i class="bi bi-floppy-fill"></i>
+              </button>
+              <br />
+            </form>
+          </div>
+        </section>
       </div>
-      <br />
     </div>
   </body>
 </html>

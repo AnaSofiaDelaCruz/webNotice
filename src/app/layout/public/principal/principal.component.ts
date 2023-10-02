@@ -38,8 +38,6 @@ export class PrincipalComponent implements OnInit {
 
   private ListaNotas() {
     this.dashboardService.ListNotas().subscribe((response) => {
-
-      
       this.notaCompleta = response.noticias.map((noticia) => ({
         ...noticia,
         itemPaths: noticia.items.map((item: { path: any }) => item.path),

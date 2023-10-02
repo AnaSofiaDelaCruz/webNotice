@@ -68,7 +68,7 @@ export class RegisterComponent {
   }
   private handleError(error: any) {
     if (error.status === 409) {
-      this.alertService.ShowErrorAlert('No se encontró la categoría');
+      this.alertService.ShowErrorAlert('El correo ya esta registrado');
     } else if (error.status === 503) {
       this.alertService.ShowErrorAlert('Intentelo más tarde');
     }

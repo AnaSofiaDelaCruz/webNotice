@@ -12,9 +12,9 @@
     <section class="escritorio">
       <div class="header">
         <div class="botonVolver">
-          <button class="btnRegresar" routerLink="/home">Regresar</button>
+          <button class="btnRegresar" (click)="Redireccionar()">Regresar</button>
         </div>
-        <h1 class="tituloMision24" (click)="Home()">Mision 24</h1>
+        <h1 class="tituloMision24" (click)="Redireccionar()">Mision 24</h1>
         <h2 class="slogan">El punto exacto de la noticia</h2>
       </div>
       <br />
@@ -27,25 +27,24 @@
             class="imagenNoticia"
           />
 
-          <button class="masContenido">Ver mas contenido</button>
+          <button class="masContenido" *ngIf="!ocultarBoton">Ver mas contenido</button>
         </div>
         <div class="textoNoticia" *ngIf="notita">
           <div class="contenedorTitulo">
             <h1 class="tituloNota">{{ notita.titulo }}</h1>
-            <h2 class="fechaNota">{{ notita.createdAt }}</h2>
+            <h2 class="fechaNota">Fecha: {{ notita.createdAt }}</h2>
             <div class="divisor"></div>
           </div>
           <div class="contenidoNoticia">
             <div [innerHTML]="notita.descripcion"></div>
           </div>
         </div>
-        <div class="seccionComentarios">comentarios (proximamente)</div>
       </div>
     </section>
 
     <section class="mobile">
       <div class="headerMobile">
-        <h1 class="Mision24Mobile" (click)="Home()">Mision 24</h1>
+        <h1 class="Mision24Mobile" (click)="Redireccionar()">Mision 24</h1>
         <h2 class="SloganMobile">El punto exacto de la noticia</h2>
       </div>
       <br />
@@ -59,7 +58,7 @@
         <button class="botonMasContenidoMobile">Ver mas contenido</button>
 
         <h1 class="tituloNoticiaMobile">{{ notita.titulo }}</h1>
-        <h2 class="fechaNotaMobile">{{ notita.createdAt }}</h2>
+        <h2 class="fechaNotaMobile">Fecha: {{ notita.createdAt }}</h2>
 
         <div class="noticiaTextoMobile">
           <p [innerHTML]="notita.descripcion"></p>

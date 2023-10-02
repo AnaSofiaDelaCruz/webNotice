@@ -32,4 +32,10 @@ export class DashboardService {
   ListNotasByFecha(fecha: Date): Observable<any> {
     return this.http.get(`${this.apiUrl}/api/prueba/${fecha}`);
   }
+
+  EliminarNoticia(id: any, rol: any): Observable<any> {
+    return this.http.delete(`${this.apiUrl}/api/borrar/noticia/${id}/${rol}`, {
+      headers: this.headers,
+    });
+  }
 }

@@ -1,12 +1,15 @@
 .escritorio {
   display: none;
 }
+.escritorio_nuevo {
+  display: none;
+}
 
 .mobile {
   display: none;
 }
 @media screen and (min-width: 1024px) {
-  .escritorio {
+  .escritorio_nuevo {
     display: block;
   }
 }
@@ -17,161 +20,291 @@
   }
 }
 
+/* Escritorio */
+
+.general {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  overflow-y: hidden;
+}
+.contenedorIzquierdo {
+  background-image: url("https://visitmexico.com/wp-content/uploads/2022/09/Chiapas_Portada.png");
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.logoM24 {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 35%;
+}
+.pilarAdd {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  width: 361px;
+}
+
+.sloganEscritorio {
+  font-family: Poppins;
+  color: #595959;
+  text-align: end;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  padding: 1rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.contenedorDerecho {
+  background-color: #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-y: hidden;
+}
+
+.centrar {
+  text-align: center;
+}
+
+.centrar h1 {
+  color: #000;
+  font-family: Poppins;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+}
+.centrar h2 {
+  color: #595959;
+  font-family: Poppins;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 158.5%; /* 38.04px */
+}
+
+.inputEntrada {
+  display: block;
+  width: 100%;
+  border-radius: 10px;
+  padding: 5px 10px;
+  border: none;
+  outline: none;
+  font-family: Poppins;
+  margin-bottom: 1rem;
+  height: 60px;
+  font-size: 1.5rem;
+}
+
+.botonIngresar {
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #635274 0.06%, #512b52 99.95%);
+  height: 60px;
+  color: white;
+  font-family: Poppins;
+  margin-top: 2rem;
+}
+
+#registrarBoton {
+  background-color: transparent;
+  width: 100%;
+  height: 60px;
+  font-size: 24px;
+  border-radius: 10px;
+}
+.botonIngresar,
+#registrarBoton {
+  transition: ease-in-out 0.5s;
+}
+.botonIngresar:hover,
+#registrarBoton:hover {
+  transform: translateY(-10px);
+}
+
+@media screen and (max-width: 1360px) {
+  .logoM24 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 35%;
+    width: calc(568px * 0.7);
+  }
+  .pilarAdd {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width:  calc( 361px*0.7);
+  }
+
+  .sloganEscritorio{
+    font-size: 1rem;
+  }
+}
+
+
+/* Mobile */
 
 .fondoMobile {
-    background-color: #512B52;
-    width: 100%;
-    height: 60vh;
-    border-radius: 0 0 2rem 2rem;
-    text-align: center;
+  background-color: #512b52;
+  width: 100%;
+  height: 60vh;
+  border-radius: 0 0 2rem 2rem;
+  text-align: center;
 }
 
-.sloganMobile{
-    font-family: Poppins;
-    color: white;
-    font-size: 1rem;
+.sloganMobile {
+  font-family: Poppins;
+  color: white;
+  font-size: 1rem;
 }
-.contenedorFormulario{
-    background-color: white;
-    width: 90%;
-    height: 100%px;
-    position: absolute;
-    top: 30%;
-    border-radius: 10px;
-    font-family: Poppins;
-    left: 0;
-    right: 0;
-    margin: auto;
-    padding: 1rem;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-
+.contenedorFormulario {
+  background-color: white;
+  width: 90%;
+  height: 100%px;
+  position: absolute;
+  top: 30%;
+  border-radius: 10px;
+  font-family: Poppins;
+  left: 0;
+  right: 0;
+  margin: auto;
+  padding: 1rem;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
-.bienvenidoMobile{
-    font-weight: bold;
-    margin-left: 1rem;
+.bienvenidoMobile {
+  font-weight: bold;
+  margin-left: 1rem;
 }
-.problemasMobile{
-    border: none;
-    margin: 5px;
-    background-color: white;
-    margin-top: 1rem;
-    font-size: 1rem;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+.problemasMobile {
+  border: none;
+  margin: 5px;
+  background-color: white;
+  margin-top: 1rem;
+  font-size: 1rem;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
-.footerMobile{
-    position: absolute;
-    bottom: 0;
-    margin-bottom: 2rem;
-    font-family: Poppins;
-    width: 100%;
+.footerMobile {
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 2rem;
+  font-family: Poppins;
+  width: 100%;
 }
-.slogan2Mobile{
-    font-weight: bold;
-    font-size: 1rem;
-    margin-left: 1rem;
+.slogan2Mobile {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-left: 1rem;
 }
-.botonRegistrarMobile{
-    border: none;
-    background-color: #512B52;
-    color: white;
-    width: 90%;
-    height: 3rem;
-    border-radius: 10px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+.botonRegistrarMobile {
+  border: none;
+  background-color: #512b52;
+  color: white;
+  width: 90%;
+  height: 3rem;
+  border-radius: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
-.inputMobile{
-    border-radius: 10px;
-    height: 40px;
-    padding-left: 5px;
-    border: none;
-    background-color: #EEE;
-    margin-bottom: 1rem;
-    width: 90%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+.inputMobile {
+  border-radius: 10px;
+  height: 40px;
+  padding-left: 5px;
+  border: none;
+  background-color: #eee;
+  margin-bottom: 1rem;
+  width: 90%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
-.loginBotonMobile{
-    border: none;
-    font-family: Poppins;
-    font-size: 2rem;
-    background-color: #7BB0A8;
-    border-radius: 50%;
-    width: 99px;
-    height: 99px;
-    color: white;
-    display: block;
-    margin-right: auto;
-    margin-left: auto;
+.loginBotonMobile {
+  border: none;
+  font-family: Poppins;
+  font-size: 2rem;
+  background-color: #7bb0a8;
+  border-radius: 50%;
+  width: 99px;
+  height: 99px;
+  color: white;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
 }
-.space{
-   padding-left: 0px !important;
-   padding-top: 0px !important;
+.space {
+  padding-left: 0px !important;
+  padding-top: 0px !important;
 }
 .triangulo-tricolor {
-    width: fit-content;
-    border-left: 460px solid #512B52;
-    border-top: 359px solid #635274;
-    border-bottom: 431px solid #7BB0A8;
-   
+  width: fit-content;
+  border-left: 460px solid #512b52;
+  border-top: 359px solid #635274;
+  border-bottom: 431px solid #7bb0a8;
 }
-.position{
-    position: relative;
-
+.position {
+  position: relative;
 }
-.logo{
-    position: absolute; 
-    left: 23px; top: -73px; 
-    z-index: 1
+.logo {
+  position: absolute;
+  left: 23px;
+  top: -73px;
+  z-index: 1;
 }
-.input{
-    width: 50%;
+.input {
+  width: 50%;
 }
-.pilar{
-    position: absolute; 
-    left: 0px; 
-    top: 263px; 
-    z-index: 1
+.pilar {
+  position: absolute;
+  left: 0px;
+  top: 263px;
+  z-index: 1;
 }
-.pilar-secundario{
-    position: relative;
-    left: 720px;
-    bottom: 20px;
+.pilar-secundario {
+  position: relative;
+  left: 720px;
+  bottom: 20px;
 }
-.slogan{
-    position: absolute;
-    color: aliceblue;
-    font-family: 'Roboto-Bold', sans-serif;
-    margin-top: 249px;
-    margin-left: 118px;
-    font-size: larger;
+.slogan {
+  position: absolute;
+  color: aliceblue;
+  font-family: "Roboto-Bold", sans-serif;
+  margin-top: 249px;
+  margin-left: 118px;
+  font-size: larger;
 }
-.background-login{
-    background-color: #EEEE;
+.background-login {
+  background-color: #eeee;
 }
-.text-title{
-    color: black;
-    font-family: 'Roboto', sans-serif;
-    font-size: 100%;
-    font-size: xx-large;
+.text-title {
+  color: black;
+  font-family: "Roboto", sans-serif;
+  font-size: 100%;
+  font-size: xx-large;
 }
-.links{
-    color: #7BB0A8;
+.links {
+  color: #7bb0a8;
 }
-.text-others{
-    color: black;
-    font-family: 'Roboto', sans-serif;
+.text-others {
+  color: black;
+  font-family: "Roboto", sans-serif;
 }
-.button-success{
-    background-color: #512B52;
-    color: white;
-    text-decoration:none;
-    font-weight:600;
-    font-size:20px;
-    padding-top:15px;
-    padding-bottom:15px;
-    padding-left:150px;
-    padding-right:150px;
+.button-success {
+  background-color: #512b52;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 20px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 150px;
+  padding-right: 150px;
 }

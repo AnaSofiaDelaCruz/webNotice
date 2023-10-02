@@ -14,7 +14,7 @@
   </head>
   <body>
     <div class="header">
-      <button class="boton_regresar">Regresar</button>
+      <button class="boton_regresar" routerLink="/homeAdmin">Regresar</button>
       <h1 class="mision24">mision 24</h1>
     </div>
 
@@ -30,372 +30,47 @@
     <div class="contenedor_dropdowns">
       <select class="dropdown">
         <option value="0">Elegir categoria</option>
-        <option value="1">Nacional</option>
+        <option
+          value="categoria"
+          *ngFor="let categoria of lista_categoria | ObjToArray"
+        >
+          {{ categoria.categoria }}
+        </option>
       </select>
       <select class="dropdown">
         <option value="0">Elegir subcategoria</option>
-        <option value="1">Accidentes</option>
+        <option
+          value="subcategoria"
+          *ngFor="let subcategoria of lista_subcategoria | ObjToArray"
+        >
+          {{ subcategoria.subcategoria }}
+        </option>
       </select>
     </div>
 
     <div class="contenedor_noticias">
-      <div class="card">
+      <div
+        class="card"
+        *ngFor="let nota of notaCompleta | ObjToArray"
+        
+      >
         <div class="contenedor_imagen">
           <img
-            src="https://assets.xboxservices.com/assets/95/eb/95eb973b-006b-4533-8902-f5a3f8dfd955.jpg?n=Halo-Infinite_GLP-Page-Hero-0_1083x609.jpg"
+            [src]="nota.itemPaths[0]"
+            [alt]="nota.item[0]"
             class="imagen_card"
           />
         </div>
         <div class="contenedor_informacion">
-          <h1 class="titulo_noticia">A tlacua se lo cogieron entre 23,000 habitantes</h1>
-          <h2 class="fecha_noticia">06/09/2023</h2>
+          <h1 class="titulo_noticia">
+            {{ nota.titulo }}
+          </h1>
+          <h2 class="fecha_noticia">{{ nota.createdAt }}</h2>
           <div class="contenedor_botontes_card">
-            <button class="boton_editar">
+            <button class="boton_editar" (click)="editar_noticia(nota.id)">
               <i class="bi bi-pencil-square"></i> Editar
             </button>
-            <button class="boton_eliminar">
-              <i class="bi bi-trash-fill"></i> Eliminar
-            </button>
-          </div>
-        </div>
-      </div>
-      <div class="card">
-        <div class="contenedor_imagen">
-          <img
-            src="https://assets.xboxservices.com/assets/95/eb/95eb973b-006b-4533-8902-f5a3f8dfd955.jpg?n=Halo-Infinite_GLP-Page-Hero-0_1083x609.jpg"
-            class="imagen_card"
-          />
-        </div>
-        <div class="contenedor_informacion">
-          <h1 class="titulo_noticia">Titulo de noticia</h1>
-          <h2 class="fecha_noticia">06/09/2023</h2>
-          <div class="contenedor_botontes_card">
-            <button class="boton_editar">
-              <i class="bi bi-pencil-square"></i> Editar
-            </button>
-            <button class="boton_eliminar">
-              <i class="bi bi-trash-fill"></i> Eliminar
-            </button>
-          </div>
-        </div>
-      </div>
-      <div class="card">
-        <div class="contenedor_imagen">
-          <img
-            src="https://assets.xboxservices.com/assets/95/eb/95eb973b-006b-4533-8902-f5a3f8dfd955.jpg?n=Halo-Infinite_GLP-Page-Hero-0_1083x609.jpg"
-            class="imagen_card"
-          />
-        </div>
-        <div class="contenedor_informacion">
-          <h1 class="titulo_noticia">Titulo de noticia</h1>
-          <h2 class="fecha_noticia">06/09/2023</h2>
-          <div class="contenedor_botontes_card">
-            <button class="boton_editar">
-              <i class="bi bi-pencil-square"></i> Editar
-            </button>
-            <button class="boton_eliminar">
-              <i class="bi bi-trash-fill"></i> Eliminar
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="contenedor_imagen">
-          <img
-            src="https://assets.xboxservices.com/assets/95/eb/95eb973b-006b-4533-8902-f5a3f8dfd955.jpg?n=Halo-Infinite_GLP-Page-Hero-0_1083x609.jpg"
-            class="imagen_card"
-          />
-        </div>
-        <div class="contenedor_informacion">
-          <h1 class="titulo_noticia">Titulo de noticia</h1>
-          <h2 class="fecha_noticia">06/09/2023</h2>
-          <div class="contenedor_botontes_card">
-            <button class="boton_editar">
-              <i class="bi bi-pencil-square"></i> Editar
-            </button>
-            <button class="boton_eliminar">
-              <i class="bi bi-trash-fill"></i> Eliminar
-            </button>
-          </div>
-        </div>
-      </div>
-      <div class="card">
-        <div class="contenedor_imagen">
-          <img
-            src="https://assets.xboxservices.com/assets/95/eb/95eb973b-006b-4533-8902-f5a3f8dfd955.jpg?n=Halo-Infinite_GLP-Page-Hero-0_1083x609.jpg"
-            class="imagen_card"
-          />
-        </div>
-        <div class="contenedor_informacion">
-          <h1 class="titulo_noticia">Titulo de noticia</h1>
-          <h2 class="fecha_noticia">06/09/2023</h2>
-          <div class="contenedor_botontes_card">
-            <button class="boton_editar">
-              <i class="bi bi-pencil-square"></i> Editar
-            </button>
-            <button class="boton_eliminar">
-              <i class="bi bi-trash-fill"></i> Eliminar
-            </button>
-          </div>
-        </div>
-      </div>
-      <div class="card">
-        <div class="contenedor_imagen">
-          <img
-            src="https://assets.xboxservices.com/assets/95/eb/95eb973b-006b-4533-8902-f5a3f8dfd955.jpg?n=Halo-Infinite_GLP-Page-Hero-0_1083x609.jpg"
-            class="imagen_card"
-          />
-        </div>
-        <div class="contenedor_informacion">
-          <h1 class="titulo_noticia">Titulo de noticia</h1>
-          <h2 class="fecha_noticia">06/09/2023</h2>
-          <div class="contenedor_botontes_card">
-            <button class="boton_editar">
-              <i class="bi bi-pencil-square"></i> Editar
-            </button>
-            <button class="boton_eliminar">
-              <i class="bi bi-trash-fill"></i> Eliminar
-            </button>
-          </div>
-        </div>
-      </div>
-      <div class="card">
-        <div class="contenedor_imagen">
-          <img
-            src="https://assets.xboxservices.com/assets/95/eb/95eb973b-006b-4533-8902-f5a3f8dfd955.jpg?n=Halo-Infinite_GLP-Page-Hero-0_1083x609.jpg"
-            class="imagen_card"
-          />
-        </div>
-        <div class="contenedor_informacion">
-          <h1 class="titulo_noticia">Titulo de noticia</h1>
-          <h2 class="fecha_noticia">06/09/2023</h2>
-          <div class="contenedor_botontes_card">
-            <button class="boton_editar">
-              <i class="bi bi-pencil-square"></i> Editar
-            </button>
-            <button class="boton_eliminar">
-              <i class="bi bi-trash-fill"></i> Eliminar
-            </button>
-          </div>
-        </div>
-      </div>
-      <div class="card">
-        <div class="contenedor_imagen">
-          <img
-            src="https://assets.xboxservices.com/assets/95/eb/95eb973b-006b-4533-8902-f5a3f8dfd955.jpg?n=Halo-Infinite_GLP-Page-Hero-0_1083x609.jpg"
-            class="imagen_card"
-          />
-        </div>
-        <div class="contenedor_informacion">
-          <h1 class="titulo_noticia">Titulo de noticia</h1>
-          <h2 class="fecha_noticia">06/09/2023</h2>
-          <div class="contenedor_botontes_card">
-            <button class="boton_editar">
-              <i class="bi bi-pencil-square"></i> Editar
-            </button>
-            <button class="boton_eliminar">
-              <i class="bi bi-trash-fill"></i> Eliminar
-            </button>
-          </div>
-        </div>
-      </div>
-      <div class="card">
-        <div class="contenedor_imagen">
-          <img
-            src="https://assets.xboxservices.com/assets/95/eb/95eb973b-006b-4533-8902-f5a3f8dfd955.jpg?n=Halo-Infinite_GLP-Page-Hero-0_1083x609.jpg"
-            class="imagen_card"
-          />
-        </div>
-        <div class="contenedor_informacion">
-          <h1 class="titulo_noticia">Titulo de noticia</h1>
-          <h2 class="fecha_noticia">06/09/2023</h2>
-          <div class="contenedor_botontes_card">
-            <button class="boton_editar">
-              <i class="bi bi-pencil-square"></i> Editar
-            </button>
-            <button class="boton_eliminar">
-              <i class="bi bi-trash-fill"></i> Eliminar
-            </button>
-          </div>
-        </div>
-      </div>
-      <div class="card">
-        <div class="contenedor_imagen">
-          <img
-            src="https://assets.xboxservices.com/assets/95/eb/95eb973b-006b-4533-8902-f5a3f8dfd955.jpg?n=Halo-Infinite_GLP-Page-Hero-0_1083x609.jpg"
-            class="imagen_card"
-          />
-        </div>
-        <div class="contenedor_informacion">
-          <h1 class="titulo_noticia">Titulo de noticia</h1>
-          <h2 class="fecha_noticia">06/09/2023</h2>
-          <div class="contenedor_botontes_card">
-            <button class="boton_editar">
-              <i class="bi bi-pencil-square"></i> Editar
-            </button>
-            <button class="boton_eliminar">
-              <i class="bi bi-trash-fill"></i> Eliminar
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="contenedor_imagen">
-          <img
-            src="https://assets.xboxservices.com/assets/95/eb/95eb973b-006b-4533-8902-f5a3f8dfd955.jpg?n=Halo-Infinite_GLP-Page-Hero-0_1083x609.jpg"
-            class="imagen_card"
-          />
-        </div>
-        <div class="contenedor_informacion">
-          <h1 class="titulo_noticia">Titulo de noticia</h1>
-          <h2 class="fecha_noticia">06/09/2023</h2>
-          <div class="contenedor_botontes_card">
-            <button class="boton_editar">
-              <i class="bi bi-pencil-square"></i> Editar
-            </button>
-            <button class="boton_eliminar">
-              <i class="bi bi-trash-fill"></i> Eliminar
-            </button>
-          </div>
-        </div>
-      </div>
-      <div class="card">
-        <div class="contenedor_imagen">
-          <img
-            src="https://assets.xboxservices.com/assets/95/eb/95eb973b-006b-4533-8902-f5a3f8dfd955.jpg?n=Halo-Infinite_GLP-Page-Hero-0_1083x609.jpg"
-            class="imagen_card"
-          />
-        </div>
-        <div class="contenedor_informacion">
-          <h1 class="titulo_noticia">Titulo de noticia</h1>
-          <h2 class="fecha_noticia">06/09/2023</h2>
-          <div class="contenedor_botontes_card">
-            <button class="boton_editar">
-              <i class="bi bi-pencil-square"></i> Editar
-            </button>
-            <button class="boton_eliminar">
-              <i class="bi bi-trash-fill"></i> Eliminar
-            </button>
-          </div>
-        </div>
-      </div>
-      <div class="card">
-        <div class="contenedor_imagen">
-          <img
-            src="https://assets.xboxservices.com/assets/95/eb/95eb973b-006b-4533-8902-f5a3f8dfd955.jpg?n=Halo-Infinite_GLP-Page-Hero-0_1083x609.jpg"
-            class="imagen_card"
-          />
-        </div>
-        <div class="contenedor_informacion">
-          <h1 class="titulo_noticia">Titulo de noticia</h1>
-          <h2 class="fecha_noticia">06/09/2023</h2>
-          <div class="contenedor_botontes_card">
-            <button class="boton_editar">
-              <i class="bi bi-pencil-square"></i> Editar
-            </button>
-            <button class="boton_eliminar">
-              <i class="bi bi-trash-fill"></i> Eliminar
-            </button>
-          </div>
-        </div>
-      </div>
-      <div class="card">
-        <div class="contenedor_imagen">
-          <img
-            src="https://assets.xboxservices.com/assets/95/eb/95eb973b-006b-4533-8902-f5a3f8dfd955.jpg?n=Halo-Infinite_GLP-Page-Hero-0_1083x609.jpg"
-            class="imagen_card"
-          />
-        </div>
-        <div class="contenedor_informacion">
-          <h1 class="titulo_noticia">Titulo de noticia</h1>
-          <h2 class="fecha_noticia">06/09/2023</h2>
-          <div class="contenedor_botontes_card">
-            <button class="boton_editar">
-              <i class="bi bi-pencil-square"></i> Editar
-            </button>
-            <button class="boton_eliminar">
-              <i class="bi bi-trash-fill"></i> Eliminar
-            </button>
-          </div>
-        </div>
-      </div>
-      <div class="card">
-        <div class="contenedor_imagen">
-          <img
-            src="https://assets.xboxservices.com/assets/95/eb/95eb973b-006b-4533-8902-f5a3f8dfd955.jpg?n=Halo-Infinite_GLP-Page-Hero-0_1083x609.jpg"
-            class="imagen_card"
-          />
-        </div>
-        <div class="contenedor_informacion">
-          <h1 class="titulo_noticia">Titulo de noticia</h1>
-          <h2 class="fecha_noticia">06/09/2023</h2>
-          <div class="contenedor_botontes_card">
-            <button class="boton_editar">
-              <i class="bi bi-pencil-square"></i> Editar
-            </button>
-            <button class="boton_eliminar">
-              <i class="bi bi-trash-fill"></i> Eliminar
-            </button>
-          </div>
-        </div>
-      </div>
-      <div class="card">
-        <div class="contenedor_imagen">
-          <img
-            src="https://assets.xboxservices.com/assets/95/eb/95eb973b-006b-4533-8902-f5a3f8dfd955.jpg?n=Halo-Infinite_GLP-Page-Hero-0_1083x609.jpg"
-            class="imagen_card"
-          />
-        </div>
-        <div class="contenedor_informacion">
-          <h1 class="titulo_noticia">Titulo de noticia</h1>
-          <h2 class="fecha_noticia">06/09/2023</h2>
-          <div class="contenedor_botontes_card">
-            <button class="boton_editar">
-              <i class="bi bi-pencil-square"></i> Editar
-            </button>
-            <button class="boton_eliminar">
-              <i class="bi bi-trash-fill"></i> Eliminar
-            </button>
-          </div>
-        </div>
-      </div>
-      <div class="card">
-        <div class="contenedor_imagen">
-          <img
-            src="https://assets.xboxservices.com/assets/95/eb/95eb973b-006b-4533-8902-f5a3f8dfd955.jpg?n=Halo-Infinite_GLP-Page-Hero-0_1083x609.jpg"
-            class="imagen_card"
-          />
-        </div>
-        <div class="contenedor_informacion">
-          <h1 class="titulo_noticia">Titulo de noticia</h1>
-          <h2 class="fecha_noticia">06/09/2023</h2>
-          <div class="contenedor_botontes_card">
-            <button class="boton_editar">
-              <i class="bi bi-pencil-square"></i> Editar
-            </button>
-            <button class="boton_eliminar">
-              <i class="bi bi-trash-fill"></i> Eliminar
-            </button>
-          </div>
-        </div>
-      </div>
-      <div class="card">
-        <div class="contenedor_imagen">
-          <img
-            src="https://assets.xboxservices.com/assets/95/eb/95eb973b-006b-4533-8902-f5a3f8dfd955.jpg?n=Halo-Infinite_GLP-Page-Hero-0_1083x609.jpg"
-            class="imagen_card"
-          />
-        </div>
-        <div class="contenedor_informacion">
-          <h1 class="titulo_noticia">Titulo de noticia</h1>
-          <h2 class="fecha_noticia">06/09/2023</h2>
-          <div class="contenedor_botontes_card">
-            <button class="boton_editar">
-              <i class="bi bi-pencil-square"></i> Editar
-            </button>
-            <button class="boton_eliminar">
+            <button class="boton_eliminar" (click)="eliminar_noticia(nota.id)">
               <i class="bi bi-trash-fill"></i> Eliminar
             </button>
           </div>

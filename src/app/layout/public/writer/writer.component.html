@@ -3,101 +3,72 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Espacio de escritor</title>
+    <title>Escribir noticia</title>
     <style>
-      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;700;800&family=Roboto:wght@100;400;700&display=swap");
-      @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+      @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css");
     </style>
   </head>
   <body>
-    <div class="cabecera">
-      <h2 class="tituloHeader">Crear nota periodística</h2>
-      <div class="contenedorBoton">
-        <button class="cancelarNota" routerLink="/homeAdmin">Cancelar</button>
-      </div>
+    <div class="header">
+      <button routerLink="/homeAdmin">Regresar</button>
+      <h1>MISÓN 24</h1>
+      <h2>El punto exacto de la noticia</h2>
     </div>
-    <form [formGroup]="notaForm" (ngSubmit)="CrearNota()">
-      <div class="form-group">
-        <label class="tituloNota">Titulo de la noticia:</label>
-        <input
-          type="text"
-          formControlName="titulo"
-          class="form-control"
-          id="inputTitulo"
-        />
-      </div>
-      <div class="encapsularCategorias">
-        <div class="form-group">
-          <label class="textoCategoria">Categoría:</label>
-          <select class="form-control" formControlName="categoriaID">
-            <option
-              *ngFor="let categoria of categories | ObjToArray"
-              [value]="categoria.id"
-            >
-              {{ categoria.categoria }}
-            </option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label class="textoCategoria">Subcategoría:</label>
-          <select class="form-control" formControlName="subcategoriaID">
-            <option
-              *ngFor="let subcategoria of subcategories | ObjToArray"
-              [value]="subcategoria.id"
-            >
-              {{ subcategoria.subcategoria }}
-            </option>
-          </select>
-        </div>
-        <div class="dropdown">
-          <a href="#"
-            ><i class="bi bi-three-dots-vertical"></i> Gestionar de
-            categorias</a
-          >
-          <div class="gestion">
-            <ul class="lista">
-              <li>
-                <a href="/crear-categoria" class="opcion"
-                  ><i class="bi bi-plus-circle-fill"></i> Crear categoria</a
-                >
-              </li>
-              <li>
-                <a href="#" class="opcion"
-                  ><i class="bi bi-pencil-fill"></i> Editar categoria</a
-                >
-              </li>
-              <li>
-                <a href="#" class="opcion"
-                  ><i class="bi bi-trash-fill"></i> Eliminar categoria</a
-                >
-              </li>
-            </ul>
+
+    <form [formGroup]="notaForm">
+      <div class="contenedor_general" id="contenedorGeneral">
+        <div class="centrar">
+          <h1 class="informacionNoticia">Información de la noticia</h1>
+          <div class="formulario">
+            <div class="titulo">
+              <h1>Titulo de la noticia</h1>
+              <input type="text" formControlName="titulo" />
+            </div>
+            <div class="categorias">
+              <h1>Categorias</h1>
+              <div class="selects">
+                <select formControlName="categoriaID">
+                  <option
+                    *ngFor="let categoria of categories | ObjToArray"
+                    [value]="categoria.id"
+                  >
+                    {{ categoria.categoria }}
+                  </option>
+                </select>
+                <select formControlName="subcategoriaID">
+                  <option
+                    *ngFor="let subcategoria of subcategories | ObjToArray"
+                    [value]="subcategoria.id"
+                  >
+                    {{subcategoria.subcategoria}}
+                  </option>
+                </select>
+              </div>
+            </div>
+            <div class="cargar">
+              <h1>Cargar imagenes</h1>
+              <input type="file" name ="images"class="cargador" multiple (change)="selectImages($event)"/>
+            </div>
+            <button class="boton_continuar" (click)="probar()">
+              Continuar <i class="bi bi-arrow-right-short"></i>
+            </button>
           </div>
         </div>
+        <div class="decoracion"></div>
       </div>
-      <div class="form-group">
-        <label class="textoCategoria">Seleccion de imágenes:</label>
-        <input
-          type="file"
-          name="images"
-          class="form-control"
-          multiple
-          (change)="selectImages($event)"
-          id="selectorImagenes"
-        />
-      </div>
-      <div class="form-group">
-        <label class="cuerpoNotaTitulo">Cuerpo de la nota:</label>
+
+      <div class="editor" id="parteEditor">
+        <input type="hidden" formControlName="id" />
         <editor
           [init]="editorConfig"
           formControlName="descripcion"
           class="estiloEditor"
         ></editor>
+        <button class="boton_noticia" (click)="CrearNota()">
+          {{ notaForm.get("id")!.value ? "Actualizar" : "Publicar" }} <i class="bi bi-floppy-fill"></i>
+        </button>
       </div>
-      <input type="hidden" formControlName="id" />
-      <button type="submit" class="confirmarNoticia">
-        {{ notaForm.get("id")!.value ? "Actualizar" : "Publicar" }}
-      </button>
     </form>
   </body>
 </html>

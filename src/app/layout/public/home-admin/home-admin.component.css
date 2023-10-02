@@ -32,6 +32,7 @@ body {
   font-style: normal;
   font-weight: 700;
   text-transform: uppercase;
+  cursor: default;
 }
 
 .escribirNotaBoton {
@@ -42,13 +43,23 @@ body {
   font-size: 30px;
   font-weight: bold;
   border: none;
+  transition: all ease 0.5s;
+}
+.escribirNotaBoton:hover {
+  background-color: #9de2d8;
+  padding: 5px;
 }
 
 .imagenUsuarioIcon {
   width: 49px;
   height: 49px;
+  transition: all ease 0.5s;
 }
-
+.imagenUsuarioIcon:hover {
+  width: 55px;
+  height: 55px;
+  color: #7bb0a8;
+}
 .botonUsuario {
   border: none;
   background-color: white;
@@ -90,6 +101,11 @@ body {
   display: flex;
   background-color: #eee;
   margin-bottom: 1rem;
+  cursor: pointer;
+  transition: all ease 0.5s;
+}
+.contenedorRecientes:hover {
+  padding: 2rem;
 }
 
 .informacionCard {
@@ -298,6 +314,10 @@ body {
   .imagenUsuarioIcon {
     width: 30px;
     height: 30px;
+  }
+  .imagenUsuarioIcon:hover {
+    width: 35px;
+    height: 35px;
   }
 
   .cabeza {

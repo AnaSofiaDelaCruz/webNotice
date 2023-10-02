@@ -4,13 +4,13 @@ import { Router } from '@angular/router';
 import { AlertService } from 'src/app/service/AlertService/alert.service';
 import { CategoriaService } from 'src/app/service/CategoriaService/categoria.service';
 
-
 @Component({
   selector: 'app-crear-categoria',
   templateUrl: './crear-categoria.component.html',
   styleUrls: ['./crear-categoria.component.css'],
 })
 export class CrearCategoriaComponent implements OnInit {
+  public banderaPublicaciones = false;
   constructor(
     private fb: FormBuilder,
     private alertService: AlertService,
@@ -57,7 +57,7 @@ export class CrearCategoriaComponent implements OnInit {
       .subscribe(
         (response) => {
           if (response.message === 'Categoria creada') {
-            this.alertService.showSuccess('Categoria', 'Categoria creada');
+            this.alertService.showSuccess('Categoria', 'Creada exitosamente');
             this.categoriaForm.reset();
             this.ListaCategory();
           }
@@ -68,14 +68,17 @@ export class CrearCategoriaComponent implements OnInit {
       );
   }
 
+  public habilitarBanderaPublicaciones() {
+    this.router.navigate(["/administrador"])
+  }
+
   private CrearSubCategorias() {
     this.categoriaService
       .RegistrarSubCategoria(this.categoriaForm.value)
       .subscribe(
         (response) => {
           if (response.message === 'Subcategoría creada') {
-
-            this.alertService.MinShowSucces("Creador","Subcategoría")
+            this.alertService.MinShowSucces('Subcategoria', 'Creada exitosamente');
             this.ListSubCategory();
             this.categoriaForm.reset();
           }
@@ -116,6 +119,6 @@ export class CrearCategoriaComponent implements OnInit {
   }
 
   public irEditar() {
-    this.router.navigate(["/editarCategoria"])
+    this.router.navigate(['/editarCategoria']);
   }
 }

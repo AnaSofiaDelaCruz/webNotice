@@ -24,7 +24,8 @@ export class EditarPerfilComponent {
     private route: ActivatedRoute,
     private rellenar: ListarEscritoresService,
     private alertas: AlertService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private router: Router
   ) {
     this.route.queryParams.subscribe((params) => {
       const parametro1 = params['parametro1'];
@@ -73,7 +74,6 @@ export class EditarPerfilComponent {
       {
         nombre: ['', Validators.required],
         apellido: ['', Validators.required],
-        username: [''],
         correo: ['', [Validators.required]],
         password: ['', [Validators.required]],
         confirmPassword: ['', Validators.required],
@@ -90,7 +90,6 @@ export class EditarPerfilComponent {
 
   public guardarCambios() {
     if (this.miFormulario.valid) {
-
       this.rellenar
         .actualizarEscritorFuncion(this.idEncontrado, this.miFormulario.value)
         .subscribe((res) => {
@@ -99,6 +98,7 @@ export class EditarPerfilComponent {
             'El usuario fue actualizado correctamente.'
           );
         });
+      this.router.navigate(['/administrador']);
     } else {
       this.alertas.ShowErrorAlert('¡Existen campos vacios!');
     }

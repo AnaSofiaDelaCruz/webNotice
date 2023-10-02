@@ -1,0 +1,400 @@
+.contenedor_general {
+  width: 100%;
+  font-family: Poppins;
+  display: grid;
+  grid-template-columns: 20% auto;
+}
+.contenedor_lateral {
+  background: linear-gradient(#0395c2, #7bb0a8);
+  height: 100vh;
+}
+
+.contenedor_contenido {
+  background-color: blue;
+}
+
+.contenedor_imagen {
+  margin-top: 3rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.admin_texto {
+  font-size: 1rem;
+  font-weight: 600;
+}
+.nombre_admin {
+  font-size: 1rem;
+}
+.admin_texto,
+.nombre_admin {
+  text-align: center;
+  color: white;
+}
+.menu_lateral {
+  margin-top: 2rem;
+}
+.boton_lateral {
+  width: 100%;
+  text-align: start;
+  border: none;
+  color: white;
+  background-color: transparent;
+  transition: all ease 0.5s;
+  font-size: 1.5rem;
+}
+
+.boton_lateral:hover {
+  background-color: #5abed3;
+  padding-left: 1rem;
+}
+
+.boton_seleccionado {
+  background-color: #5abed3;
+  padding-left: 1rem;
+}
+
+.boton_cerrar {
+  border: none;
+  width: 90%;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-top: 70%;
+  border-radius: 5px;
+  background: linear-gradient(#7bb0a8, #0395c2);
+  color: white;
+  transition: all ease 0.5s;
+}
+.boton_cerrar:hover {
+  padding: 1rem;
+}
+
+.contenedor_contenido {
+  background-color: #ebeaea;
+}
+@media screen and (max-width: 1360px) {
+  .boton_lateral {
+    font-size: 1rem;
+  }
+}
+
+.mensaje_bienvenida {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-left: 1rem;
+  margin-top: 2rem;
+}
+.mensaje {
+  font-size: 1rem;
+  margin-left: 1rem;
+  color: #a9a1a1;
+  margin-top: -0.5rem;
+}
+
+.escritores_registrados_texto {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-left: 1rem;
+  padding-top: 10px;
+}
+.escritores_registrados {
+  background-color: white;
+  width: 736px;
+  height: 70vh;
+  border-radius: 10px;
+  margin-left: 1rem;
+  overflow-y: scroll;
+  align-items: center;
+}
+.resultados_escritores {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  align-items: center;
+  padding: 0.3rem;
+  transition: all ease 0.5s;
+  cursor: pointer;
+}
+
+.resultados_escritores:hover {
+  background-color: #efefef;
+}
+.nombre_escritor {
+  font-size: 1rem;
+}
+.fecha_creado {
+  font-size: 0.8rem;
+}
+
+.boton_editar,
+.boton_eliminar {
+  border: none;
+  color: white;
+  width: 50px;
+  border-radius: 10px;
+  transition: all ease 0.5s;
+}
+.boton_editar {
+  background: linear-gradient(#0395c2, #7bb0a8);
+  margin-right: 5px;
+}
+.boton_eliminar {
+  background: linear-gradient(90deg, #993232 0%, #f94c4c 100%);
+}
+
+.boton_editar:hover,
+.boton_eliminar:hover {
+  padding: 8px;
+}
+
+.boton_registrar_escritor {
+  border: none;
+  width: 736px;
+  font-size: 3rem;
+  color: white;
+  background: linear-gradient(#0395c2, #7bb0a8);
+  margin: 1rem;
+  border-radius: 10px;
+  transition: all ease 0.5s;
+}
+
+.boton_registrar_escritor:hover {
+  margin: 0.5rem 1rem;
+}
+
+#checkEscritores,
+#checkPubs,
+#checkCategorias {
+  display: none;
+}
+
+.esconder {
+  transition: all ease 0.5s;
+  display: none;
+}
+
+/* Seccion de publicaciones */
+
+.header {
+  background: linear-gradient(270deg, #7bb0a8 33.43%, #0595c3 100%);
+  padding: 1rem;
+  text-align: center;
+}
+.buscador_notas {
+  border-radius: 47px;
+  background: linear-gradient(90deg, #23b5e3 1.14%, #60c6b6 99.98%);
+  border: none;
+  color: white;
+  outline: none;
+  width: 628px;
+  height: 40px;
+  padding-left: 1rem;
+}
+
+.contenedor_publicaciones {
+  background-color: white;
+  border-radius: 10px;
+  width: 98%;
+  height: 80vh;
+  flex-shrink: 0;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1rem;
+  overflow-y: scroll;
+  align-items: center;
+  justify-content: center;
+}
+
+.publicaciones_realizadas {
+  color: #000;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  margin-left: 1rem;
+}
+
+.imagen_publicacion {
+  width: 259px;
+  height: 129px;
+  border-radius: 10px;
+  margin: 0 auto;
+  display: block;
+}
+
+.titulo_noticia {
+  color: #000;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+.informacion_nota h2 {
+  color: #000;
+  font-family: Poppins;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 133.2%;
+  display: block;
+}
+
+.card_publicacion {
+  width: 308px;
+  height: 368px;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0px 11px 12px 0px rgba(0, 0, 0, 0.25);
+  padding: 1rem;
+  cursor: pointer;
+  transition: all ease 0.5s;
+  margin: 1rem;
+}
+.card_publicacion:hover {
+  transform: translateY(-10px);
+}
+
+.botones_noticia button {
+  border-radius: 44px;
+  border: none;
+  width: 72px;
+  height: 32px;
+  color: white;
+  transition: all ease 0.5s;
+}
+.botones_noticia {
+  text-align: end;
+  margin-top: 2rem;
+}
+.boton_borrar_nota {
+  border-radius: 44px;
+  background: linear-gradient(90deg, #993232 0%, #f94c4c 100%);
+  margin-left: 5px;
+}
+.boton_editar_nota {
+  background: linear-gradient(90deg, #7bb0a8 0%, #60b0fa 100%);
+}
+
+.boton_editar_nota:hover {
+  background: linear-gradient(90deg, #91ccc3 0%, #b1dbff, #60b0fa 100%);
+}
+
+.boton_borrar_nota:hover {
+  background: linear-gradient(90deg, #a35555 0%, #fb7070 100%);
+}
+
+/* Categorias */
+.contenedorCategorias,
+.contenedorSubcategorias {
+  width: 100%;
+  height: 400px;
+  background-color: white;
+  border-radius: 10px;
+  overflow-y: scroll;
+}
+
+.centrarCartelesCategorias {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  gap: 1rem;
+  margin-top: 1rem;
+  margin-left: 1rem;
+  margin-right: 2rem;
+}
+
+.categoriasRegistradasTexto {
+  color: #000;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  padding: 1rem;
+}
+
+.nombreCategoria {
+  color: #000 !important; 
+  font-family: Poppins;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+}
+
+.botonEditarCategoria {
+  border-radius: 44px;
+  background: linear-gradient(90deg, #7bb0a8 0%, #60b0fa 100%);
+}
+.botonEliminarCategoria {
+  border-radius: 44px;
+  background: linear-gradient(90deg, #a04242 0%, #fc5555 100%);
+  margin-left: 5px;
+}
+.botonesCategoria button {
+  color: white;
+  border: none;
+  border-radius: 10px;
+  width: 72px;
+  height: 32px;
+}
+
+.cardCategorias {
+  display: flex;
+  justify-content: space-between;
+  padding: 2px 1rem;
+  align-items: center;
+}
+
+.cardCategorias:hover {
+  background-color: rgb(241, 241, 241);
+}
+
+.contenedorCrearCategoria {
+  background-color: white;
+  width: 50%;
+  border-radius: 10px;
+  margin: 1rem;
+}
+.textoRegistrarCategoria {
+  color: #000;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  padding: 1rem;
+}
+
+.centrarInputCategoria {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 2rem;
+}
+
+.inputCategoria {
+  border-radius: 5px;
+  border: 1px solid #949494;
+  outline: none;
+  padding: 5px 10px;
+  width: 80%;
+}
+.selectCategorias {
+  border-radius: 18px;
+  border: 1px solid #949494;
+  background: #fff;
+  width: 20%;
+  padding: 5px 10px;
+  margin-left: 5px;
+}
+
+.guardarCategoria {
+  display: block;
+  margin: 1rem auto;
+  border-radius: 29px;
+  background: linear-gradient(90deg, #4acef8 0%, #7bb0a8 109.65%);
+  border: none;
+  color: white;
+  width: 30%;
+  height: 40px;
+}
