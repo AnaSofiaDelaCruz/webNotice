@@ -14,12 +14,12 @@ export class BasenewsComponent implements OnInit {
   public firstTwoImages: any[] = []; // Agregamos un arreglo para las dos primeras imágenes
   mostrarCarrusel: boolean = false;
   allImages: any[] = [];
+  indiceDiapositivaActiva = 0;
 
   constructor(
     private route: ActivatedRoute,
     private leerNota: LeerNoticiaService,
-    private router: Router,
-    // private modalService: NgModal
+    private router: Router // private modalService: NgModal
   ) {
     this.route.queryParams.subscribe((params) => {
       const parametro1 = params['parametro1'];
@@ -28,6 +28,8 @@ export class BasenewsComponent implements OnInit {
   }
   ngOnInit(): void {
     this.LecturaNoticia();
+    console.log(this.indiceDiapositivaActiva, ' indice');
+    console.log(this.allImages.length, ' allimages');
   }
 
   public ocultarBoton = false;
@@ -44,6 +46,8 @@ export class BasenewsComponent implements OnInit {
           this.ocultarBoton = true;
         }
         this.allImages = this.notita.items;
+        console.log(this.allImages.length," en lectura noticia");
+
         this.firstTwoImages = this.notita.items.slice(0, 2);
       }
     });
@@ -60,11 +64,14 @@ export class BasenewsComponent implements OnInit {
     }
   }
   abrirCarrusel() {
-    // Cargar las imágenes que deseas mostrar en this.allImages
-    this.allImages = this.notita.items; // O cualquier otra lógica para cargar las imágenes
     console.log(this.allImages);
 
     // Mostrar el modal del carrusel
     this.mostrarCarrusel = true;
+  }
+
+  cerrarCarrusel() {
+    // Cerrar el modal del carrusel
+    this.mostrarCarrusel = false;
   }
 }

@@ -48,6 +48,89 @@
           </div>
         </div>
       </div>
+      <div
+        *ngIf="mostrarCarrusel"
+        class="modal fade show"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-modal="true"
+        style="display: block; background: rgba(0, 0, 0, 0.5)"
+      >
+        <button
+          class="btn btn-danger position-absolute top-0 end-0 m-3"
+          (click)="cerrarCarrusel()"
+        >
+          <i class="bi bi-trash3-fill"></i>
+          <!-- Ícono de cierre -->
+        </button>
+        <div class="modal-dialog modal-xl">
+          <div class="modal-content">
+            <!-- Carrusel Bootstrap -->
+            <div id="carouselExampleCaptions" class="carousel slide">
+              <div id="carouselExampleCaptions" class="carousel slide">
+                <div class="carousel-indicators">
+                  <!-- Genera los indicadores de diapositivas -->
+                  <button
+                    *ngFor="let image of allImages | ObjToArray; let i = index"
+                    type="button"
+                    [attr.data-bs-target]="'#carouselExampleCaptions'"
+                    [attr.data-bs-slide-to]="i"
+                    [class.active]="i === indiceDiapositivaActiva"
+                    [attr.aria-current]="i === 0 ? 'true' : 'false'"
+                    [attr.aria-label]="'Slide ' + (i + 1)"
+                  ></button>
+                </div>
+                <div class="carousel-inner">
+                  <!-- Genera las diapositivas -->
+                  <div
+                    *ngFor="let image of allImages | ObjToArray; let i = index"
+                    class="carousel-item"
+                    [class.active]="i === indiceDiapositivaActiva"
+                  >
+                    <img
+                      [src]="image.path"
+                      class="d-block w-100"
+                      [alt]="image.nombre"
+                    />
+                  </div>
+                </div>
+                <!-- Controles de navegación -->
+                <button
+                  class="carousel-control-prev"
+                  type="button"
+                  (click)="
+                    indiceDiapositivaActiva =
+                      (indiceDiapositivaActiva - 1 + allImages.length) %
+                      allImages.length
+                  "
+                >
+                  <span
+                    class="carousel-control-prev-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button
+                  class="carousel-control-next"
+                  type="button"
+                  (click)="
+                    indiceDiapositivaActiva =
+                      (indiceDiapositivaActiva + 1) % allImages.length
+
+                  "
+
+                >
+                  <span
+                    class="carousel-control-next-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section class="mobile">

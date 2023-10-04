@@ -8,7 +8,6 @@ import { LoginComponent } from './layout/public/login/login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegisterComponent } from './layout/public/register/register/register.component';
 import { PrincipalComponent } from './layout/public/principal/principal.component';
-//import { app_routing } from './app.routes';
 import { RouterModule } from '@angular/router';
 import { BasenewsComponent } from './layout/public/basenews/basenews.component';
 import { WriterComponent } from './layout/public/writer/writer.component';
@@ -27,7 +26,7 @@ import { NoticiaOpinionComponent } from './layout/public/noticia-opinion/noticia
 import { NoticiaChiapasComponent } from './layout/public/noticia-chiapas/noticia-chiapas.component';
 import { BusquedaComponent } from './layout/public/busqueda/busqueda.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
-import { ObjToArray } from './ObjToArray.pipe';
+import { ObjToArray } from './objToArray.pipe';
 import { EditarCategoriasComponent } from './layout/public/editar-categorias/editar-categorias.component';
 import { AdministradorComponent } from './layout/public/administrador/administrador.component';
 
@@ -58,6 +57,7 @@ import { AdministradorComponent } from './layout/public/administrador/administra
     AdministradorComponent,
   ],
   imports: [
+
     BrowserModule,
     EditorModule,
     RouterModule.forRoot([
