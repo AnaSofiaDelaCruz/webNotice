@@ -15,8 +15,11 @@ export class PrincipalComponent implements OnInit {
   public notaAbajo: { items: any[]; itemPaths: string[] }[] = []; // Anotación de tipo
   public notasAbajoLimitadas: { items: any[]; itemPaths: string[] }[] = []; //!Notas de abajo
   public fechaActual: string = '';
+  public busquedaRealizada: boolean = false;
+  public notasEncontradas: { items: any[]; itemPaths: string[] }[] = [];
   tokenEnLocalStorage: boolean = false;
   esAdmin = false;
+  buscarInput = '';
 
   ngOnInit(): void {
     const token = localStorage.getItem('token');
@@ -32,6 +35,7 @@ export class PrincipalComponent implements OnInit {
   ) {}
   cerrarSesion(): void {
     localStorage.removeItem('token');
+    localStorage.removeItem('rol');
     this.tokenEnLocalStorage = false;
     this.router.navigate(['/login']);
   }
@@ -89,7 +93,24 @@ export class PrincipalComponent implements OnInit {
       queryParams: { parametro1: id },
     });
   }
+  public Buscar() {
+    this.dashboardService.BuscarNota(this.buscarInput).subscribe((response) => {
+      console.log(response.noticias);
 
+      // Almacenar las notas encontradas y cambiar el estado de busquedaRealizada
+      this.notasEncontradas = response.noticias.map((noticia) => ({
+        ...noticia,
+        itemPaths: noticia.items.map((item: { path: any }) => item.path),
+        item: noticia.items.map((item: { nombre: any }) => item.nombre),
+      })); // Asegúrate de que response contenga las notas buscadas
+      console.log(this.notasEncontradas, ' si tengo');
+
+      this.busquedaRealizada = true;
+    });
+  }
+  RegresarHome() {
+    this.busquedaRealizada = false;
+  }
   setActive(): void {
     this.active = !this.active;
   }

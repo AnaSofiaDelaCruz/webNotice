@@ -22,10 +22,17 @@
             <button class="boton-hamburguesa" (click)="setActive()">
               <i class="bi bi-list" id="botonMenu"></i>
             </button>
-            <img src="./assets/images/logoNav.png" alt="logoNav" />
+            <a (click)="RegresarHome()">
+              <img src="./assets/images/logoNav.png" alt="logoNav" />
+            </a>
           </div>
           <div class="buscador">
-            <input type="text" class="barra-buscador" />
+            <input
+              type="text"
+              class="barra-buscador"
+              [(ngModel)]="buscarInput"
+            />
+            <button class="botonBusqueda" (click)="Buscar()">buscar</button>
           </div>
           <div class="boton-iniciar">
             <a
@@ -45,7 +52,7 @@
           </div>
         </div>
 
-        <div class="contenidoReciente">
+        <div class="contenidoReciente" *ngIf="!busquedaRealizada">
           <h1 class="textoReciente">Noticias recientes</h1>
           <div
             class="cards"
@@ -67,6 +74,29 @@
             </div>
           </div>
         </div>
+        <div class="contenidoReciente" *ngIf="busquedaRealizada">
+          <h1 class="textoReciente">Notas encontradas</h1>
+          <div
+            class="cards"
+            *ngFor="let nota of notasEncontradas | ObjToArray"
+            (click)="LeerNota(nota.id)"
+          >
+            <img
+              [src]="nota.itemPaths[0]"
+              [alt]="nota.item[0]"
+              class="imagenNota"
+            />
+            <div class="textos">
+              <h1 class="titulo">{{ nota.titulo }}a</h1>
+              <h1
+                class="descripcion"
+                [innerHTML]="nota.descripcion | slice : 0 : 150"
+              ></h1>
+              <h1 class="fecha">{{ nota.createdAt }}</h1>
+            </div>
+          </div>
+        </div>
+
         <br />
         <h1 class="pregunta">¿De que te gustaria informarte?</h1>
         <br />
@@ -93,7 +123,8 @@
           <div class="listaCards">
             <div
               class="cardMasNotas"
-              *ngFor="let nota of notasAbajoLimitadas | ObjToArray " (click)="LeerNota(nota.id)"
+              *ngFor="let nota of notasAbajoLimitadas | ObjToArray"
+              (click)="LeerNota(nota.id)"
             >
               <div (click)="LeerNota(nota.id)">
                 <img
@@ -101,7 +132,7 @@
                   alt="Fotos de mas noticias"
                   class="imagenNotaMas"
                 />
-                <h1 class="titulo">{{ nota.titulo }}a</h1>
+                <h1 class="titulo">{{ nota.titulo }}</h1>
                 <h1
                   class="descripcion"
                   [innerHTML]="nota.descripcion | slice : 0 : 50"
@@ -136,7 +167,7 @@
         </section>
       </div>
     </section>
-
+    <!--INICIA LA SECCION MOBILE-->
     <section class="mobile">
       <div class="headerMobile">
         <div class="puntosMenu" (click)="setActive()">
@@ -156,37 +187,23 @@
 
       <div class="contenidoRecientesMobile">
         <h1 class="notiRMobile">Noticias Recientes</h1>
-        <div class="cardMobile1">
+        <div
+          class="cardMobile1"
+          *ngFor="let nota of notasLimitadas | ObjToArray"
+          (click)="LeerNota(nota.id)"
+        >
           <img
-            src="https://static.wixstatic.com/media/fd3de2_bb0edc60f6d946bda23a3a94625f2595~mv2.jpg/v1/fit/w_1000%2Ch_726%2Cal_c%2Cq_80,enc_auto/file.jpg"
-            alt=""
-            class="imagenCardMobile"
+            [src]="nota.itemPaths[0]"
+            [alt]="nota.item[0]"
+            class="imagenNota"
           />
           <div class="textoContenidoMobile">
-            <h1 class="TituloNotaMobile">Titulo de noticia</h1>
-            <h2 class="fechaNotaMobile">23/08/2023</h2>
-          </div>
-        </div>
-        <div class="cardMobile1">
-          <img
-            src="https://static.wixstatic.com/media/fd3de2_bb0edc60f6d946bda23a3a94625f2595~mv2.jpg/v1/fit/w_1000%2Ch_726%2Cal_c%2Cq_80,enc_auto/file.jpg"
-            alt=""
-            class="imagenCardMobile"
-          />
-          <div class="textoContenidoMobile">
-            <h1 class="TituloNotaMobile">Titulo de noticia</h1>
-            <h2 class="fechaNotaMobile">23/08/2023</h2>
-          </div>
-        </div>
-        <div class="cardMobile1">
-          <img
-            src="https://static.wixstatic.com/media/fd3de2_bb0edc60f6d946bda23a3a94625f2595~mv2.jpg/v1/fit/w_1000%2Ch_726%2Cal_c%2Cq_80,enc_auto/file.jpg"
-            alt=""
-            class="imagenCardMobile"
-          />
-          <div class="textoContenidoMobile">
-            <h1 class="TituloNotaMobile">Titulo de noticia</h1>
-            <h2 class="fechaNotaMobile">23/08/2023</h2>
+            <h1 class="TituloNotaMobile">{{ nota.titulo }}</h1>
+            <h1
+              class="descripcion"
+              [innerHTML]="nota.descripcion | slice : 0 : 50"
+            ></h1>
+            <h1 class="fecha">{{ nota.createdAt }}</h1>
           </div>
         </div>
       </div>
@@ -195,43 +212,33 @@
 
       <div class="botonesMobile">
         <button class="botonMobile">Accidentes</button>
-        <button class="botonMobile">Opinión</button>
-        <button class="botonMobile">Notas del día</button>
+        <button class="botonMobile" (click)="FiltrarNota('Opinion publica')">
+          Opinión
+        </button>
+        <button class="botonMobile" (click)="FiltrarNota('Noticias del día')">
+          Notas del día
+        </button>
       </div>
 
       <div class="contenidoRecientesMobile">
         <h1 class="notiRMobile">Noticias relacionadas</h1>
-        <div class="cardMobile1">
+        <div
+          class="cardMobile1"
+          *ngFor="let nota of notasAbajoLimitadas | ObjToArray"
+          (click)="LeerNota(nota.id)"
+        >
           <img
-            src="https://static.wixstatic.com/media/fd3de2_bb0edc60f6d946bda23a3a94625f2595~mv2.jpg/v1/fit/w_1000%2Ch_726%2Cal_c%2Cq_80,enc_auto/file.jpg"
-            alt=""
-            class="imagenCardMobile"
+            [src]="nota.itemPaths[0]"
+            alt="Fotos de mas noticias"
+            class="imagenNotaMas"
           />
           <div class="textoContenidoMobile">
-            <h1 class="TituloNotaMobile">Titulo de noticia</h1>
-            <h2 class="fechaNotaMobile">23/08/2023</h2>
-          </div>
-        </div>
-        <div class="cardMobile1">
-          <img
-            src="https://static.wixstatic.com/media/fd3de2_bb0edc60f6d946bda23a3a94625f2595~mv2.jpg/v1/fit/w_1000%2Ch_726%2Cal_c%2Cq_80,enc_auto/file.jpg"
-            alt=""
-            class="imagenCardMobile"
-          />
-          <div class="textoContenidoMobile">
-            <h1 class="TituloNotaMobile">Titulo de noticia</h1>
-            <h2 class="fechaNotaMobile">23/08/2023</h2>
-          </div>
-        </div>
-        <div class="cardMobile1">
-          <img
-            src="https://static.wixstatic.com/media/fd3de2_bb0edc60f6d946bda23a3a94625f2595~mv2.jpg/v1/fit/w_1000%2Ch_726%2Cal_c%2Cq_80,enc_auto/file.jpg"
-            alt=""
-            class="imagenCardMobile"
-          />
-          <div class="textoContenidoMobile">
-            <h1 class="TituloNotaMobile">Titulo de noticia</h1>
-            <h2 class="fechaNotaMobile">23/08/2023</h2>
+            <h1 class="TituloNotaMobile">{{ nota.titulo }}</h1>
+            <h1
+              class="descripcion"
+              [innerHTML]="nota.descripcion | slice : 0 : 25"
+            ></h1>
+            <h2 class="fechaNotaMobile">{{ nota.createdAt }}</h2>
           </div>
         </div>
       </div>
@@ -242,9 +249,9 @@
           <a routerLink="/noticiaInternacional" class="enlaceMObile"
             >Internacional</a
           >
-          <a href="#" class="enlaceMObile">Nacional</a>
-          <a href="#" class="enlaceMObile">Opinión Publica</a>
-          <a href="#" class="enlaceMObile">Notas del día</a>
+          <a routerLink="/noticiaNacional"class="enlaceMObile">Nacional</a>
+          <a routerLink="/noticiaOpinion" class="enlaceMObile">Opinión Publica</a>
+          <a routerLink="/noticiaChiapas" class="enlaceMObile">Estado | Chiapas</a>
         </nav>
         <button class="cerrarMenuMobile" (click)="setActive()">
           Cerrar menú

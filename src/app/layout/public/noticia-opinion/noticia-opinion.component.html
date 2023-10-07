@@ -57,14 +57,10 @@
 
       <h1 class="categoriaNoticiaMobile">Opinión Publica</h1>
 
-      <div class="cardMobile">
-        <img
-          src="https://assets.xboxservices.com/assets/95/eb/95eb973b-006b-4533-8902-f5a3f8dfd955.jpg?n=Halo-Infinite_GLP-Page-Hero-0_1083x609.jpg"
-          alt=""
-          class="imagenCardMobile"
-        />
-        <h1 class="tituloNotaMobile">Titulo Nota</h1>
-        <h2 class="fechaNotaMobile">Fecha de nota</h2>
+       <div class="cardMobile" *ngFor="let noticia of nota | ObjToArray">
+        <img [src]="noticia.itemPaths[0]" class="imagenCardMobile" />
+        <h1 class="tituloNotaMobile">{{ noticia.titulo }}</h1>
+        <h2 class="fechaNotaMobile">{{ noticia.createdAt }}</h2>
       </div>
 
       <div class="menuLateralMobile" [ngClass]="{ menu: active }">
@@ -73,9 +69,10 @@
           <a routerLink="/noticiaInternacional" class="enlaceMObile"
             >Internacional</a
           >
-          <a href="/noticiaNacional" class="enlaceMObile">Nacional</a>
-          <a href="/noticiaOpinion" class="enlaceMObile">Opinión Publica</a>
-          <a href="/noticiaChiapas" class="enlaceMObile">Notas del día</a>
+          <a routerLink="/noticiaNacional" class="enlaceMObile">Nacional</a>
+          <a routerLink="/noticiaChiapas" class="enlaceMObile"
+            >Estado | Chiapas</a
+          >
         </nav>
         <button class="cerrarMenuMobile" (click)="setActive()">
           Cerrar menú

@@ -57,7 +57,6 @@ import { AdministradorComponent } from './layout/public/administrador/administra
     AdministradorComponent,
   ],
   imports: [
-
     BrowserModule,
     EditorModule,
     RouterModule.forRoot([
@@ -87,7 +86,7 @@ import { AdministradorComponent } from './layout/public/administrador/administra
       },
       { path: 'noticiaNacional', component: NoticiaNacionalComponent },
       { path: 'editarCategoria', component: EditarCategoriasComponent },
-      { path: '', redirectTo: '/login', pathMatch: 'full' },
+      { path: '', redirectTo: '/home', pathMatch: 'full' },
     ]),
     AppRoutingModule,
     FormsModule,
