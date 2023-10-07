@@ -17,14 +17,14 @@ export class LoginComponent implements OnInit {
     private loginService: LoginService,
     private router: Router,
     private alertService: AlertService,
-    private appComponent:AppComponent
+    private appComponent: AppComponent
   ) {}
 
   ngOnInit(): void {
     this.loginForm = this.appComponent.loginForm;
   }
 
-/*   private createMyForm(): FormGroup {
+  /*   private createMyForm(): FormGroup {
     return this.fb.group({
       correo: ['', Validators.required],
       password: ['', Validators.required],
@@ -37,8 +37,14 @@ export class LoginComponent implements OnInit {
           if (res === null) {
             this.alertService.ShowErrorAlert('Error en credenciales');
           } else {
-            if (localStorage.getItem("rol") === "administrador" || localStorage.getItem("rol") === "escritor"){
-              this.alertService.showSuccess("Inicio de sesión exitoso","Bienvenido Administrador")
+            if (
+              localStorage.getItem('rol') === 'administrador' ||
+              localStorage.getItem('rol') === 'escritor'
+            ) {
+              this.alertService.showSuccess(
+                'Inicio de sesión exitoso',
+                `Bienvenido ${localStorage.getItem('rol')}`
+              );
               this.router.navigate(['/homeAdmin']);
             } else {
               this.alertService.showSuccess(
@@ -47,7 +53,6 @@ export class LoginComponent implements OnInit {
               );
               this.router.navigate(['/home']);
             }
-            
           }
         },
         (error) => {

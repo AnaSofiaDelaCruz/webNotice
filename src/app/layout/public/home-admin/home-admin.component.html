@@ -60,11 +60,12 @@
         <button
           class="botonesMenuUsuarios"
           id="botonCerrarSesion"
+          (click)="CerrarSesion()"
           routerLink="/login"
         >
           <i class="bi bi-box-arrow-in-left"></i> Cerrar sesión
         </button>
-        <button class="botonesMenuUsuarios" routerLink="/administrador">
+        <button class="botonesMenuUsuarios" routerLink="/administrador" *ngIf="adminBandera">
           <i class="bi bi-bar-chart-fill"></i> Menú de administrador
         </button>
         <button

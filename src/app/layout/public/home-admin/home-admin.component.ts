@@ -11,11 +11,18 @@ import { Router } from '@angular/router';
 export class HomeAdminComponent implements OnInit {
   public activar: boolean = true;
   public active: boolean = true;
+  public adminBandera: boolean = false;
   public notaCompleta: { items: any[]; itemPaths: string[] }[] = []; // Anotación de tipo
   @ViewChild('inputText') inputText!: ElementRef;
 
   ngOnInit(): void {
     this.ListaNoticia();
+    if (
+      localStorage.getItem('rol') === 'administrador' ||
+      localStorage.getItem('rol') === 'Administrador'
+    ) {
+      this.adminBandera = true;
+    }
   }
 
   constructor(
@@ -60,7 +67,9 @@ export class HomeAdminComponent implements OnInit {
   setActive(): void {
     this.active = !this.active;
   }
-
+  public CerrarSesion() {
+    localStorage.clear();
+  }
   private handleError(error: any) {
     if (error.status === 401) {
       this.alertService.ShowErrorAlert('Token invalido');

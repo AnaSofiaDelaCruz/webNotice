@@ -51,7 +51,7 @@
             </div>
             <br />
           </form>
-          <a type="button" class="btn button-success" (click)="Iniciar()"
+          <a type="button" class="btn button-success" (click)="Iniciar()" (keyup.enter)="Iniciar()"
             >Ingresar</a
           >
           <br /><br />
@@ -129,7 +129,7 @@
             class="inputMobile"
             formControlName="password"
           />
-          <button class="loginBotonMobile" (click)="Iniciar()">Ok!</button>
+          <button class="loginBotonMobile" (click)="Iniciar()" (keyup.enter)="Iniciar()">Ok!</button>
 
           <button class="problemasMobile">
             Clic aca si tienes problemas para iniciar sesion
