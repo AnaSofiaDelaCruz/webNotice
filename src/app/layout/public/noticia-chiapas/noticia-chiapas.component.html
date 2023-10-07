@@ -36,7 +36,11 @@
         </div>
 
         <div class="contenido">
-          <div class="card" *ngFor="let noticia of nota | ObjToArray">
+          <div
+            class="card"
+            *ngFor="let noticia of nota | ObjToArray"
+            (click)="LeerNota(noticia.id)"
+          >
             <img [src]="noticia.itemPaths[0]" class="imagenCard" />
             <h1 class="tituloNota">
               {{ noticia.titulo }}
@@ -57,7 +61,11 @@
 
       <h1 class="categoriaNoticiaMobile">Estado | Chiapas</h1>
 
-      <div class="cardMobile" *ngFor="let noticia of nota | ObjToArray">
+      <div
+        class="cardMobile"
+        *ngFor="let noticia of nota | ObjToArray"
+        (click)="LeerNota(noticia.id)"
+      >
         <img [src]="noticia.itemPaths[0]" class="imagenCardMobile" />
         <h1 class="tituloNotaMobile">{{ noticia.titulo }}</h1>
         <h2 class="fechaNotaMobile">{{ noticia.createdAt }}</h2>

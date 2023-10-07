@@ -13,9 +13,17 @@ export class NoticiaOpinionComponent {
   ngOnInit(): void {
     this.NoticiasEncontradas();
   }
-  constructor(private filtradoCategoria: InternacionalService,private router:Router) {}
+  constructor(
+    private filtradoCategoria: InternacionalService,
+    private router: Router
+  ) {}
   public active: boolean = true;
-
+  
+  public LeerNota(id: string) {
+    this.router.navigate(['/news', id], {
+      queryParams: { parametro1: id },
+    });
+  }
   private NoticiasEncontradas() {
     this.filtradoCategoria
       .ListNotasByCategoria('Opinion publica')

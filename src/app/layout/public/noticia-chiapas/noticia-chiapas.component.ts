@@ -18,7 +18,11 @@ export class NoticiaChiapasComponent {
     private router: Router
   ) {}
   public active: boolean = true;
-
+  public LeerNota(id: string) {
+    this.router.navigate(['/news', id], {
+      queryParams: { parametro1: id },
+    });
+  }
   private NoticiasEncontradas() {
     this.filtradoCategoria
       .ListNotasByCategoria('Estado de Chiapas')

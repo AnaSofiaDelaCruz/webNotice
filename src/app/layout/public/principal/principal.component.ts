@@ -88,7 +88,7 @@ export class PrincipalComponent implements OnInit {
       });
   }
 
-  LeerNota(id: string) {
+  public LeerNota(id: string) {
     this.router.navigate(['/news', id], {
       queryParams: { parametro1: id },
     });

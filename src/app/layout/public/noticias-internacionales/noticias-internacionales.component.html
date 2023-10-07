@@ -36,7 +36,7 @@
         </div>
 
         <div class="contenido">
-          <div class="card" *ngFor="let noticia of nota | ObjToArray">
+          <div class="card" *ngFor="let noticia of nota | ObjToArray" (click)="LeerNota(noticia.id)">
             <img [src]="noticia.itemPaths[0]" class="imagenCard" />
             <h1 class="tituloNota">
               {{ noticia.titulo }}
