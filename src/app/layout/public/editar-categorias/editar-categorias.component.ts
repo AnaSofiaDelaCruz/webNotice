@@ -36,7 +36,6 @@ export class EditarCategoriasComponent {
     this.categoriaServicio.ListSubCategorias().subscribe(
       (res) => {
         this.datosObtenidos = res.subcategoria;
-        console.log('Esto tiene mi subcategoria:', this.datosObtenidos);
       },
       (error) => {
         this.alertaError(error);
@@ -58,7 +57,6 @@ export class EditarCategoriasComponent {
   seleccion: string = '';
   public capturar() {
     this.seleccion = this.opcionSeleccinada;
-    console.log('Esto tiene:', this.seleccion);
     this.determinar();
   }
 
@@ -77,7 +75,6 @@ export class EditarCategoriasComponent {
 
   public eliminarCategoria(idCategoria: any) {
     if (this.mostrarPrimerH1) {
-      console.log('Categoria con ID: ', idCategoria);
       this.alertas
         .AlertWarningDelete(
           '¡Atención! la categoria seleccionada será eliminada.'
@@ -97,15 +94,12 @@ export class EditarCategoriasComponent {
                   }
                 },
                 (error) => {
-                  console.log('Hubo un error al intentar eliminar: ', error);
                 }
               );
           } else {
-            console.log('Operacion cancelada.');
           }
         });
     } else {
-      console.log('Subcategoria con ID: ', idCategoria);
       this.alertas
         .AlertWarningDelete(
           '¡Atención! la subcategoria seleccionada será eliminada.'
@@ -127,11 +121,9 @@ export class EditarCategoriasComponent {
                   }
                 },
                 (error) => {
-                  console.log('Hubo un error al intentar eliminar: ', error);
                 }
               );
           } else {
-            console.log('Operacion cancelada.');
           }
         });
     }
@@ -170,7 +162,6 @@ export class EditarCategoriasComponent {
     }
 
     if (capturar !== null) {
-      console.log('Esto obtenemos:', capturar);
     }
   }
 }

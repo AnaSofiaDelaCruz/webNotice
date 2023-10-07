@@ -18,7 +18,7 @@ export class NoticiaOpinionComponent {
     private router: Router
   ) {}
   public active: boolean = true;
-  
+
   public LeerNota(id: string) {
     this.router.navigate(['/news', id], {
       queryParams: { parametro1: id },
@@ -33,7 +33,6 @@ export class NoticiaOpinionComponent {
             ...noticia,
             itemPaths: noticia.items.map((item: { path: any }) => item.path),
           }));
-          console.log(this.nota);
         } else {
         }
       });

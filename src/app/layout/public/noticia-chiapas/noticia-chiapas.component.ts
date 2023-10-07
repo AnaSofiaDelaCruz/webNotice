@@ -32,7 +32,6 @@ export class NoticiaChiapasComponent {
             ...noticia,
             itemPaths: noticia.items.map((item: { path: any }) => item.path),
           }));
-          console.log(this.nota);
         } else {
         }
       });

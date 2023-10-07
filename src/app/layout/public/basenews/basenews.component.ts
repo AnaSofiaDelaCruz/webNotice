@@ -28,25 +28,19 @@ export class BasenewsComponent implements OnInit {
   }
   ngOnInit(): void {
     this.LecturaNoticia();
-    console.log(this.indiceDiapositivaActiva, ' indice');
-    console.log(this.allImages.length, ' allimages');
   }
 
   public ocultarBoton = false;
   private LecturaNoticia() {
     this.leerNota.LeerNota(this.idEncontrado).subscribe((response) => {
       if (response && response.noticia) {
-        console.log(response);
 
         this.notita = response.noticia;
         if (this.notita.items.length > 2) {
-          console.log('Hay mas de 2 imagenes');
         } else {
-          console.log('Solo hay una imagen');
           this.ocultarBoton = true;
         }
         this.allImages = this.notita.items;
-        console.log(this.allImages.length," en lectura noticia");
 
         this.firstTwoImages = this.notita.items.slice(0, 2);
       }
@@ -64,7 +58,6 @@ export class BasenewsComponent implements OnInit {
     }
   }
   abrirCarrusel() {
-    console.log(this.allImages);
 
     // Mostrar el modal del carrusel
     this.mostrarCarrusel = true;

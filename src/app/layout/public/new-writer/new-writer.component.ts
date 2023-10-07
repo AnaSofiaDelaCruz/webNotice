@@ -61,9 +61,7 @@ export class NewWriterComponent {
   }
 
   public registrar() {
-    console.log(this.registroEscritor.value);
     if (this.registroEscritor.valid) {
-      console.log('Pasa la validacion vacia');
       this.registroEscritorService
         .registrarEscritor(this.registroEscritor.value)
         .subscribe(

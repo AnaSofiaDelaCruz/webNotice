@@ -32,7 +32,6 @@ export class NoticiasInternacionalesComponent implements OnInit {
             ...noticia,
             itemPaths: noticia.items.map((item: { path: any }) => item.path),
           }));
-          console.log(this.nota);
         } else {
         }
       });

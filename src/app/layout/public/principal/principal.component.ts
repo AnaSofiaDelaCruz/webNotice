@@ -95,15 +95,12 @@ export class PrincipalComponent implements OnInit {
   }
   public Buscar() {
     this.dashboardService.BuscarNota(this.buscarInput).subscribe((response) => {
-      console.log(response.noticias);
-
       // Almacenar las notas encontradas y cambiar el estado de busquedaRealizada
       this.notasEncontradas = response.noticias.map((noticia) => ({
         ...noticia,
         itemPaths: noticia.items.map((item: { path: any }) => item.path),
         item: noticia.items.map((item: { nombre: any }) => item.nombre),
       })); // Asegúrate de que response contenga las notas buscadas
-      console.log(this.notasEncontradas, ' si tengo');
 
       this.busquedaRealizada = true;
     });

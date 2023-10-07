@@ -22,7 +22,6 @@ export class AdministradorComponent {
     this.activarEscritores();
     this.cargar_noticias();
     this.listar();
-    console.log('Esto tiene localstorage:', localStorage.getItem('rol'));
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
     const rol = localStorage.getItem('rol');
@@ -159,7 +158,6 @@ export class AdministradorComponent {
       (res) => {
         this.escritores = res.message;
         this.cantidadEscritores = this.escritores.length;
-        console.log(this.escritores);
       },
       (error) => {
         this.handleError;
@@ -211,7 +209,6 @@ export class AdministradorComponent {
                 this.listar();
               }
               // Maneja la respuesta si es necesario
-              console.log('Registro eliminado con éxito', response);
             },
             (error) => {
               // Maneja el error si ocurre uno
@@ -220,7 +217,6 @@ export class AdministradorComponent {
           );
         } else {
           // Si el usuario cancela la eliminación, puedes manejarlo aquí
-          console.log('Eliminación cancelada por el usuario');
         }
       });
   }
@@ -232,14 +228,12 @@ export class AdministradorComponent {
         itemPaths: noticia.items.map((item: { path: any }) => item.path),
         item: noticia.items.map((item: { nombre: any }) => item.nombre),
       }));
-      console.log('Esto tiene nota completa', this.notaCompleta);
     });
   }
 
   public eliminar_noticia(id: string) {
     let rol = localStorage.getItem('rol');
 
-    console.log('Este es el ID de la publicación: ', id);
 
     this.alertas
       .AlertWarningDelete('¿Esta seguro de eliminar esta noticia?')
@@ -255,7 +249,6 @@ export class AdministradorComponent {
               this.cargar_noticias();
             },
             (error) => {
-              console.log('> Hay error al eliminar: ', error);
             }
           );
         } else {
@@ -273,7 +266,6 @@ export class AdministradorComponent {
   private ListaCategory() {
     this.categoriaService.ListCategorias().subscribe(
       (res) => {
-        console.log('Esto tiene res:', res);
 
         this.categoriaLista = res.categoria;
       },
