@@ -122,6 +122,16 @@ a:hover {
   margin-right: auto;
   margin-top: 1rem;
   transition: 0.5s all ease;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.card p {
+  font-family: Poppins;
+  font-size: 12px;
+  text-align: justify;
+  width: 90%;
+  margin-left: 1rem;
 }
 
 .tituloNota {
@@ -164,6 +174,17 @@ a:hover {
     margin-left: auto;
     margin-right: auto;
     margin-top: 1rem;
+    object-fit: cover;
+  }
+
+  .imagenCardMobile {
+    object-fit: contain;
+    text-align: center;
+    display: flex;
+    display: block;
+    margin: auto;
+    width: 90%;
+    border-radius: 5px;
   }
 
   .tituloNota {
@@ -180,6 +201,8 @@ a:hover {
     margin-left: 1rem;
     margin-bottom: 0;
   }
+
+
 }
 
 /* Mobile */
@@ -217,6 +240,8 @@ a:hover {
   padding: 0.5rem;
 }
 
+
+
 body {
   background-color: #eee;
 }
@@ -229,11 +254,6 @@ body {
   border-radius: 5px;
 }
 
-.imagenCardMobile {
-  width: 150px;
-  height: 150px;
-  object-fict: cover;
-}
 .titulo,
 .descripcion,
 .fecha {
@@ -302,4 +322,13 @@ body {
   background-color: #7bb0a8;
   color: white;
   height: 40px;
+}
+
+
+.descripcion {
+  font-family: Poppins;
+  font-size: 10px;
+  text-align: justify;
+  font-weight: 400;
+  
 }
