@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { DashboardService } from 'src/app/service/DashboardService/dashboard.service';
+import { FormsModule } from '@angular/forms';
+import { AlertService } from 'src/app/service/AlertService/alert.service';
 
 @Component({
   selector: 'app-principal',
@@ -28,10 +30,12 @@ export class PrincipalComponent implements OnInit {
     }
     this.ListaNotas();
     this.NotaDelDia();
+    this.alternarMenu();
   }
   constructor(
     private router: Router,
-    private dashboardService: DashboardService
+    private dashboardService: DashboardService,
+    private alertas: AlertService
   ) {}
   cerrarSesion(): void {
     localStorage.removeItem('token');
@@ -105,10 +109,27 @@ export class PrincipalComponent implements OnInit {
       this.busquedaRealizada = true;
     });
   }
+
+  public valorBuscador;
+  public solicitarBusqueda() {
+    if (!this.valorBuscador) {
+      this.alertas.ShowErrorAlert("No es posible hacer una busqueda vacía")
+    } else {
+      this.router.navigate(['/resultado', this.valorBuscador]);
+    }
+  }
   RegresarHome() {
     this.busquedaRealizada = false;
   }
   setActive(): void {
     this.active = !this.active;
+  }
+  activarMenu = false;
+  public alternarMenu() {
+    if (this.activarMenu) {
+      this.activarMenu = false;
+    } else {
+      this.activarMenu = true;
+    }
   }
 }

@@ -1,607 +1,340 @@
-.escritorio {
-  display: none;
+body {
+  background-color: #EEE;
 }
 
-.mobile {
-  display: none;
-}
-@media screen and (min-width: 1024px) {
-  .escritorio {
-    display: block;
-  }
-}
-
-@media screen and (max-width: 1000px) {
-  .mobile {
-    display: block;
-  }
-}
-
-/*inicia home*/
-.cardContainer {
-  border-color: black;
-  box-shadow: 2px 4px 15px #a2a2a2;
-  padding-left: 20px;
-}
-.rectangulo {
-  width: 1480px;
-  height: 25px;
-  background: #428bca;
-  background: #7bb0a8;
-  border-radius: 5px 5px 0px 0px;
-}
-.cardStyle {
-  background-color: #eeeeee;
-}
-.img-card {
-  width: 90%;
-  height: auto;
-}
-.other-cards {
-  padding-left: 10px;
-}
-.text-others {
-  color: white;
-  font-family: "Roboto", sans-serif;
-  font-size: large;
-  padding-left: 10px;
-}
-
-.rectanguloVistos {
-  width: 1480px;
-  height: 25px;
-  background: #a7dbab;
-  border-radius: 5px 5px 0px 0px;
-}
-.marginheadband {
-  margin-top: 30px;
-  margin-bottom: 30px;
-  text-align: center;
-}
-.button-headband {
-  margin-left: 15px;
-}
-.button-success {
-  background-color: #512b52;
-  color: white;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 20px;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  padding-left: 150px;
-  padding-right: 150px;
-}
-.navContainer {
-  display: flex;
-  flex-wrap: inherit;
-  align-items: center;
-}
-
-/*AQUI GRIMALDO*/
-.html {
-  padding: 0;
-  margin: 0;
-}
-
-.header {
-  display: grid;
-  grid-template-columns: auto 70% auto;
-  grid-template-rows: 1 1 1;
+.header,
+.grupo1 {
   background-color: white;
-  padding-bottom: 20px;
-  justify-content: center;
-  align-items: center;
-}
-
-.contenido-izquierdo {
   display: flex;
-  margin-top: 15px;
-  margin-left: 10px;
-  padding-right: 0;
-}
-
-.burguer-menu {
-  width: 50px;
-  cursor: pointer;
-}
-
-.general {
-  background-color: #eee;
-}
-
-.labelmision {
-  color: #a7dbab;
-  font-size: 35px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 133.2%;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  display: block;
-  text-transform: uppercase;
-  margin-left: 5px;
+  padding: 0 1rem;
 }
 
-.boton-hamburguesa {
-  border: none;
-  background-color: transparent;
-  color: #9c9c9c;
+.bi-list {
   font-size: 2rem;
+  cursor: pointer;
+  transition: all ease .2s;
 }
 
-.barra-buscador {
-  border-radius: 10px;
-  background-color: #eee;
-  border: none;
-  width: 40vw;
-  height: 50px;
-  font-family: Arial, Helvetica, sans-serif;
-  padding: 10px;
-  margin-top: 15px;
-  display: block;
-  margin-left: auto;
-  /* margin-right: auto; */
+.bi-list:hover {
+  transform: scale(1.2);
 }
 
-.barra-buscador:hover {
-  border: white;
-}
-.boton-iniciar {
-  margin-top: 15px;
-}
-
-.boton1 {
-  border-radius: 3px;
-  background: #7bb0a8;
-  color: white;
-  font-weight: bold;
-  width: auto;
-  height: 50px;
-  border: none;
-  font-size: 20px;
-  display: block;
-  margin-right: 10px;
-}
-
-.boton1:hover {
-  background-color: #a7dbab;
-  transition: 1s;
-}
-
-.menu-lateral-contenedor {
-  position: absolute;
-  background-color: white;
-  top: 0;
-  box-shadow: 1px -1px 5px 0px rgba(0, 0, 0, 0.2);
-  padding: 1.5rem;
-  bottom: 0;
-}
-
-.labelM {
-  color: #a7dbab;
-  font-size: 2.5rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  text-align: center;
-  top: 0;
-}
-
-.select-noticias {
-  color: #464646;
-  font-size: 1rem;
-  font-weight: 700;
-  text-align: center;
-}
-
-.lineaDivisora {
-  background-color: black;
-  width: 100%;
-  height: 2px;
-  display: block;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 1rem;
-}
-
-.card1,
-.card2,
-.card3,
-.card4 {
-  background-image: url("https://trazoscreativos.com/wp-content/uploads/2020/01/marketing-internacional-1200x773.jpg");
-  width: 100%;
-  height: 100px;
-  margin-bottom: 1rem;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
-  border-radius: 5px;
-}
-
-.card2 {
-  background-image: url("https://mundi.io/content/images/2022/08/estados-que-mas-exportan-en-mexico.jpg");
-}
-
-.card3 {
-  background-image: url("https://concepto.de/wp-content/uploads/2020/11/opinion-e1605285684135.jpg");
-}
-
-.card4 {
-  background-image: url("https://visitmexico.com/wp-content/uploads/2022/09/Chiapas_Portada.png");
-}
-
-.card1:hover,
-.card2:hover,
-.card3:hover,
-.card4 :hover {
+.logoMision24 {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  transition: all ease .2s;
   cursor: pointer;
 }
 
-.label {
-  text-transform: uppercase;
-  display: block;
-  padding: 1rem;
-  text-align: center;
-  padding-top: 30px;
-  color: #fff;
-  font-size: 2rem;
-  font-style: normal;
-  font-weight: 700;
-}
-
-.botonCerrar {
-  border-radius: 2px;
-  background: #512b52;
-  font-size: 1rem;
-  color: white;
-  text-transform: uppercase;
-  font-weight: bold;
-  width: 100%;
-  height: 3rem;
-  border: none;
-  margin-bottom: 1rem;
-}
-
-.botonCerrar:hover {
-  background-color: #a7dbab;
-  color: #512b52;
-}
-
-.menu-lateral-contenedor {
-  box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.5);
-}
-
-.menu {
-  opacity: 0;
-  display: none;
-  transition: all 0.5s ease;
-}
-
-/* CONTENIDO RECIENTE */
-
-.contenidoReciente {
-  width: 95vw;
-  padding: 1rem;
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: 5px;
-  border: none;
-  margin-top: 1.4rem;
-  background-color: white;
-}
-.textoReciente {
-  font-size: 1rem;
-  background-color: #7bb0a8;
-  color: white;
-  padding-left: 1rem;
-}
-
-.cards {
-  display: flex;
-  background-color: #eeeeee;
-  width: 95%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 1rem;
-  border-radius: 5px;
-  padding: 1rem;
-}
-.imagenNota {
-  width: 175px;
-  height: 113px;
-  border-radius: 5px;
-}
-
-.titulo,
-.descripcion,
-.fecha {
-  color: #000;
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 700;
-}
-.titulo {
-  margin-top: 0.5rem;
-}
-
-.descripcion {
-  color: #636363;
-  font-size: 15px;
-  font-style: italic;
-  font-weight: 400;
-}
-
-.fecha {
-  color: #636363;
-  font-family: Gotham;
-  font-size: 15px;
-  font-style: normal;
-  font-weight: 700;
-  margin-bottom: 5px;
-}
-
-.textos {
-  display: grid;
-  margin-left: 1rem;
-}
-
-/* BOTONES DE CATEGORIA */
-
-.botonCategoria {
-  border-radius: 5px;
-  background: #512b52;
-  width: 250px;
-  height: 40px;
-  color: white;
-  font-weight: bold;
-  margin-left: auto;
-  margin-right: auto;
-  border: none;
-}
-
-.botonBusqueda {
-  border-radius: 5px;
-  background: #512b52;
-  width: 150px;
-  height: 100%;
-  color: white;
-  font-weight: bold;
-  margin-left: auto;
-  margin-right: auto;
-  border: none;
-}
-.pregunta {
-  color: #636363;
-  margin-top: 1rem;
-  margin-left: 2rem;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 400;
-  color: #636363;
-}
-.botonesConjuntos {
-  display: grid;
-  grid-template-columns: auto auto auto;
-}
-
-.botonCategoria:hover {
-  background-color: #6f3a72;
-  transition: 0.5s;
-}
-
-/* MAS NOTICIAS */
-
-.masNoticias {
-  width: 95vw;
-  height: 300px;
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: 5px;
-  border: none;
-  margin-top: 1.4rem;
-  background-color: white;
-}
-
-.imagenNotaMas {
-  width: 259px;
-  height: 116px;
-  border-radius: 5px;
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
-  cursor: pointer;
-}
-
-.cardMasNotas {
-  background-color: #eeeeee;
-  width: 290px;
-  height: 300;
-  padding: 0.5rem;
-  cursor: pointer;
-}
-
-.cardMasNotas:hover {
-  box-shadow: 0px 0px 22px 5px rgba(127, 178, 212, 1);
-  transition: 0.8s;
-}
-
-.listaCards {
-  display: flex;
-  flex-direction: row;
-  margin-left: auto;
-  margin-right: auto;
-  justify-content: center;
-  gap: 3rem;
-  flex-wrap: nowrap;
-  overflow: scroll;
-}
-
-/* CSS mobile */
-
-.headerMobile {
-  display: grid;
-  grid-template-columns: auto auto;
-  align-items: center;
-  background-color: #512b52;
-  color: white;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-}
-
-.puntosMenu {
-  font-size: 24px;
-  margin-left: 1rem;
-}
-.mision24Mobile {
-  font-family: Poppins;
-  font-weight: bold;
-  text-transform: uppercase;
-  font-size: 24px;
-  margin-right: 1rem;
+.logoMision24:hover {
+  transform: scale(1.1);
 }
 
 .buscador {
-  display: grid;
-  grid-template-columns: 80% auto;
-  align-items: center;
-  justify-content: center;
+  width: 70%;
+  border: 1px solid #EEE;
+  outline: none;
+  font-family: Poppins;
+  font-size: 1.2rem;
+  font-weight: 400;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.botonBuscador {
+  background-color: #512B52;
+  color: white;
+  border: none;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  padding: 5px;
+  transition: all ease .2s;
+}
+
+.botonBuscador:hover {
+  color: #7BB0A8;
+}
+
+.botonIniciarSesion {
+  font-family: Poppins;
+  color: white;
+  background-color: #7BB0A8;
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+  transition: all ease .2s;
+  font-size: 80%;
+}
+
+.botonIniciarSesion:hover {
+  transform: translateY(-5px);
+}
+
+
+.imagenNoticia {
+  width: 150px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.contenedorRecientes {
+  background-color: white;
+  width: 95%;
+  margin: auto;
   margin-top: 1rem;
-
-  gap: 5px;
-}
-.buscadorMobile {
-  border: none;
-  background-color: white;
-  width: 100%;
-  border-radius: 5px;
-  font-family: Poppins;
-  font-size: 16px;
-  padding-left: 5px;
-}
-.botonBuscarMobile {
-  border: none;
-  background-color: #7bb0a8;
-  border-radius: 5px;
-  color: white;
-}
-body {
-  background-color: #eee;
+  padding-bottom: 5px;
 }
 
-.contenidoRecientesMobile {
-  background-color: white;
-  margin: 1rem;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-}
-.notiRMobile {
+.textoRecientes {
+  background: linear-gradient(90deg, #00B2FF 0%, #7BB0A8 100%);
   font-family: Poppins;
-  font-size: 16px;
-  background-color: #7bb0a8;
+  font-size: 1.3rem;
+  padding: 2px 5px;
   color: white;
-  padding-left: 5px;
+  border-radius: 5px 5px 0 0;
 }
-.TituloNotaMobile {
+
+.cardRecientes,
+.auxiliar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.texto {
+  margin-left: 1rem;
   font-family: Poppins;
+}
+
+.texto h2 {
   font-weight: bold;
-  font-size: 18px;
-  margin-top: 6px;
+  font-size: 1rem;
+  width: 700px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-.fechaNotaMobile {
+
+.texto h1 {
+  font-size: 12px;
+  color: #b9b3b3;
+}
+
+.fechaNoticia {
+  font-family: Poppins;
+  font-size: 1rem;
+}
+
+.cardRecientes {
+  margin: 10px;
+  transition: all ease .2s;
+  cursor: pointer;
+}
+
+.fechaNoticia {
+  padding: 0 5px;
+}
+
+.cardRecientes:hover {
+  box-shadow: 2px 1px 15px 0px rgba(0, 0, 0, 0.15);
+}
+
+.botonesFiltros {
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  margin-top: 2rem;
+}
+
+.botonesFiltros button {
+  background-color: #635274;
+  color: white;
+  border: none;
+  font-family: Poppins;
+  font-size: 1rem;
+  padding: 10px;
+  width: 20%;
+  border-radius: 5px;
+  transition: all ease .2s;
+}
+
+.botonesFiltros button:hover {
+  transform: scale(1.1);
+}
+
+.resultadosFiltros {
+  width: 95%;
+  margin: auto;
+  margin-top: 3rem;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 5px;
+  
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 10px;
+  overflow-x: scroll;
+}
+
+.imgFiltro {
+  width: 95%;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin: auto;
+  margin-top: 5px;
+}
+
+.tituloNoticiaReciente2 {
+  font-family: Poppins;
+  font-size: 1rem;
+  font-weight: bold;
+  width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-left: 5px;
+}
+
+.descNotaFiltro {
   font-family: Poppins;
   font-size: 12px;
-}
-.imagenCardMobile {
-  width: 92px;
-  border-radius: 5px;
-}
-.cardMobile1 {
-  background-color: #eee;
-  display: grid;
-  grid-template-columns: 30% auto;
-  margin: 5px;
-  margin-bottom: 10px;
-  border-radius: 5px;
+  font-style: italic;
+  margin-left: 5px;
 }
 
-.informarteMobile {
-  font-family: Poppins;
-  font-size: 16px;
-  background-color: white;
-  text-align: center;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  margin: 1rem;
-  height: 40px;
+.cardFiltro {
+  background-color: #EEE;
   display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.botonesMobile {
-  display: grid;
-  grid-template-columns: auto auto auto;
-  margin: 1rem;
-  gap: 5px;
-}
-.botonMobile {
-  border: none;
+  flex-direction: column;
+  width: 20%;
   border-radius: 5px;
-  background-color: #512b52;
-  color: white;
-  font-family: poppins;
-  height: 40px;
+  cursor: pointer;
+  transition: all ease .2s;
 }
 
-.menuLateralMobile {
+.cardFiltro:hover {
+  box-shadow: 2px 1px 15px 0px rgba(0, 0, 0, 0.15);
+}
+
+.fechaRes {
+  font-family: Poppins;
+  font-size: 10px;
+  font-style: italic;
+  text-align: end;
+  padding-right: 5px;
+}
+
+.contenedorMenuLateral {
+  background: linear-gradient(180deg, #635274 0%, #512B52 100%);
+  width: 25%;
+  height: 100vh;
   position: absolute;
   top: 0;
-  background-color: #512b52;
-  width: 60%;
+}
+
+.oscurecer {
+  background-color: black;
+  opacity: 0.5;
+  width: 100%;
   height: 100vh;
-  box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.5);
-}
-
-.menuM24Mobile {
-  font-family: Poppins;
-  font-weight: bold;
-  color: white;
-  text-transform: uppercase;
-  text-align: center;
-}
-.navegacionLateralMObile {
-  display: grid;
-  background-color: white;
-  gap: 5px;
-  margin: 5px;
-}
-
-.enlaceMObile {
-  color: #000;
-  text-decoration: none;
-  background-color: #eee;
-  margin: 5px;
-  font-family: Poppins;
-  text-align: center;
-}
-
-.cerrarMenuMobile {
-  font-family: Poppins;
-  border: none;
-  width: 95%;
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
-  margin-top: 1rem;
-  background-color: #7bb0a8;
-  color: white;
-  height: 40px;
-}
-
-.cards,
-.cardMasNotas {
+  position: absolute;
+  top: 0;
   cursor: pointer;
-  transition: all ease 0.5s;
 }
 
-.cards:hover {
-  box-shadow: 0px 0px 94px -40px rgba(0, 0, 0, 0.75);
+.escritorio {
+  position: relative;
+}
+
+body {
+  overflow-y: hidden;
+}
+
+.scrollear {
+  overflow-y: scroll;
+}
+
+.imagenMenuLateral {
+  width: 30%;
+  object-fit: cover;
+  display: block;
+  margin: auto;
+  transition: all ease .2s;
+}
+
+.sloganMenuLateral {
+  font-family: Poppins;
+  width: 100%;
+  font-size: 100%;
+  color: white;
+  text-align: center;
+}
+
+.barraDecorativa {
+  background-color: white;
+  width: 80%;
+  height: 1px;
+  display: block;
+  margin: auto;
+  margin-bottom: 10px;
+}
+
+.enlacesMenu {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: auto;
+  gap: 10px;
+}
+
+.enlacesMenu a {
+  font-family: Poppins;
+  width: 100%;
+  font-size: 100%;
+  color: white;
+  text-decoration: none;
+  transition: all ease .2s;
+  height: 30px;
+  padding: 5px;
+}
+
+.enlacesMenu a:hover {
+  background: linear-gradient(90deg, #635274 0%, #512B52 100%);
+  border-radius: 5px;
+  transform: translateX(10px);
+}
+
+.cerrarMenuBoton {
+  font-family: Poppins;
+  color: white;
+  width: 80%;
+  background-color: transparent;
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 5px;
+  margin: auto;
+  display: block;
+  margin-top: 90%;
+  transition: all ease .2s;
+}
+.cerrarMenuBoton:hover {
+  background-color: white;
+  color: #512B52;
+  transform: translateY(-5px);
+}
+
+.mostrar {
+  display: block;
+}
+
+.ocultar {
+  display: none;
+}
+
+.e {
+  margin-right: 10px;
 }

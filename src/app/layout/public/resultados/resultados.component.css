@@ -1,0 +1,145 @@
+body {
+    background-color: #EEE;
+  }
+  
+  .header,
+  .grupo1 {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+  }
+  
+  .bi-caret-left {
+    font-size: 2rem;
+    cursor: pointer;
+    transition: all ease .2s;
+  }
+  
+  .bi-caret-left:hover {
+    transform: scale(1.2);
+  }
+  
+  .logoMision24 {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    transition: all ease .2s;
+    cursor: pointer;
+  }
+  
+  .logoMision24:hover {
+    transform: scale(1.1);
+  }
+  
+  .buscador {
+    width: 70%;
+    border: 1px solid #EEE;
+    outline: none;
+    font-family: Poppins;
+    font-size: 1.2rem;
+    font-weight: 400;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  
+  .botonBuscador {
+    background-color: #512B52;
+    color: white;
+    border: none;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    padding: 5px;
+    transition: all ease .2s;
+  }
+  
+  .botonBuscador:hover {
+    color: #7BB0A8;
+  }
+  
+  .botonIniciarSesion {
+    font-family: Poppins;
+    color: white;
+    background-color: #7BB0A8;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    transition: all ease .2s;
+    font-size: 80%;
+  }
+  
+  .botonIniciarSesion:hover {
+    transform: translateY(-5px);
+  }
+  
+  
+  .imagenNoticia {
+    width: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+  
+  .contenedorRecientes {
+    background-color: white;
+    width: 95%;
+    margin: auto;
+    margin-top: 1rem;
+    padding-bottom: 5px;
+  }
+  
+  .textoRecientes {
+    background: linear-gradient(90deg, #00B2FF 0%, #7BB0A8 100%);
+    font-family: Poppins;
+    font-size: 1.3rem;
+    padding: 2px 5px;
+    color: white;
+    border-radius: 5px 5px 0 0;
+  }
+  
+  .cardRecientes,
+  .auxiliar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .texto {
+    margin-left: 1rem;
+    font-family: Poppins;
+  }
+  
+  .texto h2 {
+    font-weight: bold;
+    font-size: 1rem;
+    width: 700px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .texto h1 {
+    font-size: 12px;
+    color: #b9b3b3;
+  }
+  
+  .fechaNoticia {
+    font-family: Poppins;
+    font-size: 1rem;
+  }
+  
+  .cardRecientes {
+    margin: 10px;
+    transition: all ease .2s;
+    cursor: pointer;
+  }
+  
+  .fechaNoticia {
+    padding: 0 5px;
+  }
+  
+  .cardRecientes:hover {
+    box-shadow: 2px 1px 15px 0px rgba(0, 0, 0, 0.15);
+  }
+  
+  

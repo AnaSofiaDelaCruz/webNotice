@@ -35,6 +35,22 @@
   position: relative;
 }
 
+.noRegistro {
+  font-family: Poppins;
+  font-size: .9rem;
+  border-radius: 5px;
+  border: none;
+  background-color: #635274;
+  margin-top: 6px;
+  color: white;
+  padding: 4px;
+  transition: all ease .5s;
+}
+
+.noRegistro:hover {
+  padding: 4px 15px;
+}
+
 .logoM24 {
   position: absolute;
   left: 50%;

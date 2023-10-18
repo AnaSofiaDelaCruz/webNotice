@@ -29,6 +29,8 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 import { ObjToArray } from './objToArray.pipe';
 import { EditarCategoriasComponent } from './layout/public/editar-categorias/editar-categorias.component';
 import { AdministradorComponent } from './layout/public/administrador/administrador.component';
+import { ResultadosComponent } from './layout/public/resultados/resultados.component';
+
 
 @NgModule({
   declarations: [
@@ -55,6 +57,7 @@ import { AdministradorComponent } from './layout/public/administrador/administra
     ObjToArray,
     EditarCategoriasComponent,
     AdministradorComponent,
+    ResultadosComponent,
   ],
   imports: [
     BrowserModule,
@@ -80,6 +83,7 @@ import { AdministradorComponent } from './layout/public/administrador/administra
       { path: 'administrador', component: AdministradorComponent },
       { path: 'noticiaChiapas', component: NoticiaChiapasComponent },
       { path: 'busqueda', component: BusquedaComponent },
+      { path: 'resultado/:id', component: ResultadosComponent },
       {
         path: 'noticiaInternacional',
         component: NoticiasInternacionalesComponent,
