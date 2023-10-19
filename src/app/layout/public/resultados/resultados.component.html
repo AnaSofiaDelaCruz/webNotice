@@ -26,17 +26,17 @@
       <button class="botonIniciarSesion"><i class="bi bi-person-fill"></i> Iniciar sesión</button>
     </div>
     <div class="contenedorRecientes">
-      <h1 class="textoRecientes">Resultados de busqueda</h1>
-      <div class="cardRecientes">
+      <h1 class="textoRecientes">Resultados de busqueda: <span>{{cantidad}}</span></h1>
+      <div class="cardRecientes" *ngFor="let nota of notasEncontradas | ObjToArray" (click)="LeerNota(nota.id)">
         <div class="auxiliar">
-          <img src="https://wallpapercave.com/wp/wp8536904.jpg" class="imagenNoticia">
+          <img [src]="nota.itemPaths[0]" [alt]="nota.item[0]" class="imagenNoticia">
           <div class="texto">
-            <h2 class="tituloNoticiaReciente">Titulo</h2>
-            <!-- <h1 class="descripcionNoticia" [innerHTML]="nota.descripcion | slice : 0 : 150"></h1> -->
+            <h2 class="tituloNoticiaReciente">{{ nota.titulo }}</h2>
+            <h1 class="descripcionNoticia" [innerHTML]="nota.descripcion | slice : 0 : 150"></h1>
           </div>
         </div>
 
-        <h3 class="fechaNoticia">fecha</h3>
+        <h3 class="fechaNoticia">{{ nota.createdAt }}</h3>
       </div>
     </div>
   </section>
